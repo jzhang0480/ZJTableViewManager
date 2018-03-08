@@ -20,7 +20,7 @@ open class ZJTextFieldCell: ZJTableViewCell {
         // Initialization code
     }
     
-    override public func cellWillAppear() {
+    override open func cellWillAppear() {
         super.cellWillAppear()
         let item = self.item as! ZJTextFieldItem
         if item.isFullLength {
@@ -40,11 +40,12 @@ open class ZJTextFieldCell: ZJTableViewCell {
         item.text = textField.text
         item.didChanged?(item)
     }
-
+    
     override open func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
 }
+

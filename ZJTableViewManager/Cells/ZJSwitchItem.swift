@@ -19,3 +19,4 @@ public class ZJSwitchItem: ZJTableViewItem {
         self.didChanged = didChanged
     }
 }
+

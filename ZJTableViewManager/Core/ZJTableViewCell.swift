@@ -9,19 +9,19 @@
 import UIKit
 
 open class ZJTableViewCell: UITableViewCell {
-    var item: Any!
+    public var item: Any!
     
     override open func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    public func cellWillAppear() {
+    open func cellWillAppear() {
         
         
     }
     
-    public func cellDidAppear() {
+    open func cellDidAppear() {
         let item = self.item as! ZJTableViewItem
         if item.isHideSeparator {
             self.separatorInset = UIEdgeInsetsMake(0, 15, 0, self.bounds.size.width - 15)
@@ -30,14 +30,15 @@ open class ZJTableViewCell: UITableViewCell {
         }
     }
     
-    public func cellDidDisappear() {
+    open func cellDidDisappear() {
         
     }
-
+    
     override open func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }
+

@@ -17,13 +17,13 @@ open class ZJSwitchCell: ZJTableViewCell {
         // Initialization code
     }
     
-    override public func cellWillAppear() {
+    override open func cellWillAppear() {
         super.cellWillAppear()
         let item = self.item as! ZJSwitchItem
         self.labelTitle.text = item.title
         self.switchButton.isOn = item.isOn
     }
-
+    
     @IBAction func valueChanged(_ sender: UISwitch) {
         let item = self.item as! ZJSwitchItem
         item.isOn = sender.isOn
@@ -32,8 +32,9 @@ open class ZJSwitchCell: ZJTableViewCell {
     }
     override open func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
 }
+

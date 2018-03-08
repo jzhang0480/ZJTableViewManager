@@ -16,9 +16,9 @@ open class ZJTextCell: ZJTableViewCell, UITextViewDelegate {
         // Initialization code
         self.textView.delegate = self
     }
-
     
-    override public func cellWillAppear() {
+    
+    override open func cellWillAppear() {
         super.cellWillAppear()
         let item = self.item as! ZJTextItem
         textView.placeholder = item.placeHolder
@@ -33,8 +33,9 @@ open class ZJTextCell: ZJTableViewCell, UITextViewDelegate {
     
     override open func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
 }
+

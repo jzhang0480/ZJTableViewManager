@@ -16,7 +16,7 @@ open class ZJTableViewSection: NSObject {
     public var headerView: UIView?
     public var footerView: UIView?
     
-    override init() {
+    override public init() {
         super.init()
         self.items = []
         self.headerHeight = CGFloat.leastNormalMagnitude
@@ -36,7 +36,7 @@ open class ZJTableViewSection: NSObject {
     public convenience init(footerView: UIView?) {
         self.init(headerView: nil, footerView: footerView)
     }
-
+    
     public convenience init(headerView: UIView?, footerView: UIView?) {
         self.init()
         if let header = headerView {
@@ -79,3 +79,4 @@ open class ZJTableViewSection: NSObject {
     }
     
 }
+

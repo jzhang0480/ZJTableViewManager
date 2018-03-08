@@ -56,9 +56,10 @@ open class ZJTableViewItem: NSObject {
         tableViewManager.tableView.deleteRows(at: [indexPath], with: animation)
     }
     
-    public func updateHeight() {
+    open func updateHeight() {
         tableViewManager.tableView.beginUpdates()
         tableViewManager.tableView.endUpdates()
     }
     
 }
+
