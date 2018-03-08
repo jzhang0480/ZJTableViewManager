@@ -8,19 +8,19 @@
 
 import UIKit
 
-class ZJTextFieldCell: ZJTableViewCell {
+public class ZJTextFieldCell: ZJTableViewCell {
     @IBOutlet weak var titleConstraint: NSLayoutConstraint!
     @IBOutlet weak var labelTitle: UILabel!
     
     @IBOutlet weak var textField: UITextField!
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         
         self.textField.addTarget(self, action: #selector(textFieldDidChanged(textField:)), for: UIControlEvents.editingChanged)
         // Initialization code
     }
     
-    override func cellWillAppear() {
+    override public func cellWillAppear() {
         super.cellWillAppear()
         let item = self.item as! ZJTextFieldItem
         if item.isFullLength {
@@ -41,7 +41,7 @@ class ZJTextFieldCell: ZJTableViewCell {
         item.didChanged?(item)
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    override public func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

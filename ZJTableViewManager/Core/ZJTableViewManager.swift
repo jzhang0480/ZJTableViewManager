@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource {
+public class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource {
     var tableView:UITableView!
     var sections: [Any] = []
     
@@ -35,42 +35,42 @@ class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    public func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         let currentSection = sections[section] as! ZJTableViewSection
         return currentSection.headerHeight
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let currentSection = sections[section] as! ZJTableViewSection
         return currentSection.headerView
     }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         let currentSection = sections[section] as! ZJTableViewSection
         return currentSection.footerHeight
     }
     
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let currentSection = sections[section] as! ZJTableViewSection
         return currentSection.footerView
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let currentSection = sections[section] as! ZJTableViewSection
         return currentSection.items.count;
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let currentSection = sections[indexPath.section] as! ZJTableViewSection
         let item = currentSection.items[indexPath.row] as! ZJTableViewItem
         return item.cellHeight
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let currentSection = sections[indexPath.section] as! ZJTableViewSection
         let item = currentSection.items[indexPath.row] as! ZJTableViewItem
         item.indexPath = indexPath
@@ -106,17 +106,17 @@ class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource {
         return cell!;
     }
     
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 //        print("didEndDisplaying")
         (cell as! ZJTableViewCell).cellDidDisappear()
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 //        print("willDisplay")
         (cell as! ZJTableViewCell).cellDidAppear()
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentSection = sections[indexPath.section] as! ZJTableViewSection
         let item = currentSection.items[indexPath.row] as! ZJTableViewItem
         if item.isSelectionAnimate {

@@ -8,30 +8,30 @@
 
 import UIKit
 
-class ZJTextCell: ZJTableViewCell, UITextViewDelegate {
+public class ZJTextCell: ZJTableViewCell, UITextViewDelegate {
     @IBOutlet weak var textView: ZJTextView!
     
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.textView.delegate = self
     }
 
     
-    override func cellWillAppear() {
+    override public func cellWillAppear() {
         super.cellWillAppear()
         let item = self.item as! ZJTextItem
         textView.placeholder = item.placeHolder
         textView.text = item.text
     }
     
-    func textViewDidChange(_ textView: UITextView) {
+    public func textViewDidChange(_ textView: UITextView) {
         let item = self.item as! ZJTextItem
         item.text = textView.text
         item.didChanged?(self.item)
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    override public func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

@@ -97,6 +97,7 @@
 		8F950AA2204D1F5400F06DD8 /* ZJTableViewManagerExample */ = {
 			isa = PBXGroup;
 			children = (
+				8FB83B29205023BC00AD1F3F /* CustomCells */,
 				8F950AA3204D1F5400F06DD8 /* AppDelegate.swift */,
 				8F950AA5204D1F5400F06DD8 /* ViewController.swift */,
 				8F950AD0204D386800F06DD8 /* RetractableViewController.swift */,
@@ -113,7 +114,6 @@
 		8F950AB5204D1F7D00F06DD8 /* ZJTableViewManager */ = {
 			isa = PBXGroup;
 			children = (
-				8FB83B29205023BC00AD1F3F /* CustomCells */,
 				8F950AB6204D1F7D00F06DD8 /* OtherClass */,
 				8F950AB9204D1F7D00F06DD8 /* Cells */,
 				8F950ABD204D1F7D00F06DD8 /* Core */,

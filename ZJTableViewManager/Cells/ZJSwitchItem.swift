@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ZJSwitchItem: ZJTableViewItem {
+public class ZJSwitchItem: ZJTableViewItem {
     public var title: String?
     public var isOn: Bool = false
     var didChanged: ZJTableViewItemBlock?

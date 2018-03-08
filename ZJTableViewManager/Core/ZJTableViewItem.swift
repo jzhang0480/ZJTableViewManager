@@ -7,9 +7,9 @@
 //
 
 import UIKit
-typealias ZJTableViewItemBlock = (Any) -> ()
+public typealias ZJTableViewItemBlock = (Any) -> ()
 
-class ZJTableViewItem: NSObject {
+public class ZJTableViewItem: NSObject {
     weak var tableViewManager: ZJTableViewManager!
     var section: ZJTableViewSection!
     var indexPath: IndexPath!

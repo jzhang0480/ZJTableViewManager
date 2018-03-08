@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ZJTextView: UITextView {
+open class ZJTextView: UITextView {
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
