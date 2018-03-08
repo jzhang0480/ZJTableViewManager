@@ -93,11 +93,14 @@ section.reload(.automatic)
 import UIKit
 
 class ZJOrderEvaluateVC: BaseTableViewManagerVC {
-
+    var tableView: UITableView!
+    var manager: ZJTableViewManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "评价"
-        
+         self.tableView = UITableView(frame: self.view.bounds, style: self.tableViewStyle)
+        self.view.addSubview(self.tableView);
         let section = ZJTableViewSection()
         self.manager.add(section: section)
         
