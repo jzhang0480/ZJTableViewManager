@@ -3,8 +3,10 @@
 
 
 ### 关于数据驱动TableView & 使用方式
-数据驱动搭建TableView页面，简单来说就是开发者不需要处理TableView的delegate、dataSource，只需要关心数据的处理。数据处理好，页面就按照数据的样子搭建起来了。举个例子：
-使用ZJTableViewManager搭建一个TableView页面，添加一个section，section里面添加cell
+数据驱动搭建TableView页面，简单来说就是开发者不需要处理TableView的delegate、dataSource，只需要关心数据的处理。数据处理好，页面就按照数据的样子搭建起来了。
+举个例子，要实现下面这个界面：
+![image](https://raw.githubusercontent.com/JavenZ/ZJTableViewManager/master/Simulator%20Screen%20Shot%20-%20iPhone%20X%20-%202018-03-07%20at%2022.27.37.jpg)
+使用TableView初始化ZJTableViewManager，添加一个section，section里面添加cell
 ```swift
 class ZJTableViewController: UIViewController {
     var tableView: UITableView!
@@ -66,6 +68,13 @@ passwordItem.delete(.automatic)
 passwordItem.reload(.automatic)
 ```
 
+更新cell的高度：
+```
+item.cellHeight = 200
+//这个方法只更新cell高度，自带动画，不会reload这个cell
+item.updateHeight()
+```
+
 刷新section：
 ```
 section.remove(item: simpleStringItem)
@@ -73,6 +82,43 @@ section.remove(item: passwordItem)
 section.reload(.automatic)
 ```
 
+### 使用效果：
+![image](https://github.com/JavenZ/ZJTableViewManager/blob/master/QQ20180307-220059.gif?raw=true)
+
+这个是我项目上用到的一部分实现效果，来不及抽出来放到demo里，这里主要有两个cell，一个输入评价的cell，一个添加图片的cell。viewController只有20行代码
+```
+import UIKit
+
+class ZJOrderEvaluateVC: BaseTableViewManagerVC {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "评价"
+        
+        let section = ZJTableViewSection()
+        self.manager.add(section: section)
+        
+        for _ in 0...9 {
+            //评价cell
+            section.add(item: OrderEvaluateItem(title: "评价"))
+            let textItem = ZJTextItem(text: nil, placeHolder: "请在此输入您的评价~", didChange: nil)
+            textItem.isHideSeparator = true
+            section.add(item: textItem)
+            
+            //图片cell
+            let pictureItem = ZJPictureTableItem(maxNumber: 5, column: 4, space: 15, width: kWidth, superVC: self)
+            pictureItem.type = .edit
+            section.add(item: pictureItem)
+        }
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+}
+```
 
 ### 注：
 1.tableView可以storyboard、xib、纯代码初始化
