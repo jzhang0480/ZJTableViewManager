@@ -56,6 +56,8 @@ class ZJTableViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 ```
+到这里，这个界面就搭建好了，add item的顺序就是界面上cell的展示顺序，不需要写tableview的那些代理。
+
 ### 界面操作
 **都可以使用系统自带的动画**
 
