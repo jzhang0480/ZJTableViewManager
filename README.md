@@ -6,6 +6,7 @@
 数据驱动搭建TableView页面，简单来说就是开发者不需要处理TableView的delegate、dataSource，只需要关心数据的处理。数据处理好，页面就按照数据的样子搭建起来了。
 举个例子，要实现下面这个界面：
 ![image](https://raw.githubusercontent.com/JavenZ/ZJTableViewManager/master/1.jpg)
+
 使用TableView初始化ZJTableViewManager，添加一个section，section里面添加cell
 ```swift
 class ZJTableViewController: UIViewController {
