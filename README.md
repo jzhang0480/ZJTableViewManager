@@ -1,6 +1,9 @@
 ### 关于ZJTableViewManager
 最近开始用Swift写项目，在这之前只看了看Swift相关的文档，突然开始写很不适应，特别是之前一直在用的数据驱动的TableView框架`RETableViewManger`没有Swift版，混编的话也有问题（可能是Swift 4.0不兼容吧）于是就决定自己写一下Swift版的，使用方式基本一模一样。
 
+### 导入
+直接拖入ZJTableViewManager文件夹里面的文件，或者用cocoapods
+`pod 'ZJTableViewManager', '~> 0.0.7'`
 
 ### 关于数据驱动TableView & 使用方式
 数据驱动搭建TableView页面，简单来说就是开发者不需要处理TableView的delegate、dataSource，只需要关心数据的处理。数据处理好，页面就按照数据的样子搭建起来了。
