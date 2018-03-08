@@ -86,7 +86,7 @@ section.reload(.automatic)
 ![image](https://github.com/JavenZ/ZJTableViewManager/blob/master/QQ20180307-220059.gif?raw=true)
 
 这个是我项目上用到的一部分实现效果，来不及抽出来放到demo里，这里主要有两个cell，一个输入评价的cell，一个添加图片的cell。viewController只有20行代码
-```
+```swift
 import UIKit
 
 class ZJOrderEvaluateVC: BaseTableViewManagerVC {
