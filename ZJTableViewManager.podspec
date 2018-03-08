@@ -10,7 +10,7 @@ ZJTableViewManager allows to manage the content of any UITableView with ease, bo
   s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
   s.author             = { "Javen" => "1074472615@qq.com" }
   s.source       = { :git =>"https://github.com/JavenZ/ZJTableViewManager.git", :tag => "#{s.version}" }
-  s.source_files  = "ZJTableViewManager", "ZJTableViewManager/**/*.{h,m}" 
+  s.source_files  = "ZJTableViewManagerExample/ZJTableViewManager/**/*.{h,m}" 
   s.platform = :ios, '8.0'
   
 end
