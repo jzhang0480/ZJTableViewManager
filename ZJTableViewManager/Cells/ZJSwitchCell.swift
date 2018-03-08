@@ -8,11 +8,11 @@
 
 import UIKit
 
-public class ZJSwitchCell: ZJTableViewCell {
+open class ZJSwitchCell: ZJTableViewCell {
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var switchButton: UISwitch!
     
-    override public func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
@@ -30,7 +30,7 @@ public class ZJSwitchCell: ZJTableViewCell {
         item.didChanged?(item)
         
     }
-    override public func setSelected(_ selected: Bool, animated: Bool) {
+    override open func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

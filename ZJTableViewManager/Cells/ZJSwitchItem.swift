@@ -11,8 +11,8 @@ import UIKit
 public class ZJSwitchItem: ZJTableViewItem {
     public var title: String?
     public var isOn: Bool = false
-    var didChanged: ZJTableViewItemBlock?
-    convenience init(title: String?, isOn: Bool, didChanged: ZJTableViewItemBlock?) {
+    public var didChanged: ZJTableViewItemBlock?
+    convenience public init(title: String?, isOn: Bool, didChanged: ZJTableViewItemBlock?) {
         self.init()
         self.title = title
         self.isOn = isOn

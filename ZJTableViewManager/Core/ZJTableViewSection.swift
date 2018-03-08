@@ -8,13 +8,13 @@
 
 import UIKit
 
-public class ZJTableViewSection: NSObject {
-    weak var tableViewManager: ZJTableViewManager!
-    var items: [Any]!
-    var headerHeight: CGFloat!
-    var footerHeight: CGFloat!
-    var headerView: UIView?
-    var footerView: UIView?
+open class ZJTableViewSection: NSObject {
+    public  weak var tableViewManager: ZJTableViewManager!
+    public var items: [Any]!
+    public var headerHeight: CGFloat!
+    public var footerHeight: CGFloat!
+    public var headerView: UIView?
+    public var footerView: UIView?
     
     override init() {
         super.init()

@@ -8,10 +8,10 @@
 
 import UIKit
 
-public class ZJTextCell: ZJTableViewCell, UITextViewDelegate {
+open class ZJTextCell: ZJTableViewCell, UITextViewDelegate {
     @IBOutlet weak var textView: ZJTextView!
     
-    override public func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.textView.delegate = self
@@ -31,7 +31,7 @@ public class ZJTextCell: ZJTableViewCell, UITextViewDelegate {
         item.didChanged?(self.item)
     }
     
-    override public func setSelected(_ selected: Bool, animated: Bool) {
+    override open func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

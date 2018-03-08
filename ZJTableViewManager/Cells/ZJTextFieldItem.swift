@@ -8,15 +8,15 @@
 
 import UIKit
 
-class ZJTextFieldItem: ZJTableViewItem {
-    var title: String?
-    var placeHolder: String?
-    var text: String?
-    var didChanged: ZJTableViewItemBlock?
-    var isFullLength: Bool = false
-    var isSecureTextEntry: Bool = false
+open class ZJTextFieldItem: ZJTableViewItem {
+    public var title: String?
+    public var placeHolder: String?
+    public var text: String?
+    public var didChanged: ZJTableViewItemBlock?
+    public var isFullLength: Bool = false
+    public var isSecureTextEntry: Bool = false
     
-    convenience init(title: String?, placeHolder: String?, text: String?,isFullLength: Bool = false, didChanged: ZJTableViewItemBlock?) {
+    convenience public init(title: String?, placeHolder: String?, text: String?,isFullLength: Bool = false, didChanged: ZJTableViewItemBlock?) {
         self.init()
         self.title = title
         self.placeHolder = placeHolder

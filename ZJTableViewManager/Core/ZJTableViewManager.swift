@@ -8,11 +8,11 @@
 
 import UIKit
 
-public class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource {
-    var tableView:UITableView!
-    var sections: [Any] = []
+open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource {
+    public var tableView:UITableView!
+    public var sections: [Any] = []
     
-    init(tableView: UITableView) {
+    public init(tableView: UITableView) {
         super.init()
         self.tableView = tableView
         self.tableView.delegate = self
@@ -27,7 +27,7 @@ public class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataS
         self.register(ZJSwitchCell.self, ZJSwitchItem.self)
     }
     
-    func register(_ nibClass: AnyClass, _ item:AnyClass) {
+    public func register(_ nibClass: AnyClass, _ item:AnyClass) {
         if (Bundle.main.path(forResource: "\(nibClass)", ofType: "nib") != nil) {
             self.tableView.register(UINib.init(nibName: "\(nibClass)", bundle: nil), forCellReuseIdentifier: NSStringFromClass(item))
         }else{
@@ -125,16 +125,16 @@ public class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataS
         item.selectionHandler?(item)
     }
     
-    func add(section: Any) {
+    public func add(section: Any) {
         (section as! ZJTableViewSection).tableViewManager = self
         self.sections.append(section)
     }
     
-    func reload() {
+    public func reload() {
         self.tableView.reloadData()
     }
     
-    func transform(fromLabel:UILabel?, toLabel:UILabel?) {
+    public func transform(fromLabel:UILabel?, toLabel:UILabel?) {
         toLabel?.text = fromLabel?.text
         toLabel?.font = fromLabel?.font
         toLabel?.textColor = fromLabel?.textColor

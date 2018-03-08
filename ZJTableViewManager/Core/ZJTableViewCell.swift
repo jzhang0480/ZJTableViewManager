@@ -8,10 +8,10 @@
 
 import UIKit
 
-public class ZJTableViewCell: UITableViewCell {
+open class ZJTableViewCell: UITableViewCell {
     var item: Any!
     
-    override public func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
@@ -34,7 +34,7 @@ public class ZJTableViewCell: UITableViewCell {
         
     }
 
-    override public func setSelected(_ selected: Bool, animated: Bool) {
+    override open func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

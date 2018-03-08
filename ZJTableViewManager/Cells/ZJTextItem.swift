@@ -8,17 +8,17 @@
 
 import UIKit
 
-class ZJTextItem: ZJTableViewItem {
-    var text: String?
-    var placeHolder: String?
-    var didChanged: ZJTableViewItemBlock?
+open class ZJTextItem: ZJTableViewItem {
+    public var text: String?
+    public var placeHolder: String?
+    public var didChanged: ZJTableViewItemBlock?
     override init() {
         super.init()
         self.cellHeight = 125
         self.selectionStyle = UITableViewCellSelectionStyle.none
     }
     
-    convenience init(text: String?, placeHolder: String, didChanged: ZJTableViewItemBlock?) {
+    convenience public init(text: String?, placeHolder: String, didChanged: ZJTableViewItemBlock?) {
         self.init()
         self.text = text
         self.placeHolder =  placeHolder
