@@ -125,7 +125,9 @@ class ZJOrderEvaluateVC: BaseTableViewManagerVC {
 
 ### 注：
 1.tableView可以storyboard、xib、纯代码初始化
+
 2.我自己使用主要是用xib方式搭建的cell，纯代码的cell应该也支持
+
 3.找这个库的人应该也是像我这样用惯了RETableViewManger吧，使用自定义cell的体验应该是差不多的，但是有许多特性还没有支持，比如侧滑删除等，也没有RE那么多自带的cell样式，这个只能慢慢补了（我先把我自己项目要用到的特性弄好……）
 
 **最后，我本人也才接触Swift没几天，所以估计这里面会有很多问题，目前只是能满足大部分搭建界面的需要，实现也比较简单，方便使用tableView而已。希望大家多提建议**
