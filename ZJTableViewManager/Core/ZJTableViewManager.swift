@@ -107,12 +107,12 @@ class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        print("didEndDisplaying")
+//        print("didEndDisplaying")
         (cell as! ZJTableViewCell).cellDidDisappear()
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        print("willDisplay")
+//        print("willDisplay")
         (cell as! ZJTableViewCell).cellDidAppear()
     }
     
