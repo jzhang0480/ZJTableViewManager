@@ -10,9 +10,9 @@ import UIKit
 
 open class ZJBaseTableViewController: UIViewController {
     @IBOutlet weak var IBTableView: UITableView?
-    var tableView: UITableView!
-    var manager: ZJTableViewManager!
-    var tableViewStyle: UITableViewStyle = UITableViewStyle.plain
+    public var tableView: UITableView!
+    public var manager: ZJTableViewManager!
+    public var tableViewStyle: UITableViewStyle = UITableViewStyle.plain
     
     override open func viewDidLoad() {
         super.viewDidLoad()

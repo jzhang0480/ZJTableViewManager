@@ -126,8 +126,22 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     }
     
     public func add(section: Any) {
+        if (section as AnyObject).isKind(of: ZJTableViewSection.self) {
+            print("error section class")
+            return
+        }
         (section as! ZJTableViewSection).tableViewManager = self
         self.sections.append(section)
+    }
+    
+    public func remove(section: Any) {
+        if (section as AnyObject).isKind(of: ZJTableViewSection.self) {
+            print("error section class")
+            return
+        }
+        self.sections.remove(at: self.sections.index(where: { (current) -> Bool in
+            return (current as! ZJTableViewSection) == (section as! ZJTableViewSection)
+        })!)
     }
     
     public func reload() {

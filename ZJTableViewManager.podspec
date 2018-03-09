@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "ZJTableViewManager"
-  s.version      = "0.0.7"
+  s.version      = "0.0.8"
   s.summary      = "Powerful data driven content manager for UITableView. RETableViewManager的Swift版 RETableViewManager's Swift Version"
   s.description  = <<-DESC
 ZJTableViewManager allows to manage the content of any UITableView with ease, both forms and lists. ZJTableViewManager is built on top of reusable cells technique and provides APIs for mapping any object class to any custom cell subclass.
@@ -10,7 +10,10 @@ ZJTableViewManager allows to manage the content of any UITableView with ease, bo
   s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
   s.author             = { "Javen" => "1074472615@qq.com" }
   s.source       = { :git =>"https://github.com/JavenZ/ZJTableViewManager.git", :tag => "#{s.version}" }
-  s.source_files  = "ZJTableViewManager", "ZJTableViewManager/Cells/*", "ZJTableViewManager/Core/*", "ZJTableViewManager/OtherClass/*" 
+  s.source_files  = "ZJTableViewManager", "ZJTableViewManager/Cells/*.swift", "ZJTableViewManager/Core/*.swift", "ZJTableViewManager/OtherClass/*.swift" 
+  s.resource_bundles = {
+  'ZJTableViewManager' => ['JTableViewManager/Cells/*.xib'],
+}
   s.platform = :ios, '8.0'
   
 end
