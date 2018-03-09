@@ -22,14 +22,15 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     }
     
     func registerDefaultCells() {
-        self.register(ZJTextCell.self, ZJTextItem.self)
-        self.register(ZJTextFieldCell.self, ZJTextFieldItem.self)
-        self.register(ZJSwitchCell.self, ZJSwitchItem.self)
+        let myBundle = Bundle(for: ZJTextItem.self)
+        self.register(ZJTextCell.self, ZJTextItem.self, myBundle)
+        self.register(ZJTextFieldCell.self, ZJTextFieldItem.self, myBundle)
+        self.register(ZJSwitchCell.self, ZJSwitchItem.self, myBundle)
     }
     
-    public func register(_ nibClass: AnyClass, _ item:AnyClass) {
-        if (Bundle.main.path(forResource: "\(nibClass)", ofType: "nib") != nil) {
-            self.tableView.register(UINib.init(nibName: "\(nibClass)", bundle: nil), forCellReuseIdentifier: NSStringFromClass(item))
+    public func register(_ nibClass: AnyClass, _ item: AnyClass, _ bundle: Bundle = Bundle.main) {
+        if (bundle.path(forResource: "\(nibClass)", ofType: "nib") != nil) {
+            self.tableView.register(UINib.init(nibName: "\(nibClass)", bundle: bundle), forCellReuseIdentifier: NSStringFromClass(item))
         }else{
             self.tableView.register(nibClass, forCellReuseIdentifier: NSStringFromClass(item))
         }
