@@ -90,46 +90,49 @@ section.reload(.automatic)
 
 ### 使用效果：
 demo 电商项目的评价、打星评分、添加评论图片,
-![image](https://github.com/JavenZ/ZJTableViewManager/blob/master/ScreenShot/pictureitem_edit.gif?raw=true)
-![image](https://github.com/JavenZ/ZJTableViewManager/blob/master/ScreenShot/pictrue_item_read.gif?raw=true)
+
+![image](https://github.com/JavenZ/ZJTableViewManager/blob/master/ScreenShot/pictureitem_edit.gif?raw=true)![image](https://github.com/JavenZ/ZJTableViewManager/blob/master/ScreenShot/pictrue_item_read.gif?raw=true)
 
 这里主要有3个cell，一个打星的cell，一个评论的cell，一个添加图片的cell。viewController里只有20行代码，耦合性非常低。
 
 ```swift
-import UIKit
-
-class ZJOrderEvaluateVC: BaseTableViewManagerVC {
-    var tableView: UITableView!
-    var manager: ZJTableViewManager!
-    
-    override func viewDidLoad() {
+override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "评价"
-         self.tableView = UITableView(frame: self.view.bounds, style: self.tableViewStyle)
-        self.view.addSubview(self.tableView);
-        let section = ZJTableViewSection()
-        self.manager.add(section: section)
+        self.title = "Demo"
+        self.manager = ZJTableViewManager(tableView: self.tableView)
         
-        for _ in 0...9 {
+        //register cell
+        self.manager?.register(OrderEvaluateCell.self, OrderEvaluateItem.self)
+        self.manager?.register(ZJPictureTableCell.self, ZJPictureTableItem.self)
+        
+        //add section
+        let section = ZJTableViewSection(headerHeight: 10, color: UIColor.init(white: 0.9, alpha: 1))
+        self.manager?.add(section: section)
+        
+        //add cells
+        for i in 0...10 {
             //评价cell
             section.add(item: OrderEvaluateItem(title: "评价"))
-            let textItem = ZJTextItem(text: nil, placeHolder: "请在此输入您的评价~", didChange: nil)
+            let textItem = ZJTextItem(text: nil, placeHolder: "请在此输入您的评价~", didChanged: nil)
             textItem.isHideSeparator = true
             section.add(item: textItem)
             
             //图片cell
-            let pictureItem = ZJPictureTableItem(maxNumber: 5, column: 4, space: 15, width: kWidth, superVC: self)
-            pictureItem.type = .edit
-            section.add(item: pictureItem)
+            if i%2 == 1 {
+                //只展示图片
+                let pictureItem = ZJPictureTableItem(maxNumber: 5, column: 4, space: 15, width: self.view.frame.size.width, superVC: self, pictures: [image])
+                pictureItem.type = .read
+                section.add(item: pictureItem)
+            }else{
+                //添加图片
+                let pictureItem = ZJPictureTableItem(maxNumber: 5, column: 4, space: 15, width: self.view.frame.size.width, superVC: self)
+                pictureItem.type = .edit
+                section.add(item: pictureItem)
+            }
         }
-        // Do any additional setup after loading the view.
+        
+        // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-}
 ```
 
 ### 注：
