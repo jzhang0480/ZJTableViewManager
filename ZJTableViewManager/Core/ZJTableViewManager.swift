@@ -127,7 +127,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     }
     
     public func add(section: Any) {
-        if (section as AnyObject).isKind(of: ZJTableViewSection.self) {
+        if !(section as AnyObject).isKind(of: ZJTableViewSection.self) {
             print("error section class")
             return
         }
@@ -136,7 +136,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     }
     
     public func remove(section: Any) {
-        if (section as AnyObject).isKind(of: ZJTableViewSection.self) {
+        if !(section as AnyObject).isKind(of: ZJTableViewSection.self) {
             print("error section class")
             return
         }
