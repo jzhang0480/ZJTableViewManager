@@ -3,12 +3,12 @@
 
 ### 导入
 直接拖入ZJTableViewManager文件夹里面的文件，或者用cocoapods
-`pod 'ZJTableViewManager', '~> 0.0.7'`
+`pod 'ZJTableViewManager', '~> 0.0.9'`
 
 ### 关于数据驱动TableView & 使用方式
 数据驱动搭建TableView页面，简单来说就是开发者不需要处理TableView的delegate、dataSource，只需要关心数据的处理。数据处理好，页面就按照数据的样子搭建起来了。
 举个例子，要实现下面这个界面：
-![image](https://raw.githubusercontent.com/JavenZ/ZJTableViewManager/master/1.jpg)
+![image](https://github.com/JavenZ/ZJTableViewManager/blob/master/ScreenShot/1.jpg)
 
 使用TableView初始化ZJTableViewManager，添加一个section，section里面添加cell
 ```swift
@@ -89,9 +89,12 @@ section.reload(.automatic)
 ```
 
 ### 使用效果：
-![image](https://github.com/JavenZ/ZJTableViewManager/blob/master/QQ20180307-220059.gif?raw=true)
+demo 电商项目的评价、打星评分、添加评论图片,
+![image](https://github.com/JavenZ/ZJTableViewManager/blob/master/ScreenShot/pictureitem_edit.gif?raw=true)
+![image](https://github.com/JavenZ/ZJTableViewManager/blob/master/ScreenShot/pictrue_item_read.gif?raw=true)
 
-这个是我项目上用到的一部分实现效果，来不及抽出来放到demo里，这里主要有两个cell，一个输入评价的cell，一个添加图片的cell。viewController只有20行代码
+这里主要有3个cell，一个打星的cell，一个评论的cell，一个添加图片的cell。viewController里只有20行代码，耦合性非常低。
+
 ```swift
 import UIKit
 
