@@ -1,0 +1,11 @@
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/IQKeyboardManagerSwift" "$PODS_CONFIGURATION_BUILD_DIR/ImagePicker" "$PODS_CONFIGURATION_BUILD_DIR/SKPhotoBrowser" "$PODS_CONFIGURATION_BUILD_DIR/SwiftyStarRatingView" "$PODS_CONFIGURATION_BUILD_DIR/ZJTableViewManager"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/ImagePicker/ImagePicker.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SKPhotoBrowser/SKPhotoBrowser.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SwiftyStarRatingView/SwiftyStarRatingView.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/ZJTableViewManager/ZJTableViewManager.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "IQKeyboardManagerSwift" -framework "ImagePicker" -framework "SKPhotoBrowser" -framework "SwiftyStarRatingView" -framework "ZJTableViewManager"
+OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
+PODS_ROOT = ${SRCROOT}/Pods
