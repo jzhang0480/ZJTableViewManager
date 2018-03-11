@@ -9,7 +9,7 @@
 import UIKit
 
 open class ZJTableViewCell: UITableViewCell {
-    public var item: Any!
+    public var item: ZJTableViewItem!
     
     override open func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +22,7 @@ open class ZJTableViewCell: UITableViewCell {
     }
     
     open func cellDidAppear() {
-        let item = self.item as! ZJTableViewItem
+        let item = self.item as ZJTableViewItem
         if item.isHideSeparator {
             self.separatorInset = UIEdgeInsetsMake(0, 15, 0, self.bounds.size.width - 15)
         }else{

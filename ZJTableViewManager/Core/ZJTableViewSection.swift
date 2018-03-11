@@ -15,6 +15,8 @@ open class ZJTableViewSection: NSObject {
     public var footerHeight: CGFloat!
     public var headerView: UIView?
     public var footerView: UIView?
+    public var headerTitle: String?
+    public var footerTitle: String?
     
     override public init() {
         super.init()
@@ -27,6 +29,20 @@ open class ZJTableViewSection: NSObject {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: headerHeight))
         headerView.backgroundColor = color
         self.init(headerView: headerView, footerView: nil)
+    }
+    
+    public convenience init(headerTitle: String?, footerTitle: String?) {
+        self.init()
+        self.headerTitle = headerTitle
+        self.footerTitle = footerTitle
+    }
+    
+    public convenience init(headerTitle: String?) {
+        self.init(headerTitle: headerTitle, footerTitle: nil)
+    }
+    
+    public convenience init(footerTitle: String?) {
+        self.init(headerTitle: nil, footerTitle: footerTitle)
     }
     
     public convenience init(headerView: UIView!) {

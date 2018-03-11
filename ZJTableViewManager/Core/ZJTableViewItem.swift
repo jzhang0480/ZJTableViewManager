@@ -7,28 +7,46 @@
 //
 
 import UIKit
-public typealias ZJTableViewItemBlock = (Any) -> ()
+public typealias ZJTableViewItemBlock = (ZJTableViewItem) -> ()
 
 open class ZJTableViewItem: NSObject {
     weak var tableViewManager: ZJTableViewManager!
-    public  var section: ZJTableViewSection!
-    public var indexPath: IndexPath!
+    public var section: ZJTableViewSection!
+    public var cellTitle: String?
     public var cellIdentifier: String!
     public var cellHeight: CGFloat!
     /// 系统默认样式的cell
-    public var systemCell: UITableViewCell?
-    public var systemCellStyle: UITableViewCellStyle?
+//    public var systemCell: UITableViewCell?
+    public var cellStyle: UITableViewCellStyle?
     /// cell点击事件的回调
     public var selectionHandler: ZJTableViewItemBlock?
+    public func setSelectionHandler(selectHandler: ZJTableViewItemBlock?) {
+        self.selectionHandler = selectHandler
+    }
+    public var deletionHandler: ZJTableViewItemBlock?
+    public func setDeletionHandler(deletionHandler: ZJTableViewItemBlock?) {
+        self.deletionHandler = deletionHandler
+    }
     public var separatorInset: UIEdgeInsets?
     public var accessoryType: UITableViewCellAccessoryType?
-    public var selectionStyle: UITableViewCellSelectionStyle?
-    public var isSelectionAnimate:Bool! = false
+    public var selectionStyle: UITableViewCellSelectionStyle = UITableViewCellSelectionStyle.default
+    public var editingStyle: UITableViewCellEditingStyle = UITableViewCellEditingStyle.none
+    public var isSelectionAnimate:Bool! = true
     public var isHideSeparator: Bool = false
     public var separatorLeftMargin: CGFloat = 15
-    
-    public func setSelectionHandler(tempSelectHandler: ZJTableViewItemBlock?) {
-        self.selectionHandler = tempSelectHandler
+    public var indexPath: IndexPath {
+        get {
+//            print("calculate item indexPath")
+            let rowIndex = self.section.items.index(where: { (item) -> Bool in
+                return (item as! ZJTableViewItem) == self
+            })
+            
+            let section = tableViewManager.sections.index(where: { (section) -> Bool in
+                return (section as! ZJTableViewSection) == self.section
+            })
+            
+            return IndexPath(item: rowIndex!, section: section!)
+        }
     }
     
     override public init() {
@@ -37,11 +55,10 @@ open class ZJTableViewItem: NSObject {
         cellHeight = 44
     }
     
-    convenience public init(tableViewCellStyle: UITableViewCellStyle = UITableViewCellStyle.default) {
+    convenience public init(title: String?) {
         self.init()
-        self.systemCellStyle = tableViewCellStyle
-        self.cellIdentifier = self.cellIdentifier + String(tableViewCellStyle.rawValue)
-        self.systemCell = UITableViewCell(style: tableViewCellStyle, reuseIdentifier: nil)
+        self.cellStyle = UITableViewCellStyle.default
+        self.cellTitle = title
     }
     
     public func reload(_ animation: UITableViewRowAnimation) {
@@ -51,8 +68,9 @@ open class ZJTableViewItem: NSObject {
         tableViewManager.tableView.endUpdates()
     }
     
-    public func delete(_ animation: UITableViewRowAnimation) {
-        section.items.remove(at: self.indexPath.row)
+    public func delete(_ animation: UITableViewRowAnimation = .automatic) {
+        let indexPath = self.indexPath
+        section.items.remove(at: indexPath.row)
         tableViewManager.tableView.deleteRows(at: [indexPath], with: animation)
     }
     

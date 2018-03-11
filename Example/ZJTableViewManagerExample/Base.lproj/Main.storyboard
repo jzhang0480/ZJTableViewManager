@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,28 +20,13 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Fsy-Wu-Ay0">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Fsy-Wu-Ay0" firstAttribute="top" secondItem="Lyg-TX-C2v" secondAttribute="bottom" id="76u-G0-n3E"/>
-                            <constraint firstItem="532-6n-JJC" firstAttribute="top" secondItem="Fsy-Wu-Ay0" secondAttribute="bottom" id="G6P-BN-pAI"/>
-                            <constraint firstItem="Fsy-Wu-Ay0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Tkw-yo-UAu"/>
-                            <constraint firstAttribute="trailing" secondItem="Fsy-Wu-Ay0" secondAttribute="trailing" id="XJy-R2-Xcs"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ZJTableViewManager" id="Xrq-YT-MwM"/>
-                    <connections>
-                        <outlet property="IBTableView" destination="Fsy-Wu-Ay0" id="i8m-Rz-oQZ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="369" y="-85"/>
+            <point key="canvasLocation" x="332" y="-128"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hsn-CW-Txv">

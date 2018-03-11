@@ -17,9 +17,8 @@ class FormViewController: ZJBaseTableViewController {
         let section = ZJTableViewSection()
         self.manager.add(section: section)
         
-        let simpleStringItem = ZJTableViewItem(tableViewCellStyle: .default)
-        simpleStringItem.systemCell?.textLabel?.text = "Simple String"
-        section.add(item: simpleStringItem)
+        //Simple String
+        section.add(item: ZJTableViewItem(title: "Simple String"))
         
         //Full length text field
         section.add(item: ZJTextFieldItem(title: nil, placeHolder: "Full length text field", text: nil, isFullLength: true, didChanged: nil))

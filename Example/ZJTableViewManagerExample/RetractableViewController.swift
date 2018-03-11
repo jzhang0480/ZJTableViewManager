@@ -24,14 +24,11 @@ class RetractableViewController: ZJBaseTableViewController {
         
         //collapsed
         for i in 1...4 {
-            let item = ZJTableViewItem(tableViewCellStyle: UITableViewCellStyle.default)
-            item.systemCell?.textLabel?.text = "Test Item " + String(i)
-            collapsedItems.append(item)
+            collapsedItems.append(ZJTableViewItem(title: "Test Item " + String(i)))
         }
         
-        let moreItem = ZJTableViewItem(tableViewCellStyle: UITableViewCellStyle.default)
+        let moreItem = ZJTableViewItem(title: "Show More")
         moreItem.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
-        moreItem.systemCell?.textLabel?.text = "Show More"
         collapsedItems.append(moreItem)
         moreItem.setSelectionHandler { (item) in
             section.replaceItemsFrom(array: expandedItems)
@@ -42,14 +39,11 @@ class RetractableViewController: ZJBaseTableViewController {
         
         //expanded
         for i in 1...7 {
-            let item = ZJTableViewItem(tableViewCellStyle: UITableViewCellStyle.default)
-            item.systemCell?.textLabel?.text = "Test Item " + String(i)
-            expandedItems.append(item)
+             expandedItems.append(ZJTableViewItem(title: "Test Item " + String(i)))
         }
         
-        let lessItem = ZJTableViewItem(tableViewCellStyle: UITableViewCellStyle.default)
+        let lessItem = ZJTableViewItem(title: "Show Less")
         lessItem.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
-        lessItem.systemCell?.textLabel?.text = "Show Less"
 
         lessItem.setSelectionHandler { (item) in
             section.replaceItemsFrom(array: collapsedItems)

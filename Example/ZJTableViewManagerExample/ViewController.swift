@@ -8,23 +8,29 @@
 
 import UIKit
 
-class ViewController: ZJBaseTableViewController {
+class ViewController: UIViewController {
+    var tableView: UITableView!
+    var manager: ZJTableViewManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView = UITableView(frame: self.view.bounds, style: .grouped)
+        self.view.addSubview(self.tableView);
+        self.manager = ZJTableViewManager(tableView: self.tableView)
+        
         self.tableView.tableFooterView = UIView()
         let section = ZJTableViewSection()
         self.manager.add(section: section)
         
         let titles = ["Forms", "Retractable", "CustomCells", "List", "Editing", ]
         for i in titles {
-            let item = ZJTableViewItem(tableViewCellStyle: UITableViewCellStyle.default)
+            let item = ZJTableViewItem(title: i)
             item.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
-            item.systemCell?.textLabel?.text = i
             item.isSelectionAnimate = true
             section.add(item: item)
             
-            item.setSelectionHandler(tempSelectHandler: { (item) in
+            item.setSelectionHandler(selectHandler: { (item) in
                 
                 if i == "Forms" {
                     let vc = FormViewController()
@@ -36,9 +42,10 @@ class ViewController: ZJBaseTableViewController {
                 }else if i == "CustomCells" {
                     let vc = CustomCellViewController()
                     self.navigationController?.pushViewController(vc, animated: true)
-                }else if i == "List" {
-                    
                 }else if i == "Editing" {
+                    let vc = EditingViewController()
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }else if i == "List" {
                     
                 }
             })
