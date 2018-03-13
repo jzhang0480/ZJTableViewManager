@@ -24,11 +24,11 @@ class SectionsViewController: UIViewController {
         for i in 0...8 {
             let section = ZJTableViewSection(headerTitle: "Section " + String(i))
             self.manager.add(section: section)
-            section.setWillDisplayHandler({ (currentSection) in
+            section.setHeaderWillDisplayHandler({ (currentSection) in
                 print("Section" + String(currentSection.index) + " will display!")
             })
             
-            section.setEndDisplayHandler({ (currentSection) in
+            section.setHeaderDidEndDisplayHandler({ (currentSection) in
                 print("Section" + String(currentSection.index) + " did end display!")
             })
             

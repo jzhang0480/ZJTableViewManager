@@ -70,12 +70,12 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     
     public func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let (currentSection, _) = self.sectinAndItemFrom(indexPath: nil, sectionIndex: section, rowIndex: nil)
-        currentSection?.willDisplayHandler?(currentSection!)
+        currentSection?.headerWillDisplayHandler?(currentSection!)
     }
     
     public func tableView(_ tableView: UITableView, didEndDisplayingHeaderView view: UIView, forSection section: Int) {
         let (currentSection, _) = self.sectinAndItemFrom(indexPath: nil, sectionIndex: section, rowIndex: nil)
-        currentSection?.endDisplayHandler?(currentSection!)
+        currentSection?.headerDidEndDisplayHandler?(currentSection!)
     }
     
     public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

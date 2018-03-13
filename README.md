@@ -64,9 +64,18 @@ class ZJTableViewController: UIViewController {
 ### 界面操作
 **都可以使用系统自带的动画**
 
-删除cell：
+代码删除cell：
 ```
 passwordItem.delete(.automatic)
+```
+
+侧滑删除
+```swift
+            let item = ZJTableViewItem(title: "section 1, item " + String(i))
+            item.editingStyle = .delete
+            item.setDeletionHandler(deletionHandler: {[weak self] (item) in
+                self?.deleteConfirm(item: item)
+            })
 ```
 
 刷新cell：
@@ -86,6 +95,17 @@ item.updateHeight()
 section.remove(item: simpleStringItem)
 section.remove(item: passwordItem)
 section.reload(.automatic)
+```
+
+sectionHeader 出现、消失的回调
+```swift
+section.setHeaderWillDisplayHandler({ (currentSection) in
+                print("Section" + String(currentSection.index) + " will display!")
+            })
+            
+section.setHeaderDidEndDisplayHandler({ (currentSection) in
+                print("Section" + String(currentSection.index) + " did end display!")
+            })
 ```
 
 ### 使用效果：
@@ -140,7 +160,7 @@ override func viewDidLoad() {
 
 2.我自己使用主要是用xib方式搭建的cell，纯代码的cell应该也支持
 
-3.找这个库的人应该也是像我这样用惯了RETableViewManger吧，使用自定义cell的体验应该是差不多的，但是有许多特性还没有支持，比如侧滑删除等，也没有RE那么多自带的cell样式，这个只能慢慢补了（我先把我自己项目要用到的特性弄好……）
+3.找这个库的人应该也是像我这样用惯了RETableViewManger吧，使用自定义cell的体验应该是差不多的，但是有许多特性还没有支持，也没有RE那么多自带的cell样式，这个只能慢慢补了（我先把我自己项目要用到的特性弄好……）
 
 **最后，我本人也才接触Swift没几天，所以估计这里面会有很多问题，目前只是能满足大部分搭建界面的需要，实现也比较简单，方便使用tableView而已。希望大家多提建议**
 

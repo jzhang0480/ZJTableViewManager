@@ -19,13 +19,13 @@ open class ZJTableViewSection: NSObject {
     public var footerView: UIView?
     public var headerTitle: String?
     public var footerTitle: String?
-    var willDisplayHandler: ZJTableViewSectionBlock?
-    func setWillDisplayHandler(_ block: ZJTableViewSectionBlock?) {
-        self.willDisplayHandler = block
+    var headerWillDisplayHandler: ZJTableViewSectionBlock?
+    func setHeaderWillDisplayHandler(_ block: ZJTableViewSectionBlock?) {
+        self.headerWillDisplayHandler = block
     }
-    var endDisplayHandler: ZJTableViewSectionBlock?
-    func setEndDisplayHandler(_ block: ZJTableViewSectionBlock?) {
-        self.endDisplayHandler = block
+    var headerDidEndDisplayHandler: ZJTableViewSectionBlock?
+    func setHeaderDidEndDisplayHandler(_ block: ZJTableViewSectionBlock?) {
+        self.headerDidEndDisplayHandler = block
     }
     public var index: Int {
         get {
