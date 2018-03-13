@@ -8,6 +8,8 @@
 
 import UIKit
 
+public typealias ZJTableViewSectionBlock = (ZJTableViewSection) -> ()
+
 open class ZJTableViewSection: NSObject {
     public  weak var tableViewManager: ZJTableViewManager!
     public var items: [Any]!
@@ -17,6 +19,22 @@ open class ZJTableViewSection: NSObject {
     public var footerView: UIView?
     public var headerTitle: String?
     public var footerTitle: String?
+    var willDisplayHandler: ZJTableViewSectionBlock?
+    func setWillDisplayHandler(_ block: ZJTableViewSectionBlock?) {
+        self.willDisplayHandler = block
+    }
+    var endDisplayHandler: ZJTableViewSectionBlock?
+    func setEndDisplayHandler(_ block: ZJTableViewSectionBlock?) {
+        self.endDisplayHandler = block
+    }
+    public var index: Int {
+        get {
+            let section = tableViewManager.sections.index(where: { (section) -> Bool in
+                return (section as! ZJTableViewSection) == self
+            })
+            return section!
+        }
+    }
     
     override public init() {
         super.init()

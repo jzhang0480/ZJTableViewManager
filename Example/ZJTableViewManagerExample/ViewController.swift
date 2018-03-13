@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         let section = ZJTableViewSection()
         self.manager.add(section: section)
         
-        let titles = ["Forms", "Retractable", "CustomCells", "List", "Editing", ]
+        let titles = ["Forms", "Retractable", "CustomCells", "Editing", "Sections", "List", ]
         for i in titles {
             let item = ZJTableViewItem(title: i)
             item.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
@@ -38,15 +38,15 @@ class ViewController: UIViewController {
                 }else if i == "Retractable" {
                     let vc = RetractableViewController()
                     self.navigationController?.pushViewController(vc, animated: true)
-                    
                 }else if i == "CustomCells" {
                     let vc = CustomCellViewController()
                     self.navigationController?.pushViewController(vc, animated: true)
                 }else if i == "Editing" {
                     let vc = EditingViewController()
                     self.navigationController?.pushViewController(vc, animated: true)
-                }else if i == "List" {
-                    
+                }else if i == "Sections" {
+                    let vc = SectionsViewController()
+                    self.navigationController?.pushViewController(vc, animated: true)
                 }
             })
         }

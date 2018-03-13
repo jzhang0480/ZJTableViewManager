@@ -10,8 +10,8 @@ import UIKit
 public typealias ZJTableViewItemBlock = (ZJTableViewItem) -> ()
 
 open class ZJTableViewItem: NSObject {
-    weak var tableViewManager: ZJTableViewManager!
-    public var section: ZJTableViewSection!
+    public weak var tableViewManager: ZJTableViewManager!
+    public weak var section: ZJTableViewSection!
     public var cellTitle: String?
     public var cellIdentifier: String!
     public var cellHeight: CGFloat!

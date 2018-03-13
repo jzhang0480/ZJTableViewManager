@@ -68,6 +68,16 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
         return currentSection.headerView
     }
     
+    public func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let (currentSection, _) = self.sectinAndItemFrom(indexPath: nil, sectionIndex: section, rowIndex: nil)
+        currentSection?.willDisplayHandler?(currentSection!)
+    }
+    
+    public func tableView(_ tableView: UITableView, didEndDisplayingHeaderView view: UIView, forSection section: Int) {
+        let (currentSection, _) = self.sectinAndItemFrom(indexPath: nil, sectionIndex: section, rowIndex: nil)
+        currentSection?.endDisplayHandler?(currentSection!)
+    }
+    
     public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         let currentSection = sections[section] as! ZJTableViewSection
         return currentSection.footerHeight
