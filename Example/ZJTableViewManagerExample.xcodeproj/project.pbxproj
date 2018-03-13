@@ -54,6 +54,7 @@
 		8FDBE415205266890029B97E /* ZJTableViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDBE406205266890029B97E /* ZJTableViewItem.swift */; };
 		8FDBE416205266890029B97E /* ZJTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDBE407205266890029B97E /* ZJTableViewManager.swift */; };
 		8FDBE417205266890029B97E /* ZJTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDBE408205266890029B97E /* ZJTableViewCell.swift */; };
+		8FFE29402057C42E00760300 /* ZJTableViewManager.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8FFE293F2057C42E00760300 /* ZJTableViewManager.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,7 @@
 		8FDBE406205266890029B97E /* ZJTableViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewItem.swift; sourceTree = "<group>"; };
 		8FDBE407205266890029B97E /* ZJTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewManager.swift; sourceTree = "<group>"; };
 		8FDBE408205266890029B97E /* ZJTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewCell.swift; sourceTree = "<group>"; };
+		8FFE293F2057C42E00760300 /* ZJTableViewManager.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ZJTableViewManager.podspec; path = ../../ZJTableViewManager.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +243,7 @@
 				8F950AAA204D1F5400F06DD8 /* Assets.xcassets */,
 				8F950AAC204D1F5400F06DD8 /* LaunchScreen.storyboard */,
 				8F950AAF204D1F5400F06DD8 /* Info.plist */,
+				8FFE293F2057C42E00760300 /* ZJTableViewManager.podspec */,
 				8F20A1DC2054120F0098929B /* Other */,
 			);
 			path = ZJTableViewManagerExample;
@@ -371,6 +374,7 @@
 				8FB83B2F2050248000AD1F3F /* NotSeriousCustomCell.xib in Resources */,
 				8F20A227205412510098929B /* README.md in Resources */,
 				8F950AA9204D1F5400F06DD8 /* Main.storyboard in Resources */,
+				8FFE29402057C42E00760300 /* ZJTableViewManager.podspec in Resources */,
 				8FDBE40D205266890029B97E /* ZJTextCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

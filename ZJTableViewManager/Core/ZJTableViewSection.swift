@@ -20,11 +20,11 @@ open class ZJTableViewSection: NSObject {
     public var headerTitle: String?
     public var footerTitle: String?
     var headerWillDisplayHandler: ZJTableViewSectionBlock?
-    func setHeaderWillDisplayHandler(_ block: ZJTableViewSectionBlock?) {
+    public func setHeaderWillDisplayHandler(_ block: ZJTableViewSectionBlock?) {
         self.headerWillDisplayHandler = block
     }
     var headerDidEndDisplayHandler: ZJTableViewSectionBlock?
-    func setHeaderDidEndDisplayHandler(_ block: ZJTableViewSectionBlock?) {
+    public func setHeaderDidEndDisplayHandler(_ block: ZJTableViewSectionBlock?) {
         self.headerDidEndDisplayHandler = block
     }
     public var index: Int {

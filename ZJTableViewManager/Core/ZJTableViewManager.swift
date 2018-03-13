@@ -123,7 +123,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
         }
         
         if let title = item.cellTitle {
-            cell?.textLabel?.text = item.cellTitle
+            cell?.textLabel?.text = title
         }
         
         if let separatorInset = item.separatorInset {
