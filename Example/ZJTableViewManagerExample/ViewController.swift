@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         for i in titles {
             let item = ZJTableViewItem(title: i)
             item.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
-            item.isSelectionAnimate = true
+            item.isAutoDeselect = true
             section.add(item: item)
             
             item.setSelectionHandler(selectHandler: { (item) in

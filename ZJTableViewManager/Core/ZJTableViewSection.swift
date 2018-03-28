@@ -104,6 +104,20 @@ open class ZJTableViewSection: NSObject {
         self.items = self.items + array
     }
     
+    public func insert(_ item: ZJTableViewItem!, afterItem: ZJTableViewItem, animate: UITableViewRowAnimation = .automatic) {
+        if !self.items.contains(where: {($0 as! ZJTableViewItem) == afterItem}) {
+            print("can't insert because afterItem did not in sections")
+            return;
+        }
+        
+        tableViewManager.tableView.beginUpdates()
+        item.section = self
+        item.tableViewManager = self.tableViewManager
+        self.items.insert(item, at: self.items.index(where: {($0 as! ZJTableViewItem) == afterItem})! + 1)
+        tableViewManager.tableView.insertRows(at: [item.indexPath], with: animate)
+        tableViewManager.tableView.endUpdates()
+    }
+    
     public func reload(_ animation: UITableViewRowAnimation) {
         tableViewManager.tableView.beginUpdates()
         tableViewManager.tableView.reloadSections(IndexSet(integer: tableViewManager.sections.index(where: { (item) -> Bool in

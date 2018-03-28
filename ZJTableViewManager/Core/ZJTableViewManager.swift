@@ -7,8 +7,12 @@
 //
 
 import UIKit
+public protocol ZJTableViewDelegate: NSObjectProtocol {
+    func scrollViewDidScroll(_ scrollView: UIScrollView)
+}
 
 open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource {
+    public var delegate: ZJTableViewDelegate?
     public var tableView:UITableView!
     public var sections: [Any] = []
     var defaultTableViewSectionHeight: CGFloat {
@@ -157,7 +161,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentSection = sections[indexPath.section] as! ZJTableViewSection
         let item = currentSection.items[indexPath.row] as! ZJTableViewItem
-        if item.isSelectionAnimate {
+        if item.isAutoDeselect {
             tableView.deselectRow(at: indexPath, animated: true)
         }
         item.selectionHandler?(item)
@@ -175,6 +179,13 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
         if editingStyle == .delete {
             if let handler = item?.deletionHandler {
                 handler(item!)
+            }
+        }
+    }
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if let d = self.delegate {
+            if (d.responds(to: #selector(scrollViewDidScroll(_:)))) {
+                d.scrollViewDidScroll(scrollView)
             }
         }
     }
@@ -216,18 +227,12 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
         })!)
     }
     
-    public func reload() {
-        self.tableView.reloadData()
+    public func removeAllSections() {
+        self.sections.removeAll()
     }
     
-    public func transform(fromLabel:UILabel?, toLabel:UILabel?) {
-        toLabel?.text = fromLabel?.text
-        toLabel?.font = fromLabel?.font
-        toLabel?.textColor = fromLabel?.textColor
-        toLabel?.textAlignment = (fromLabel?.textAlignment)!
-        if let string = fromLabel?.attributedText {
-            toLabel?.attributedText = string
-        }
+    public func reload() {
+        self.tableView.reloadData()
     }
 }
 

@@ -16,7 +16,7 @@ open class ZJTableViewItem: NSObject {
     public var cellIdentifier: String!
     public var cellHeight: CGFloat!
     /// 系统默认样式的cell
-//    public var systemCell: UITableViewCell?
+    //    public var systemCell: UITableViewCell?
     public var cellStyle: UITableViewCellStyle?
     /// cell点击事件的回调
     public var selectionHandler: ZJTableViewItemBlock?
@@ -31,12 +31,12 @@ open class ZJTableViewItem: NSObject {
     public var accessoryType: UITableViewCellAccessoryType?
     public var selectionStyle: UITableViewCellSelectionStyle = UITableViewCellSelectionStyle.default
     public var editingStyle: UITableViewCellEditingStyle = UITableViewCellEditingStyle.none
-    public var isSelectionAnimate:Bool! = true
+    public var isAutoDeselect: Bool! = true
     public var isHideSeparator: Bool = false
     public var separatorLeftMargin: CGFloat = 15
     public var indexPath: IndexPath {
         get {
-//            print("calculate item indexPath")
+            //            print("calculate item indexPath")
             let rowIndex = self.section.items.index(where: { (item) -> Bool in
                 return (item as! ZJTableViewItem) == self
             })
@@ -69,6 +69,10 @@ open class ZJTableViewItem: NSObject {
     }
     
     public func delete(_ animation: UITableViewRowAnimation = .automatic) {
+        if !self.section.items.contains(where: {($0 as! ZJTableViewItem) == self}) {
+            print("can't delete because this item did not in section")
+            return;
+        }
         let indexPath = self.indexPath
         section.items.remove(at: indexPath.row)
         tableViewManager.tableView.deleteRows(at: [indexPath], with: animation)
