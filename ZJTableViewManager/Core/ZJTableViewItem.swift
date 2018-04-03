@@ -42,7 +42,7 @@ open class ZJTableViewItem: NSObject {
             })
             
             let section = tableViewManager.sections.index(where: { (section) -> Bool in
-                return (section as! ZJTableViewSection) == self.section
+                return section == self.section
             })
             
             return IndexPath(item: rowIndex!, section: section!)
@@ -82,6 +82,83 @@ open class ZJTableViewItem: NSObject {
         tableViewManager.tableView.beginUpdates()
         tableViewManager.tableView.endUpdates()
     }
+    
+    public func systemFittingHeightForConfiguratedCell(_ cell: UITableViewCell) -> CGFloat {
+        var contentViewWidth = self.tableViewManager.tableView.frame.width
+        
+        var cellBounds = cell.bounds
+        cellBounds.size.width = contentViewWidth
+        cell.bounds = cellBounds
+        
+        var accessroyWidth: CGFloat = 0
+        
+        if let accessoryView = cell.accessoryView {
+            // 15为系统cell左边的空隙
+            accessroyWidth = 16 + accessoryView.frame.width
+        } else {
+            let systemAccessoryWidths: [UITableViewCellAccessoryType: CGFloat] = [
+                .none: 0,
+                .disclosureIndicator: 34,
+                .detailDisclosureButton: 68,
+                .checkmark: 40,
+                .detailButton: 48,
+                ]
+            accessroyWidth = systemAccessoryWidths[cell.accessoryType] ?? 0
+        }
+        contentViewWidth -= accessroyWidth
+        
+        var fittingHeight: CGFloat = 0
+        if contentViewWidth > 0 {
+            
+            let widthFenceConstraint = NSLayoutConstraint(item: cell.contentView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: contentViewWidth)
+            
+            var edgeConstraints: [NSLayoutConstraint] = []
+            if isSystemVersionEqualOrGreaterThen10_2 {
+                // To avoid confilicts, make width constraint softer than required (1000)
+                widthFenceConstraint.priority = UILayoutPriority(rawValue: UILayoutPriority.required.rawValue - 1)
+                
+                // Build edge constraints
+                let leftConstraint = NSLayoutConstraint(item: cell.contentView, attribute: .left, relatedBy: .equal, toItem: cell, attribute: .left, multiplier: 1, constant: 0)
+                let rightConstraint = NSLayoutConstraint(item: cell.contentView, attribute: .right, relatedBy: .equal, toItem: cell, attribute: .right, multiplier: 1, constant: accessroyWidth)
+                let topConstraint = NSLayoutConstraint(item: cell.contentView, attribute: .top, relatedBy: .equal, toItem: cell, attribute: .top, multiplier: 1, constant: 0)
+                let bottomConstraint = NSLayoutConstraint(item: cell.contentView, attribute: .bottom, relatedBy: .equal, toItem: cell, attribute: .bottom, multiplier: 1, constant: 0)
+                
+                edgeConstraints = [leftConstraint, rightConstraint, topConstraint, bottomConstraint]
+                cell.addConstraints(edgeConstraints)
+            }
+            
+            cell.contentView.addConstraint(widthFenceConstraint)
+            
+            fittingHeight = cell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
+            
+            cell.contentView.removeConstraint(widthFenceConstraint)
+            if isSystemVersionEqualOrGreaterThen10_2 {
+                cell.removeConstraints(edgeConstraints)
+            }
+            
+        }
+        
+        if fittingHeight == 0 {
+            
+            fittingHeight = cell.sizeThatFits(CGSize(width: contentViewWidth, height: 0)).height
+            
+        }
+        
+        if fittingHeight == 0 {
+            fittingHeight = 44
+        }
+        
+        if self.tableViewManager.tableView.separatorStyle != .none {
+            fittingHeight += 1.0 / UIScreen.main.scale
+        }
+        
+        return fittingHeight
+    }
+    
+    private var isSystemVersionEqualOrGreaterThen10_2: Bool {
+        return UIDevice.current.systemVersion.compare("10.2", options: .numeric) == .orderedDescending
+    }
+    
     
 }
 

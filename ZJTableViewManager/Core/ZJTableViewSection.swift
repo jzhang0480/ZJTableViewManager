@@ -30,7 +30,7 @@ open class ZJTableViewSection: NSObject {
     public var index: Int {
         get {
             let section = tableViewManager.sections.index(where: { (section) -> Bool in
-                return (section as! ZJTableViewSection) == self
+                return section == self
             })
             return section!
         }
@@ -121,7 +121,7 @@ open class ZJTableViewSection: NSObject {
     public func reload(_ animation: UITableViewRowAnimation) {
         tableViewManager.tableView.beginUpdates()
         tableViewManager.tableView.reloadSections(IndexSet(integer: tableViewManager.sections.index(where: { (item) -> Bool in
-            return (item as! ZJTableViewSection) == self
+            return item == self
         })!), with: animation)
         tableViewManager.tableView.endUpdates()
     }

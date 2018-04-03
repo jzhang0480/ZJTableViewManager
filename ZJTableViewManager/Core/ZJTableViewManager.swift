@@ -7,14 +7,14 @@
 //
 
 import UIKit
-public protocol ZJTableViewDelegate: NSObjectProtocol {
-    func scrollViewDidScroll(_ scrollView: UIScrollView)
+@objc public protocol ZJTableViewDelegate: NSObjectProtocol {
+    @objc func scrollViewDidScroll(_ scrollView: UIScrollView)
 }
 
 open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource {
     public var delegate: ZJTableViewDelegate?
     public var tableView:UITableView!
-    public var sections: [Any] = []
+    public var sections: [ZJTableViewSection] = []
     var defaultTableViewSectionHeight: CGFloat {
         get {
             return self.tableView.style == .grouped ? 44 : 0
@@ -50,7 +50,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     }
     
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let currentSection = sections[section] as! ZJTableViewSection
+        let currentSection = sections[section]
         if currentSection.headerView != nil {
             return currentSection.headerHeight
         }
@@ -68,7 +68,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     }
     
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let currentSection = sections[section] as! ZJTableViewSection
+        let currentSection = sections[section]
         return currentSection.headerView
     }
     
@@ -83,12 +83,12 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     }
     
     public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        let currentSection = sections[section] as! ZJTableViewSection
+        let currentSection = sections[section]
         return currentSection.footerHeight
     }
     
     public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let currentSection = sections[section] as! ZJTableViewSection
+        let currentSection = sections[section]
         return currentSection.footerView
     }
     
@@ -103,12 +103,12 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let currentSection = sections[section] as! ZJTableViewSection
+        let currentSection = sections[section]
         return currentSection.items.count;
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let currentSection = sections[indexPath.section] as! ZJTableViewSection
+        let currentSection = sections[indexPath.section]
         let item = currentSection.items[indexPath.row] as! ZJTableViewItem
         return item.cellHeight
     }
@@ -116,7 +116,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
-        let currentSection = sections[indexPath.section] as! ZJTableViewSection
+        let currentSection = sections[indexPath.section]
         let item = currentSection.items[indexPath.row] as! ZJTableViewItem
         item.tableViewManager = self
         //报错在这里，可能是是没有register cell 和 item
@@ -159,7 +159,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let currentSection = sections[indexPath.section] as! ZJTableViewSection
+        let currentSection = sections[indexPath.section]
         let item = currentSection.items[indexPath.row] as! ZJTableViewItem
         if item.isAutoDeselect {
             tableView.deselectRow(at: indexPath, animated: true)
@@ -184,7 +184,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     }
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if let d = self.delegate {
-            if (d.responds(to: #selector(scrollViewDidScroll(_:)))) {
+            if (d.responds(to: #selector(ZJTableViewDelegate.scrollViewDidScroll(_:)))) {
                 d.scrollViewDidScroll(scrollView)
             }
         }
@@ -194,12 +194,12 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
         var currentSection: ZJTableViewSection? = nil
         var item: ZJTableViewItem? = nil
         if let idx = indexPath {
-            currentSection = sections[idx.section] as? ZJTableViewSection
+            currentSection = sections[idx.section]
             item = currentSection?.items[idx.row] as? ZJTableViewItem
         }
         
         if let idx = sectionIndex {
-            currentSection = sections[idx] as? ZJTableViewSection
+            currentSection = sections[idx]
         }
         
         if let idx = rowIndex {
@@ -214,7 +214,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
             return
         }
         (section as! ZJTableViewSection).tableViewManager = self
-        self.sections.append(section)
+        self.sections.append(section as! ZJTableViewSection)
     }
     
     public func remove(section: Any) {
@@ -223,7 +223,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
             return
         }
         self.sections.remove(at: self.sections.index(where: { (current) -> Bool in
-            return (current as! ZJTableViewSection) == (section as! ZJTableViewSection)
+            return current == (section as! ZJTableViewSection)
         })!)
     }
     
@@ -233,6 +233,16 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     
     public func reload() {
         self.tableView.reloadData()
+    }
+    
+    public func transform(fromLabel:UILabel?, toLabel:UILabel?) {
+        toLabel?.text = fromLabel?.text
+        toLabel?.font = fromLabel?.font
+        toLabel?.textColor = fromLabel?.textColor
+        toLabel?.textAlignment = (fromLabel?.textAlignment)!
+        if let string = fromLabel?.attributedText {
+            toLabel?.attributedText = string
+        }
     }
 }
 
