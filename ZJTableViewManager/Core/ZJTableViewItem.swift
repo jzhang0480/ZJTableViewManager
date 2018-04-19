@@ -38,7 +38,7 @@ open class ZJTableViewItem: NSObject {
         get {
             //            print("calculate item indexPath")
             let rowIndex = self.section.items.index(where: { (item) -> Bool in
-                return (item as! ZJTableViewItem) == self
+                return item == self
             })
             
             let section = tableViewManager.sections.index(where: { (section) -> Bool in
@@ -51,7 +51,7 @@ open class ZJTableViewItem: NSObject {
     
     override public init() {
         super.init()
-        cellIdentifier = NSStringFromClass(type(of: self))
+        cellIdentifier = NSStringFromClass(type(of: self)).components(separatedBy: ".").last
         cellHeight = 44
     }
     
@@ -69,7 +69,7 @@ open class ZJTableViewItem: NSObject {
     }
     
     public func delete(_ animation: UITableViewRowAnimation = .automatic) {
-        if !self.section.items.contains(where: {($0 as! ZJTableViewItem) == self}) {
+        if !self.section.items.contains(where: {$0 == self}) {
             print("can't delete because this item did not in section")
             return;
         }

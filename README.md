@@ -96,6 +96,7 @@ section.setHeaderDidEndDisplayHandler({ (currentSection) in
 
 ![image](https://github.com/JavenZ/ZJTableViewManager/blob/master/ScreenShot/pictureitem_edit.gif?raw=true)    ![image](https://github.com/JavenZ/ZJTableViewManager/blob/master/ScreenShot/pictrue_item_read.gif?raw=true)
 
+** This is the entire code for this comment page viewController.
 ```swift
 override func viewDidLoad() {
         super.viewDidLoad()

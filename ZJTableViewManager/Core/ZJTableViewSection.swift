@@ -12,7 +12,7 @@ public typealias ZJTableViewSectionBlock = (ZJTableViewSection) -> ()
 
 open class ZJTableViewSection: NSObject {
     public  weak var tableViewManager: ZJTableViewManager!
-    public var items: [Any]!
+    public var items: [ZJTableViewItem]!
     public var headerHeight: CGFloat!
     public var footerHeight: CGFloat!
     public var headerView: UIView?
@@ -84,14 +84,15 @@ open class ZJTableViewSection: NSObject {
         }
     }
     
-    public func add(item: Any) {
-        (item as! ZJTableViewItem).section = self
+    public func add(item: ZJTableViewItem) {
+        item.section = self
+        item.tableViewManager = self.tableViewManager
         self.items.append(item)
     }
     
-    public func remove(item: Any) {
+    public func remove(item: ZJTableViewItem) {
         self.items.remove(at: self.items.index(where: { (obj) -> Bool in
-            return (obj as! ZJTableViewItem) == (item as! ZJTableViewItem)
+            return obj == item
         })!)
     }
     
@@ -99,13 +100,13 @@ open class ZJTableViewSection: NSObject {
         self.items.removeAll()
     }
     
-    public func replaceItemsFrom(array: [Any]!) {
+    public func replaceItemsFrom(array: [ZJTableViewItem]!) {
         self.removeAllItems()
         self.items = self.items + array
     }
     
     public func insert(_ item: ZJTableViewItem!, afterItem: ZJTableViewItem, animate: UITableViewRowAnimation = .automatic) {
-        if !self.items.contains(where: {($0 as! ZJTableViewItem) == afterItem}) {
+        if !self.items.contains(where: {$0 == afterItem}) {
             print("can't insert because afterItem did not in sections")
             return;
         }
@@ -113,7 +114,7 @@ open class ZJTableViewSection: NSObject {
         tableViewManager.tableView.beginUpdates()
         item.section = self
         item.tableViewManager = self.tableViewManager
-        self.items.insert(item, at: self.items.index(where: {($0 as! ZJTableViewItem) == afterItem})! + 1)
+        self.items.insert(item, at: self.items.index(where: {$0 == afterItem})! + 1)
         tableViewManager.tableView.insertRows(at: [item.indexPath], with: animate)
         tableViewManager.tableView.endUpdates()
     }

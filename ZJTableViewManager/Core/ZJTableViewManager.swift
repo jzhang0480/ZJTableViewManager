@@ -38,10 +38,11 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     }
     
     public func register(_ nibClass: AnyClass, _ item: AnyClass, _ bundle: Bundle = Bundle.main) {
+        print("\(nibClass)")
         if (bundle.path(forResource: "\(nibClass)", ofType: "nib") != nil) {
-            self.tableView.register(UINib.init(nibName: "\(nibClass)", bundle: bundle), forCellReuseIdentifier: NSStringFromClass(item))
+            self.tableView.register(UINib.init(nibName: "\(nibClass)", bundle: bundle), forCellReuseIdentifier: "\(item)")
         }else{
-            self.tableView.register(nibClass, forCellReuseIdentifier: NSStringFromClass(item))
+            self.tableView.register(nibClass, forCellReuseIdentifier: "\(item)")
         }
     }
     
@@ -109,7 +110,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let currentSection = sections[indexPath.section]
-        let item = currentSection.items[indexPath.row] as! ZJTableViewItem
+        let item = currentSection.items[indexPath.row] 
         return item.cellHeight
     }
     
@@ -117,7 +118,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
         
         
         let currentSection = sections[indexPath.section]
-        let item = currentSection.items[indexPath.row] as! ZJTableViewItem
+        let item = currentSection.items[indexPath.row] 
         item.tableViewManager = self
         //报错在这里，可能是是没有register cell 和 item
         var cell = tableView.dequeueReusableCell(withIdentifier: item.cellIdentifier) as? ZJTableViewCell
@@ -160,7 +161,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentSection = sections[indexPath.section]
-        let item = currentSection.items[indexPath.row] as! ZJTableViewItem
+        let item = currentSection.items[indexPath.row] 
         if item.isAutoDeselect {
             tableView.deselectRow(at: indexPath, animated: true)
         }
@@ -195,7 +196,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
         var item: ZJTableViewItem? = nil
         if let idx = indexPath {
             currentSection = sections[idx.section]
-            item = currentSection?.items[idx.row] as? ZJTableViewItem
+            item = currentSection?.items[idx.row]
         }
         
         if let idx = sectionIndex {
@@ -203,18 +204,18 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
         }
         
         if let idx = rowIndex {
-            item = currentSection?.items[idx] as? ZJTableViewItem
+            item = currentSection?.items[idx]
         }
         
         return (currentSection, item)
     }
-    public func add(section: Any) {
-        if !(section as AnyObject).isKind(of: ZJTableViewSection.self) {
+    public func add(section: ZJTableViewSection) {
+        if !section.isKind(of: ZJTableViewSection.self) {
             print("error section class")
             return
         }
-        (section as! ZJTableViewSection).tableViewManager = self
-        self.sections.append(section as! ZJTableViewSection)
+        section.tableViewManager = self
+        self.sections.append(section)
     }
     
     public func remove(section: Any) {

@@ -19,8 +19,8 @@ class RetractableViewController: ZJBaseTableViewController {
         let section = ZJTableViewSection()
         self.manager.add(section: section)
         
-        var collapsedItems:[Any] = []
-        var expandedItems:[Any] = []
+        var collapsedItems:[ZJTableViewItem] = []
+        var expandedItems:[ZJTableViewItem] = []
         
         //collapsed
         for i in 1...4 {
