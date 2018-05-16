@@ -69,6 +69,10 @@ open class ZJTableViewItem: NSObject {
     }
     
     public func delete(_ animation: UITableViewRowAnimation = .automatic) {
+        if tableViewManager == nil || section == nil {
+            print("Item did not in section or manager，please check section.add() method")
+            return;
+        }
         if !self.section.items.contains(where: {$0 == self}) {
             print("can't delete because this item did not in section")
             return;

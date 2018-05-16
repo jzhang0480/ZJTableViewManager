@@ -52,7 +52,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         let currentSection = sections[section]
-        if currentSection.headerView != nil {
+        if currentSection.headerView != nil || (currentSection.headerHeight > 0 && currentSection.headerHeight != CGFloat.leastNormalMagnitude){
             return currentSection.headerHeight
         }
         
@@ -110,7 +110,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let currentSection = sections[indexPath.section]
-        let item = currentSection.items[indexPath.row] 
+        let item = currentSection.items[indexPath.row]
         return item.cellHeight
     }
     
@@ -118,7 +118,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
         
         
         let currentSection = sections[indexPath.section]
-        let item = currentSection.items[indexPath.row] 
+        let item = currentSection.items[indexPath.row]
         item.tableViewManager = self
         //报错在这里，可能是是没有register cell 和 item
         var cell = tableView.dequeueReusableCell(withIdentifier: item.cellIdentifier) as? ZJTableViewCell
@@ -161,7 +161,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentSection = sections[indexPath.section]
-        let item = currentSection.items[indexPath.row] 
+        let item = currentSection.items[indexPath.row]
         if item.isAutoDeselect {
             tableView.deselectRow(at: indexPath, animated: true)
         }
@@ -200,11 +200,11 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
         }
         
         if let idx = sectionIndex {
-            currentSection = sections[idx]
+            currentSection = sections.count > idx ? sections[idx] : nil
         }
         
         if let idx = rowIndex {
-            item = currentSection?.items[idx]
+            item = (currentSection?.items.count)! > idx ? currentSection?.items[idx] : nil
         }
         
         return (currentSection, item)

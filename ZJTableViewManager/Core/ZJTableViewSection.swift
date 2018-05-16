@@ -12,7 +12,7 @@ public typealias ZJTableViewSectionBlock = (ZJTableViewSection) -> ()
 
 open class ZJTableViewSection: NSObject {
     public  weak var tableViewManager: ZJTableViewManager!
-    public var items: [ZJTableViewItem]!
+    public var items = [ZJTableViewItem]()
     public var headerHeight: CGFloat!
     public var footerHeight: CGFloat!
     public var headerView: UIView?
@@ -120,11 +120,13 @@ open class ZJTableViewSection: NSObject {
     }
     
     public func reload(_ animation: UITableViewRowAnimation) {
-        tableViewManager.tableView.beginUpdates()
-        tableViewManager.tableView.reloadSections(IndexSet(integer: tableViewManager.sections.index(where: { (item) -> Bool in
-            return item == self
-        })!), with: animation)
-        tableViewManager.tableView.endUpdates()
+        
+        if let index = tableViewManager.sections.index(where: {$0 == self}) {
+            tableViewManager.tableView.reloadSections(IndexSet(integer: index), with: animation)
+        }else{
+            print("section did not in manager！")
+        }
+        
     }
     
 }
