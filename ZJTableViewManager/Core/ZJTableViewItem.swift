@@ -87,6 +87,17 @@ open class ZJTableViewItem: NSObject {
         tableViewManager.tableView.endUpdates()
     }
     
+    public func autoHeight<T>(_ manager: ZJTableViewManager, _ cellClass: T.Type, _ fillCellData: ((T)->())?) {
+        tableViewManager = manager
+        let cell = manager.tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
+        if cell == nil {
+            print("please register cell")
+        }else{
+            fillCellData?(cell as! T)
+            cellHeight = systemFittingHeightForConfiguratedCell(cell!)
+        }
+    }
+    
     public func systemFittingHeightForConfiguratedCell(_ cell: UITableViewCell) -> CGFloat {
         var contentViewWidth = self.tableViewManager.tableView.frame.width
         
