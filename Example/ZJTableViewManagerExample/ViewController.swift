@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         let section = ZJTableViewSection()
         self.manager.add(section: section)
         
-        let titles = ["Forms", "Retractable", "CustomCells", "Editing", "Sections", "List", ]
+        let titles = ["Forms", "Retractable", "CustomCells", "Editing", "Sections", "List", "AutomaticHeight"]
         for i in titles {
             let item = ZJTableViewItem(title: i)
             item.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
@@ -46,6 +46,9 @@ class ViewController: UIViewController {
                     self.navigationController?.pushViewController(vc, animated: true)
                 }else if i == "Sections" {
                     let vc = SectionsViewController()
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }else if i == "AutomaticHeight" {
+                    let vc = AutomaticHeightViewController()
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
             })

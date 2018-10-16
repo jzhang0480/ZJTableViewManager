@@ -11,6 +11,7 @@ import UIKit
 open class ZJTextItem: ZJTableViewItem {
     public var text: String?
     public var placeHolder: String?
+    public var textViewBackgroundColor: UIColor = UIColor.white
     public var didChanged: ZJTableViewItemBlock?
     override init() {
         super.init()

@@ -55,6 +55,9 @@
 		8FDBE416205266890029B97E /* ZJTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDBE407205266890029B97E /* ZJTableViewManager.swift */; };
 		8FDBE417205266890029B97E /* ZJTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDBE408205266890029B97E /* ZJTableViewCell.swift */; };
 		8FFE29402057C42E00760300 /* ZJTableViewManager.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8FFE293F2057C42E00760300 /* ZJTableViewManager.podspec */; };
+		8FFEFD2A2176327700B3113D /* AutomaticHeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFEFD292176327700B3113D /* AutomaticHeightViewController.swift */; };
+		8FFEFD2F2176340400B3113D /* AutomaticHeightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFEFD2D2176340400B3113D /* AutomaticHeightCell.swift */; };
+		8FFEFD302176340400B3113D /* AutomaticHeightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FFEFD2E2176340400B3113D /* AutomaticHeightCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +111,9 @@
 		8FDBE407205266890029B97E /* ZJTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewManager.swift; sourceTree = "<group>"; };
 		8FDBE408205266890029B97E /* ZJTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewCell.swift; sourceTree = "<group>"; };
 		8FFE293F2057C42E00760300 /* ZJTableViewManager.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ZJTableViewManager.podspec; path = ../../ZJTableViewManager.podspec; sourceTree = "<group>"; };
+		8FFEFD292176327700B3113D /* AutomaticHeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomaticHeightViewController.swift; sourceTree = "<group>"; };
+		8FFEFD2D2176340400B3113D /* AutomaticHeightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomaticHeightCell.swift; sourceTree = "<group>"; };
+		8FFEFD2E2176340400B3113D /* AutomaticHeightCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AutomaticHeightCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +245,7 @@
 				8FB83B302050257600AD1F3F /* CustomCellViewController.swift */,
 				8F20A239205422820098929B /* EditingViewController.swift */,
 				8F3786FC2057AB3200BAC618 /* SectionsViewController.swift */,
+				8FFEFD3121763DD800B3113D /* AutomaticHeightViewController */,
 				8F950AA7204D1F5400F06DD8 /* Main.storyboard */,
 				8F950AAA204D1F5400F06DD8 /* Assets.xcassets */,
 				8F950AAC204D1F5400F06DD8 /* LaunchScreen.storyboard */,
@@ -306,6 +313,24 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		8FFEFD2C217633B700B3113D /* AutomaticHeightCell */ = {
+			isa = PBXGroup;
+			children = (
+				8FFEFD2D2176340400B3113D /* AutomaticHeightCell.swift */,
+				8FFEFD2E2176340400B3113D /* AutomaticHeightCell.xib */,
+			);
+			path = AutomaticHeightCell;
+			sourceTree = "<group>";
+		};
+		8FFEFD3121763DD800B3113D /* AutomaticHeightViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8FFEFD292176327700B3113D /* AutomaticHeightViewController.swift */,
+				8FFEFD2C217633B700B3113D /* AutomaticHeightCell */,
+			);
+			path = AutomaticHeightViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -369,6 +394,7 @@
 				8F950AAE204D1F5400F06DD8 /* LaunchScreen.storyboard in Resources */,
 				8FDBE40C205266890029B97E /* ZJTextFieldCell.xib in Resources */,
 				8F950AAB204D1F5400F06DD8 /* Assets.xcassets in Resources */,
+				8FFEFD302176340400B3113D /* AutomaticHeightCell.xib in Resources */,
 				8FDBE40B205266890029B97E /* ZJSwitchCell.xib in Resources */,
 				8F20A226205412510098929B /* LICENSE.md in Resources */,
 				8FB83B2F2050248000AD1F3F /* NotSeriousCustomCell.xib in Resources */,
@@ -401,6 +427,7 @@
 				8F20A228205412510098929B /* IQTextView.swift in Sources */,
 				8F950AD1204D386800F06DD8 /* RetractableViewController.swift in Sources */,
 				8F20A234205412510098929B /* IQUIScrollView+Additions.swift in Sources */,
+				8FFEFD2A2176327700B3113D /* AutomaticHeightViewController.swift in Sources */,
 				8FDBE415205266890029B97E /* ZJTableViewItem.swift in Sources */,
 				8F20A22E205412510098929B /* IQKeyboardManagerConstantsInternal.swift in Sources */,
 				8FDBE410205266890029B97E /* ZJTextFieldItem.swift in Sources */,
@@ -417,6 +444,7 @@
 				8FB83B2B2050245300AD1F3F /* NotSeriousCustomItem.swift in Sources */,
 				8F20A232205412510098929B /* IQKeyboardManager.swift in Sources */,
 				8FB83B2E2050248000AD1F3F /* NotSeriousCustomCell.swift in Sources */,
+				8FFEFD2F2176340400B3113D /* AutomaticHeightCell.swift in Sources */,
 				8FB83B312050257600AD1F3F /* CustomCellViewController.swift in Sources */,
 				8FDBE40F205266890029B97E /* ZJSwitchItem.swift in Sources */,
 				8FDBE413205266890029B97E /* ZJTextCell.swift in Sources */,

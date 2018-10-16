@@ -87,6 +87,12 @@ open class ZJTableViewItem: NSObject {
         tableViewManager.tableView.endUpdates()
     }
     
+    /// 在这个方法里面给cell赋值
+    ///
+    /// - Parameters:
+    ///   - manager: 当前tableview的manager
+    ///   - cellClass: 当前计算高度的cell的类型
+    ///   - fillCellData: 回调方法
     public func autoHeight<T>(_ manager: ZJTableViewManager, _ cellClass: T.Type, _ fillCellData: ((T)->())?) {
         tableViewManager = manager
         let cell = manager.tableView.dequeueReusableCell(withIdentifier: cellIdentifier)

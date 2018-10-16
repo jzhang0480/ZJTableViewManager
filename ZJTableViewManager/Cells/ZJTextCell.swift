@@ -23,6 +23,7 @@ open class ZJTextCell: ZJTableViewCell, UITextViewDelegate {
         let item = self.item as! ZJTextItem
         textView.placeholder = item.placeHolder
         textView.text = item.text
+        textView.backgroundColor = item.textViewBackgroundColor
     }
     
     public func textViewDidChange(_ textView: UITextView) {
