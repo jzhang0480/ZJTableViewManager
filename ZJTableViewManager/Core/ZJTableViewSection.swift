@@ -91,9 +91,11 @@ open class ZJTableViewSection: NSObject {
     }
     
     public func remove(item: ZJTableViewItem) {
-        self.items.remove(at: self.items.index(where: { (obj) -> Bool in
-            return obj == item
-        })!)
+        if let index = items.index(where: {$0 == item}) {
+            items.remove(at: index)
+        }else{
+            print("item not in this section")
+        }
     }
     
     public func removeAllItems() {

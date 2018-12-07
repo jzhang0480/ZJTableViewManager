@@ -12,7 +12,7 @@ import UIKit
 }
 
 open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource {
-    public var delegate: ZJTableViewDelegate?
+    public weak var delegate: ZJTableViewDelegate?
     public var tableView:UITableView!
     public var sections: [ZJTableViewSection] = []
     var defaultTableViewSectionHeight: CGFloat {
