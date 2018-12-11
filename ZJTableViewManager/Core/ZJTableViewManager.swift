@@ -17,32 +17,35 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     public var sections: [ZJTableViewSection] = []
     var defaultTableViewSectionHeight: CGFloat {
         get {
-            return self.tableView.style == .grouped ? 44 : 0
+            return tableView.style == .grouped ? 44 : 0
         }
     }
     
     public init(tableView: UITableView) {
         super.init()
         self.tableView = tableView
-        self.tableView.delegate = self
-        self.tableView.dataSource = self;
-        self.tableView.layoutMargins = UIEdgeInsets.zero
-        self.registerDefaultCells()
+        tableView.delegate = self
+        tableView.dataSource = self;
+        tableView.layoutMargins = UIEdgeInsets.zero
+        tableView.estimatedRowHeight = 0;
+        tableView.estimatedSectionFooterHeight = 0;
+        tableView.estimatedSectionHeaderHeight = 0;
+        registerDefaultCells()
     }
     
     func registerDefaultCells() {
         let myBundle = Bundle(for: ZJTextItem.self)
-        self.register(ZJTextCell.self, ZJTextItem.self, myBundle)
-        self.register(ZJTextFieldCell.self, ZJTextFieldItem.self, myBundle)
-        self.register(ZJSwitchCell.self, ZJSwitchItem.self, myBundle)
+        register(ZJTextCell.self, ZJTextItem.self, myBundle)
+        register(ZJTextFieldCell.self, ZJTextFieldItem.self, myBundle)
+        register(ZJSwitchCell.self, ZJSwitchItem.self, myBundle)
     }
     
     public func register(_ nibClass: AnyClass, _ item: AnyClass, _ bundle: Bundle = Bundle.main) {
         print("\(nibClass)")
         if (bundle.path(forResource: "\(nibClass)", ofType: "nib") != nil) {
-            self.tableView.register(UINib.init(nibName: "\(nibClass)", bundle: bundle), forCellReuseIdentifier: "\(item)")
+            tableView.register(UINib.init(nibName: "\(nibClass)", bundle: bundle), forCellReuseIdentifier: "\(item)")
         }else{
-            self.tableView.register(nibClass, forCellReuseIdentifier: "\(item)")
+            tableView.register(nibClass, forCellReuseIdentifier: "\(item)")
         }
     }
     
@@ -63,7 +66,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
             label.sizeToFit()
             return label.frame.height + 20.0
         }else{
-            return self.defaultTableViewSectionHeight
+            return defaultTableViewSectionHeight
         }
         
     }
@@ -74,12 +77,12 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     }
     
     public func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        let (currentSection, _) = self.sectinAndItemFrom(indexPath: nil, sectionIndex: section, rowIndex: nil)
+        let (currentSection, _) = sectinAndItemFrom(indexPath: nil, sectionIndex: section, rowIndex: nil)
         currentSection?.headerWillDisplayHandler?(currentSection!)
     }
     
     public func tableView(_ tableView: UITableView, didEndDisplayingHeaderView view: UIView, forSection section: Int) {
-        let (currentSection, _) = self.sectinAndItemFrom(indexPath: nil, sectionIndex: section, rowIndex: nil)
+        let (currentSection, _) = sectinAndItemFrom(indexPath: nil, sectionIndex: section, rowIndex: nil)
         currentSection?.headerDidEndDisplayHandler?(currentSection!)
     }
     
@@ -94,12 +97,12 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     }
     
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let (section, _) = self.sectinAndItemFrom(indexPath: nil, sectionIndex: section, rowIndex: nil)
+        let (section, _) = sectinAndItemFrom(indexPath: nil, sectionIndex: section, rowIndex: nil)
         return section!.headerTitle
     }
     
     public func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        let (section, _) = self.sectinAndItemFrom(indexPath: nil, sectionIndex: section, rowIndex: nil)
+        let (section, _) = sectinAndItemFrom(indexPath: nil, sectionIndex: section, rowIndex: nil)
         return section!.footerTitle
     }
     
@@ -170,12 +173,12 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     
     
     public func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-        let (_ , item) = self.sectinAndItemFrom(indexPath: indexPath, sectionIndex: nil, rowIndex: nil)
+        let (_ , item) = sectinAndItemFrom(indexPath: indexPath, sectionIndex: nil, rowIndex: nil)
         return item!.editingStyle
     }
     
     public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        let (_ , item) = self.sectinAndItemFrom(indexPath: indexPath, sectionIndex: nil, rowIndex: nil)
+        let (_ , item) = sectinAndItemFrom(indexPath: indexPath, sectionIndex: nil, rowIndex: nil)
         
         if editingStyle == .delete {
             if let handler = item?.deletionHandler {
@@ -184,7 +187,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
         }
     }
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if let d = self.delegate {
+        if let d = delegate {
             if (d.responds(to: #selector(ZJTableViewDelegate.scrollViewDidScroll(_:)))) {
                 d.scrollViewDidScroll(scrollView)
             }
@@ -215,7 +218,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
             return
         }
         section.tableViewManager = self
-        self.sections.append(section)
+        sections.append(section)
     }
     
     public func remove(section: Any) {
@@ -223,17 +226,17 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
             print("error section class")
             return
         }
-        self.sections.remove(at: self.sections.index(where: { (current) -> Bool in
+        sections.remove(at: sections.index(where: { (current) -> Bool in
             return current == (section as! ZJTableViewSection)
         })!)
     }
     
     public func removeAllSections() {
-        self.sections.removeAll()
+        sections.removeAll()
     }
     
     public func reload() {
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
     
     public func transform(fromLabel:UILabel?, toLabel:UILabel?) {

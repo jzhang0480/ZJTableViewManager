@@ -22,22 +22,17 @@ class AutomaticHeightViewController: UIViewController {
         let section = ZJTableViewSection(headerTitle: "Section")
         manager.add(section: section)
         
-        let datas = [["title":"测试标题测试标题", "content":"测试内容测试内容测试内容"],
-                    ["title":"测试标题测试标题测试标题测试标题测试标题", "content":"测试内容测试内容测试内容测试内容测试内容测试内容"],
-                    ["title":"测试标题测试标题", "content":"测试内容测试内容测试内容"],
-                    ["title":"测试标题", "content":"测试内容"],
-                    ["title":"测试标题测试标题", "content":"测试内容测试内容测试内容"],
-                    ["title":"测试标题测试标题测试标题测试标题测试标题测试标题测试标题测试标题", "content":"测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容"],
-                    ["title":"测试标题测试标题测试标题测试标题测试标题测试标题测试标题测试标题测试标题测试标题测试标题测试标题测试标题测试标题测试标题测试标题测试标题测试标题", "content":"测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容"]]
+        var datas = [[String:String]]()
+        for _ in 0..<50 {
+            //注: randomStr()是随机产生字符串的方法
+            datas.append(["title":randomStr(), "content":randomStr(), "right":randomStr()])
+        }
         for data in datas {
             let item = AutomaticHeightCellItem()
             item.title = data["title"]
             item.content = data["content"]
-            //在autoHeight方法里对cell赋值，就会自动计算高度
-            item.autoHeight(manager, AutomaticHeightCell.self) { (cell) in
-                cell.configWithItem(item: item)
-            }
-            
+            //计算高度
+            item.autoHeight(manager)
             section.add(item: item)
         }
         // Do any additional setup after loading the view.
@@ -48,15 +43,15 @@ class AutomaticHeightViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //随机产生不确定长度字符串
+    func randomStr() -> String{
+        let random_str_characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        var ranStr = ""
+        let len = arc4random_uniform(100)
+        for _ in 0..<len {
+            let index = Int(arc4random_uniform(UInt32(random_str_characters.count)))
+            ranStr.append(random_str_characters[random_str_characters.index(random_str_characters.startIndex, offsetBy: index)])
+        }
+        return ranStr
     }
-    */
-
 }

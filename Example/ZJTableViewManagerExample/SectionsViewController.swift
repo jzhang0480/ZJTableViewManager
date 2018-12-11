@@ -29,7 +29,7 @@ class SectionsViewController: UIViewController {
             })
             
             section.setHeaderDidEndDisplayHandler({ (currentSection) in
-                print("Section" + String(currentSection.index) + " did end display!")
+//                print("Section" + String(currentSection.index) + " did end display!")
             })
             
             for j in 0...4 {

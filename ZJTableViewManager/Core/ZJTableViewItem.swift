@@ -14,6 +14,8 @@ open class ZJTableViewItem: NSObject {
     public weak var section: ZJTableViewSection!
     public var cellTitle: String?
     public var cellIdentifier: String!
+    
+    /// 设置cell高度(如果是UITableViewAutomaticDimension,则代表调用系统方法自动计算高度)
     public var cellHeight: CGFloat!
     /// 系统默认样式的cell
     //    public var systemCell: UITableViewCell?
@@ -93,18 +95,36 @@ open class ZJTableViewItem: NSObject {
     ///   - manager: 当前tableview的manager
     ///   - cellClass: 当前计算高度的cell的类型
     ///   - fillCellData: 回调方法
+    @available(*, deprecated)
     public func autoHeight<T>(_ manager: ZJTableViewManager, _ cellClass: T.Type, _ fillCellData: ((T)->())?) {
+        //由于本方法已经废弃, 直接调用新方法
+        autoHeight(manager)
+    }
+    
+    
+    
+    /// 计算cell高度
+    ///
+    /// - Parameters:
+    ///   - manager: 当前tableview的manager
+    public func autoHeight(_ manager: ZJTableViewManager) {
         tableViewManager = manager
-        let cell = manager.tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
+        let cell = manager.tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? ZJTableViewCell
         if cell == nil {
             print("please register cell")
         }else{
-            fillCellData?(cell as! T)
+            cell?.item = self;
+            cell?.cellWillAppear()
             cellHeight = systemFittingHeightForConfiguratedCell(cell!)
         }
     }
     
+    
+    
     public func systemFittingHeightForConfiguratedCell(_ cell: UITableViewCell) -> CGFloat {
+        cell.contentView.translatesAutoresizingMaskIntoConstraints = false;
+        cell.prepareForReuse()
+        
         var contentViewWidth = self.tableViewManager.tableView.frame.width
         
         var cellBounds = cell.bounds
@@ -151,6 +171,7 @@ open class ZJTableViewItem: NSObject {
             cell.contentView.addConstraint(widthFenceConstraint)
             
             fittingHeight = cell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
+//            print(fittingHeight)
             
             cell.contentView.removeConstraint(widthFenceConstraint)
             if isSystemVersionEqualOrGreaterThen10_2 {
@@ -162,6 +183,7 @@ open class ZJTableViewItem: NSObject {
         if fittingHeight == 0 {
             
             fittingHeight = cell.sizeThatFits(CGSize(width: contentViewWidth, height: 0)).height
+            
             
         }
         
