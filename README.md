@@ -1,4 +1,5 @@
 
+[English introduction](https://github.com/JavenZ/ZJTableViewManager/blob/master/README_EN.md)
 ### 关于ZJTableViewManager
 最近开始用Swift写项目，在这之前只看了看Swift相关的文档，突然开始写很不适应，特别是之前一直在用的数据驱动的TableView框架`RETableViewManger`没有Swift版，混编的话也有问题（可能是Swift 4.0不兼容）于是就决定自己写一下Swift版的，使用方式基本一致。但是加了一些扩展功能，比如cell高度的自动计算等等。
 
