@@ -3,13 +3,7 @@
 ### 关于ZJTableViewManager
 最近开始用Swift写项目，在这之前只看了看Swift相关的文档，突然开始写很不适应，特别是之前一直在用的数据驱动的TableView框架`RETableViewManger`没有Swift版，混编的话也有问题（可能是Swift 4.0不兼容）于是就决定自己写一下Swift版的，使用方式基本一致。但是加了一些扩展功能，比如cell高度的自动计算等等。
 
-### 导入
-直接拖入ZJTableViewManager文件夹里面的文件，或者用cocoapods
-`pod 'ZJTableViewManager'`
-
-### 关于数据驱动TableView & 使用方式
-数据驱动搭建TableView页面，简单来说就是开发者不需要处理TableView的delegate、dataSource，只需要关心数据的处理。数据处理好，页面就按照数据的样子搭建起来了。
-举个例子，要实现下面这个界面：
+举个例子，要实现下面这个界面只需要10行代码：
 
 ![image](https://github.com/JavenZ/ZJTableViewManager/blob/master/ScreenShot/forms_shot.jpg)
 
@@ -40,6 +34,9 @@
 
 ```
 到这里，这个界面就搭建好了，add item的顺序就是界面上cell的展示顺序，不需要写tableview的代理。didChanged是界面上text变化或者按钮触发的回调，可以实时获取。
+
+### 关于数据驱动
+数据驱动搭建TableView页面，简单来说就是开发者不需要处理TableView的delegate、dataSource，只需要关心数据的处理。数据处理好，页面就按照数据的样子搭建起来了。
 
 ### 界面操作
 **都可以使用系统自带的动画**
@@ -140,6 +137,10 @@ override func viewDidLoad() {
         // Do any additional setup after loading the view, typically from a nib.
     }
 ```
+
+### 使用
+直接拖入ZJTableViewManager文件夹里面的文件，或者用cocoapods
+`pod 'ZJTableViewManager'`
 
 ### 注：
 1.tableView可以storyboard、xib、纯代码初始化
