@@ -1,28 +1,17 @@
-### ZJTableViewManager
-[![Platform](https://img.shields.io/badge/platform-iOS-red.svg)](https://developer.apple.com/iphone/index.action)
-[![Language](http://img.shields.io/badge/language-swift4.0-yellow.svg?style=flat)](https://en.wikipedia.org/wiki/swift)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](http://mit-license.org)
 
-__Powerful data driven content manager for UITableView.__
-`ZJTableViewManager` is a lightweight, pure-Swift library for manage the content of any `UITableView` with ease, both forms and lists.  This project is heavily inspired by the popular [RETableViewManager](https://github.com/romaonthego/RETableViewManager). 
+### 关于ZJTableViewManager
+最近开始用Swift写项目，在这之前只看了看Swift相关的文档，突然开始写很不适应，特别是之前一直在用的数据驱动的TableView框架`RETableViewManger`没有Swift版，混编的话也有问题（可能是Swift 4.0不兼容）于是就决定自己写一下Swift版的，使用方式基本一致。但是加了一些扩展功能，比如cell高度的自动计算等等。
 
-`ZJTableViewManager` is built on top of reusable cells technique and provides APIs for mapping any object class to any custom cell subclass.
+### 导入
+直接拖入ZJTableViewManager文件夹里面的文件，或者用cocoapods
+`pod 'ZJTableViewManager'`
 
-The general idea is to allow developers to use their own `UITableView` and `UITableViewController` instances (and even subclasses), providing a layer that synchronizes data with the cell appearance.
-It fully implements `UITableViewDelegate` and `UITableViewDataSource` protocols so you don't have to.
+### 关于数据驱动TableView & 使用方式
+数据驱动搭建TableView页面，简单来说就是开发者不需要处理TableView的delegate、dataSource，只需要关心数据的处理。数据处理好，页面就按照数据的样子搭建起来了。
+举个例子，要实现下面这个界面：
+![image](https://github.com/JavenZ/ZJTableViewManager/blob/master/ScreenShot/forms_shot.jpg)
 
-### Installation
-```
-cocoapods
-pod 'ZJTableViewManager'
-```
-
-
-### Quick Example
-
-![image](https://github.com/JavenZ/ZJTableViewManager/blob/master/ScreenShot/forms_shot.jpg?raw=true)
-
-Get your `UITableView` up and running in several lines of code:
+使用TableView初始化ZJTableViewManager，添加一个section，section里面添加cell
 ```swift
         self.manager = ZJTableViewManager(tableView: self.tableView)
         
@@ -48,15 +37,17 @@ Get your `UITableView` up and running in several lines of code:
         section.add(item: ZJSwitchItem(title: "Switch Item", isOn: false,  didChanged: nil))
 
 ```
+到这里，这个界面就搭建好了，add item的顺序就是界面上cell的展示顺序，不需要写tableview的代理。didChanged是界面上text变化或者按钮触发的回调，可以实时获取。
 
-### Other
+### 界面操作
+**都可以使用系统自带的动画**
 
-delete cell with animation：
+代码删除cell：
 ```
 passwordItem.delete(.automatic)
 ```
 
-swipe delete cell:
+侧滑删除
 ```swift
 item.editingStyle = .delete
 item.setDeletionHandler(deletionHandler: {[weak self] (item) in
@@ -64,23 +55,26 @@ item.setDeletionHandler(deletionHandler: {[weak self] (item) in
       })
 ```
 
-reload cell：
+刷新cell：
 ```
 passwordItem.reload(.automatic)
 ```
 
-update cell height：
+更新cell的高度：
 ```
 item.cellHeight = 200
+//这个方法只更新cell高度，自带动画，不会reload这个cell
 item.updateHeight()
 ```
 
-reload section：
+刷新section：
 ```
+section.remove(item: simpleStringItem)
+section.remove(item: passwordItem)
 section.reload(.automatic)
 ```
 
-sectionHeader call back
+sectionHeader 在屏幕上出现、消失的回调
 ```swift
 section.setHeaderWillDisplayHandler({ (currentSection) in
                 print("Section" + String(currentSection.index) + " will display!")
@@ -91,11 +85,20 @@ section.setHeaderDidEndDisplayHandler({ (currentSection) in
             })
 ```
 
-### Other Demo
+### 自动计算高度：
+ZJTableViewManager提供了提前计算cell高度并缓存的api，只需要调用一行代码即可实现自动计算高度，高度和item绑定，不需要缓存，效率应该是很高的。
+```swift
+item.autoHeight(manager)
+```
+要提前把item的相关属性赋值好，再调用`item.autoHeight(manager)`，具体可查看demo
+
+### 使用效果：
+demo 电商项目的评价、打星评分、添加评论图片,
 
 ![image](https://github.com/JavenZ/ZJTableViewManager/blob/master/ScreenShot/pictureitem_edit.gif?raw=true)    ![image](https://github.com/JavenZ/ZJTableViewManager/blob/master/ScreenShot/pictrue_item_read.gif?raw=true)
 
-** This is the entire code for this comment page viewController.
+这里主要有3个cell，一个打星的cell，一个评论的cell，一个添加图片的cell。viewController里只有20行代码，耦合性低。
+
 ```swift
 override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,28 +115,36 @@ override func viewDidLoad() {
         
         //add cells
         for i in 0...10 {
-            //evaluat cell
+          i  //评价cell
             section.add(item: OrderEvaluateItem(title: "评价"))
-            let textItem = ZJTextItem(text: nil, placeHolder: "请在此输入您的评价~", didChanged: nil)
+            let textItem = ZJTextItem(text: nil, placeHolder: "请在此输入您的评价~", ddChanged: nil)
             textItem.isHideSeparator = true
             section.add(item: textItem)
             
-            //picture cell
+            //图片cell
             if i%2 == 1 {
-                //pictures readonly
+                //只展示图片
                 let pictureItem = ZJPictureTableItem(maxNumber: 5, column: 4, space: 15, width: self.view.frame.size.width, superVC: self, pictures: [image])
                 pictureItem.type = .read
                 section.add(item: pictureItem)
             }else{
-                //pictures editable
+                //添加图片
                 let pictureItem = ZJPictureTableItem(maxNumber: 5, column: 4, space: 15, width: self.view.frame.size.width, superVC: self)
                 pictureItem.type = .edit
                 section.add(item: pictureItem)
             }
         }
+        
+        // Do any additional setup after loading the view, typically from a nib.
     }
 ```
 
+### 注：
+1.tableView可以storyboard、xib、纯代码初始化
+
+2.我自己使用主要是用xib方式搭建的cell，纯代码的cell应该也支持
+
+3.找这个库的人应该也是像我这样用惯了RETableViewManger吧，使用自定义cell的体验应该是差不多的，但是有许多特性还没有支持，也没有RE那么多自带的cell样式，不过很多情况下也用不到（我先把我自己项目要用到的特性弄好……）
 
 
 
