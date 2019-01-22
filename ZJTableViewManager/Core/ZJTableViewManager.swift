@@ -172,12 +172,12 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     }
     
     
-    public func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    public func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         let (_ , item) = sectinAndItemFrom(indexPath: indexPath, sectionIndex: nil, rowIndex: nil)
         return item!.editingStyle
     }
     
-    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let (_ , item) = sectinAndItemFrom(indexPath: indexPath, sectionIndex: nil, rowIndex: nil)
         
         if editingStyle == .delete {

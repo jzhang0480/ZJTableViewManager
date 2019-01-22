@@ -16,7 +16,7 @@ open class ZJTextFieldCell: ZJTableViewCell {
     override open func awakeFromNib() {
         super.awakeFromNib()
         
-        self.textField.addTarget(self, action: #selector(textFieldDidChanged(textField:)), for: UIControlEvents.editingChanged)
+        self.textField.addTarget(self, action: #selector(textFieldDidChanged(textField:)), for: UIControl.Event.editingChanged)
         // Initialization code
     }
     

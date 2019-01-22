@@ -3,6 +3,15 @@
 ### 关于ZJTableViewManager
 最近开始用Swift写项目，在这之前只看了看Swift相关的文档，突然开始写很不适应，特别是之前一直在用的数据驱动的TableView框架`RETableViewManger`没有Swift版，混编的话也有问题（可能是Swift 4.0不兼容）于是就决定自己写一下Swift版的，使用方式基本一致。但是加了一些扩展功能，比如cell高度的自动计算等等。
 
+### Swift版本适配
+
+| Swift版本 |  cocoapods版本  |
+|-----------|-----------------|
+|       4.0 | 0.1.9           |
+|       4.2 | 0.2.0及以后版本 |
+
+
+
 举个例子，要实现下面这个界面只需要10行代码：
 
 ![image](https://github.com/JavenZ/ZJTableViewManager/blob/master/ScreenShot/forms_shot.jpg)

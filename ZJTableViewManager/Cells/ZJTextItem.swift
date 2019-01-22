@@ -16,7 +16,7 @@ open class ZJTextItem: ZJTableViewItem {
     override init() {
         super.init()
         self.cellHeight = 125
-        self.selectionStyle = UITableViewCellSelectionStyle.none
+        self.selectionStyle = UITableViewCell.SelectionStyle.none
     }
     
     convenience public init(text: String?, placeHolder: String, didChanged: ZJTableViewItemBlock?) {

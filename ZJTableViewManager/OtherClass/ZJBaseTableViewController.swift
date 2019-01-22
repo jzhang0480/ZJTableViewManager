@@ -12,7 +12,7 @@ open class ZJBaseTableViewController: UIViewController {
     @IBOutlet weak var IBTableView: UITableView?
     public var tableView: UITableView!
     public var manager: ZJTableViewManager!
-    public var tableViewStyle: UITableViewStyle = UITableViewStyle.plain
+    public var tableViewStyle: UITableView.Style = UITableView.Style.plain
     
     override open func viewDidLoad() {
         super.viewDidLoad()

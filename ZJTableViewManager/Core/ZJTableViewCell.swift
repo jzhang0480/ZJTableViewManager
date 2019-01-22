@@ -24,9 +24,9 @@ open class ZJTableViewCell: UITableViewCell {
     open func cellDidAppear() {
         let item = self.item as ZJTableViewItem
         if item.isHideSeparator {
-            self.separatorInset = UIEdgeInsetsMake(0, 15, 0, self.bounds.size.width - 15)
+            self.separatorInset = UIEdgeInsets.init(top: 0, left: 15, bottom: 0, right: self.bounds.size.width - 15)
         }else{
-            self.separatorInset = UIEdgeInsetsMake(0, item.separatorLeftMargin, 0, 0)
+            self.separatorInset = UIEdgeInsets.init(top: 0, left: item.separatorLeftMargin, bottom: 0, right: 0)
         }
     }
     

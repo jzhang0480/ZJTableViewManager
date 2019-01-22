@@ -124,7 +124,7 @@ open class IQToolbar: UIToolbar , UIInputViewAudioFeedback {
         super.init(frame: frame)
         
         sizeToFit()
-        autoresizingMask = UIViewAutoresizing.flexibleWidth
+        autoresizingMask = UIView.AutoresizingMask.flexibleWidth
         self.isTranslucent = true
     }
     
@@ -133,7 +133,7 @@ open class IQToolbar: UIToolbar , UIInputViewAudioFeedback {
         super.init(coder: aDecoder)
 
         sizeToFit()
-        autoresizingMask = UIViewAutoresizing.flexibleWidth
+        autoresizingMask = UIView.AutoresizingMask.flexibleWidth
         self.isTranslucent = true
     }
 

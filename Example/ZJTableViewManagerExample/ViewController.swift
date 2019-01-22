@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         let titles = ["Forms", "Retractable", "CustomCells", "Editing", "Sections", "List", "AutomaticHeight"]
         for i in titles {
             let item = ZJTableViewItem(title: i)
-            item.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+            item.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
             item.isAutoDeselect = true
             section.add(item: item)
             

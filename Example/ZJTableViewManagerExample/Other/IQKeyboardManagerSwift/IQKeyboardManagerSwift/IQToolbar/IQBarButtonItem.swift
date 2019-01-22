@@ -44,7 +44,7 @@ open class IQBarButtonItem: UIBarButtonItem {
 
         let  appearanceProxy = self.appearance()
 
-        let states : [UIControlState] = [.normal,.highlighted,.disabled,.selected,.application,.reserved];
+        let states : [UIControl.State] = [.normal,.highlighted,.disabled,.selected,.application,.reserved];
 
         for state in states {
 
@@ -64,17 +64,17 @@ open class IQBarButtonItem: UIBarButtonItem {
         didSet {
 
             #if swift(>=4)
-                var textAttributes = [NSAttributedStringKey : Any]()
+                var textAttributes = [NSAttributedString.Key : Any]()
                 
-                if let attributes = titleTextAttributes(for: .normal) {
+                if let attributes = convertFromOptionalNSAttributedStringKeyDictionary(titleTextAttributes(for: .normal)) {
                 
                     for (key, value) in attributes {
                 
-                        textAttributes[NSAttributedStringKey.init(key)] = value
+                        textAttributes[NSAttributedString.Key.init(key)] = value
                     }
                 }
                 
-                textAttributes[NSAttributedStringKey.foregroundColor] = tintColor
+                textAttributes[NSAttributedString.Key.foregroundColor] = tintColor
                 
                 setTitleTextAttributes(textAttributes, for: .normal)
 
@@ -118,4 +118,10 @@ open class IQBarButtonItem: UIBarButtonItem {
      */
     open var invocation : (target: AnyObject?, action: Selector?)
     
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromOptionalNSAttributedStringKeyDictionary(_ input: [NSAttributedString.Key: Any]?) -> [String: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
 }

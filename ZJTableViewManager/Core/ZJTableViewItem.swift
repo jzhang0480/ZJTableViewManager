@@ -19,7 +19,7 @@ open class ZJTableViewItem: NSObject {
     public var cellHeight: CGFloat!
     /// 系统默认样式的cell
     //    public var systemCell: UITableViewCell?
-    public var cellStyle: UITableViewCellStyle?
+    public var cellStyle: UITableViewCell.CellStyle?
     /// cell点击事件的回调
     public var selectionHandler: ZJTableViewItemBlock?
     public func setSelectionHandler(selectHandler: ZJTableViewItemBlock?) {
@@ -30,9 +30,9 @@ open class ZJTableViewItem: NSObject {
         self.deletionHandler = deletionHandler
     }
     public var separatorInset: UIEdgeInsets?
-    public var accessoryType: UITableViewCellAccessoryType?
-    public var selectionStyle: UITableViewCellSelectionStyle = UITableViewCellSelectionStyle.default
-    public var editingStyle: UITableViewCellEditingStyle = UITableViewCellEditingStyle.none
+    public var accessoryType: UITableViewCell.AccessoryType?
+    public var selectionStyle: UITableViewCell.SelectionStyle = UITableViewCell.SelectionStyle.default
+    public var editingStyle: UITableViewCell.EditingStyle = UITableViewCell.EditingStyle.none
     public var isAutoDeselect: Bool! = true
     public var isHideSeparator: Bool = false
     public var separatorLeftMargin: CGFloat = 15
@@ -59,18 +59,18 @@ open class ZJTableViewItem: NSObject {
     
     convenience public init(title: String?) {
         self.init()
-        self.cellStyle = UITableViewCellStyle.default
+        self.cellStyle = UITableViewCell.CellStyle.default
         self.cellTitle = title
     }
     
-    public func reload(_ animation: UITableViewRowAnimation) {
+    public func reload(_ animation: UITableView.RowAnimation) {
         print("reload tableview at \(indexPath)")
         tableViewManager.tableView.beginUpdates()
         tableViewManager.tableView.reloadRows(at: [indexPath], with: animation)
         tableViewManager.tableView.endUpdates()
     }
     
-    public func delete(_ animation: UITableViewRowAnimation = .automatic) {
+    public func delete(_ animation: UITableView.RowAnimation = .automatic) {
         if tableViewManager == nil || section == nil {
             print("Item did not in section or manager，please check section.add() method")
             return;
@@ -137,7 +137,7 @@ open class ZJTableViewItem: NSObject {
             // 15为系统cell左边的空隙
             accessroyWidth = 16 + accessoryView.frame.width
         } else {
-            let systemAccessoryWidths: [UITableViewCellAccessoryType: CGFloat] = [
+            let systemAccessoryWidths: [UITableViewCell.AccessoryType: CGFloat] = [
                 .none: 0,
                 .disclosureIndicator: 34,
                 .detailDisclosureButton: 68,
@@ -170,7 +170,7 @@ open class ZJTableViewItem: NSObject {
             
             cell.contentView.addConstraint(widthFenceConstraint)
             
-            fittingHeight = cell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
+            fittingHeight = cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
 //            print(fittingHeight)
             
             cell.contentView.removeConstraint(widthFenceConstraint)
