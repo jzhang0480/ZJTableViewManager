@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ZJExpandTreeCellItem: ZJTableViewItem {
+open class ZJExpandTreeCellItem: ZJTableViewItem {
     public var level:Int = 0
     public var isExpand = true
     public var arrNextLevel = [ZJExpandTreeCellItem]()
