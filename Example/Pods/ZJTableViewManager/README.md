@@ -5,10 +5,11 @@
 
 ### Swift版本适配
 
-| Swift版本 |  cocoapods版本  |
-|-----------|-----------------|
-|       4.0 | 0.1.9           |
-|       4.2 | 0.2.0及以后版本 |
+| Swift |   cocoapods    |
+|-------|----------------|
+|   4.0 | 0.1.9          |
+|   4.2 | 0.2.0 or later |
+
 
 
 
@@ -100,8 +101,10 @@ item.autoHeight(manager)
 ```
 要提前把item的相关属性赋值好，再调用`item.autoHeight(manager)`，具体可查看demo
 
-### 使用效果：
-demo 电商项目的评价、打星评分、添加评论图片,
+
+
+### Demo：
+电商项目的评价、打星评分、添加评论图片,
 
 ![image](https://github.com/JavenZ/ZJTableViewManager/blob/master/ScreenShot/pictureitem_edit.gif?raw=true)    ![image](https://github.com/JavenZ/ZJTableViewManager/blob/master/ScreenShot/pictrue_item_read.gif?raw=true)
 

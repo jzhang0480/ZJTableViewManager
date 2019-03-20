@@ -1,5 +1,5 @@
 PODS:
-  - ZJTableViewManager (0.2.0)
+  - ZJTableViewManager (0.2.1)
 
 DEPENDENCIES:
   - ZJTableViewManager
@@ -9,7 +9,7 @@ SPEC REPOS:
     - ZJTableViewManager
 
 SPEC CHECKSUMS:
-  ZJTableViewManager: cc83cd46a9b72a4c2a46a3ed9cc424ba888baa8a
+  ZJTableViewManager: 1cc6871163a3c27ec5ec64cc7f3ee6580f70cc58
 
 PODFILE CHECKSUM: 137f3e960598a7f295de703f914310fd694563d6
 
