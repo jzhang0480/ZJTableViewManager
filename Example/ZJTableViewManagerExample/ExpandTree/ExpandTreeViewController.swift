@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import ZJTableViewManager
 class ExpandTreeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var manager: ZJTableViewManager!
@@ -15,6 +15,7 @@ class ExpandTreeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "ExpandTree"
         manager = ZJTableViewManager(tableView: tableView)
         manager.register(Level0Cell.self, Level0CellItem.self)
         manager.register(Level1Cell.self, Level1CellItem.self)

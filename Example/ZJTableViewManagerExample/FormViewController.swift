@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import ZJTableViewManager
 class FormViewController: ZJBaseTableViewController {
 
     override func viewDidLoad() {

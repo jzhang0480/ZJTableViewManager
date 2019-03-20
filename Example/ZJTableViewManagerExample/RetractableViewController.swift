@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import ZJTableViewManager
 class RetractableViewController: ZJBaseTableViewController {
 
     override func viewDidLoad() {

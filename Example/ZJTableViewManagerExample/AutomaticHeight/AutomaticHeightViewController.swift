@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import ZJTableViewManager
 class AutomaticHeightViewController: UIViewController {
     var tableView: UITableView!
     var manager: ZJTableViewManager!

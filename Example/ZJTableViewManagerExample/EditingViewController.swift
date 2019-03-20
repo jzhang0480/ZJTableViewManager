@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import ZJTableViewManager
 class EditingViewController: UIViewController {
     var tableView: UITableView!
     var manager: ZJTableViewManager!

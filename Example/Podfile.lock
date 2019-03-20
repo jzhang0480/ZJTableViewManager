@@ -1,0 +1,16 @@
+PODS:
+  - ZJTableViewManager (0.2.0)
+
+DEPENDENCIES:
+  - ZJTableViewManager
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ZJTableViewManager
+
+SPEC CHECKSUMS:
+  ZJTableViewManager: cc83cd46a9b72a4c2a46a3ed9cc424ba888baa8a
+
+PODFILE CHECKSUM: 137f3e960598a7f295de703f914310fd694563d6
+
+COCOAPODS: 1.5.3

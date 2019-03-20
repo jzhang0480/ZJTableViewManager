@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2518307AB3C027BB4FAB811C /* Pods_ZJTableViewManagerExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F47636CA19CA23211AF358F /* Pods_ZJTableViewManagerExample.framework */; };
 		8F20A226205412510098929B /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 8F20A20C205412510098929B /* LICENSE.md */; };
 		8F20A227205412510098929B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8F20A20D205412510098929B /* README.md */; };
 		8F20A228205412510098929B /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F20A211205412510098929B /* IQTextView.swift */; };
@@ -48,22 +49,6 @@
 		8FC89EE4224291D2006557F9 /* Level2Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC89EDC224291D2006557F9 /* Level2Cell.swift */; };
 		8FC89EE5224291D2006557F9 /* Level3Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC89EDD224291D2006557F9 /* Level3Cell.swift */; };
 		8FC89EE7224291E1006557F9 /* ExpandTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC89EE6224291E1006557F9 /* ExpandTreeViewController.swift */; };
-		8FC89EFE224294B5006557F9 /* ZJExpandTreeCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC89EEC224294B4006557F9 /* ZJExpandTreeCellItem.swift */; };
-		8FC89EFF224294B5006557F9 /* ZJBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC89EED224294B4006557F9 /* ZJBaseTableViewController.swift */; };
-		8FC89F00224294B5006557F9 /* ZJTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC89EEE224294B4006557F9 /* ZJTextView.swift */; };
-		8FC89F01224294B5006557F9 /* ZJSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FC89EF0224294B4006557F9 /* ZJSwitchCell.xib */; };
-		8FC89F02224294B5006557F9 /* ZJTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FC89EF1224294B4006557F9 /* ZJTextFieldCell.xib */; };
-		8FC89F03224294B5006557F9 /* ZJTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FC89EF2224294B4006557F9 /* ZJTextCell.xib */; };
-		8FC89F04224294B5006557F9 /* ZJTextItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC89EF3224294B4006557F9 /* ZJTextItem.swift */; };
-		8FC89F05224294B5006557F9 /* ZJSwitchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC89EF4224294B4006557F9 /* ZJSwitchItem.swift */; };
-		8FC89F06224294B5006557F9 /* ZJTextFieldItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC89EF5224294B4006557F9 /* ZJTextFieldItem.swift */; };
-		8FC89F07224294B5006557F9 /* ZJTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC89EF6224294B4006557F9 /* ZJTextFieldCell.swift */; };
-		8FC89F08224294B5006557F9 /* ZJSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC89EF7224294B4006557F9 /* ZJSwitchCell.swift */; };
-		8FC89F09224294B5006557F9 /* ZJTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC89EF8224294B4006557F9 /* ZJTextCell.swift */; };
-		8FC89F0A224294B5006557F9 /* ZJTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC89EFA224294B4006557F9 /* ZJTableViewSection.swift */; };
-		8FC89F0B224294B5006557F9 /* ZJTableViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC89EFB224294B4006557F9 /* ZJTableViewItem.swift */; };
-		8FC89F0C224294B5006557F9 /* ZJTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC89EFC224294B4006557F9 /* ZJTableViewManager.swift */; };
-		8FC89F0D224294B5006557F9 /* ZJTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC89EFD224294B4006557F9 /* ZJTableViewCell.swift */; };
 		8FFE29402057C42E00760300 /* ZJTableViewManager.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8FFE293F2057C42E00760300 /* ZJTableViewManager.podspec */; };
 		8FFEFD2A2176327700B3113D /* AutomaticHeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFEFD292176327700B3113D /* AutomaticHeightViewController.swift */; };
 		8FFEFD2F2176340400B3113D /* AutomaticHeightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFEFD2D2176340400B3113D /* AutomaticHeightCell.swift */; };
@@ -71,6 +56,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F47636CA19CA23211AF358F /* Pods_ZJTableViewManagerExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZJTableViewManagerExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A8576949DF36ECDF1D015B0 /* Pods-ZJTableViewManagerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJTableViewManagerExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZJTableViewManagerExample/Pods-ZJTableViewManagerExample.release.xcconfig"; sourceTree = "<group>"; };
 		8F20A20C205412510098929B /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		8F20A20D205412510098929B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8F20A211205412510098929B /* IQTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQTextView.swift; sourceTree = "<group>"; };
@@ -114,26 +101,11 @@
 		8FC89EDC224291D2006557F9 /* Level2Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level2Cell.swift; sourceTree = "<group>"; };
 		8FC89EDD224291D2006557F9 /* Level3Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level3Cell.swift; sourceTree = "<group>"; };
 		8FC89EE6224291E1006557F9 /* ExpandTreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandTreeViewController.swift; sourceTree = "<group>"; };
-		8FC89EEC224294B4006557F9 /* ZJExpandTreeCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJExpandTreeCellItem.swift; sourceTree = "<group>"; };
-		8FC89EED224294B4006557F9 /* ZJBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJBaseTableViewController.swift; sourceTree = "<group>"; };
-		8FC89EEE224294B4006557F9 /* ZJTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTextView.swift; sourceTree = "<group>"; };
-		8FC89EF0224294B4006557F9 /* ZJSwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZJSwitchCell.xib; sourceTree = "<group>"; };
-		8FC89EF1224294B4006557F9 /* ZJTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZJTextFieldCell.xib; sourceTree = "<group>"; };
-		8FC89EF2224294B4006557F9 /* ZJTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZJTextCell.xib; sourceTree = "<group>"; };
-		8FC89EF3224294B4006557F9 /* ZJTextItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTextItem.swift; sourceTree = "<group>"; };
-		8FC89EF4224294B4006557F9 /* ZJSwitchItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJSwitchItem.swift; sourceTree = "<group>"; };
-		8FC89EF5224294B4006557F9 /* ZJTextFieldItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTextFieldItem.swift; sourceTree = "<group>"; };
-		8FC89EF6224294B4006557F9 /* ZJTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTextFieldCell.swift; sourceTree = "<group>"; };
-		8FC89EF7224294B4006557F9 /* ZJSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJSwitchCell.swift; sourceTree = "<group>"; };
-		8FC89EF8224294B4006557F9 /* ZJTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTextCell.swift; sourceTree = "<group>"; };
-		8FC89EFA224294B4006557F9 /* ZJTableViewSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewSection.swift; sourceTree = "<group>"; };
-		8FC89EFB224294B4006557F9 /* ZJTableViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewItem.swift; sourceTree = "<group>"; };
-		8FC89EFC224294B4006557F9 /* ZJTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewManager.swift; sourceTree = "<group>"; };
-		8FC89EFD224294B4006557F9 /* ZJTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewCell.swift; sourceTree = "<group>"; };
 		8FFE293F2057C42E00760300 /* ZJTableViewManager.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ZJTableViewManager.podspec; path = ../../ZJTableViewManager.podspec; sourceTree = "<group>"; };
 		8FFEFD292176327700B3113D /* AutomaticHeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomaticHeightViewController.swift; sourceTree = "<group>"; };
 		8FFEFD2D2176340400B3113D /* AutomaticHeightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomaticHeightCell.swift; sourceTree = "<group>"; };
 		8FFEFD2E2176340400B3113D /* AutomaticHeightCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AutomaticHeightCell.xib; sourceTree = "<group>"; };
+		D9E07EB9A55F485FAFC9C81D /* Pods-ZJTableViewManagerExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJTableViewManagerExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZJTableViewManagerExample/Pods-ZJTableViewManagerExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,12 +113,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2518307AB3C027BB4FAB811C /* Pods_ZJTableViewManagerExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35675D595ECEA05096864ED6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D9E07EB9A55F485FAFC9C81D /* Pods-ZJTableViewManagerExample.debug.xcconfig */,
+				7A8576949DF36ECDF1D015B0 /* Pods-ZJTableViewManagerExample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8F20A1DC2054120F0098929B /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +224,8 @@
 			children = (
 				8F950AA2204D1F5400F06DD8 /* ZJTableViewManagerExample */,
 				8F950AA1204D1F5400F06DD8 /* Products */,
+				35675D595ECEA05096864ED6 /* Pods */,
+				9AC6BC66003226FB3210384D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -256,7 +240,6 @@
 		8F950AA2204D1F5400F06DD8 /* ZJTableViewManagerExample */ = {
 			isa = PBXGroup;
 			children = (
-				8FC89EEA224294B4006557F9 /* ZJTableViewManager */,
 				8FB83B29205023BC00AD1F3F /* CustomCells */,
 				8F950AA3204D1F5400F06DD8 /* AppDelegate.swift */,
 				8F950AA5204D1F5400F06DD8 /* ViewController.swift */,
@@ -311,54 +294,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		8FC89EEA224294B4006557F9 /* ZJTableViewManager */ = {
-			isa = PBXGroup;
-			children = (
-				8FC89EEB224294B4006557F9 /* OtherClass */,
-				8FC89EEF224294B4006557F9 /* Cells */,
-				8FC89EF9224294B4006557F9 /* Core */,
-			);
-			name = ZJTableViewManager;
-			path = ../../ZJTableViewManager;
-			sourceTree = "<group>";
-		};
-		8FC89EEB224294B4006557F9 /* OtherClass */ = {
-			isa = PBXGroup;
-			children = (
-				8FC89EEC224294B4006557F9 /* ZJExpandTreeCellItem.swift */,
-				8FC89EED224294B4006557F9 /* ZJBaseTableViewController.swift */,
-				8FC89EEE224294B4006557F9 /* ZJTextView.swift */,
-			);
-			path = OtherClass;
-			sourceTree = "<group>";
-		};
-		8FC89EEF224294B4006557F9 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				8FC89EF0224294B4006557F9 /* ZJSwitchCell.xib */,
-				8FC89EF1224294B4006557F9 /* ZJTextFieldCell.xib */,
-				8FC89EF2224294B4006557F9 /* ZJTextCell.xib */,
-				8FC89EF3224294B4006557F9 /* ZJTextItem.swift */,
-				8FC89EF4224294B4006557F9 /* ZJSwitchItem.swift */,
-				8FC89EF5224294B4006557F9 /* ZJTextFieldItem.swift */,
-				8FC89EF6224294B4006557F9 /* ZJTextFieldCell.swift */,
-				8FC89EF7224294B4006557F9 /* ZJSwitchCell.swift */,
-				8FC89EF8224294B4006557F9 /* ZJTextCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		8FC89EF9224294B4006557F9 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				8FC89EFA224294B4006557F9 /* ZJTableViewSection.swift */,
-				8FC89EFB224294B4006557F9 /* ZJTableViewItem.swift */,
-				8FC89EFC224294B4006557F9 /* ZJTableViewManager.swift */,
-				8FC89EFD224294B4006557F9 /* ZJTableViewCell.swift */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
 		8FFEFD2C217633B700B3113D /* AutomaticHeightCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,6 +312,14 @@
 			path = AutomaticHeight;
 			sourceTree = "<group>";
 		};
+		9AC6BC66003226FB3210384D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F47636CA19CA23211AF358F /* Pods_ZJTableViewManagerExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -384,9 +327,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8F950AB2204D1F5400F06DD8 /* Build configuration list for PBXNativeTarget "ZJTableViewManagerExample" */;
 			buildPhases = (
+				93D433C04E6BBE1FF2A7363D /* [CP] Check Pods Manifest.lock */,
 				8F950A9C204D1F5400F06DD8 /* Sources */,
 				8F950A9D204D1F5400F06DD8 /* Frameworks */,
 				8F950A9E204D1F5400F06DD8 /* Resources */,
+				0CC86EE93DCACE220DD1AFBD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -444,11 +389,8 @@
 				8FFEFD302176340400B3113D /* AutomaticHeightCell.xib in Resources */,
 				8F20A226205412510098929B /* LICENSE.md in Resources */,
 				8FB83B2F2050248000AD1F3F /* NotSeriousCustomCell.xib in Resources */,
-				8FC89F01224294B5006557F9 /* ZJSwitchCell.xib in Resources */,
-				8FC89F03224294B5006557F9 /* ZJTextCell.xib in Resources */,
 				8FC89EDF224291D2006557F9 /* Level2Cell.xib in Resources */,
 				8FC89EE2224291D2006557F9 /* Level3Cell.xib in Resources */,
-				8FC89F02224294B5006557F9 /* ZJTextFieldCell.xib in Resources */,
 				8FC89EE0224291D2006557F9 /* Level1Cell.xib in Resources */,
 				8F20A227205412510098929B /* README.md in Resources */,
 				8F950AA9204D1F5400F06DD8 /* Main.storyboard in Resources */,
@@ -458,6 +400,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0CC86EE93DCACE220DD1AFBD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ZJTableViewManagerExample/Pods-ZJTableViewManagerExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ZJTableViewManager/ZJTableViewManager.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZJTableViewManager.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZJTableViewManagerExample/Pods-ZJTableViewManagerExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93D433C04E6BBE1FF2A7363D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZJTableViewManagerExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8F950A9C204D1F5400F06DD8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -465,12 +454,8 @@
 			files = (
 				8F20A23A205422820098929B /* EditingViewController.swift in Sources */,
 				8F20A22F205412510098929B /* IQKeyboardManagerConstants.swift in Sources */,
-				8FC89F07224294B5006557F9 /* ZJTextFieldCell.swift in Sources */,
-				8FC89F0A224294B5006557F9 /* ZJTableViewSection.swift in Sources */,
 				8F20A231205412510098929B /* IQKeyboardReturnKeyHandler.swift in Sources */,
-				8FC89F04224294B5006557F9 /* ZJTextItem.swift in Sources */,
 				8F20A229205412510098929B /* IQPreviousNextView.swift in Sources */,
-				8FC89F0D224294B5006557F9 /* ZJTableViewCell.swift in Sources */,
 				8F20A236205412510098929B /* IQUITextFieldView+Additions.swift in Sources */,
 				8F20A22A205412510098929B /* IQTitleBarButtonItem.swift in Sources */,
 				8F20A22B205412510098929B /* IQBarButtonItem.swift in Sources */,
@@ -479,35 +464,26 @@
 				8F20A234205412510098929B /* IQUIScrollView+Additions.swift in Sources */,
 				8FFEFD2A2176327700B3113D /* AutomaticHeightViewController.swift in Sources */,
 				8F20A22E205412510098929B /* IQKeyboardManagerConstantsInternal.swift in Sources */,
-				8FC89EFF224294B5006557F9 /* ZJBaseTableViewController.swift in Sources */,
 				8FC89EE1224291D2006557F9 /* Level0Cell.swift in Sources */,
 				8F20A233205412510098929B /* IQUIWindow+Hierarchy.swift in Sources */,
 				8F950AA6204D1F5400F06DD8 /* ViewController.swift in Sources */,
 				8F20A22D205412510098929B /* IQUIView+IQKeyboardToolbar.swift in Sources */,
 				8FC89EE3224291D2006557F9 /* Level1Cell.swift in Sources */,
-				8FC89F0C224294B5006557F9 /* ZJTableViewManager.swift in Sources */,
 				8F20A238205412510098929B /* IQNSArray+Sort.swift in Sources */,
 				8F950AA4204D1F5400F06DD8 /* AppDelegate.swift in Sources */,
 				8F950AD3204D54CA00F06DD8 /* FormViewController.swift in Sources */,
 				8F20A235205412510098929B /* IQUIViewController+Additions.swift in Sources */,
-				8FC89F00224294B5006557F9 /* ZJTextView.swift in Sources */,
-				8FC89F06224294B5006557F9 /* ZJTextFieldItem.swift in Sources */,
 				8F20A237205412510098929B /* IQUIView+Hierarchy.swift in Sources */,
 				8FC89EE7224291E1006557F9 /* ExpandTreeViewController.swift in Sources */,
-				8FC89F05224294B5006557F9 /* ZJSwitchItem.swift in Sources */,
 				8FC89EE5224291D2006557F9 /* Level3Cell.swift in Sources */,
 				8FB83B2B2050245300AD1F3F /* NotSeriousCustomItem.swift in Sources */,
 				8F20A232205412510098929B /* IQKeyboardManager.swift in Sources */,
 				8FB83B2E2050248000AD1F3F /* NotSeriousCustomCell.swift in Sources */,
-				8FC89EFE224294B5006557F9 /* ZJExpandTreeCellItem.swift in Sources */,
 				8FFEFD2F2176340400B3113D /* AutomaticHeightCell.swift in Sources */,
-				8FC89F08224294B5006557F9 /* ZJSwitchCell.swift in Sources */,
 				8FB83B312050257600AD1F3F /* CustomCellViewController.swift in Sources */,
-				8FC89F0B224294B5006557F9 /* ZJTableViewItem.swift in Sources */,
 				8FC89EE4224291D2006557F9 /* Level2Cell.swift in Sources */,
 				8F3786FD2057AB3200BAC618 /* SectionsViewController.swift in Sources */,
 				8F20A22C205412510098929B /* IQToolbar.swift in Sources */,
-				8FC89F09224294B5006557F9 /* ZJTextCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,6 +618,7 @@
 		};
 		8F950AB3204D1F5400F06DD8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9E07EB9A55F485FAFC9C81D /* Pods-ZJTableViewManagerExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -658,6 +635,7 @@
 		};
 		8F950AB4204D1F5400F06DD8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A8576949DF36ECDF1D015B0 /* Pods-ZJTableViewManagerExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
