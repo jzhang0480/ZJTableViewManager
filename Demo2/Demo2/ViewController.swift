@@ -28,7 +28,6 @@ class ViewController: UIViewController {
         //假数据
         let arrCategory = ["分类1","分类2","分类3","分类4","分类5","分类6"]
         let arrProduct = ["面包", "蛋糕", "香蕉", "牛奶", "饼干", "猫粮"]
-        
         //添加分类数据
         let categorySection = ZJTableViewSection()
         self.categoryManager?.add(section: categorySection)
@@ -41,7 +40,6 @@ class ViewController: UIViewController {
                 self?.productManager.tableView.scrollToRow(at: IndexPath(row: 0, section: item.indexPath.row), at: .top, animated: true)
             })
         }
-        
         //添加商品数据
         for category in arrCategory {
             //添加分区标题
@@ -53,19 +51,15 @@ class ViewController: UIViewController {
             //商品列表滑动时与分类列表联动
             section.setHeaderWillDisplayHandler({[weak self] (currentSection) in
                 //手动拖才和左边联动
-                if (self?.productManager.tableView.isDragging ?? false && !(self?.isScrollUp ?? true)){
+                if ((self?.productManager.tableView.isDragging)! && !(self?.isScrollUp)!){
                     let currentSection = self?.productTableView.indexPathsForVisibleRows?.first?.section ?? 0
                     self?.categoryTableView.selectRow(at: IndexPath(item: currentSection, section: 0), animated: false, scrollPosition: .middle)
                 }
             })
-            
             section.setHeaderDidEndDisplayHandler {[weak self] (currentSection) in
                 //手动拖才和左边联动
-                if (self?.productManager.tableView.isDragging ?? false && (self?.isScrollUp ?? true)){
+                if ((self?.productManager.tableView.isDragging)! && (self?.isScrollUp)!){
                      self?.categoryTableView.selectRow(at: IndexPath(item: currentSection.index + 1, section: 0), animated: false, scrollPosition: .middle)
-                }else if (self?.productManager.tableView.isDragging ?? false && !(self?.isScrollUp ?? true)){
-                    let currentSection = self?.productTableView.indexPathsForVisibleRows?.first?.section ?? 0
-                    self?.categoryTableView.selectRow(at: IndexPath(item: currentSection, section: 0), animated: false, scrollPosition: .middle)
                 }
             }
             //添加商品
@@ -75,18 +69,14 @@ class ViewController: UIViewController {
                 section.add(item: item)
             }
         }
+        //先默认选中categoryTableView分类的第一个cell
+        self.categoryTableView.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: UITableView.ScrollPosition.top)
     }
-    
-    
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
 extension ViewController:ZJTableViewDelegate{
@@ -94,6 +84,5 @@ extension ViewController:ZJTableViewDelegate{
         isScrollUp = lastOffsetY < scrollView.contentOffset.y;
         lastOffsetY = scrollView.contentOffset.y;
     }
-    
-    
 }
+
