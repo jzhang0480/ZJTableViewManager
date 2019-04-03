@@ -32,7 +32,7 @@ open class ZJExpandTreeCellItem: ZJTableViewItem {
             if item.isExpand {
                 item.section.insert(arrItems, afterItem: item, animate: .fade)
             }else{
-                item.section.delete(arrItems, afterItem: item, animate: .fade)
+                item.section.delete(arrItems, animate: .fade)
             }
         }
     }

@@ -44,7 +44,7 @@ class FormViewController: ZJBaseTableViewController {
             print((item as! ZJSwitchItem).isOn)
         }))
         
-        
+        manager.reload()
         // Do any additional setup after loading the view.
     }
 

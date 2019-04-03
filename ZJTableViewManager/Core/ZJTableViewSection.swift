@@ -140,18 +140,13 @@ open class ZJTableViewSection: NSObject {
         tableViewManager.tableView.endUpdates()
     }
     
-    public func delete(_ items: [ZJTableViewItem], afterItem: ZJTableViewItem, animate: UITableView.RowAnimation = .automatic) {
-        if !self.items.contains(where: {$0 == afterItem}) {
-            print("can't insert because afterItem did not in sections")
-            return;
-        }
-        
+    public func delete(_ itemsToDelete: [ZJTableViewItem], animate: UITableView.RowAnimation = .automatic) {
+        guard itemsToDelete.count > 0 else { return }
         tableViewManager.tableView.beginUpdates()
-        let newFirstIndex = self.items.index(where: {$0 == afterItem})! + 1
         var arrNewIndexPath = [IndexPath]()
-        for i in 0..<items.count {
-            self.items.remove(at: self.items.firstIndex(where: {$0 == items[i]})!)
-            arrNewIndexPath.append(IndexPath(item: newFirstIndex + i, section: afterItem.indexPath.section))
+        for i in itemsToDelete {
+            remove(item: i)
+            arrNewIndexPath.append(i.indexPath)
         }
         tableViewManager.tableView.deleteRows(at: arrNewIndexPath, with: animate)
         tableViewManager.tableView.endUpdates()

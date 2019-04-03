@@ -28,6 +28,7 @@ class CustomCellViewController: ZJBaseTableViewController {
         section.add(item: NotSeriousCustomItem())
         section.add(item: NotSeriousCustomItem())
         
+        manager.reload()
         // Do any additional setup after loading the view.
     }
 

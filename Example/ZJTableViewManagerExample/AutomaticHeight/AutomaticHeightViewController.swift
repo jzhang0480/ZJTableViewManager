@@ -35,6 +35,7 @@ class AutomaticHeightViewController: UIViewController {
             item.autoHeight(manager)
             section.add(item: item)
         }
+        manager.reload()
         // Do any additional setup after loading the view.
     }
 

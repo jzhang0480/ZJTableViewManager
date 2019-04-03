@@ -9,7 +9,7 @@
 import UIKit
 import ZJTableViewManager
 class RetractableViewController: ZJBaseTableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Retractable"
@@ -39,37 +39,37 @@ class RetractableViewController: ZJBaseTableViewController {
         
         //expanded
         for i in 1...7 {
-             expandedItems.append(ZJTableViewItem(title: "Test Item " + String(i)))
+            expandedItems.append(ZJTableViewItem(title: "Test Item " + String(i)))
         }
         
         let lessItem = ZJTableViewItem(title: "Show Less")
         lessItem.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
-
+        
         lessItem.setSelectionHandler { (item) in
             section.replaceItemsFrom(array: collapsedItems)
             section.reload(UITableView.RowAnimation.automatic)
         }
         expandedItems.append(lessItem)
         
-        
+        manager.reload()
         
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

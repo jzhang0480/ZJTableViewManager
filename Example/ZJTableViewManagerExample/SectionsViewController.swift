@@ -37,6 +37,7 @@ class SectionsViewController: UIViewController {
             }
         }
 
+        manager.reload()
         // Do any additional setup after loading the view.
     }
 
