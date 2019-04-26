@@ -9,20 +9,34 @@
 import UIKit
 
 class ZJTextView: UITextView {
-
+    
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        #if swift(>=4.2)
         NotificationCenter.default.addObserver(self, selector: #selector(self.refreshPlaceholder), name: UITextView.textDidChangeNotification, object: self)
+        #else
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshPlaceholder), name: NSNotification.Name.UITextViewTextDidChange, object: self)
+        #endif
     }
     
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
+        #if swift(>=4.2)
         NotificationCenter.default.addObserver(self, selector: #selector(self.refreshPlaceholder), name: UITextView.textDidChangeNotification, object: self)
+        #else
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshPlaceholder), name: NSNotification.Name.UITextViewTextDidChange, object: self)
+        #endif
+        
     }
     
     override open func awakeFromNib() {
         super.awakeFromNib()
+        #if swift(>=4.2)
         NotificationCenter.default.addObserver(self, selector: #selector(self.refreshPlaceholder), name: UITextView.textDidChangeNotification, object: self)
+        #else
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshPlaceholder), name: NSNotification.Name.UITextViewTextDidChange, object: self)
+        #endif
+        
     }
     
     deinit {
