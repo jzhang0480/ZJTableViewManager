@@ -16,13 +16,13 @@
 		53C34187FF356EA66864C5EA1C5E853C /* ZJTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A059EED9A13B0D03F297B357F23EC3D /* ZJTableViewCell.swift */; };
 		6CE4BAFFDDCDE0DF67D6220DC014ECEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
 		6EE48DBA8893FA29C7047EDE1DD01434 /* ZJSwitchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446957560F78C9322822A721BBF8FC77 /* ZJSwitchItem.swift */; };
-		764BAB215458F153DE22841FDD1950E9 /* Pods-ZJTableViewManagerExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F946F2BD597216BEDD0F43C2B07ACC5 /* Pods-ZJTableViewManagerExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F0350009588E1F0545A920EE3DD9DC7 /* ZJTableViewManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D5C853A72102203C92A101E365120 /* ZJTableViewManager-dummy.m */; };
-		7FC28A9FE150294E95ECCE4B81AC3D80 /* Pods-ZJTableViewManagerExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D60688BCF4BB5E8ED97E8383D8EB4E9C /* Pods-ZJTableViewManagerExample-dummy.m */; };
+		764BAB215458F153DE22841FDD1950E9 /* Pods-ZJTableViewManagerExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E70F56BA2E0E9D4E4B3EBB42B9089F97 /* Pods-ZJTableViewManagerExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F0350009588E1F0545A920EE3DD9DC7 /* ZJTableViewManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBC73E9768F9849BEBE2A5432DE6B50 /* ZJTableViewManager-dummy.m */; };
+		7FC28A9FE150294E95ECCE4B81AC3D80 /* Pods-ZJTableViewManagerExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8552E6831F2E2D237A6C10159F57BBEE /* Pods-ZJTableViewManagerExample-dummy.m */; };
 		8B952FA6358FC387C3C1C9C1247FF59E /* ZJTextCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 0579861206C4AF06FA5105FA1B0C355D /* ZJTextCell.xib */; };
 		A4B2DEE496A3027B1D2DD99B097439F7 /* ZJTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17962A16592780FE9FE3D9073CCF9616 /* ZJTextCell.swift */; };
 		A9F70E64F6F3E4A805C20306EA10E228 /* ZJExpandTreeCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44826EE459FC6CC1C22B30FE5A38927D /* ZJExpandTreeCellItem.swift */; };
-		AC0C692077A87A6137B4AE911FEA4FF0 /* ZJTableViewManager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BC399A740FAEF96188FE2BEFF6E6BDA6 /* ZJTableViewManager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AC0C692077A87A6137B4AE911FEA4FF0 /* ZJTableViewManager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 127E50562D8BFFE1A4341934A9515226 /* ZJTableViewManager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ACC0AEB63949B65BD818B8A06D265EA6 /* ZJTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B39C6811B1C2055C13DD17170F59C9 /* ZJTableViewSection.swift */; };
 		B4244E8F8D104801C695B01C0CD0DD8F /* ZJTextItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAFE1C536944FB51F9F87C2A2346184 /* ZJTextItem.swift */; };
 		B9507A1CD85667032E507F1E6C45DD4B /* ZJTextFieldCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 4D2976DB0E4C85F3E530A1E548E357BC /* ZJTextFieldCell.xib */; };
@@ -43,41 +43,40 @@
 
 /* Begin PBXFileReference section */
 		0579861206C4AF06FA5105FA1B0C355D /* ZJTextCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ZJTextCell.xib; path = ZJTableViewManager/Cells/ZJTextCell.xib; sourceTree = "<group>"; };
-		0DBE8FC57FCDBA5AE8B23FF027039AB4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F07C466323D3AC26A5A405569123B18 /* ZJTableViewItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJTableViewItem.swift; path = ZJTableViewManager/Core/ZJTableViewItem.swift; sourceTree = "<group>"; };
+		127E50562D8BFFE1A4341934A9515226 /* ZJTableViewManager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZJTableViewManager-umbrella.h"; sourceTree = "<group>"; };
 		131F6DD2B8C9D2BE54DBB01FC5381453 /* ZJSwitchCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJSwitchCell.swift; path = ZJTableViewManager/Cells/ZJSwitchCell.swift; sourceTree = "<group>"; };
+		152894C43C66985F8622C5D7449CE6EA /* Pods-ZJTableViewManagerExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ZJTableViewManagerExample.modulemap"; sourceTree = "<group>"; };
+		152978AC2D270AA3F39DA8E4EA257282 /* ZJTableViewManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZJTableViewManager.xcconfig; sourceTree = "<group>"; };
 		17962A16592780FE9FE3D9073CCF9616 /* ZJTextCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJTextCell.swift; path = ZJTableViewManager/Cells/ZJTextCell.swift; sourceTree = "<group>"; };
-		1E757AAD8BAC56A7302AB6225502C1F4 /* Pods-ZJTableViewManagerExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZJTableViewManagerExample-acknowledgements.plist"; sourceTree = "<group>"; };
 		1EDE962EC0E86FAC85A240129B0CA915 /* ZJSwitchCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ZJSwitchCell.xib; path = ZJTableViewManager/Cells/ZJSwitchCell.xib; sourceTree = "<group>"; };
-		211C922FB1B0382448A0DDF2CEA75B53 /* Pods-ZJTableViewManagerExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZJTableViewManagerExample-acknowledgements.markdown"; sourceTree = "<group>"; };
-		24390EFD555DD124430DFF9724065945 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2E39B807D9CBBF90D7241B057358CEA2 /* ZJTableViewManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJTableViewManager.swift; path = ZJTableViewManager/Core/ZJTableViewManager.swift; sourceTree = "<group>"; };
-		3F946F2BD597216BEDD0F43C2B07ACC5 /* Pods-ZJTableViewManagerExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ZJTableViewManagerExample-umbrella.h"; sourceTree = "<group>"; };
-		418BD282629BBD604560922DD70EC140 /* Pods-ZJTableViewManagerExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZJTableViewManagerExample-frameworks.sh"; sourceTree = "<group>"; };
-		41AE32E07D521C23965DC5F74FFBAB0E /* ZJTableViewManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZJTableViewManager-prefix.pch"; sourceTree = "<group>"; };
+		423A4069AA2FCB265DB5D6F4BFD7B266 /* ZJTableViewManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ZJTableViewManager.modulemap; sourceTree = "<group>"; };
 		446957560F78C9322822A721BBF8FC77 /* ZJSwitchItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJSwitchItem.swift; path = ZJTableViewManager/Cells/ZJSwitchItem.swift; sourceTree = "<group>"; };
 		44826EE459FC6CC1C22B30FE5A38927D /* ZJExpandTreeCellItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJExpandTreeCellItem.swift; path = ZJTableViewManager/OtherClass/ZJExpandTreeCellItem.swift; sourceTree = "<group>"; };
 		4D2976DB0E4C85F3E530A1E548E357BC /* ZJTextFieldCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ZJTextFieldCell.xib; path = ZJTableViewManager/Cells/ZJTextFieldCell.xib; sourceTree = "<group>"; };
 		5A059EED9A13B0D03F297B357F23EC3D /* ZJTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJTableViewCell.swift; path = ZJTableViewManager/Core/ZJTableViewCell.swift; sourceTree = "<group>"; };
 		6D1E0E5D0BB537E7D37F99A60B5FC6A7 /* ZJBaseTableViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJBaseTableViewController.swift; path = ZJTableViewManager/OtherClass/ZJBaseTableViewController.swift; sourceTree = "<group>"; };
+		73D02374A176D87206DBAE8E568DCB37 /* Pods-ZJTableViewManagerExample-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZJTableViewManagerExample-Info.plist"; sourceTree = "<group>"; };
 		75B39C6811B1C2055C13DD17170F59C9 /* ZJTableViewSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJTableViewSection.swift; path = ZJTableViewManager/Core/ZJTableViewSection.swift; sourceTree = "<group>"; };
 		7769E756012C265E7BCAA4EEC2993916 /* ZJTextFieldCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJTextFieldCell.swift; path = ZJTableViewManager/Cells/ZJTextFieldCell.swift; sourceTree = "<group>"; };
-		78FEE4A03435FA42CC728EB6812CD320 /* Pods-ZJTableViewManagerExample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZJTableViewManagerExample-resources.sh"; sourceTree = "<group>"; };
-		7A04888BE76E9205FC81A18C0283EA75 /* Pods-ZJTableViewManagerExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ZJTableViewManagerExample.modulemap"; sourceTree = "<group>"; };
+		7CA133A46A70E15FE41603C54AAF95FB /* Pods-ZJTableViewManagerExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZJTableViewManagerExample-acknowledgements.plist"; sourceTree = "<group>"; };
+		7FBC73E9768F9849BEBE2A5432DE6B50 /* ZJTableViewManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZJTableViewManager-dummy.m"; sourceTree = "<group>"; };
+		8552E6831F2E2D237A6C10159F57BBEE /* Pods-ZJTableViewManagerExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZJTableViewManagerExample-dummy.m"; sourceTree = "<group>"; };
 		8F54561107F67CCEC2FCB32368FA04F0 /* ZJTextFieldItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJTextFieldItem.swift; path = ZJTableViewManager/Cells/ZJTextFieldItem.swift; sourceTree = "<group>"; };
 		935F8695CB774067C0DF10A87E939AD1 /* Pods_ZJTableViewManagerExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ZJTableViewManagerExample.framework; path = "Pods-ZJTableViewManagerExample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F8D5C853A72102203C92A101E365120 /* ZJTableViewManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZJTableViewManager-dummy.m"; sourceTree = "<group>"; };
+		99513A6306AB115A7A410EA5C506F68C /* ZJTableViewManager-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ZJTableViewManager-Info.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A71E047BB4EF72622FAA857317726400 /* ZJTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJTextView.swift; path = ZJTableViewManager/OtherClass/ZJTextView.swift; sourceTree = "<group>"; };
 		AFAFE1C536944FB51F9F87C2A2346184 /* ZJTextItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJTextItem.swift; path = ZJTableViewManager/Cells/ZJTextItem.swift; sourceTree = "<group>"; };
-		B0A171F876834C1F3533B318E5D1BE11 /* Pods-ZJTableViewManagerExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZJTableViewManagerExample.debug.xcconfig"; sourceTree = "<group>"; };
-		B937A8C415C8AF8990E9B929C4A3C424 /* ZJTableViewManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ZJTableViewManager.modulemap; sourceTree = "<group>"; };
-		BC399A740FAEF96188FE2BEFF6E6BDA6 /* ZJTableViewManager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZJTableViewManager-umbrella.h"; sourceTree = "<group>"; };
-		CA643B7C556F2D8EE05383601A5FBE7D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4BEC5A8FB3F6668DDD396954DACCEAD /* Pods-ZJTableViewManagerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZJTableViewManagerExample.release.xcconfig"; sourceTree = "<group>"; };
+		B63485392DD52B86B8B8B59D9153291F /* Pods-ZJTableViewManagerExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZJTableViewManagerExample-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B7A1DA095C487BA6F978019A1DB5FD22 /* Pods-ZJTableViewManagerExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZJTableViewManagerExample-frameworks.sh"; sourceTree = "<group>"; };
 		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D21F54D3C8D2345CB8383020BD8A8959 /* Pods-ZJTableViewManagerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZJTableViewManagerExample.release.xcconfig"; sourceTree = "<group>"; };
-		D541E5C0A9B17B1CC69AFF51024B4D53 /* ZJTableViewManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZJTableViewManager.xcconfig; sourceTree = "<group>"; };
-		D60688BCF4BB5E8ED97E8383D8EB4E9C /* Pods-ZJTableViewManagerExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZJTableViewManagerExample-dummy.m"; sourceTree = "<group>"; };
 		E154B37F60D0048D3A14EEA5B4A6F286 /* ZJTableViewManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZJTableViewManager.framework; path = ZJTableViewManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E70F56BA2E0E9D4E4B3EBB42B9089F97 /* Pods-ZJTableViewManagerExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ZJTableViewManagerExample-umbrella.h"; sourceTree = "<group>"; };
+		EC8E867B0B04D6B1E20848ABC26C1C4A /* Pods-ZJTableViewManagerExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZJTableViewManagerExample.debug.xcconfig"; sourceTree = "<group>"; };
+		FD7D534160E9464D09085FF724A472C0 /* ZJTableViewManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZJTableViewManager-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +99,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		173DE1B537695A1B9B74424FC330F918 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				423A4069AA2FCB265DB5D6F4BFD7B266 /* ZJTableViewManager.modulemap */,
+				152978AC2D270AA3F39DA8E4EA257282 /* ZJTableViewManager.xcconfig */,
+				7FBC73E9768F9849BEBE2A5432DE6B50 /* ZJTableViewManager-dummy.m */,
+				99513A6306AB115A7A410EA5C506F68C /* ZJTableViewManager-Info.plist */,
+				FD7D534160E9464D09085FF724A472C0 /* ZJTableViewManager-prefix.pch */,
+				127E50562D8BFFE1A4341934A9515226 /* ZJTableViewManager-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ZJTableViewManager";
+			sourceTree = "<group>";
+		};
 		2CFF01723853EEFBABFCBA55158F9F30 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,33 +122,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9212108EB8809620D67BD40D78BB6FB6 /* Support Files */ = {
+		3ED3CCC7F8D439002354DE0E8E18A641 /* Pods-ZJTableViewManagerExample */ = {
 			isa = PBXGroup;
 			children = (
-				CA643B7C556F2D8EE05383601A5FBE7D /* Info.plist */,
-				B937A8C415C8AF8990E9B929C4A3C424 /* ZJTableViewManager.modulemap */,
-				D541E5C0A9B17B1CC69AFF51024B4D53 /* ZJTableViewManager.xcconfig */,
-				9F8D5C853A72102203C92A101E365120 /* ZJTableViewManager-dummy.m */,
-				41AE32E07D521C23965DC5F74FFBAB0E /* ZJTableViewManager-prefix.pch */,
-				BC399A740FAEF96188FE2BEFF6E6BDA6 /* ZJTableViewManager-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/ZJTableViewManager";
-			sourceTree = "<group>";
-		};
-		9A7EA44EA2CFCACA4AED2F6E769C782F /* Pods-ZJTableViewManagerExample */ = {
-			isa = PBXGroup;
-			children = (
-				0DBE8FC57FCDBA5AE8B23FF027039AB4 /* Info.plist */,
-				7A04888BE76E9205FC81A18C0283EA75 /* Pods-ZJTableViewManagerExample.modulemap */,
-				211C922FB1B0382448A0DDF2CEA75B53 /* Pods-ZJTableViewManagerExample-acknowledgements.markdown */,
-				1E757AAD8BAC56A7302AB6225502C1F4 /* Pods-ZJTableViewManagerExample-acknowledgements.plist */,
-				D60688BCF4BB5E8ED97E8383D8EB4E9C /* Pods-ZJTableViewManagerExample-dummy.m */,
-				418BD282629BBD604560922DD70EC140 /* Pods-ZJTableViewManagerExample-frameworks.sh */,
-				78FEE4A03435FA42CC728EB6812CD320 /* Pods-ZJTableViewManagerExample-resources.sh */,
-				3F946F2BD597216BEDD0F43C2B07ACC5 /* Pods-ZJTableViewManagerExample-umbrella.h */,
-				B0A171F876834C1F3533B318E5D1BE11 /* Pods-ZJTableViewManagerExample.debug.xcconfig */,
-				D21F54D3C8D2345CB8383020BD8A8959 /* Pods-ZJTableViewManagerExample.release.xcconfig */,
+				152894C43C66985F8622C5D7449CE6EA /* Pods-ZJTableViewManagerExample.modulemap */,
+				B63485392DD52B86B8B8B59D9153291F /* Pods-ZJTableViewManagerExample-acknowledgements.markdown */,
+				7CA133A46A70E15FE41603C54AAF95FB /* Pods-ZJTableViewManagerExample-acknowledgements.plist */,
+				8552E6831F2E2D237A6C10159F57BBEE /* Pods-ZJTableViewManagerExample-dummy.m */,
+				B7A1DA095C487BA6F978019A1DB5FD22 /* Pods-ZJTableViewManagerExample-frameworks.sh */,
+				73D02374A176D87206DBAE8E568DCB37 /* Pods-ZJTableViewManagerExample-Info.plist */,
+				E70F56BA2E0E9D4E4B3EBB42B9089F97 /* Pods-ZJTableViewManagerExample-umbrella.h */,
+				EC8E867B0B04D6B1E20848ABC26C1C4A /* Pods-ZJTableViewManagerExample.debug.xcconfig */,
+				B4BEC5A8FB3F6668DDD396954DACCEAD /* Pods-ZJTableViewManagerExample.release.xcconfig */,
 			);
 			name = "Pods-ZJTableViewManagerExample";
 			path = "Target Support Files/Pods-ZJTableViewManagerExample";
@@ -149,10 +147,10 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		B3CE6F5612BED787AF7FAD9415F150AF /* Targets Support Files */ = {
+		CD297060F7E519B7B4AD7744D0C79BB1 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				9A7EA44EA2CFCACA4AED2F6E769C782F /* Pods-ZJTableViewManagerExample */,
+				3ED3CCC7F8D439002354DE0E8E18A641 /* Pods-ZJTableViewManagerExample */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
@@ -160,11 +158,11 @@
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
-				24390EFD555DD124430DFF9724065945 /* Podfile */,
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				D9854E72600D31CFB2B5C552235967F2 /* Pods */,
 				2CFF01723853EEFBABFCBA55158F9F30 /* Products */,
-				B3CE6F5612BED787AF7FAD9415F150AF /* Targets Support Files */,
+				CD297060F7E519B7B4AD7744D0C79BB1 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -203,7 +201,7 @@
 				8F54561107F67CCEC2FCB32368FA04F0 /* ZJTextFieldItem.swift */,
 				AFAFE1C536944FB51F9F87C2A2346184 /* ZJTextItem.swift */,
 				A71E047BB4EF72622FAA857317726400 /* ZJTextView.swift */,
-				9212108EB8809620D67BD40D78BB6FB6 /* Support Files */,
+				173DE1B537695A1B9B74424FC330F918 /* Support Files */,
 			);
 			name = ZJTableViewManager;
 			path = ZJTableViewManager;
@@ -357,7 +355,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		3073E9329E3D859060CB4B679A6C557C /* Release */ = {
+		07488D4657FB0A78086563621D425F8A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -389,200 +387,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.2;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		7BF33B3F235604DC045A3750A9C91931 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D21F54D3C8D2345CB8383020BD8A8959 /* Pods-ZJTableViewManagerExample.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ZJTableViewManagerExample/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ZJTableViewManagerExample/Pods-ZJTableViewManagerExample.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8EFA7C82E89F57AAE8B2B44E23EF1CDB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D541E5C0A9B17B1CC69AFF51024B4D53 /* ZJTableViewManager.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ZJTableViewManager/ZJTableViewManager-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ZJTableViewManager/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ZJTableViewManager/ZJTableViewManager.modulemap";
-				PRODUCT_MODULE_NAME = ZJTableViewManager;
-				PRODUCT_NAME = ZJTableViewManager;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A7EF8BA18F24A64FDE887FA3A69C40E1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B0A171F876834C1F3533B318E5D1BE11 /* Pods-ZJTableViewManagerExample.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ZJTableViewManagerExample/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ZJTableViewManagerExample/Pods-ZJTableViewManagerExample.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E5AF44E2329AD32F2A7E2E640AADFBE0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D541E5C0A9B17B1CC69AFF51024B4D53 /* ZJTableViewManager.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ZJTableViewManager/ZJTableViewManager-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ZJTableViewManager/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ZJTableViewManager/ZJTableViewManager.modulemap";
-				PRODUCT_MODULE_NAME = ZJTableViewManager;
-				PRODUCT_NAME = ZJTableViewManager;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E728C0BD3857BC99A5D2AD6ACDFBA09A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -615,14 +419,204 @@
 			};
 			name = Debug;
 		};
+		59DBB40F4EED19F1E5070A57887CBE33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 152978AC2D270AA3F39DA8E4EA257282 /* ZJTableViewManager.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ZJTableViewManager/ZJTableViewManager-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ZJTableViewManager/ZJTableViewManager-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ZJTableViewManager/ZJTableViewManager.modulemap";
+				PRODUCT_MODULE_NAME = ZJTableViewManager;
+				PRODUCT_NAME = ZJTableViewManager;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		97139FF3B3368F30A7FDB72147192D2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC8E867B0B04D6B1E20848ABC26C1C4A /* Pods-ZJTableViewManagerExample.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ZJTableViewManagerExample/Pods-ZJTableViewManagerExample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ZJTableViewManagerExample/Pods-ZJTableViewManagerExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A1962E6FF39BBAC201A2E5DDF99557DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		AE4366DE17FF7044F48059063CCF45EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 152978AC2D270AA3F39DA8E4EA257282 /* ZJTableViewManager.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ZJTableViewManager/ZJTableViewManager-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ZJTableViewManager/ZJTableViewManager-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ZJTableViewManager/ZJTableViewManager.modulemap";
+				PRODUCT_MODULE_NAME = ZJTableViewManager;
+				PRODUCT_NAME = ZJTableViewManager;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D709A7E507A33E81AA25B8A080010414 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4BEC5A8FB3F6668DDD396954DACCEAD /* Pods-ZJTableViewManagerExample.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ZJTableViewManagerExample/Pods-ZJTableViewManagerExample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ZJTableViewManagerExample/Pods-ZJTableViewManagerExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		22DE466D8D151B486FC063D3E95CC2B0 /* Build configuration list for PBXNativeTarget "Pods-ZJTableViewManagerExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A7EF8BA18F24A64FDE887FA3A69C40E1 /* Debug */,
-				7BF33B3F235604DC045A3750A9C91931 /* Release */,
+				97139FF3B3368F30A7FDB72147192D2C /* Debug */,
+				D709A7E507A33E81AA25B8A080010414 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -630,8 +624,8 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E728C0BD3857BC99A5D2AD6ACDFBA09A /* Debug */,
-				3073E9329E3D859060CB4B679A6C557C /* Release */,
+				07488D4657FB0A78086563621D425F8A /* Debug */,
+				A1962E6FF39BBAC201A2E5DDF99557DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -639,8 +633,8 @@
 		4EFADCED80684C995C40F7F59B294228 /* Build configuration list for PBXNativeTarget "ZJTableViewManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E5AF44E2329AD32F2A7E2E640AADFBE0 /* Debug */,
-				8EFA7C82E89F57AAE8B2B44E23EF1CDB /* Release */,
+				AE4366DE17FF7044F48059063CCF45EA /* Debug */,
+				59DBB40F4EED19F1E5070A57887CBE33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

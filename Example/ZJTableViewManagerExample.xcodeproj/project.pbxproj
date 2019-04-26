@@ -285,7 +285,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ZJTableViewManagerExample/Pods-ZJTableViewManagerExample-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ZJTableViewManagerExample/Pods-ZJTableViewManagerExample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ZJTableViewManager/ZJTableViewManager.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -296,7 +296,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZJTableViewManagerExample/Pods-ZJTableViewManagerExample-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZJTableViewManagerExample/Pods-ZJTableViewManagerExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		93D433C04E6BBE1FF2A7363D /* [CP] Check Pods Manifest.lock */ = {

@@ -169,9 +169,11 @@ open class ZJTableViewItem: NSObject {
             }
             
             cell.contentView.addConstraint(widthFenceConstraint)
-            
+            #if swift(>=4.2)
             fittingHeight = cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
-//            print(fittingHeight)
+            #else
+            fittingHeight = cell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
+            #endif
             
             cell.contentView.removeConstraint(widthFenceConstraint)
             if isSystemVersionEqualOrGreaterThen10_2 {

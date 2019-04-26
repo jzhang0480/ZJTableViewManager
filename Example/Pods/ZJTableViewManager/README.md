@@ -4,11 +4,7 @@
 最近开始用Swift写项目，在这之前只看了看Swift相关的文档，突然开始写很不适应，特别是之前一直在用的数据驱动的TableView框架`RETableViewManger`没有Swift版，混编的话也有问题（可能是Swift 4.0不兼容）于是就决定自己写一下Swift版的，使用方式基本一致。但是加了一些扩展功能，比如cell高度的自动计算等等。
 
 ### Swift版本适配
-
-| Swift |   cocoapods    |
-|-------|----------------|
-|   4.0 | 0.1.9          |
-|   4.2 | 0.2.0 or later |
+Swift 4.0/4.2
 
 
 
@@ -46,7 +42,9 @@
 到这里，这个界面就搭建好了，add item的顺序就是界面上cell的展示顺序，不需要写tableview的代理。didChanged是界面上text变化或者按钮触发的回调，可以实时获取。
 
 ### 关于数据驱动
-数据驱动搭建TableView页面，简单来说就是开发者不需要处理TableView的delegate、dataSource，只需要关心数据的处理。数据处理好，页面就按照数据的样子搭建起来了。
+使用TableView时，复杂TableView界面cell数量多的时候，VC里面的每个delegate、dataSource方法都要写if else判断，特别是`tableView(_:cellForRowAt:)`里面代码会很多，即使想办法封装，里面大量的if else也避免不了。
+数据驱动搭建TableView页面，就是为了处理这个情况而诞生的。开发者不需要处理TableView的delegate、dataSource，只需要关心数据的处理。数据处理好并赋值，页面就按照数据的样子搭建起来。
+同时对TableView界面的动态改变也不需要通过TableView或者cell，而是直接对cell对应的item做操作，数据的处理和TableView的显示效果关联，逻辑处理更加集中，代码更加简洁，更加容易实现复杂的TableView界面，同时代码也更加容易理解。
 
 ### 界面操作
 **都可以使用系统自带的动画**
@@ -75,6 +73,15 @@ item.cellHeight = 200
 //这个方法只更新cell高度，自带动画，不会reload这个cell
 item.updateHeight()
 ```
+批量在某个section里面插入 cell：
+```swift
+section.insert(arrItems, afterItem: item, animate: .fade)
+```
+批量删除cell：
+```swift
+section.delete(arrItems, animate: .fade)
+```
+
 
 刷新section：
 ```
@@ -95,7 +102,7 @@ section.setHeaderDidEndDisplayHandler({ (currentSection) in
 ```
 
 ### 自动计算高度：
-ZJTableViewManager提供了提前计算cell高度并缓存的api，只需要调用一行代码即可实现自动计算高度，高度和item绑定，不需要缓存，效率应该是很高的。
+ZJTableViewManager提供了提前计算cell高度并缓存的api，只需要调用一行代码即可实现自动计算高度，高度和item绑定，不需要缓存，效率很高。
 ```swift
 item.autoHeight(manager)
 ```
@@ -157,9 +164,8 @@ override func viewDidLoad() {
 ### 注：
 1.tableView可以storyboard、xib、纯代码初始化
 
-2.我自己使用主要是用xib方式搭建的cell，纯代码的cell应该也支持
+2.我自己使用主要是用xib方式搭建cell，但纯代码的cell也支持
 
-3.找这个库的人应该也是像我这样用惯了RETableViewManger吧，使用自定义cell的体验应该是差不多的，但是有许多特性还没有支持，也没有RE那么多自带的cell样式，不过很多情况下也用不到（我先把我自己项目要用到的特性弄好……）
 
 
 
