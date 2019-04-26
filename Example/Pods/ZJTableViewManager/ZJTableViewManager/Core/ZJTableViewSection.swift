@@ -145,8 +145,10 @@ open class ZJTableViewSection: NSObject {
         tableViewManager.tableView.beginUpdates()
         var arrNewIndexPath = [IndexPath]()
         for i in itemsToDelete {
-            remove(item: i)
             arrNewIndexPath.append(i.indexPath)
+        }
+        for i in itemsToDelete {
+            remove(item: i)
         }
         tableViewManager.tableView.deleteRows(at: arrNewIndexPath, with: animate)
         tableViewManager.tableView.endUpdates()
