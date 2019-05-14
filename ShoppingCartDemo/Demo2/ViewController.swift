@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         //初始化tableviewManager
         self.categoryManager = ZJTableViewManager(tableView: self.categoryTableView)
+        categoryManager.register(Category1Cell.self, Category1CellItem.self)
         self.productManager = ZJTableViewManager(tableView: self.productTableView)
         self.productManager.delegate = self
         //假数据
@@ -32,7 +33,8 @@ class ViewController: UIViewController {
         let categorySection = ZJTableViewSection()
         self.categoryManager?.add(section: categorySection)
         for category in arrCategory {
-            let categoryItem = ZJTableViewItem(title: category)
+            let categoryItem = Category1CellItem()
+            categoryItem.title = category
             categoryItem.isAutoDeselect = false
             categorySection.add(item: categoryItem)
             //分类的点击事件
