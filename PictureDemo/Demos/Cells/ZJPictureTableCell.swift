@@ -11,6 +11,68 @@ import ImagePicker
 import SKPhotoBrowser
 import ZJTableViewManager
 
+import ZJTableViewManager
+enum ZJPictureCellType {
+    case edit
+    case read
+}
+class ZJPictureTableItem: ZJTableViewItem {
+    var arrPictures: [Any] = []
+    var maxNumber: CGFloat = 5
+    var column: CGFloat = 4
+    var type: ZJPictureCellType = ZJPictureCellType.edit
+    var pictureSize: CGSize?
+    var space: CGFloat = 8
+    var superVC: UIViewController!
+    var customEdgeInsets: UIEdgeInsets?
+    
+    /// 初始化图片item
+    ///
+    /// - Parameters:
+    ///   - maxNumber: 最多允许添加几张图片
+    ///   - column: 列数（一行显示几个图片）
+    ///   - space: 图片间距（最后效果不一定会完全符合设置的间距，会有略微差异）
+    ///   - width: 显示图片区域的宽度（一般是这个cell的宽度）
+    ///   - superVC: 当前的viewcontroller
+    ///   - pictures: 图片
+    convenience init(maxNumber: CGFloat, column: CGFloat, space: CGFloat, width: CGFloat, superVC: UIViewController!, pictures: [Any] = []) {
+        self.init()
+        self.superVC = superVC
+        self.maxNumber = maxNumber
+        self.column = column
+        self.space = space
+        let tempWidth = (width - (space) * (column + 1) - 8) / column
+        //精确到小数点后2位，不四舍五入，防止精度问题导致不恰当的换行
+        let pictureWidth = CGFloat(Int(tempWidth * 100))/100
+        self.pictureSize = CGSize(width: pictureWidth, height: pictureWidth)
+        self.arrPictures = self.arrPictures + pictures
+        self.calculateHeight()
+    }
+    
+    override func updateHeight (){
+        self.calculateHeight()
+        super.updateHeight()
+    }
+    
+    func calculateHeight() {
+        var picCount = self.arrPictures.count
+        //如果非只读的情况，则还需要多计算一个添加按钮的位置
+        if (self.type != .read) {
+            if (self.arrPictures.count != Int(self.maxNumber)) {
+                picCount += 1;
+            }
+        }
+        var div = picCount / Int(self.column);
+        let remainder = picCount % Int(self.column);
+        if (remainder != 0) {
+            div = div + 1;
+        }
+        
+        self.cellHeight = CGFloat(div) * ((self.pictureSize?.height)! + self.space);
+    }
+    
+}
+
 class ZJPictureTableCell: ZJTableViewCell {
     var collectionView: UICollectionView!
     var layout: UICollectionViewFlowLayout!
@@ -38,15 +100,15 @@ class ZJPictureTableCell: ZJTableViewCell {
     
     override func cellWillAppear() {
         super.cellWillAppear()
-        self.myItem = self.item as! ZJPictureTableItem
+        self.myItem = (self.item as! ZJPictureTableItem)
         self.layout.itemSize = self.myItem.pictureSize!;
         self.layout.minimumInteritemSpacing = self.myItem.space;
         self.layout.minimumLineSpacing = self.myItem.space;
-        //-8是因为图片本身布局就和右边距离8像素
+
         if let edge = myItem.customEdgeInsets {
             self.collectionView.contentInset = edge
         }else{
-            self.collectionView.contentInset = UIEdgeInsetsMake(0, self.myItem.space, self.myItem.space, self.myItem.space);
+            self.collectionView.contentInset = UIEdgeInsetsMake(0, self.myItem.space + 8, self.myItem.space, self.myItem.space);
         }
 
         self.collectionView.reloadData()

@@ -10,7 +10,11 @@ import UIKit
 
 typealias ZJPictureDeleteHandler = ((Int) -> Void)
 class ZJPictureCollectionCell: UICollectionViewCell {
+    
+    /// 删除图片按钮
     @IBOutlet weak var btnDelete: UIButton!
+    
+    /// 添加的图片
     @IBOutlet weak var img: UIImageView!
     weak var collectionView: UICollectionView?
     var item: ZJPictureTableItem?

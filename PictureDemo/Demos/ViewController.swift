@@ -36,12 +36,12 @@ class ViewController: UIViewController {
             //图片cell
             if i%2 == 1 {
                 //只展示图片
-                let pictureItem = ZJPictureTableItem(maxNumber: 5, column: 4, space: 15, width: self.view.frame.size.width, superVC: self, pictures: [#imageLiteral(resourceName: "demo_image_1"),#imageLiteral(resourceName: "demo_image_2"),#imageLiteral(resourceName: "demo_image_3"),#imageLiteral(resourceName: "demo_image_4"),#imageLiteral(resourceName: "demo_image_5")])
+                let pictureItem = ZJPictureTableItem(maxNumber: 9, column: 8, space: 1, width: self.view.frame.size.width, superVC: self, pictures: [#imageLiteral(resourceName: "demo_image_1"),#imageLiteral(resourceName: "demo_image_2"),#imageLiteral(resourceName: "demo_image_3"),#imageLiteral(resourceName: "demo_image_4"),#imageLiteral(resourceName: "demo_image_5"),#imageLiteral(resourceName: "demo_image_5"),#imageLiteral(resourceName: "demo_image_5"),#imageLiteral(resourceName: "demo_image_5"),#imageLiteral(resourceName: "demo_image_5")])
                 pictureItem.type = .read
                 section.add(item: pictureItem)
             }else{
                 //添加图片
-                let pictureItem = ZJPictureTableItem(maxNumber: 5, column: 4, space: 15, width: self.view.frame.size.width, superVC: self)
+                let pictureItem = ZJPictureTableItem(maxNumber: 9, column: 5, space: 8, width: self.view.frame.size.width, superVC: self)
                 pictureItem.type = .edit
                 section.add(item: pictureItem)
             }

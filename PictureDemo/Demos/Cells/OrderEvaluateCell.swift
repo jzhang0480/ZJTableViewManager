@@ -10,6 +10,28 @@ import UIKit
 import SwiftyStarRatingView
 import ZJTableViewManager
 
+class OrderEvaluateItem: ZJTableViewItem {
+    var title: String?
+    var evaluate: String?
+    var starValue: CGFloat = 1
+    var editable: Bool?
+    
+    override init() {
+        super.init()
+        self.cellHeight = 55
+        self.selectionStyle = UITableViewCellSelectionStyle.none
+        self.isHideSeparator = true
+    }
+    
+    convenience init(title: String!, starValue: CGFloat = 1, editable: Bool = true) {
+        self.init()
+        self.title = title
+        self.starValue = starValue
+        self.editable = editable
+    }
+    
+}
+
 class OrderEvaluateCell: ZJTableViewCell, UITextViewDelegate {
     @IBOutlet weak var imgGoods: UIImageView!
     @IBOutlet weak var starView: SwiftyStarRatingView!
