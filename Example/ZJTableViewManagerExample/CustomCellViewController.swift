@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ZJTableViewManager
+
 class CustomCellViewController: ZJBaseTableViewController {
 
     override func viewDidLoad() {

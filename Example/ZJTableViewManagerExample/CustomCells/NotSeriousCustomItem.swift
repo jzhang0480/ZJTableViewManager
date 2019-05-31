@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ZJTableViewManager
+
 class NotSeriousCustomItem: ZJTableViewItem {
     override init() {
         super.init()

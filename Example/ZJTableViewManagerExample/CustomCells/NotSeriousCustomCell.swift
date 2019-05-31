@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ZJTableViewManager
+
 class NotSeriousCustomCell: ZJTableViewCell {
 
     override func awakeFromNib() {

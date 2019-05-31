@@ -6,7 +6,7 @@ target 'ZJTableViewManagerExample' do
   use_frameworks!
 
   # Pods for ZJTableViewManagerExample
-  pod 'ZJTableViewManager', '~> 0.2.5'
+  # pod 'ZJTableViewManager', '~> 0.2.5'
 
 
 end

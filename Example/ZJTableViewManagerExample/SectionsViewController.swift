@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ZJTableViewManager
+
 class SectionsViewController: UIViewController {
     var tableView: UITableView!
     var manager: ZJTableViewManager!

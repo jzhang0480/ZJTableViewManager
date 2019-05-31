@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ZJTableViewManager
+
 class AutomaticHeightCellItem: ZJTableViewItem {
     var title: String!
     var content: String!
