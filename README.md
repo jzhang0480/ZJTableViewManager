@@ -1,7 +1,7 @@
 
 [English introduction](https://github.com/JavenZ/ZJTableViewManager/blob/master/README_EN.md)
 ### 关于ZJTableViewManager
-强大的数据驱动的TableView，和知名的`RETableViewManger`类似，通过对TableView的代理方法的封装使TableView更加简便易用，更加强大。
+强大的数据驱动的TableView，构建复杂TableView从未如此轻松。
 
 ### Swift版本适配
 Swift 4.0/4.2
@@ -50,7 +50,7 @@ item.autoHeight(manager)
 >高度计算使用系统`estimatedRowHeight`、`UITableViewAutomaticDimension`内部实现一样的方法，计算和预期没有误差
 
 ### 使用
-以这个页面为例（TableView是用Storyboard拖的）
+以这个Forms页面为例（TableView是用Storyboard拖的）
 
 ![image](https://github.com/JavenZ/ZJTableViewManager/blob/master/ScreenShot/forms_shot.jpg?raw=true)
 
@@ -88,7 +88,7 @@ item.autoHeight(manager)
 >到这里，这个界面就搭建好了，add item的顺序就是界面上cell的展示顺序。didChanged是界面上text变化或者按钮触发的回调，实时获取相关数据。
 
 ### 关于数据驱动
-上面例子的界面，如果不使用本框架，那实现起来会是这样：
+以上面例子中的Forms页面为例，如果不使用本框架，那`tableView(_:cellForRowAt:)`代理方法里会是这样：
 ```swift
 public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if condition1 {
@@ -107,7 +107,7 @@ public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPat
 
 }
 ```
-如果cell的高度有差异，那`tableView(_:heightForRowAt:)`里面也需要判断，使界面逻辑处理复杂化。
+如果cell的高度有差异，那`tableView(_:heightForRowAt:)`里面也需要判断，使界面逻辑处理复杂化。（与之相比，使用本框架的那段代码是不是显得特别清爽？）
 
 数据驱动搭建TableView页面，就是为了处理这个情况而诞生的。
 
