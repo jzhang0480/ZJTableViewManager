@@ -1,26 +1,69 @@
 
 [English introduction](https://github.com/JavenZ/ZJTableViewManager/blob/master/README_EN.md)
 ### 关于ZJTableViewManager
-最近开始用Swift写项目，在这之前只看了看Swift相关的文档，突然开始写很不适应，特别是之前一直在用的数据驱动的TableView框架`RETableViewManger`没有Swift版，混编的话也有问题（可能是Swift 4.0不兼容）于是就决定自己写一下Swift版的，使用方式基本一致。但是加了一些扩展功能，比如cell高度的自动计算等等。
+强大的数据驱动的TableView，和知名的`RETableViewManger`类似，通过对TableView的代理方法的封装使TableView更加简便易用，更加强大。
 
 ### Swift版本适配
 Swift 4.0/4.2
 
+### 特性
+####1、数据驱动，不用写代理方法
+
+添加一个cell，只需要两行代码
+```swift
+    section.add(item: ZJTableViewItem(title: "Simple String"))
+    manager.reload()//或者section.reload(.automatic)
+```
+
+#### 2、高度封装，把代理方法操作转化为对cell绑定的item的操作
 
 
+```swift
+删除一个cell并且带动画：
+passwordItem.delete(.automatic)
+```
 
-举个例子，要实现下面这个界面只需要10行代码：
+```swift
+侧滑删除cell
+item.editingStyle = .delete
+item.setDeletionHandler(deletionHandler: {[weak self] (item) in
+      self?.deleteConfirm(item: item)
+      })
+```
 
-![image](https://github.com/JavenZ/ZJTableViewManager/blob/master/ScreenShot/forms_shot.jpg)
+```swift
+修改单个cell的高度
+item.cellHeight = 200
+//这个方法只更新cell高度，有动画，不会cell里的cellWillAppear不会被调用
+item.updateHeight()
+```
+>和系统方法对比，原生方法需要在代理方法里做处理，并且要处理好数据源，容易出现问题。而使用本框架只需要对item做操作即可，数据源和代理方法被框架内部接管，保证效果的实现。
 
-使用TableView初始化ZJTableViewManager，添加一个section，section里面添加cell
+#### 3、自动计算高度：
+
+ZJTableViewManager提供了提前计算cell高度并缓存的api，**一行代码**自动计算高度。
+```swift
+item.autoHeight(manager)
+```
+![image](https://github.com/JavenZ/ZJTableViewManager/blob/master/ScreenShot/auto_height.jpg?raw=true)
+
+>高度计算使用系统`estimatedRowHeight`、`UITableViewAutomaticDimension`内部实现一样的方法，计算和预期没有误差
+
+### 使用
+以这个页面为例（TableView是用Storyboard拖的）
+
+![image](https://github.com/JavenZ/ZJTableViewManager/blob/master/ScreenShot/forms_shot.jpg?raw=true)
+
+1、使用TableView初始化ZJTableViewManager，并添加一个section
 ```swift
         self.manager = ZJTableViewManager(tableView: self.tableView)
         
         //add section
         let section = ZJTableViewSection()
         self.manager.add(section: section)
-        
+```
+2、section里面添加cell
+```swift        
         //Simple String
         section.add(item: ZJTableViewItem(title: "Simple String"))
         
@@ -38,13 +81,39 @@ Swift 4.0/4.2
         //Switch Item
         section.add(item: ZJSwitchItem(title: "Switch Item", isOn: false,  didChanged: nil))
 
+        //reload
+        manager.reload()
+
 ```
-到这里，这个界面就搭建好了，add item的顺序就是界面上cell的展示顺序，不需要写tableview的代理。didChanged是界面上text变化或者按钮触发的回调，可以实时获取。
+>到这里，这个界面就搭建好了，add item的顺序就是界面上cell的展示顺序。didChanged是界面上text变化或者按钮触发的回调，实时获取相关数据。
 
 ### 关于数据驱动
-使用TableView时，复杂TableView界面cell数量多的时候，VC里面的每个delegate、dataSource方法都要写if else判断，特别是`tableView(_:cellForRowAt:)`里面代码会很多，即使想办法封装，里面大量的if else也避免不了。
-数据驱动搭建TableView页面，就是为了处理这个情况而诞生的。开发者不需要处理TableView的delegate、dataSource，只需要关心数据的处理。数据处理好并赋值，页面就按照数据的样子搭建起来。
-同时对TableView界面的动态改变也不需要通过TableView或者cell，而是直接对cell对应的item做操作，数据的处理和TableView的显示效果关联，逻辑处理更加集中，代码更加简洁，更加容易实现复杂的TableView界面，同时代码也更加容易理解。
+上面例子的界面，如果不使用本框架，那实现起来会是这样：
+```swift
+public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if condition1 {
+            return SimpleStringCell
+        }else if condition2 {
+            return FullLengthTextFieldCell
+        }else if condition3 {
+            return TextCell
+        }else if condition4 {
+            return PasswordCell
+        }else if condition5 {
+            return SwitchCell
+        }else {
+            return DefaultCell
+        }
+
+}
+```
+如果cell的高度有差异，那`tableView(_:heightForRowAt:)`里面也需要判断，使界面逻辑处理复杂化。
+
+数据驱动搭建TableView页面，就是为了处理这个情况而诞生的。
+
+开发者不需要处理TableView的delegate、dataSource，只需要关心数据的处理。数据处理好，页面就按照数据的样子搭建起来。
+
+同时对TableView界面的动态改变只需要直接对cell对应的item做操作，数据的处理和TableView的显示效果关联，逻辑处理更加集中，代码更加简洁，更加容易实现复杂的TableView界面，同时代码也更加容易理解。（比如上面Forms页面，看着代码，脑子里就已经可以想象到页面的样子了）
 
 ### 界面操作
 **都可以使用系统自带的动画**
@@ -101,13 +170,6 @@ section.setHeaderDidEndDisplayHandler({ (currentSection) in
             })
 ```
 
-### 自动计算高度：
-ZJTableViewManager提供了提前计算cell高度并缓存的api，只需要调用一行代码即可实现自动计算高度，高度和item绑定，不需要缓存，效率很高。
-```swift
-item.autoHeight(manager)
-```
-要提前把item的相关属性赋值好，再调用`item.autoHeight(manager)`，具体可查看demo
-
 
 
 ### Demo：
@@ -162,10 +224,7 @@ override func viewDidLoad() {
 `pod 'ZJTableViewManager'`
 
 ### 注：
-1.tableView可以storyboard、xib、纯代码初始化
-
-2.我自己使用主要是用xib方式搭建cell，但纯代码的cell也支持
-
+TableView可以storyboard、xib、纯代码初始化，cell可以xib或者纯代码构建
 
 
 
