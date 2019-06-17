@@ -12,6 +12,8 @@ open class ZJExpandTreeCellItem: ZJTableViewItem {
     public var level:Int = 0
     public var isExpand = true
     public var arrNextLevel = [ZJExpandTreeCellItem]()
+    /// 展开或者收起下级cell的回调
+    public var willExpand: ((ZJExpandTreeCellItem)->())?
     
     public override init() {
         super.init()
@@ -28,7 +30,7 @@ open class ZJExpandTreeCellItem: ZJTableViewItem {
                 item.isExpand = !item.isExpand
                 self.recursionForItem(item, outItems: &arrItems)
             }
-            
+            self.willExpand?(item)
             if item.isExpand {
                 item.section.insert(arrItems, afterItem: item, animate: .fade)
             }else{
@@ -36,6 +38,7 @@ open class ZJExpandTreeCellItem: ZJTableViewItem {
             }
         }
     }
+    
     /// 递归获取一个item下面所有显示的item
     func recursionForItem(_ item: ZJExpandTreeCellItem, outItems: inout [ZJExpandTreeCellItem]) {
         for subItem in item.arrNextLevel {
