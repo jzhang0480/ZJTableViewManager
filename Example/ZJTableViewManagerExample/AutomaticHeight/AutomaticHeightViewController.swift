@@ -15,20 +15,30 @@ class AutomaticHeightViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "AutomaticHeight"
-        self.tableView = UITableView(frame: self.view.bounds, style: .grouped)
-        self.view.addSubview(self.tableView);
-        self.manager = ZJTableViewManager(tableView: self.tableView)
-        self.manager.register(AutomaticHeightCell.self, AutomaticHeightCellItem.self)
-        let section = ZJTableViewSection(headerTitle: "Section")
-        manager.add(section: section)
+        tableView = UITableView(frame: view.bounds, style: .plain)
+        view.addSubview(tableView);
+        manager = ZJTableViewManager(tableView: tableView)
+        manager.register(AutomaticHeightCell.self, AutomaticHeightCellItem.self)
+        tableView.separatorStyle = .none
+//        let section = ZJTableViewSection(headerTitle: "Section")
+//        manager.add(section: section)
         
         
-        for data in randomStr() {
-            let item = AutomaticHeightCellItem()
-            item.data = data as? [String: Any]
-            //计算高度
-            item.autoHeight(manager)
-            section.add(item: item)
+        for hero in randomStr() {
+            let headerView = HeroHeaderView.view()
+            headerView.imageHero.image = UIImage(named: hero.name)
+            headerView.labelHero.text = hero.name
+            let section = ZJTableViewSection(headerView: headerView)
+            manager.add(section: section)
+            
+            
+            for skill in hero.skill {
+                let item = AutomaticHeightCellItem()
+                item.skill = skill
+                //计算高度
+                item.autoHeight(manager)
+                section.add(item: item)
+            }
         }
         manager.reload()
         // Do any additional setup after loading the view.
@@ -40,7 +50,7 @@ class AutomaticHeightViewController: UIViewController {
     }
     
     //随机产生不确定长度字符串
-    func randomStr() -> [Any]{
+    func randomStr() -> [HeroModel]{
         let myArray: [Any] = [
             [
                 "name" : "程咬金",
@@ -229,6 +239,11 @@ class AutomaticHeightViewController: UIViewController {
                 ]
             ]
         ]
-        return myArray
+        
+        let models = myArray.map { (dic) -> HeroModel in
+            return HeroModel(fromDictionary: dic as! Dictionary)
+        }
+        
+        return models
     }
 }

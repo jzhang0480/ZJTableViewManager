@@ -20,7 +20,7 @@ class EditingViewController: UIViewController {
         self.view.addSubview(self.tableView);
         self.manager = ZJTableViewManager(tableView: self.tableView)
         
-        var section = ZJTableViewSection(headerTitle: "DELETEABLE(可删除)")
+        var section = ZJTableViewSection(headerTitle: "DELETEABLE")
         self.manager.add(section: section)
         for i in 0...3 {
             let item = ZJTableViewItem(title: "section 0, item " + String(i))
@@ -31,7 +31,7 @@ class EditingViewController: UIViewController {
             section.add(item: item)
         }
         
-        section = ZJTableViewSection(headerTitle: "Deletable with confirmation (删除需要确认)")
+        section = ZJTableViewSection(headerTitle: "Deletable with confirmation")
         self.manager.add(section: section)
         for i in 0...3 {
             let item = ZJTableViewItem(title: "section 1, item " + String(i))

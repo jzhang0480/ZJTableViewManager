@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		8F20A23A205422820098929B /* EditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F20A239205422820098929B /* EditingViewController.swift */; };
 		8F3786FD2057AB3200BAC618 /* SectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3786FC2057AB3200BAC618 /* SectionsViewController.swift */; };
+		8F62E6C622BA8C6E00D987F7 /* HeroHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F62E6C522BA8C6E00D987F7 /* HeroHeaderView.xib */; };
+		8F62E6C822BA8C8600D987F7 /* HeroHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F62E6C722BA8C8600D987F7 /* HeroHeaderView.swift */; };
+		8F62E6CC22BA903300D987F7 /* HeroSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F62E6CA22BA903300D987F7 /* HeroSkill.swift */; };
+		8F62E6CD22BA903300D987F7 /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F62E6CB22BA903300D987F7 /* HeroModel.swift */; };
 		8F830AFF22A11F210070E9BB /* ZJExpandTreeCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F830AED22A11F210070E9BB /* ZJExpandTreeCellItem.swift */; };
 		8F830B0022A11F210070E9BB /* ZJBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F830AEE22A11F210070E9BB /* ZJBaseTableViewController.swift */; };
 		8F830B0122A11F210070E9BB /* ZJTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F830AEF22A11F210070E9BB /* ZJTextView.swift */; };
@@ -55,6 +59,10 @@
 		6F561AE05FA7308D77B486A3 /* Pods_ZJTableViewManagerExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZJTableViewManagerExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F20A239205422820098929B /* EditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingViewController.swift; sourceTree = "<group>"; };
 		8F3786FC2057AB3200BAC618 /* SectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsViewController.swift; sourceTree = "<group>"; };
+		8F62E6C522BA8C6E00D987F7 /* HeroHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroHeaderView.xib; sourceTree = "<group>"; };
+		8F62E6C722BA8C8600D987F7 /* HeroHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeaderView.swift; sourceTree = "<group>"; };
+		8F62E6CA22BA903300D987F7 /* HeroSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroSkill.swift; sourceTree = "<group>"; };
+		8F62E6CB22BA903300D987F7 /* HeroModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroModel.swift; sourceTree = "<group>"; };
 		8F830AED22A11F210070E9BB /* ZJExpandTreeCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJExpandTreeCellItem.swift; sourceTree = "<group>"; };
 		8F830AEE22A11F210070E9BB /* ZJBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJBaseTableViewController.swift; sourceTree = "<group>"; };
 		8F830AEF22A11F210070E9BB /* ZJTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTextView.swift; sourceTree = "<group>"; };
@@ -126,6 +134,24 @@
 			children = (
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		8F62E6C422BA8C4A00D987F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8F62E6C522BA8C6E00D987F7 /* HeroHeaderView.xib */,
+				8F62E6C722BA8C8600D987F7 /* HeroHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8F62E6C922BA902100D987F7 /* Modes */ = {
+			isa = PBXGroup;
+			children = (
+				8F62E6CB22BA903300D987F7 /* HeroModel.swift */,
+				8F62E6CA22BA903300D987F7 /* HeroSkill.swift */,
+			);
+			path = Modes;
 			sourceTree = "<group>";
 		};
 		8F830AEB22A11F210070E9BB /* ZJTableViewManager */ = {
@@ -265,6 +291,8 @@
 			isa = PBXGroup;
 			children = (
 				8FFEFD292176327700B3113D /* AutomaticHeightViewController.swift */,
+				8F62E6C922BA902100D987F7 /* Modes */,
+				8F62E6C422BA8C4A00D987F7 /* Views */,
 				8FFEFD2C217633B700B3113D /* AutomaticHeightCell */,
 			);
 			path = AutomaticHeight;
@@ -344,6 +372,7 @@
 				8F950AAE204D1F5400F06DD8 /* LaunchScreen.storyboard in Resources */,
 				8F950AAB204D1F5400F06DD8 /* Assets.xcassets in Resources */,
 				8FFEFD302176340400B3113D /* AutomaticHeightCell.xib in Resources */,
+				8F62E6C622BA8C6E00D987F7 /* HeroHeaderView.xib in Resources */,
 				8FB83B2F2050248000AD1F3F /* NotSeriousCustomCell.xib in Resources */,
 				8FC89EDF224291D2006557F9 /* Level2Cell.xib in Resources */,
 				8FC89EE2224291D2006557F9 /* Level3Cell.xib in Resources */,
@@ -396,8 +425,10 @@
 				8F830B0722A11F210070E9BB /* ZJTextFieldItem.swift in Sources */,
 				8F950AA6204D1F5400F06DD8 /* ViewController.swift in Sources */,
 				8F830AFF22A11F210070E9BB /* ZJExpandTreeCellItem.swift in Sources */,
+				8F62E6CD22BA903300D987F7 /* HeroModel.swift in Sources */,
 				8F830B0A22A11F210070E9BB /* ZJTextCell.swift in Sources */,
 				8F830B0022A11F210070E9BB /* ZJBaseTableViewController.swift in Sources */,
+				8F62E6CC22BA903300D987F7 /* HeroSkill.swift in Sources */,
 				8F830B0122A11F210070E9BB /* ZJTextView.swift in Sources */,
 				8F830B0C22A11F210070E9BB /* ZJTableViewItem.swift in Sources */,
 				8FC89EE3224291D2006557F9 /* Level1Cell.swift in Sources */,
@@ -412,6 +443,7 @@
 				8FB83B2E2050248000AD1F3F /* NotSeriousCustomCell.swift in Sources */,
 				8FFEFD2F2176340400B3113D /* AutomaticHeightCell.swift in Sources */,
 				8FB83B312050257600AD1F3F /* CustomCellViewController.swift in Sources */,
+				8F62E6C822BA8C8600D987F7 /* HeroHeaderView.swift in Sources */,
 				8FC89EE4224291D2006557F9 /* Level2Cell.swift in Sources */,
 				8F830B0D22A11F210070E9BB /* ZJTableViewManager.swift in Sources */,
 				8F3786FD2057AB3200BAC618 /* SectionsViewController.swift in Sources */,
