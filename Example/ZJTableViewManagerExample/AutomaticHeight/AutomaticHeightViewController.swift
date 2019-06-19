@@ -20,17 +20,25 @@ class AutomaticHeightViewController: UIViewController {
         manager = ZJTableViewManager(tableView: tableView)
         manager.register(AutomaticHeightCell.self, AutomaticHeightCellItem.self)
         tableView.separatorStyle = .none
-//        let section = ZJTableViewSection(headerTitle: "Section")
-//        manager.add(section: section)
         
-        
+        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        indicator.center = view.center
+        view.addSubview(indicator)
+        indicator.startAnimating()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + DispatchTimeInterval.seconds(1)) {
+            indicator.stopAnimating()
+            self.showData()
+        }
+        // Do any additional setup after loading the view.
+    }
+    
+    func showData() {
         for hero in randomStr() {
             let headerView = HeroHeaderView.view()
             headerView.imageHero.image = UIImage(named: hero.name)
             headerView.labelHero.text = hero.name
             let section = ZJTableViewSection(headerView: headerView)
             manager.add(section: section)
-            
             
             for skill in hero.skill {
                 let item = AutomaticHeightCellItem()
@@ -41,7 +49,6 @@ class AutomaticHeightViewController: UIViewController {
             }
         }
         manager.reload()
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {

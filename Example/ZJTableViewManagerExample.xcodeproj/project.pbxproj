@@ -13,6 +13,9 @@
 		8F62E6C822BA8C8600D987F7 /* HeroHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F62E6C722BA8C8600D987F7 /* HeroHeaderView.swift */; };
 		8F62E6CC22BA903300D987F7 /* HeroSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F62E6CA22BA903300D987F7 /* HeroSkill.swift */; };
 		8F62E6CD22BA903300D987F7 /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F62E6CB22BA903300D987F7 /* HeroModel.swift */; };
+		8F62E6E122BA9C6700D987F7 /* FPSStatusBarWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F62E6DD22BA9C6600D987F7 /* FPSStatusBarWindow.swift */; };
+		8F62E6E222BA9C6700D987F7 /* FPSCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F62E6DF22BA9C6700D987F7 /* FPSCounter.swift */; };
+		8F62E6E322BA9C6700D987F7 /* FPSStatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F62E6E022BA9C6700D987F7 /* FPSStatusBarViewController.swift */; };
 		8F830AFF22A11F210070E9BB /* ZJExpandTreeCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F830AED22A11F210070E9BB /* ZJExpandTreeCellItem.swift */; };
 		8F830B0022A11F210070E9BB /* ZJBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F830AEE22A11F210070E9BB /* ZJBaseTableViewController.swift */; };
 		8F830B0122A11F210070E9BB /* ZJTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F830AEF22A11F210070E9BB /* ZJTextView.swift */; };
@@ -63,6 +66,10 @@
 		8F62E6C722BA8C8600D987F7 /* HeroHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeaderView.swift; sourceTree = "<group>"; };
 		8F62E6CA22BA903300D987F7 /* HeroSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroSkill.swift; sourceTree = "<group>"; };
 		8F62E6CB22BA903300D987F7 /* HeroModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroModel.swift; sourceTree = "<group>"; };
+		8F62E6DD22BA9C6600D987F7 /* FPSStatusBarWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPSStatusBarWindow.swift; sourceTree = "<group>"; };
+		8F62E6DE22BA9C6700D987F7 /* FPSCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPSCounter.h; sourceTree = "<group>"; };
+		8F62E6DF22BA9C6700D987F7 /* FPSCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPSCounter.swift; sourceTree = "<group>"; };
+		8F62E6E022BA9C6700D987F7 /* FPSStatusBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPSStatusBarViewController.swift; sourceTree = "<group>"; };
 		8F830AED22A11F210070E9BB /* ZJExpandTreeCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJExpandTreeCellItem.swift; sourceTree = "<group>"; };
 		8F830AEE22A11F210070E9BB /* ZJBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJBaseTableViewController.swift; sourceTree = "<group>"; };
 		8F830AEF22A11F210070E9BB /* ZJTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTextView.swift; sourceTree = "<group>"; };
@@ -132,6 +139,10 @@
 		8F20A1DC2054120F0098929B /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				8F62E6DE22BA9C6700D987F7 /* FPSCounter.h */,
+				8F62E6DF22BA9C6700D987F7 /* FPSCounter.swift */,
+				8F62E6E022BA9C6700D987F7 /* FPSStatusBarViewController.swift */,
+				8F62E6DD22BA9C6600D987F7 /* FPSStatusBarWindow.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -418,12 +429,15 @@
 			files = (
 				8F20A23A205422820098929B /* EditingViewController.swift in Sources */,
 				8F950AD1204D386800F06DD8 /* RetractableViewController.swift in Sources */,
+				8F62E6E122BA9C6700D987F7 /* FPSStatusBarWindow.swift in Sources */,
 				8FFEFD2A2176327700B3113D /* AutomaticHeightViewController.swift in Sources */,
+				8F62E6E222BA9C6700D987F7 /* FPSCounter.swift in Sources */,
 				8F830B0922A11F210070E9BB /* ZJSwitchCell.swift in Sources */,
 				8F830B0822A11F210070E9BB /* ZJTextFieldCell.swift in Sources */,
 				8FC89EE1224291D2006557F9 /* Level0Cell.swift in Sources */,
 				8F830B0722A11F210070E9BB /* ZJTextFieldItem.swift in Sources */,
 				8F950AA6204D1F5400F06DD8 /* ViewController.swift in Sources */,
+				8F62E6E322BA9C6700D987F7 /* FPSStatusBarViewController.swift in Sources */,
 				8F830AFF22A11F210070E9BB /* ZJExpandTreeCellItem.swift in Sources */,
 				8F62E6CD22BA903300D987F7 /* HeroModel.swift in Sources */,
 				8F830B0A22A11F210070E9BB /* ZJTextCell.swift in Sources */,

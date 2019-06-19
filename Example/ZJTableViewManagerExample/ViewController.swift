@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        FPSCounter.showInStatusBar()
         self.tableView = UITableView(frame: self.view.bounds, style: .grouped)
         self.view.addSubview(self.tableView);
         self.manager = ZJTableViewManager(tableView: self.tableView)
