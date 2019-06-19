@@ -20,13 +20,14 @@ class AutomaticHeightViewController: UIViewController {
         manager = ZJTableViewManager(tableView: tableView)
         manager.register(AutomaticHeightCell.self, AutomaticHeightCellItem.self)
         tableView.separatorStyle = .none
-        
+        //模拟网络请求
         let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         indicator.center = view.center
         view.addSubview(indicator)
         indicator.startAnimating()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + DispatchTimeInterval.seconds(1)) {
             indicator.stopAnimating()
+            //网络请求完成
             self.showData()
         }
         // Do any additional setup after loading the view.
