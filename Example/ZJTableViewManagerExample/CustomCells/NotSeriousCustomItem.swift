@@ -11,6 +11,6 @@ import UIKit
 class NotSeriousCustomItem: ZJTableViewItem {
     override init() {
         super.init()
-        self.cellHeight = 200
+        cellHeight = 200
     }
 }

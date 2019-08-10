@@ -8,11 +8,9 @@
 
 import UIKit
 
-class Level3CellItem: ZJExpandTreeCellItem {
-    
-}
-class Level3Cell: ZJTableViewCell {
+class Level3CellItem: ZJExpandTreeCellItem {}
 
+class Level3Cell: ZJTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,5 +21,4 @@ class Level3Cell: ZJTableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }

@@ -8,56 +8,51 @@
 
 import UIKit
 
-
 /// A view controller to show a FPS label in the status bar.
 ///
 class FPSStatusBarViewController: UIViewController {
-
     fileprivate let fpsCounter = FPSCounter()
     private let label = UILabel()
-
 
     // MARK: - Initialization
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
-        self.commonInit()
+        commonInit()
     }
 
     required init?(coder decoder: NSCoder) {
         super.init(coder: decoder)
 
-        self.commonInit()
+        commonInit()
     }
 
     private func commonInit() {
         NotificationCenter.default.addObserver(self,
-            selector: #selector(FPSStatusBarViewController.updateStatusBarFrame(_:)),
-            name: NSNotification.Name.UIApplicationDidChangeStatusBarOrientation,
-            object: nil
-        )
+                                               selector: #selector(FPSStatusBarViewController.updateStatusBarFrame(_:)),
+                                               name: NSNotification.Name.UIApplicationDidChangeStatusBarOrientation,
+                                               object: nil)
     }
 
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
 
-
     // MARK: - View Lifecycle and Events
 
     override func loadView() {
-        self.view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0))
+        view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0))
 
         let font = UIFont.boldSystemFont(ofSize: 10.0)
-        let rect = self.view.bounds.insetBy(dx: 10.0, dy: 0.0)
+        let rect = view.bounds.insetBy(dx: 10.0, dy: 0.0)
 
-        self.label.frame = CGRect(x: rect.origin.x, y: rect.maxY - font.lineHeight - 1.0, width: rect.width, height: font.lineHeight)
-        self.label.autoresizingMask = [ .flexibleWidth, .flexibleTopMargin ]
-        self.label.font = font
-        self.view.addSubview(self.label)
+        label.frame = CGRect(x: rect.origin.x, y: rect.maxY - font.lineHeight - 1.0, width: rect.width, height: font.lineHeight)
+        label.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
+        label.font = font
+        view.addSubview(label)
 
-        self.fpsCounter.delegate = self
+        fpsCounter.delegate = self
     }
 
     @objc func updateStatusBarFrame(_ notification: Notification) {
@@ -66,7 +61,6 @@ class FPSStatusBarViewController: UIViewController {
 
         FPSStatusBarViewController.statusBarWindow.frame = frame
     }
-
 
     // MARK: - Getting the shared status bar window
 
@@ -78,27 +72,25 @@ class FPSStatusBarViewController: UIViewController {
     }()
 }
 
-
 // MARK: - FPSCounterDelegate
 
 extension FPSStatusBarViewController: FPSCounterDelegate {
-
-    @objc func fpsCounter(_ counter: FPSCounter, didUpdateFramesPerSecond fps: Int) {
-        self.resignKeyWindowIfNeeded()
+    @objc func fpsCounter(_: FPSCounter, didUpdateFramesPerSecond fps: Int) {
+        resignKeyWindowIfNeeded()
 
         let milliseconds = 1000 / max(fps, 1)
-        self.label.text = "\(fps) FPS (\(milliseconds) milliseconds per frame)"
+        label.text = "\(fps) FPS (\(milliseconds) milliseconds per frame)"
 
         switch fps {
         case 45...:
-            self.view.backgroundColor = .green
-            self.label.textColor = .black
+            view.backgroundColor = .green
+            label.textColor = .black
         case 35...:
-            self.view.backgroundColor = .orange
-            self.label.textColor = .white
+            view.backgroundColor = .orange
+            label.textColor = .white
         default:
-            self.view.backgroundColor = .red
-            self.label.textColor = .white
+            view.backgroundColor = .red
+            label.textColor = .white
         }
     }
 
@@ -111,9 +103,7 @@ extension FPSStatusBarViewController: FPSCounterDelegate {
     }
 }
 
-
 public extension FPSCounter {
-
     // MARK: - Show FPS in the status bar
 
     /// Add a label in the status bar that shows the applications current FPS.

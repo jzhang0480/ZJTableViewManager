@@ -8,10 +8,8 @@
 
 import UIKit
 
-
 class FPStatusBarWindow: UIWindow {
-
-    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+    override func point(inside _: CGPoint, with _: UIEvent?) -> Bool {
         // don't hijack touches from the main window
         return false
     }

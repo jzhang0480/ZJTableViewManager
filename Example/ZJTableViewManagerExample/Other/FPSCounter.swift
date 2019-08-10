@@ -6,9 +6,8 @@
 //  Copyright © 2016 konoma GmbH. All rights reserved.
 //
 
-import UIKit
 import QuartzCore
-
+import UIKit
 
 /// A class that tracks the current FPS of the running application.
 ///
@@ -20,7 +19,6 @@ import QuartzCore
 /// `FPSCounter.showInStatusBar()` convenience method.
 ///
 public class FPSCounter: NSObject {
-
     /// Helper class that relays display link updates to the FPSCounter
     ///
     /// This is necessary because CADisplayLink retains its target. Thus
@@ -29,7 +27,6 @@ public class FPSCounter: NSObject {
     /// to its parent FPSCounter, thus preventing this.
     ///
     internal class DisplayLinkProxy: NSObject {
-
         /// A weak ref to the parent FPSCounter instance.
         @objc weak var parentCounter: FPSCounter?
 
@@ -45,7 +42,6 @@ public class FPSCounter: NSObject {
         }
     }
 
-
     // MARK: - Initialization
 
     private let displayLink: CADisplayLink
@@ -57,21 +53,20 @@ public class FPSCounter: NSObject {
     /// `startTracking(inRunLoop:mode:)` method.
     ///
     public override init() {
-        self.displayLinkProxy = DisplayLinkProxy()
-        self.displayLink = CADisplayLink(
-            target: self.displayLinkProxy,
+        displayLinkProxy = DisplayLinkProxy()
+        displayLink = CADisplayLink(
+            target: displayLinkProxy,
             selector: #selector(DisplayLinkProxy.updateFromDisplayLink(_:))
         )
 
         super.init()
 
-        self.displayLinkProxy.parentCounter = self
+        displayLinkProxy.parentCounter = self
     }
 
     deinit {
         self.displayLink.invalidate()
     }
-
 
     // MARK: - Configuration
 
@@ -80,7 +75,6 @@ public class FPSCounter: NSObject {
 
     /// Delay between FPS updates. Longer delays mean more averaged FPS numbers.
     @objc public var notificationDelay: TimeInterval = 1.0
-
 
     // MARK: - Tracking
 
@@ -100,11 +94,11 @@ public class FPSCounter: NSObject {
     ///   - mode:    The mode(s) to track in the runloop
     ///
     @objc public func startTracking(inRunLoop runloop: RunLoop = .main, mode: RunLoop.Mode = RunLoopMode.commonModes) {
-        self.stopTracking()
+        stopTracking()
 
         self.runloop = runloop
         self.mode = mode
-        self.displayLink.add(to: runloop, forMode: mode)
+        displayLink.add(to: runloop, forMode: mode)
     }
 
     /// Stop tracking FPS updates.
@@ -114,48 +108,45 @@ public class FPSCounter: NSObject {
     @objc public func stopTracking() {
         guard let runloop = self.runloop, let mode = self.mode else { return }
 
-        self.displayLink.remove(from: runloop, forMode: mode)
+        displayLink.remove(from: runloop, forMode: mode)
         self.runloop = nil
         self.mode = nil
     }
-
 
     // MARK: - Handling Frame Updates
 
     private var lastNotificationTime: CFAbsoluteTime = 0.0
     private var numberOfFrames = 0
 
-    private func updateFromDisplayLink(_ displayLink: CADisplayLink) {
-        if self.lastNotificationTime == 0.0 {
-            self.lastNotificationTime = CFAbsoluteTimeGetCurrent()
+    private func updateFromDisplayLink(_: CADisplayLink) {
+        if lastNotificationTime == 0.0 {
+            lastNotificationTime = CFAbsoluteTimeGetCurrent()
             return
         }
 
-        self.numberOfFrames += 1
+        numberOfFrames += 1
 
         let currentTime = CFAbsoluteTimeGetCurrent()
-        let elapsedTime = currentTime - self.lastNotificationTime
+        let elapsedTime = currentTime - lastNotificationTime
 
-        if elapsedTime >= self.notificationDelay {
-            self.notifyUpdateForElapsedTime(elapsedTime)
-            self.lastNotificationTime = 0.0
-            self.numberOfFrames = 0
+        if elapsedTime >= notificationDelay {
+            notifyUpdateForElapsedTime(elapsedTime)
+            lastNotificationTime = 0.0
+            numberOfFrames = 0
         }
     }
 
     private func notifyUpdateForElapsedTime(_ elapsedTime: CFAbsoluteTime) {
-        let fps = Int(round(Double(self.numberOfFrames) / elapsedTime))
-        self.delegate?.fpsCounter(self, didUpdateFramesPerSecond: fps)
+        let fps = Int(round(Double(numberOfFrames) / elapsedTime))
+        delegate?.fpsCounter(self, didUpdateFramesPerSecond: fps)
     }
 }
-
 
 /// The delegate protocol for the FPSCounter class.
 ///
 /// Implement this protocol if you want to receive updates from a `FPSCounter`.
 ///
 public protocol FPSCounterDelegate: NSObjectProtocol {
-
     /// Called in regular intervals while the counter is tracking FPS.
     ///
     /// - Parameters:

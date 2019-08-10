@@ -11,70 +11,68 @@ import UIKit
 class EditingViewController: UIViewController {
     var tableView: UITableView!
     var manager: ZJTableViewManager!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Editing"
-        
-        self.tableView = UITableView(frame: self.view.bounds, style: .grouped)
-        self.view.addSubview(self.tableView);
-        self.manager = ZJTableViewManager(tableView: self.tableView)
-        
+        title = "Editing"
+
+        tableView = UITableView(frame: view.bounds, style: .grouped)
+        view.addSubview(tableView)
+        manager = ZJTableViewManager(tableView: tableView)
+
         var section = ZJTableViewSection(headerTitle: "DELETEABLE")
-        self.manager.add(section: section)
-        for i in 0...3 {
+        manager.add(section: section)
+        for i in 0 ... 3 {
             let item = ZJTableViewItem(title: "section 0, item " + String(i))
             item.editingStyle = .delete
-            item.setDeletionHandler(deletionHandler: {[weak self] (item) in
-                 self?.deleteConfirm(item: item, needConfirm: false)
+            item.setDeletionHandler(deletionHandler: { [weak self] item in
+                self?.deleteConfirm(item: item, needConfirm: false)
             })
             section.add(item: item)
         }
-        
+
         section = ZJTableViewSection(headerTitle: "Deletable with confirmation")
-        self.manager.add(section: section)
-        for i in 0...3 {
+        manager.add(section: section)
+        for i in 0 ... 3 {
             let item = ZJTableViewItem(title: "section 1, item " + String(i))
             item.editingStyle = .delete
-            item.setDeletionHandler(deletionHandler: {[weak self] (item) in
+            item.setDeletionHandler(deletionHandler: { [weak self] item in
                 self?.deleteConfirm(item: item)
             })
             section.add(item: item)
         }
-        
+
         manager.reload()
         // Do any additional setup after loading the view.
     }
-    
+
     func deleteConfirm(item: ZJTableViewItem, needConfirm: Bool = true) {
         if !needConfirm {
             print(item.cellTitle ?? "")
             item.delete()
-            return;
+            return
         }
-        
+
         let alertVC = UIAlertController(title: "Confirmation", message: "Are you sure to delete " + (item.cellTitle)!, preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "Delete", style: .default, handler: { (_) in
+        alertVC.addAction(UIAlertAction(title: "Delete", style: .default, handler: { _ in
             item.delete(.fade)
         }))
         alertVC.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
-        self.present(alertVC, animated: true, completion: nil)
+        present(alertVC, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
-    // MARK: - Navigation
+     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destinationViewController.
+         // Pass the selected object to the new view controller.
+     }
+     */
 }

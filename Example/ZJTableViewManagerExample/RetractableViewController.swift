@@ -9,67 +9,63 @@
 import UIKit
 
 class RetractableViewController: ZJBaseTableViewController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Retractable"
-        self.tableView.tableFooterView = UIView()
-        
+        title = "Retractable"
+        tableView.tableFooterView = UIView()
+
         // Add main section
         let section = ZJTableViewSection()
-        self.manager.add(section: section)
-        
-        var collapsedItems:[ZJTableViewItem] = []
-        var expandedItems:[ZJTableViewItem] = []
-        
-        //collapsed
-        for i in 1...4 {
+        manager.add(section: section)
+
+        var collapsedItems: [ZJTableViewItem] = []
+        var expandedItems: [ZJTableViewItem] = []
+
+        // collapsed
+        for i in 1 ... 4 {
             collapsedItems.append(ZJTableViewItem(title: "Test Item " + String(i)))
         }
-        
+
         let moreItem = ZJTableViewItem(title: "Show More")
         moreItem.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         collapsedItems.append(moreItem)
-        moreItem.setSelectionHandler { (item) in
+        moreItem.setSelectionHandler { _ in
             section.replaceItemsFrom(array: expandedItems)
             section.reload(UITableView.RowAnimation.automatic)
         }
         section.replaceItemsFrom(array: collapsedItems)
-        
-        
-        //expanded
-        for i in 1...7 {
+
+        // expanded
+        for i in 1 ... 7 {
             expandedItems.append(ZJTableViewItem(title: "Test Item " + String(i)))
         }
-        
+
         let lessItem = ZJTableViewItem(title: "Show Less")
         lessItem.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
-        
-        lessItem.setSelectionHandler { (item) in
+
+        lessItem.setSelectionHandler { _ in
             section.replaceItemsFrom(array: collapsedItems)
             section.reload(UITableView.RowAnimation.automatic)
         }
         expandedItems.append(lessItem)
-        
+
         manager.reload()
-        
+
         // Do any additional setup after loading the view.
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
+
     /*
      // MARK: - Navigation
-     
+
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
      }
      */
-    
 }

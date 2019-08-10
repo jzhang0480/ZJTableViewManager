@@ -15,15 +15,14 @@ open class ZJTextItem: ZJTableViewItem {
     public var didChanged: ZJTableViewItemBlock?
     override init() {
         super.init()
-        self.cellHeight = 125
-        self.selectionStyle = UITableViewCell.SelectionStyle.none
+        cellHeight = 125
+        selectionStyle = UITableViewCell.SelectionStyle.none
     }
-    
-    convenience public init(text: String?, placeHolder: String, didChanged: ZJTableViewItemBlock?) {
+
+    public convenience init(text: String?, placeHolder: String, didChanged: ZJTableViewItemBlock?) {
         self.init()
         self.text = text
-        self.placeHolder =  placeHolder
+        self.placeHolder = placeHolder
         self.didChanged = didChanged
     }
 }
-

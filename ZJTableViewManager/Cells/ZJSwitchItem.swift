@@ -12,11 +12,10 @@ public class ZJSwitchItem: ZJTableViewItem {
     public var title: String?
     public var isOn: Bool = false
     public var didChanged: ZJTableViewItemBlock?
-    convenience public init(title: String?, isOn: Bool, didChanged: ZJTableViewItemBlock?) {
+    public convenience init(title: String?, isOn: Bool, didChanged: ZJTableViewItemBlock?) {
         self.init()
         self.title = title
         self.isOn = isOn
         self.didChanged = didChanged
     }
 }
-

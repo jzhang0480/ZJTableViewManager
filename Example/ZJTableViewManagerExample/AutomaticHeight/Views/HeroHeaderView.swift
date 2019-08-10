@@ -9,22 +9,21 @@
 import UIKit
 
 class HeroHeaderView: UIView {
-    @IBOutlet weak var imageHero: UIImageView!
-    @IBOutlet weak var labelHero: UILabel!
-    
-    class func view() -> HeroHeaderView{
+    @IBOutlet var imageHero: UIImageView!
+    @IBOutlet var labelHero: UILabel!
+
+    class func view() -> HeroHeaderView {
         let nib = UINib(nibName: "HeroHeaderView", bundle: nil)
         let headerView = nib.instantiate(withOwner: nil, options: nil)[0] as! HeroHeaderView
-        headerView.frame.size.height = 50;
+        headerView.frame.size.height = 50
         return headerView
     }
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
 
+    /*
+     // Only override draw() if you perform custom drawing.
+     // An empty implementation adversely affects performance during animation.
+     override func draw(_ rect: CGRect) {
+         // Drawing code
+     }
+     */
 }

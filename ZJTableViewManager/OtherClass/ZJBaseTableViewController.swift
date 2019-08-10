@@ -9,45 +9,43 @@
 import UIKit
 
 open class ZJBaseTableViewController: UIViewController {
-    @IBOutlet weak var IBTableView: UITableView?
+    @IBOutlet var IBTableView: UITableView?
     public var tableView: UITableView!
     public var manager: ZJTableViewManager!
     public var tableViewStyle: UITableView.Style = UITableView.Style.plain
-    
-    override open func viewDidLoad() {
+
+    open override func viewDidLoad() {
         super.viewDidLoad()
         if let tableView = self.IBTableView {
             self.tableView = tableView
-        }else{
-            self.tableView = UITableView(frame: self.view.bounds, style: self.tableViewStyle)
-            self.view.addSubview(self.tableView);
+        } else {
+            tableView = UITableView(frame: view.bounds, style: tableViewStyle)
+            view.addSubview(tableView)
         }
-        self.manager = ZJTableViewManager(tableView: self.tableView)
-        
+        manager = ZJTableViewManager(tableView: tableView)
+
         // Do any additional setup after loading the view.
     }
-    
-    override open func viewDidLayoutSubviews() {
+
+    open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        if self.IBTableView == nil {
-            self.tableView.frame = self.view.bounds
+        if IBTableView == nil {
+            tableView.frame = view.bounds
         }
     }
-    override open func didReceiveMemoryWarning() {
+
+    open override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
+
     /*
      // MARK: - Navigation
-     
+
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
      }
      */
-    
 }
-

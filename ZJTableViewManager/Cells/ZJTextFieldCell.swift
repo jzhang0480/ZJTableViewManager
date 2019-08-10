@@ -9,43 +9,39 @@
 import UIKit
 
 open class ZJTextFieldCell: ZJTableViewCell {
-    @IBOutlet weak var titleConstraint: NSLayoutConstraint!
-    @IBOutlet weak var labelTitle: UILabel!
-    
-    @IBOutlet weak var textField: UITextField!
-    override open func awakeFromNib() {
+    @IBOutlet var titleConstraint: NSLayoutConstraint!
+    @IBOutlet var labelTitle: UILabel!
+
+    @IBOutlet var textField: UITextField!
+    open override func awakeFromNib() {
         super.awakeFromNib()
-        
-        self.textField.addTarget(self, action: #selector(textFieldDidChanged(textField:)), for: UIControl.Event.editingChanged)
+
+        textField.addTarget(self, action: #selector(textFieldDidChanged(textField:)), for: UIControl.Event.editingChanged)
         // Initialization code
     }
-    
-    override open func cellWillAppear() {
+
+    open override func cellWillAppear() {
         super.cellWillAppear()
         let item = self.item as! ZJTextFieldItem
         if item.isFullLength {
-            self.titleConstraint.constant = 0
-        }else{
-            self.labelTitle.text = item.title
+            titleConstraint.constant = 0
+        } else {
+            labelTitle.text = item.title
         }
-        self.textField.isSecureTextEntry = item.isSecureTextEntry
-        self.textField.text = item.text
-        self.textField.placeholder = item.placeHolder
-        
-        
+        textField.isSecureTextEntry = item.isSecureTextEntry
+        textField.text = item.text
+        textField.placeholder = item.placeHolder
     }
-    
+
     @objc func textFieldDidChanged(textField: UITextField) {
         let item = self.item as! ZJTextFieldItem
         item.text = textField.text
         item.didChanged?(item)
     }
-    
-    override open func setSelected(_ selected: Bool, animated: Bool) {
+
+    open override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+
         // Configure the view for the selected state
     }
-    
 }
-
