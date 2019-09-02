@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         let section = ZJTableViewSection()
         manager.add(section: section)
 
-        let titles = ["Forms", "Retractable", "CustomCells", "Editing", "Sections", "List", "AutomaticHeight", "ExpandTree"]
+        let titles = ["Forms", "Retractable", "CustomCells", "Editing", "Sections", "List", "AutomaticHeight", "ExpandTree", "UpdateHeight"]
         for i in titles {
             let item = ZJTableViewItem(title: i)
             item.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
@@ -53,6 +53,9 @@ class ViewController: UIViewController {
                 } else if i == "ExpandTree" {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let vc = storyboard.instantiateViewController(withIdentifier: "ExpandTreeViewController")
+                    self.navigationController?.pushViewController(vc, animated: true)
+                } else if i == "UpdateHeight" {
+                    let vc = UpdateHeightViewController()
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
             })
