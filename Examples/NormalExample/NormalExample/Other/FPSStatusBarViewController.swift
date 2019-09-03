@@ -31,7 +31,7 @@ class FPSStatusBarViewController: UIViewController {
     private func commonInit() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(FPSStatusBarViewController.updateStatusBarFrame(_:)),
-                                               name: NSNotification.Name.UIApplicationDidChangeStatusBarOrientation,
+                                               name: UIApplication.didChangeStatusBarOrientationNotification,
                                                object: nil)
     }
 
@@ -66,7 +66,7 @@ class FPSStatusBarViewController: UIViewController {
 
     @objc static var statusBarWindow: UIWindow = {
         let window = FPStatusBarWindow()
-        window.windowLevel = UIWindowLevelStatusBar
+        window.windowLevel = UIWindow.Level.statusBar
         window.rootViewController = FPSStatusBarViewController()
         return window
     }()
@@ -119,7 +119,7 @@ public extension FPSCounter {
     @objc class func showInStatusBar(
         application: UIApplication = .shared,
         runloop: RunLoop = .main,
-        mode: RunLoop.Mode = RunLoopMode.commonModes
+        mode: RunLoop.Mode = RunLoop.Mode.common
     ) {
         let window = FPSStatusBarViewController.statusBarWindow
         window.frame = application.statusBarFrame

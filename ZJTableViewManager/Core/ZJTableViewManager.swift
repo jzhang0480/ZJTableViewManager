@@ -117,7 +117,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let currentSection = sections[indexPath.section]
         let item = currentSection.items[indexPath.row]
-        if item.cellHeight == UITableViewAutomaticDimension, tableView.estimatedRowHeight == 0 {
+        if item.cellHeight == UITableView.automaticDimension, tableView.estimatedRowHeight == 0 {
             tableView.estimatedRowHeight = 44
             tableView.estimatedSectionFooterHeight = 44
             tableView.estimatedSectionHeaderHeight = 44

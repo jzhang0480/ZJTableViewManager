@@ -21,7 +21,7 @@ class AutomaticHeightViewController: UIViewController {
         manager.register(AutomaticHeightCell.self, AutomaticHeightCellItem.self)
         tableView.separatorStyle = .none
         // 模拟网络请求
-        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        let indicator = UIActivityIndicatorView(style: .gray)
         indicator.center = view.center
         view.addSubview(indicator)
         indicator.startAnimating()
