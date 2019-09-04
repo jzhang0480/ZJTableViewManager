@@ -54,7 +54,7 @@ class ViewController: UIViewController {
             //商品列表滑动时与分类列表联动
             //商品列表section header显示的回调
             section.setHeaderWillDisplayHandler({[weak self] (currentSection) in
-                //手动拖拽事件结束并且是向下滚动，根据商品tableView最上面的section控制左边分类tableView的选中分类
+                //手动拖拽事件结束并且是向下滚动，说明马上要显示的section就是当前的section，所以左边要选中对应的section
                 if ((self?.productManager.tableView.isDragging)! && !(self?.isScrollUp)!){
                     let currentSection = self?.productTableView.indexPathsForVisibleRows?.first?.section ?? 0
                     self?.categoryTableView.selectRow(at: IndexPath(item: currentSection, section: 0), animated: false, scrollPosition: .middle)
@@ -62,7 +62,7 @@ class ViewController: UIViewController {
             })
             //商品列表section header消失的回调
             section.setHeaderDidEndDisplayHandler {[weak self] (currentSection) in
-                //手动拖拽事件结束并且是向上滚动，说明现在消失的section下下一个section出现了，所以左边要选中下一个section
+                //手动拖拽事件结束并且是向上滚动，说明现在消失的section的下一个section出现了，所以左边要选中下一个section
                 if ((self?.productManager.tableView.isDragging)! && (self?.isScrollUp)!){
                      self?.categoryTableView.selectRow(at: IndexPath(item: currentSection.index + 1, section: 0), animated: false, scrollPosition: .middle)
                 }
