@@ -1,0 +1,32 @@
+PODS:
+  - ImagePicker (3.1.0)
+  - IQKeyboardManagerSwift (6.4.1)
+  - SKPhotoBrowser (5.0.9)
+  - SwiftyStarRatingView (1.0.4)
+  - ZJTableViewManager (0.2.7)
+
+DEPENDENCIES:
+  - ImagePicker
+  - IQKeyboardManagerSwift
+  - SKPhotoBrowser (~> 5.0.0)
+  - SwiftyStarRatingView
+  - ZJTableViewManager (~> 0.2.7)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ImagePicker
+    - IQKeyboardManagerSwift
+    - SKPhotoBrowser
+    - SwiftyStarRatingView
+    - ZJTableViewManager
+
+SPEC CHECKSUMS:
+  ImagePicker: db1fd7626337b2577c523bef5f499bbbe5a37079
+  IQKeyboardManagerSwift: d2df660d0b8d64a15cb2537c9ff303213fa515b2
+  SKPhotoBrowser: 668c29bdd9d4d276026fc131c55e96d902c2463c
+  SwiftyStarRatingView: a2b0057700e0adeb8e7442c55d99cb53b531d2f4
+  ZJTableViewManager: 23e932486a2aaff2827765b65924d4abcaab7ead
+
+PODFILE CHECKSUM: 519b3c92c91de2d022441d64e51908421a44a08e
+
+COCOAPODS: 1.7.5

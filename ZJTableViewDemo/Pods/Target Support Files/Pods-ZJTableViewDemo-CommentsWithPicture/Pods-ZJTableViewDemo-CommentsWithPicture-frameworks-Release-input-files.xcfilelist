@@ -1,0 +1,6 @@
+${PODS_ROOT}/Target Support Files/Pods-ZJTableViewDemo-CommentsWithPicture/Pods-ZJTableViewDemo-CommentsWithPicture-frameworks.sh
+${BUILT_PRODUCTS_DIR}/ZJTableViewManager-iOS12.4/ZJTableViewManager.framework
+${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework
+${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework
+${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework
+${BUILT_PRODUCTS_DIR}/SwiftyStarRatingView/SwiftyStarRatingView.framework

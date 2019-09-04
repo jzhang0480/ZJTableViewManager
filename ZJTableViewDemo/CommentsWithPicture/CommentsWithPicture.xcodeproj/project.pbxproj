@@ -1,0 +1,421 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0958CFD956D32CD903F21BE6 /* Pods_ZJTableViewDemo_CommentsWithPicture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57C8C1BA045D78F73A15989F /* Pods_ZJTableViewDemo_CommentsWithPicture.framework */; };
+		660D6E6B231F5F53009741A7 /* OrderEvaluateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6E66231F5F53009741A7 /* OrderEvaluateCell.swift */; };
+		660D6E6C231F5F53009741A7 /* ZJPictureCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 660D6E67231F5F53009741A7 /* ZJPictureCollectionCell.xib */; };
+		660D6E6D231F5F53009741A7 /* OrderEvaluateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 660D6E68231F5F53009741A7 /* OrderEvaluateCell.xib */; };
+		660D6E6E231F5F53009741A7 /* ZJPictureTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6E69231F5F53009741A7 /* ZJPictureTableCell.swift */; };
+		660D6E6F231F5F53009741A7 /* ZJPictureCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6E6A231F5F53009741A7 /* ZJPictureCollectionCell.swift */; };
+		660D6E76231F5F60009741A7 /* comments-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 660D6E70231F5F60009741A7 /* comments-Info.plist */; };
+		660D6E77231F5F60009741A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 660D6E71231F5F60009741A7 /* Main.storyboard */; };
+		660D6E78231F5F60009741A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6E72231F5F60009741A7 /* ViewController.swift */; };
+		660D6E79231F5F60009741A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660D6E73231F5F60009741A7 /* Assets.xcassets */; };
+		660D6E7A231F5F60009741A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 660D6E74231F5F60009741A7 /* LaunchScreen.storyboard */; };
+		660D6E7B231F5F60009741A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6E75231F5F60009741A7 /* AppDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4C768E58BE05CB9CB40BDC54 /* Pods-ZJTableViewDemo-CommentsWithPicture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJTableViewDemo-CommentsWithPicture.release.xcconfig"; path = "Target Support Files/Pods-ZJTableViewDemo-CommentsWithPicture/Pods-ZJTableViewDemo-CommentsWithPicture.release.xcconfig"; sourceTree = "<group>"; };
+		57C8C1BA045D78F73A15989F /* Pods_ZJTableViewDemo_CommentsWithPicture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZJTableViewDemo_CommentsWithPicture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		660D6E50231F5F12009741A7 /* CommentsWithPicture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommentsWithPicture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		660D6E66231F5F53009741A7 /* OrderEvaluateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderEvaluateCell.swift; sourceTree = "<group>"; };
+		660D6E67231F5F53009741A7 /* ZJPictureCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZJPictureCollectionCell.xib; sourceTree = "<group>"; };
+		660D6E68231F5F53009741A7 /* OrderEvaluateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderEvaluateCell.xib; sourceTree = "<group>"; };
+		660D6E69231F5F53009741A7 /* ZJPictureTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJPictureTableCell.swift; sourceTree = "<group>"; };
+		660D6E6A231F5F53009741A7 /* ZJPictureCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJPictureCollectionCell.swift; sourceTree = "<group>"; };
+		660D6E70231F5F60009741A7 /* comments-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "comments-Info.plist"; sourceTree = "<group>"; };
+		660D6E71231F5F60009741A7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		660D6E72231F5F60009741A7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		660D6E73231F5F60009741A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		660D6E74231F5F60009741A7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		660D6E75231F5F60009741A7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FFAEE3B7031D9D64EB0A71F1 /* Pods-ZJTableViewDemo-CommentsWithPicture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJTableViewDemo-CommentsWithPicture.debug.xcconfig"; path = "Target Support Files/Pods-ZJTableViewDemo-CommentsWithPicture/Pods-ZJTableViewDemo-CommentsWithPicture.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		660D6E4D231F5F12009741A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0958CFD956D32CD903F21BE6 /* Pods_ZJTableViewDemo_CommentsWithPicture.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A9BF9AB065948515DC040FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57C8C1BA045D78F73A15989F /* Pods_ZJTableViewDemo_CommentsWithPicture.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5994A3BA0F447EA47AEDDB66 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FFAEE3B7031D9D64EB0A71F1 /* Pods-ZJTableViewDemo-CommentsWithPicture.debug.xcconfig */,
+				4C768E58BE05CB9CB40BDC54 /* Pods-ZJTableViewDemo-CommentsWithPicture.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		660D6E47231F5F12009741A7 = {
+			isa = PBXGroup;
+			children = (
+				660D6E52231F5F12009741A7 /* CommentsWithPicture */,
+				660D6E51231F5F12009741A7 /* Products */,
+				5994A3BA0F447EA47AEDDB66 /* Pods */,
+				1A9BF9AB065948515DC040FC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		660D6E51231F5F12009741A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				660D6E50231F5F12009741A7 /* CommentsWithPicture.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		660D6E52231F5F12009741A7 /* CommentsWithPicture */ = {
+			isa = PBXGroup;
+			children = (
+				660D6E75231F5F60009741A7 /* AppDelegate.swift */,
+				660D6E73231F5F60009741A7 /* Assets.xcassets */,
+				660D6E70231F5F60009741A7 /* comments-Info.plist */,
+				660D6E74231F5F60009741A7 /* LaunchScreen.storyboard */,
+				660D6E71231F5F60009741A7 /* Main.storyboard */,
+				660D6E72231F5F60009741A7 /* ViewController.swift */,
+				660D6E65231F5F53009741A7 /* Cells */,
+			);
+			path = CommentsWithPicture;
+			sourceTree = "<group>";
+		};
+		660D6E65231F5F53009741A7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				660D6E66231F5F53009741A7 /* OrderEvaluateCell.swift */,
+				660D6E67231F5F53009741A7 /* ZJPictureCollectionCell.xib */,
+				660D6E68231F5F53009741A7 /* OrderEvaluateCell.xib */,
+				660D6E69231F5F53009741A7 /* ZJPictureTableCell.swift */,
+				660D6E6A231F5F53009741A7 /* ZJPictureCollectionCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		660D6E4F231F5F12009741A7 /* CommentsWithPicture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 660D6E62231F5F13009741A7 /* Build configuration list for PBXNativeTarget "CommentsWithPicture" */;
+			buildPhases = (
+				7CEAE0D69AC4097D3516F655 /* [CP] Check Pods Manifest.lock */,
+				660D6E4C231F5F12009741A7 /* Sources */,
+				660D6E4D231F5F12009741A7 /* Frameworks */,
+				660D6E4E231F5F12009741A7 /* Resources */,
+				A469E68D05D32ADF09186EB2 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CommentsWithPicture;
+			productName = CommentsWithPicture;
+			productReference = 660D6E50231F5F12009741A7 /* CommentsWithPicture.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		660D6E48231F5F12009741A7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = "Green Dot";
+				TargetAttributes = {
+					660D6E4F231F5F12009741A7 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+				};
+			};
+			buildConfigurationList = 660D6E4B231F5F12009741A7 /* Build configuration list for PBXProject "CommentsWithPicture" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 660D6E47231F5F12009741A7;
+			productRefGroup = 660D6E51231F5F12009741A7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				660D6E4F231F5F12009741A7 /* CommentsWithPicture */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		660D6E4E231F5F12009741A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660D6E6C231F5F53009741A7 /* ZJPictureCollectionCell.xib in Resources */,
+				660D6E6D231F5F53009741A7 /* OrderEvaluateCell.xib in Resources */,
+				660D6E76231F5F60009741A7 /* comments-Info.plist in Resources */,
+				660D6E7A231F5F60009741A7 /* LaunchScreen.storyboard in Resources */,
+				660D6E77231F5F60009741A7 /* Main.storyboard in Resources */,
+				660D6E79231F5F60009741A7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7CEAE0D69AC4097D3516F655 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZJTableViewDemo-CommentsWithPicture-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A469E68D05D32ADF09186EB2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZJTableViewDemo-CommentsWithPicture/Pods-ZJTableViewDemo-CommentsWithPicture-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZJTableViewDemo-CommentsWithPicture/Pods-ZJTableViewDemo-CommentsWithPicture-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZJTableViewDemo-CommentsWithPicture/Pods-ZJTableViewDemo-CommentsWithPicture-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		660D6E4C231F5F12009741A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660D6E6B231F5F53009741A7 /* OrderEvaluateCell.swift in Sources */,
+				660D6E6F231F5F53009741A7 /* ZJPictureCollectionCell.swift in Sources */,
+				660D6E78231F5F60009741A7 /* ViewController.swift in Sources */,
+				660D6E7B231F5F60009741A7 /* AppDelegate.swift in Sources */,
+				660D6E6E231F5F53009741A7 /* ZJPictureTableCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		660D6E60231F5F13009741A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		660D6E61231F5F13009741A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		660D6E63231F5F13009741A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFAEE3B7031D9D64EB0A71F1 /* Pods-ZJTableViewDemo-CommentsWithPicture.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/CommentsWithPicture/comments-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Green-Dot.CommentsWithPicture";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		660D6E64231F5F13009741A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C768E58BE05CB9CB40BDC54 /* Pods-ZJTableViewDemo-CommentsWithPicture.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/CommentsWithPicture/comments-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Green-Dot.CommentsWithPicture";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		660D6E4B231F5F12009741A7 /* Build configuration list for PBXProject "CommentsWithPicture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				660D6E60231F5F13009741A7 /* Debug */,
+				660D6E61231F5F13009741A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		660D6E62231F5F13009741A7 /* Build configuration list for PBXNativeTarget "CommentsWithPicture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				660D6E63231F5F13009741A7 /* Debug */,
+				660D6E64231F5F13009741A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 660D6E48231F5F12009741A7 /* Project object */;
+}

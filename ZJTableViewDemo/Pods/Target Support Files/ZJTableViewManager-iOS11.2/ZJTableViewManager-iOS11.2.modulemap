@@ -1,0 +1,6 @@
+framework module ZJTableViewManager {
+  umbrella header "ZJTableViewManager-iOS11.2-umbrella.h"
+
+  export *
+  module * { export * }
+}

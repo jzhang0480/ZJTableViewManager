@@ -1,0 +1,32 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+workspace 'ZJTableViewDemo.xcworkspace'
+use_frameworks!
+
+# ignore all warnings from all pods
+inhibit_all_warnings!
+
+project 'NormalExample/NormalExample.xcodeproj'
+project 'ShoppingCartDemo/Demo2.xcodeproj'
+project 'CommentsWithPicture/CommentsWithPicture.xcodeproj'
+
+
+abstract_target 'ZJTableViewDemo' do
+  pod 'ZJTableViewManager', '~> 0.2.7'
+
+  target 'NormalExample' do
+    project 'NormalExample/NormalExample.xcodeproj'
+  end
+
+  target 'Demo2' do
+    project 'ShoppingCartDemo/Demo2.xcodeproj'
+  end
+
+  target 'CommentsWithPicture' do
+    project 'CommentsWithPicture/CommentsWithPicture.xcodeproj'
+    pod 'SwiftyStarRatingView'
+    pod 'ImagePicker'
+    pod 'SKPhotoBrowser', '~> 5.0.0'
+    pod 'IQKeyboardManagerSwift'
+  end
+end

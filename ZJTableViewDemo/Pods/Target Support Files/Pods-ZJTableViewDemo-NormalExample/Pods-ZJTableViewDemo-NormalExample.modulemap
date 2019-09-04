@@ -1,0 +1,6 @@
+framework module Pods_ZJTableViewDemo_NormalExample {
+  umbrella header "Pods-ZJTableViewDemo-NormalExample-umbrella.h"
+
+  export *
+  module * { export * }
+}
