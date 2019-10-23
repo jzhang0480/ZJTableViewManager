@@ -9,29 +9,29 @@
 import Foundation
 import UIKit
 
-public protocol ZJCellProtocol where Self: UITableViewCell {
-    func cellWillAppear(_ cellItem: ZJTableViewItem)
+public protocol ZJItemProtocol where Self: ZJTableViewItem {}
+
+public protocol DefaultCellProtocol where Self: UITableViewCell {
+    var _item: ZJItemProtocol? { get set }
+    func cellWillAppear()
     func cellDidAppear()
     func cellDidDisappear()
 }
 
-public protocol ZJPrepareProtocol where Self: UITableViewCell {
-    associatedtype ZJTableViewItemType: ZJTableViewItem
-    var item: ZJTableViewItemType! { get set }
-    func prepareWillAppear(_ i: AnyObject)
+public protocol ZJCellProtocol: DefaultCellProtocol {
+    associatedtype ZJCelltemType: ZJItemProtocol
+    var item: ZJCelltemType! { get set }
 }
 
-extension ZJPrepareProtocol {
-    
-    /// Must write prepareWillAppear(:) method at the top of cellWillAppear(:)
-    ///
-    /// - Parameter i: Item
-    public func prepareWillAppear(_ i: AnyObject) {
-        let inItem = i as? ZJTableViewItemType
-        assert(inItem != nil, "i must confirm to ZJPrepareProtocol")
-        item = inItem
+public extension ZJCellProtocol {
+    var _item: ZJItemProtocol? {
+        get {
+            return item
+        }
+        set {
+            item = (newValue as! Self.ZJCelltemType)
+        }
     }
 }
 
-
-
+extension ZJTableViewItem: ZJItemProtocol {}

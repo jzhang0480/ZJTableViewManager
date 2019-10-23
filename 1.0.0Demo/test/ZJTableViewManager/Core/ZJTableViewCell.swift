@@ -8,16 +8,14 @@
 
 import UIKit
 
-open class ZJTableViewCell: UITableViewCell, ZJPrepareProtocol, ZJCellProtocol {
+open class ZJTableViewCell: UITableViewCell, ZJCellProtocol {
     public var item: ZJTableViewItem!
+    
+    public typealias ZJCelltemType = ZJTableViewItem
 
-    public typealias ZJTableViewItemType = ZJTableViewItem
+    public func cellWillAppear() { }
 
-    public func cellWillAppear(_ cellItem: ZJTableViewItem) {
-        prepareWillAppear(cellItem)
-    }
-
-    public func cellDidAppear() {}
+    public func cellDidAppear() { }
 
     public func cellDidDisappear() {}
 

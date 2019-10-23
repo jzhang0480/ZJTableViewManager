@@ -110,17 +110,17 @@ open class ZJTableViewItem: Equatable {
     ///   - manager: 当前tableview的manager
     public func autoHeight(_ manager: ZJTableViewManager) {
         tableViewManager = manager
-        let cell = manager.tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? ZJTableViewCell
+        let cell = manager.tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? DefaultCellProtocol
         if cell == nil {
             print("please register cell")
         } else {
-            cell?.item = self
+            cell?._item = self
             cellHeight = systemFittingHeightForConfiguratedCell(cell!)
         }
     }
 
-    public func systemFittingHeightForConfiguratedCell(_ cell: ZJCellProtocol) -> CGFloat {
-        cell.cellWillAppear(self)
+    public func systemFittingHeightForConfiguratedCell(_ cell: DefaultCellProtocol) -> CGFloat {
+        cell.cellWillAppear()
 
         let height = cell.systemLayoutSizeFitting(CGSize(width: tableViewManager.tableView.frame.width, height: 0), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel).height
         return height
