@@ -10,11 +10,7 @@ import UIKit
 
 open class ZJTextCell: UITableViewCell, UITextViewDelegate, ZJCellProtocol  {
     public var item: ZJTextItem!
-    
     public typealias ZJCelltemType = ZJTextItem
-    
-    
-    public typealias ZJTableViewItemType = ZJTextItem
     
     public func cellWillAppear() {
         textView.placeholder = item.placeHolder
@@ -40,8 +36,8 @@ open class ZJTextCell: UITableViewCell, UITextViewDelegate, ZJCellProtocol  {
     }
 
     public func textViewDidChange(_ textView: UITextView) {
-//        item.text = textView.text
-//        item.didChanged?(item)
+        item.text = textView.text
+        item.didChanged?(item)
     }
 
     open override func setSelected(_ selected: Bool, animated: Bool) {
