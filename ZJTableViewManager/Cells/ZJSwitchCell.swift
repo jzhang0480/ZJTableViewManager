@@ -10,17 +10,13 @@ import UIKit
 
 open class ZJSwitchCell: UITableViewCell, ZJTableViewCellProtocol {
     public var item: ZJSwitchItem!
-    
+
     public typealias ZJCelltemClass = ZJSwitchItem
-    
-    public func cellDidAppear() {
-        
-    }
-    
-    public func cellDidDisappear() {
-        
-    }
-    
+
+    public func cellDidAppear() {}
+
+    public func cellDidDisappear() {}
+
     @IBOutlet var labelTitle: UILabel!
     @IBOutlet var switchButton: UISwitch!
 

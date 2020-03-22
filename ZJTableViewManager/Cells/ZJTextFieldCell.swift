@@ -10,17 +10,13 @@ import UIKit
 
 open class ZJTextFieldCell: UITableViewCell, ZJTableViewCellProtocol {
     public var item: ZJTextFieldItem!
-    
+
     public typealias ZJCelltemClass = ZJTextFieldItem
-    
-    public func cellDidAppear() {
-        
-    }
-    
-    public func cellDidDisappear() {
-        
-    }
-    
+
+    public func cellDidAppear() {}
+
+    public func cellDidDisappear() {}
+
     @IBOutlet var titleConstraint: NSLayoutConstraint!
     @IBOutlet var labelTitle: UILabel!
 

@@ -10,20 +10,12 @@ import UIKit
 
 open class ZJTableViewCell: UITableViewCell, ZJTableViewCellProtocol {
     public var item: ZJTableViewItem!
-    
+
     public typealias ZJCelltemType = ZJTableViewItem
-    
-    public func cellWillAppear() {
-        
-    }
-    
-    public func cellDidAppear() {
-        
-    }
-    
-    public func cellDidDisappear() {
-        
-    }
-    
-    
+
+    public func cellWillAppear() {}
+
+    public func cellDidAppear() {}
+
+    public func cellDidDisappear() {}
 }

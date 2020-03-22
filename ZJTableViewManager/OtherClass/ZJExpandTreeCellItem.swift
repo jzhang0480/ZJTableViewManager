@@ -18,7 +18,7 @@ open class ZJExpandTreeCellItem: ZJTableViewItem {
     public override init() {
         super.init()
         selectionStyle = .none
-        setSelectionHandler {[weak self] callBackItem in
+        setSelectionHandler { [weak self] callBackItem in
             let item = callBackItem as! ZJExpandTreeCellItem
             var arrItems = [ZJExpandTreeCellItem]()
             if item.isExpand {
