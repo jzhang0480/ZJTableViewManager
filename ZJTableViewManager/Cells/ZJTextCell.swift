@@ -8,7 +8,11 @@
 
 import UIKit
 
-open class ZJTextCell: ZJTableViewCell, UITextViewDelegate {
+open class ZJTextCell: UITableViewCell, UITextViewDelegate, ZJCellProtocol {
+    public var item: ZJTextItem!
+
+    public typealias ZJCelltemType = ZJTextItem
+
     @IBOutlet var textView: ZJTextView!
 
     open override func awakeFromNib() {
@@ -17,18 +21,19 @@ open class ZJTextCell: ZJTableViewCell, UITextViewDelegate {
         textView.delegate = self
     }
 
-    open override func cellWillAppear() {
-        super.cellWillAppear()
-        let item = self.item as! ZJTextItem
+    public func cellWillAppear() {
         textView.placeholder = item.placeHolder
         textView.text = item.text
         textView.backgroundColor = item.textViewBackgroundColor
     }
 
+    public func cellDidAppear() {}
+
+    public func cellDidDisappear() {}
+
     public func textViewDidChange(_ textView: UITextView) {
-        let item = self.item as! ZJTextItem
         item.text = textView.text
-        item.didChanged?(self.item)
+        item.didChanged?(item)
     }
 
     open override func setSelected(_ selected: Bool, animated: Bool) {

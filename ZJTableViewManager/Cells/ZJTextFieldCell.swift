@@ -8,7 +8,19 @@
 
 import UIKit
 
-open class ZJTextFieldCell: ZJTableViewCell {
+open class ZJTextFieldCell: UITableViewCell, ZJCellProtocol {
+    public var item: ZJTextFieldItem!
+    
+    public typealias ZJCelltemType = ZJTextFieldItem
+    
+    public func cellDidAppear() {
+        
+    }
+    
+    public func cellDidDisappear() {
+        
+    }
+    
     @IBOutlet var titleConstraint: NSLayoutConstraint!
     @IBOutlet var labelTitle: UILabel!
 
@@ -20,9 +32,7 @@ open class ZJTextFieldCell: ZJTableViewCell {
         // Initialization code
     }
 
-    open override func cellWillAppear() {
-        super.cellWillAppear()
-        let item = self.item as! ZJTextFieldItem
+    public func cellWillAppear() {
         if item.isFullLength {
             titleConstraint.constant = 0
         } else {
@@ -34,7 +44,6 @@ open class ZJTextFieldCell: ZJTableViewCell {
     }
 
     @objc func textFieldDidChanged(textField: UITextField) {
-        let item = self.item as! ZJTextFieldItem
         item.text = textField.text
         item.didChanged?(item)
     }

@@ -139,30 +139,20 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
         let item = currentSection.items[indexPath.row]
         item.tableViewManager = self
         // 报错在这里，可能是是没有register cell 和 item
-        var cell = tableView.dequeueReusableCell(withIdentifier: item.cellIdentifier) as? ZJTableViewCell
-        
+        var cell = tableView.dequeueReusableCell(withIdentifier: item.cellIdentifier) as? DefaultCellProtocol
         if cell == nil {
-            cell = ZJTableViewCell(style: item.cellStyle!, reuseIdentifier: item.cellIdentifier)
+            cell = (ZJTableViewCell(style: item.cellStyle!, reuseIdentifier: item.cellIdentifier) as DefaultCellProtocol)
         }
         
-        if let title = item.cellTitle {
-            cell?.textLabel?.text = title
-        }
+        cell!.textLabel?.text = item.cellTitle
         
-        if let separatorInset = item.separatorInset {
-            cell?.separatorInset = separatorInset
-        }
+        cell!.accessoryType = item.accessoryType
         
-        if let accessoryType = item.accessoryType {
-            cell?.accessoryType = accessoryType
-        } else {
-            cell?.accessoryType = .none
-        }
+        cell!.selectionStyle = item.selectionStyle
         
-        cell?.selectionStyle = item.selectionStyle
+        cell!._item = item
         
-        cell?.item = item
-        cell?.cellWillAppear()
+        cell!.cellWillAppear()
         
         return cell!
     }
@@ -174,7 +164,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     
     public func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt _: IndexPath) {
         //        print("willDisplay")
-        (cell as! ZJTableViewCell).cellDidAppear()
+        (cell as! DefaultCellProtocol).cellDidAppear()
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

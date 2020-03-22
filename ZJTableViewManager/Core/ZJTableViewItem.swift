@@ -32,9 +32,9 @@ open class ZJTableViewItem: NSObject {
     }
 
     public var separatorInset: UIEdgeInsets?
-    public var accessoryType: UITableViewCell.AccessoryType?
-    public var selectionStyle: UITableViewCell.SelectionStyle = UITableViewCell.SelectionStyle.default
-    public var editingStyle: UITableViewCell.EditingStyle = UITableViewCell.EditingStyle.none
+    public var accessoryType: UITableViewCell.AccessoryType = .none
+    public var selectionStyle: UITableViewCell.SelectionStyle = .default
+    public var editingStyle: UITableViewCell.EditingStyle = .none
     public var isAutoDeselect: Bool! = true
     public var isHideSeparator: Bool = false
     public var separatorLeftMargin: CGFloat = 15

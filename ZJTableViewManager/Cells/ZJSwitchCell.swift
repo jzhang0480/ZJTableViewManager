@@ -8,7 +8,19 @@
 
 import UIKit
 
-open class ZJSwitchCell: ZJTableViewCell {
+open class ZJSwitchCell: UITableViewCell, ZJCellProtocol {
+    public var item: ZJSwitchItem!
+    
+    public typealias ZJCelltemType = ZJSwitchItem
+    
+    public func cellDidAppear() {
+        
+    }
+    
+    public func cellDidDisappear() {
+        
+    }
+    
     @IBOutlet var labelTitle: UILabel!
     @IBOutlet var switchButton: UISwitch!
 
@@ -17,15 +29,12 @@ open class ZJSwitchCell: ZJTableViewCell {
         // Initialization code
     }
 
-    open override func cellWillAppear() {
-        super.cellWillAppear()
-        let item = self.item as! ZJSwitchItem
+    public func cellWillAppear() {
         labelTitle.text = item.title
         switchButton.isOn = item.isOn
     }
 
     @IBAction func valueChanged(_ sender: UISwitch) {
-        let item = self.item as! ZJSwitchItem
         item.isOn = sender.isOn
         item.didChanged?(item)
     }
