@@ -8,10 +8,10 @@
 
 import UIKit
 
-open class ZJSwitchCell: UITableViewCell, ZJCellProtocol {
+open class ZJSwitchCell: UITableViewCell, ZJTableViewCellProtocol {
     public var item: ZJSwitchItem!
     
-    public typealias ZJCelltemType = ZJSwitchItem
+    public typealias ZJCelltemClass = ZJSwitchItem
     
     public func cellDidAppear() {
         

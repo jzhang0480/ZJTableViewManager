@@ -139,9 +139,9 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
         let item = currentSection.items[indexPath.row]
         item.tableViewManager = self
         // 报错在这里，可能是是没有register cell 和 item
-        var cell = tableView.dequeueReusableCell(withIdentifier: item.cellIdentifier) as? DefaultCellProtocol
+        var cell = tableView.dequeueReusableCell(withIdentifier: item.cellIdentifier) as? ZJInternalCellProtocol
         if cell == nil {
-            cell = (ZJTableViewCell(style: item.cellStyle!, reuseIdentifier: item.cellIdentifier) as DefaultCellProtocol)
+            cell = (ZJTableViewCell(style: item.cellStyle!, reuseIdentifier: item.cellIdentifier) as ZJInternalCellProtocol)
         }
         
         cell!.textLabel?.text = item.cellTitle
@@ -158,13 +158,11 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
     }
     
     public func tableView(_: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt _: IndexPath) {
-        //        print("didEndDisplaying")
-        (cell as! ZJTableViewCell).cellDidDisappear()
+        (cell as! ZJInternalCellProtocol).cellDidDisappear()
     }
     
     public func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt _: IndexPath) {
-        //        print("willDisplay")
-        (cell as! DefaultCellProtocol).cellDidAppear()
+        (cell as! ZJInternalCellProtocol).cellDidAppear()
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -232,9 +230,7 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
             print("error section class")
             return
         }
-        sections.remove(at: sections.index(where: { (current) -> Bool in
-            current == (section as! ZJTableViewSection)
-        })!)
+        sections.remove(at: sections.zj_indexOf(section as! ZJTableViewSection))
     }
     
     public func removeAllSections() {
@@ -253,5 +249,24 @@ open class ZJTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
         if let string = fromLabel?.attributedText {
             toLabel?.attributedText = string
         }
+    }
+}
+
+extension Array where Element: Equatable {
+    func zj_indexOf(_ element: Element) -> Int {
+        var index: Int? = nil
+        
+        #if swift(>=5)
+        index = self.firstIndex { (e) -> Bool in
+            return e == element
+        }
+        #else
+        index = self.index(where: { (e) -> Bool in
+            return e == element
+        })
+        #endif
+        
+        assert(index != nil, "Can't find element in array, please check you code")
+        return index!
     }
 }

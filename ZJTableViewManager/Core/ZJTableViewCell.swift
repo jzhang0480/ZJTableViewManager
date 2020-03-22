@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class ZJTableViewCell: UITableViewCell, ZJCellProtocol {
+open class ZJTableViewCell: UITableViewCell, ZJTableViewCellProtocol {
     public var item: ZJTableViewItem!
     
     public typealias ZJCelltemType = ZJTableViewItem

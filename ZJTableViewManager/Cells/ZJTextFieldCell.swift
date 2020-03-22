@@ -8,10 +8,10 @@
 
 import UIKit
 
-open class ZJTextFieldCell: UITableViewCell, ZJCellProtocol {
+open class ZJTextFieldCell: UITableViewCell, ZJTableViewCellProtocol {
     public var item: ZJTextFieldItem!
     
-    public typealias ZJCelltemType = ZJTextFieldItem
+    public typealias ZJCelltemClass = ZJTextFieldItem
     
     public func cellDidAppear() {
         

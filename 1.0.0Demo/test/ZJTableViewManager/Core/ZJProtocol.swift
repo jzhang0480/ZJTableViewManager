@@ -11,25 +11,25 @@ import UIKit
 
 public protocol ZJItemProtocol where Self: ZJTableViewItem {}
 
-public protocol DefaultCellProtocol where Self: UITableViewCell {
+public protocol ZJInternalCellProtocol where Self: UITableViewCell {
     var _item: ZJItemProtocol? { get set }
     func cellWillAppear()
     func cellDidAppear()
     func cellDidDisappear()
 }
 
-public protocol ZJCellProtocol: DefaultCellProtocol {
-    associatedtype ZJCelltemType: ZJItemProtocol
-    var item: ZJCelltemType! { get set }
+public protocol ZJTableViewCellProtocol: ZJInternalCellProtocol {
+    associatedtype ZJCelltemClass: ZJItemProtocol
+    var item: ZJCelltemClass! { get set }
 }
 
-public extension ZJCellProtocol {
+public extension ZJTableViewCellProtocol {
     var _item: ZJItemProtocol? {
         get {
             return item
         }
         set {
-            item = (newValue as! Self.ZJCelltemType)
+            item = (newValue as! Self.ZJCelltemClass)
         }
     }
 }

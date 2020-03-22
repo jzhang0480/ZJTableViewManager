@@ -8,10 +8,10 @@
 
 import UIKit
 
-open class ZJTextCell: UITableViewCell, UITextViewDelegate, ZJCellProtocol {
+open class ZJTextCell: UITableViewCell, UITextViewDelegate, ZJTableViewCellProtocol {
     public var item: ZJTextItem!
 
-    public typealias ZJCelltemType = ZJTextItem
+    public typealias ZJCelltemClass = ZJTextItem
 
     @IBOutlet var textView: ZJTextView!
 
