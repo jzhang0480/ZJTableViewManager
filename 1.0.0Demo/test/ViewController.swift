@@ -11,20 +11,20 @@ import UIKit
 class ViewController: UIViewController {
     var tableView: UITableView!
     var manager: ZJTableViewManager!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 //        FPSCounter.showInStatusBar()
         tableView = UITableView(frame: view.bounds, style: .grouped)
         view.addSubview(tableView)
         manager = ZJTableViewManager(tableView: tableView)
-        
+
         tableView.tableFooterView = UIView()
         let section = ZJTableViewSection()
         manager.add(section: section)
-        
+
         section.add(item: ZJTextItem(text: "text item", placeHolder: "placeholder", didChanged: nil))
-        
+
         let titles = ["Forms", "Retractable", "CustomCells", "Editing", "Sections", "List", "AutomaticHeight", "ExpandTree", "UpdateHeight"]
         for i in titles {
             let item = ZJTableViewItem(title: i)
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
             item.isAutoDeselect = true
             section.add(item: item)
             item.setSelectionHandler(selectHandler: { _ in
-                
+
 //                if i == "Forms" {
 //                    let vc = FormViewController()
 //                    self.navigationController?.pushViewController(vc, animated: true)
@@ -62,7 +62,7 @@ class ViewController: UIViewController {
             })
         }
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

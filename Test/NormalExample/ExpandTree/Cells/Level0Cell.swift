@@ -13,27 +13,27 @@ class Level0CellItem: ZJExpandTreeCellItem {
 }
 
 class Level0Cell: UITableViewCell, ZJTableViewCellProtocol {
-    @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet var labelTitle: UILabel!
     var item: Level0CellItem!
-    
+
     typealias ZJCelltemClass = Level0CellItem
-    
+
     func cellWillAppear() {
         labelTitle.text = item.title
     }
-    
+
     func cellDidAppear() {}
-    
+
     func cellDidDisappear() {}
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+
         // Configure the view for the selected state
     }
 }

@@ -75,7 +75,7 @@ class ViewController: UIViewController {
 /// - Parameters:
 ///   - view: 展示indicator的view
 ///   - callBack: 模拟网络请求完成之后的回调
-func httpRequest(view: UIView, callBack: (() -> ())?) {
+func httpRequest(view: UIView, callBack: (() -> Void)?) {
     let shadowView = UIView(frame: view.bounds)
     shadowView.backgroundColor = UIColor(white: 0, alpha: 0.5)
     view.addSubview(shadowView)

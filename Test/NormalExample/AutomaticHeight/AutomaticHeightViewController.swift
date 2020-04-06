@@ -20,7 +20,7 @@ class AutomaticHeightViewController: UIViewController {
         manager = ZJTableViewManager(tableView: tableView)
         manager.register(AutomaticHeightCell.self, AutomaticHeightCellItem.self)
         tableView.separatorStyle = .none
-        
+
         // 模拟网络请求
         httpRequest(view: view) {
             // 网络请求完成

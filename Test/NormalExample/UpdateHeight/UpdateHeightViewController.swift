@@ -35,7 +35,7 @@ class UpdateHeightViewController: UIViewController {
             }
         }
 
-        if let lastItem = section.items.last as? CardTableViewCellItem{
+        if let lastItem = section.items.last as? CardTableViewCellItem {
             // Last cell keep open and don't respond to the tap event
             lastItem.openCard()
             lastItem.selectionHandler = nil
@@ -58,9 +58,7 @@ class UpdateHeightViewController: UIViewController {
         // 注意：Xcode11.3.1 模拟器上tableview update height存在bug
         // 如果cell是透明的，动画过程中透明部分会变成不透明，影响动画的效果。
         // 真机上面是正常的
-         manager.updateHeight()
-
-
+        manager.updateHeight()
     }
 
     /*

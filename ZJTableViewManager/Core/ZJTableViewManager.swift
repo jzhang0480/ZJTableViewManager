@@ -61,23 +61,17 @@ open class ZJTableViewManager: NSObject {
         }
     }
 
-    func sectinAndItemFrom(indexPath: IndexPath?, sectionIndex: Int?, rowIndex: Int?) -> (ZJTableViewSection?, ZJTableViewItem?) {
-        var currentSection: ZJTableViewSection?
-        var item: ZJTableViewItem?
-        if let idx = indexPath {
-            currentSection = sections[idx.section]
-            item = currentSection?.items[idx.row]
-        }
+    func sectionFrom(section: Int) -> ZJTableViewSection {
+        let section = sections.count > section ? sections[section] : nil
+        assert(section != nil, "section out of range")
+        return section!
+    }
 
-        if let idx = sectionIndex {
-            currentSection = sections.count > idx ? sections[idx] : nil
-        }
-
-        if let idx = rowIndex {
-            item = (currentSection?.items.count)! > idx ? currentSection?.items[idx] : nil
-        }
-
-        return (currentSection, item)
+    func getSectionAndItem(indexPath: (section: Int, row: Int)) -> (section: ZJTableViewSection, item: ZJTableViewItem) {
+        let section = sectionFrom(section: indexPath.section)
+        let item = section.items.count > indexPath.row ? section.items[indexPath.row] : nil
+        assert(item != nil, "row out of range")
+        return (section, item!)
     }
 
     public func add(section: ZJTableViewSection) {
@@ -120,25 +114,24 @@ open class ZJTableViewManager: NSObject {
 
 extension ZJTableViewManager: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let currentSection = sections[indexPath.section]
-        let item = currentSection.items[indexPath.row]
-        if item.isAutoDeselect {
+        let obj = getSectionAndItem(indexPath: (indexPath.section, indexPath.row))
+        if obj.item.isAutoDeselect {
             tableView.deselectRow(at: indexPath, animated: true)
         }
-        item.selectionHandler?(item)
+        obj.item.selectionHandler?(obj.item)
     }
 
     public func tableView(_: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        let (_, item) = sectinAndItemFrom(indexPath: indexPath, sectionIndex: nil, rowIndex: nil)
-        return item!.editingStyle
+        let obj = getSectionAndItem(indexPath: (section: indexPath.section, row: indexPath.row))
+        return obj.item.editingStyle
     }
 
     public func tableView(_: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        let (_, item) = sectinAndItemFrom(indexPath: indexPath, sectionIndex: nil, rowIndex: nil)
+        let obj = getSectionAndItem(indexPath: (section: indexPath.section, row: indexPath.row))
 
         if editingStyle == .delete {
-            if let handler = item?.deletionHandler {
-                handler(item!)
+            if let handler = obj.item.deletionHandler {
+                handler(obj.item)
             }
         }
     }
@@ -152,32 +145,32 @@ extension ZJTableViewManager: UITableViewDelegate {
     }
 
     public func tableView(_: UITableView, willDisplayHeaderView _: UIView, forSection section: Int) {
-        let (currentSection, _) = sectinAndItemFrom(indexPath: nil, sectionIndex: section, rowIndex: nil)
-        currentSection?.headerWillDisplayHandler?(currentSection!)
+        let section = sectionFrom(section: section)
+        section.headerWillDisplayHandler?(section)
     }
 
     public func tableView(_: UITableView, didEndDisplayingHeaderView _: UIView, forSection section: Int) {
-        let (currentSection, _) = sectinAndItemFrom(indexPath: nil, sectionIndex: section, rowIndex: nil)
-        currentSection?.headerDidEndDisplayHandler?(currentSection!)
+        let section = sectionFrom(section: section)
+        section.headerDidEndDisplayHandler?(section)
     }
 
     public func tableView(_: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let currentSection = sections[section]
-        return currentSection.headerView
+        let section = sectionFrom(section: section)
+        return section.headerView
     }
 
     public func tableView(_: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let currentSection = sections[section]
-        return currentSection.footerView
+        let section = sectionFrom(section: section)
+        return section.footerView
     }
 
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let currentSection = sections[section]
-        if currentSection.headerView != nil || (currentSection.headerHeight > 0 && currentSection.headerHeight != CGFloat.leastNormalMagnitude) {
-            return currentSection.headerHeight
+        let section = sectionFrom(section: section)
+        if section.headerView != nil || (section.headerHeight > 0 && section.headerHeight != CGFloat.leastNormalMagnitude) {
+            return section.headerHeight
         }
 
-        if let title = currentSection.headerTitle {
+        if let title = section.headerTitle {
             let label = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.width - 40, height: CGFloat.greatestFiniteMagnitude))
             label.text = title
             label.font = UIFont.preferredFont(forTextStyle: .footnote)
@@ -189,13 +182,13 @@ extension ZJTableViewManager: UITableViewDelegate {
     }
 
     public func tableView(_: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        let currentSection = sections[section]
-        return currentSection.footerHeight
+        let section = sectionFrom(section: section)
+        return section.footerHeight
     }
 
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let currentSection = sections[indexPath.section]
-        let item = currentSection.items[indexPath.row]
+        let section = sections[indexPath.section]
+        let item = section.items[indexPath.row]
         #if swift(>=4.2)
             if item.cellHeight == UITableView.automaticDimension, tableView.estimatedRowHeight == 0 {
                 tableView.estimatedRowHeight = 44
@@ -222,37 +215,37 @@ extension ZJTableViewManager: UITableViewDataSource {
     }
 
     public func tableView(_: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let (section, _) = sectinAndItemFrom(indexPath: nil, sectionIndex: section, rowIndex: nil)
-        return section!.headerTitle
+        let section = sectionFrom(section: section)
+        return section.headerTitle
     }
 
     public func tableView(_: UITableView, titleForFooterInSection section: Int) -> String? {
-        let (section, _) = sectinAndItemFrom(indexPath: nil, sectionIndex: section, rowIndex: nil)
-        return section!.footerTitle
+        let section = sectionFrom(section: section)
+        return section.footerTitle
     }
 
     public func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let currentSection = sections[section]
-        return currentSection.items.count
+        let section = sectionFrom(section: section)
+        return section.items.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let currentSection = sections[indexPath.section]
-        let item = currentSection.items[indexPath.row]
-        item.tableViewManager = self
+        let obj = getSectionAndItem(indexPath: (indexPath.section, indexPath.row))
+
+        obj.item.tableViewManager = self
         // 报错在这里，可能是是没有register cell 和 item
-        var cell = tableView.dequeueReusableCell(withIdentifier: item.cellIdentifier) as? ZJInternalCellProtocol
+        var cell = tableView.dequeueReusableCell(withIdentifier: obj.item.cellIdentifier) as? ZJInternalCellProtocol
         if cell == nil {
-            cell = (ZJTableViewCell(style: item.cellStyle, reuseIdentifier: item.cellIdentifier) as ZJInternalCellProtocol)
+            cell = (ZJTableViewCell(style: obj.item.cellStyle, reuseIdentifier: obj.item.cellIdentifier) as ZJInternalCellProtocol)
         }
 
-        cell!.textLabel?.text = item.cellTitle
+        cell!.textLabel?.text = obj.item.cellTitle
 
-        cell!.accessoryType = item.accessoryType
+        cell!.accessoryType = obj.item.accessoryType
 
-        cell!.selectionStyle = item.selectionStyle
+        cell!.selectionStyle = obj.item.selectionStyle
 
-        cell!._item = item
+        cell!._item = obj.item
 
         cell!.cellWillAppear()
 
