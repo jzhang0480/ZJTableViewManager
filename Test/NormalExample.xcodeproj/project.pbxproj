@@ -43,6 +43,7 @@
 		660D6DBA231E5F53009741A7 /* HeroHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 660D6D96231E5F52009741A7 /* HeroHeaderView.xib */; };
 		660D6DBB231E5F53009741A7 /* HeroHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6D97231E5F52009741A7 /* HeroHeaderView.swift */; };
 		660D6DBC231E5F53009741A7 /* Info-manager.plist in Resources */ = {isa = PBXBuildFile; fileRef = 660D6D98231E5F52009741A7 /* Info-manager.plist */; };
+		667B07BE243B9031008D959C /* ZJProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B07BD243B9031008D959C /* ZJProtocol.swift */; };
 		66E60FAF2427D1C900C5E2BB /* ZJExpandTreeCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60F9D2427D1C900C5E2BB /* ZJExpandTreeCellItem.swift */; };
 		66E60FB02427D1C900C5E2BB /* ZJBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60F9E2427D1C900C5E2BB /* ZJBaseTableViewController.swift */; };
 		66E60FB12427D1C900C5E2BB /* ZJTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60F9F2427D1C900C5E2BB /* ZJTextView.swift */; };
@@ -59,7 +60,6 @@
 		66E60FBC2427D1C900C5E2BB /* ZJTableViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60FAC2427D1C900C5E2BB /* ZJTableViewItem.swift */; };
 		66E60FBD2427D1C900C5E2BB /* ZJTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60FAD2427D1C900C5E2BB /* ZJTableViewManager.swift */; };
 		66E60FBE2427D1C900C5E2BB /* ZJTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60FAE2427D1C900C5E2BB /* ZJTableViewCell.swift */; };
-		66E60FC02427D98300C5E2BB /* ZJProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60FBF2427D98300C5E2BB /* ZJProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +104,7 @@
 		660D6D96231E5F52009741A7 /* HeroHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeroHeaderView.xib; sourceTree = "<group>"; };
 		660D6D97231E5F52009741A7 /* HeroHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroHeaderView.swift; sourceTree = "<group>"; };
 		660D6D98231E5F52009741A7 /* Info-manager.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-manager.plist"; sourceTree = "<group>"; };
+		667B07BD243B9031008D959C /* ZJProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJProtocol.swift; sourceTree = "<group>"; };
 		66E60F9D2427D1C900C5E2BB /* ZJExpandTreeCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJExpandTreeCellItem.swift; sourceTree = "<group>"; };
 		66E60F9E2427D1C900C5E2BB /* ZJBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJBaseTableViewController.swift; sourceTree = "<group>"; };
 		66E60F9F2427D1C900C5E2BB /* ZJTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTextView.swift; sourceTree = "<group>"; };
@@ -120,7 +121,6 @@
 		66E60FAC2427D1C900C5E2BB /* ZJTableViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewItem.swift; sourceTree = "<group>"; };
 		66E60FAD2427D1C900C5E2BB /* ZJTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewManager.swift; sourceTree = "<group>"; };
 		66E60FAE2427D1C900C5E2BB /* ZJTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewCell.swift; sourceTree = "<group>"; };
-		66E60FBF2427D98300C5E2BB /* ZJProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZJProtocol.swift; path = ../../1.0.0Demo/test/ZJTableViewManager/Core/ZJProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,7 +327,7 @@
 		66E60FAA2427D1C900C5E2BB /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				66E60FBF2427D98300C5E2BB /* ZJProtocol.swift */,
+				667B07BD243B9031008D959C /* ZJProtocol.swift */,
 				66E60FAB2427D1C900C5E2BB /* ZJTableViewSection.swift */,
 				66E60FAC2427D1C900C5E2BB /* ZJTableViewItem.swift */,
 				66E60FAD2427D1C900C5E2BB /* ZJTableViewManager.swift */,
@@ -465,7 +465,7 @@
 				660D6DB0231E5F53009741A7 /* Level2Cell.swift in Sources */,
 				66E60FB92427D1C900C5E2BB /* ZJSwitchCell.swift in Sources */,
 				66E60FB52427D1C900C5E2BB /* ZJTextItem.swift in Sources */,
-				66E60FC02427D98300C5E2BB /* ZJProtocol.swift in Sources */,
+				667B07BE243B9031008D959C /* ZJProtocol.swift in Sources */,
 				660D6DB4231E5F53009741A7 /* AppDelegate.swift in Sources */,
 				66E60FB02427D1C900C5E2BB /* ZJBaseTableViewController.swift in Sources */,
 				66E60FBB2427D1C900C5E2BB /* ZJTableViewSection.swift in Sources */,
