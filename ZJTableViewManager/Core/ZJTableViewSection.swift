@@ -30,10 +30,7 @@ open class ZJTableViewSection: NSObject {
     }
 
     public var index: Int {
-        let section = tableViewManager.sections.index(where: { (section) -> Bool in
-            section == self
-        })
-        return section!
+        return tableViewManager.sections.zj_indexOf(self)
     }
 
     public override init() {
@@ -91,11 +88,8 @@ open class ZJTableViewSection: NSObject {
     }
 
     public func remove(item: ZJTableViewItem) {
-        if let index = items.index(where: { $0 == item }) {
-            items.remove(at: index)
-        } else {
-            print("item not in this section")
-        }
+        // If crash at here, item not in this section
+        items.remove(at: items.zj_indexOf(item))
     }
 
     public func removeAllItems() {
@@ -109,26 +103,26 @@ open class ZJTableViewSection: NSObject {
 
     public func insert(_ item: ZJTableViewItem!, afterItem: ZJTableViewItem, animate: UITableView.RowAnimation = .automatic) {
         if !items.contains(where: { $0 == afterItem }) {
-            print("can't insert because afterItem did not in sections")
+            zj_log("can't insert because afterItem did not in sections")
             return
         }
 
         tableViewManager.tableView.beginUpdates()
         item.section = self
         item.tableViewManager = tableViewManager
-        items.insert(item, at: items.index(where: { $0 == afterItem })! + 1)
+        items.insert(item, at: items.zj_indexOf(afterItem) + 1)
         tableViewManager.tableView.insertRows(at: [item.indexPath], with: animate)
         tableViewManager.tableView.endUpdates()
     }
 
     public func insert(_ items: [ZJTableViewItem], afterItem: ZJTableViewItem, animate: UITableView.RowAnimation = .automatic) {
         if !self.items.contains(where: { $0 == afterItem }) {
-            print("can't insert because afterItem did not in sections")
+            zj_log("can't insert because afterItem did not in sections")
             return
         }
 
         tableViewManager.tableView.beginUpdates()
-        let newFirstIndex = self.items.index(where: { $0 == afterItem })! + 1
+        let newFirstIndex = self.items.zj_indexOf(afterItem) + 1
         self.items.insert(contentsOf: items, at: newFirstIndex)
         var arrNewIndexPath = [IndexPath]()
         for i in 0 ..< items.count {
@@ -155,10 +149,8 @@ open class ZJTableViewSection: NSObject {
     }
 
     public func reload(_ animation: UITableView.RowAnimation) {
-        if let index = tableViewManager.sections.index(where: { $0 == self }) {
-            tableViewManager.tableView.reloadSections(IndexSet(integer: index), with: animation)
-        } else {
-            print("section did not in manager！")
-        }
+        // If crash at here, section did not in manager！
+        let index = tableViewManager.sections.zj_indexOf(self)
+        tableViewManager.tableView.reloadSections(IndexSet(integer: index), with: animation)
     }
 }

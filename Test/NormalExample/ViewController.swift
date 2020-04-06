@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         FPSCounter.showInStatusBar()
+
+        ZJTableViewManager.isDebug = true
+
         tableView = UITableView(frame: view.bounds, style: .grouped)
         view.addSubview(tableView)
         manager = ZJTableViewManager(tableView: tableView)
@@ -30,7 +33,7 @@ class ViewController: UIViewController {
             item.isAutoDeselect = true
             section.add(item: item)
 
-            item.setSelectionHandler(selectHandler: { _ in
+            item.setSelectionHandler { _ in
 
                 if i == "Forms" {
                     let vc = FormViewController()
@@ -58,12 +61,35 @@ class ViewController: UIViewController {
                     let vc = UpdateHeightViewController()
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
-            })
+            }
         }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+}
+
+/// 假装调用接口
+/// - Parameters:
+///   - view: 展示indicator的view
+///   - callBack: 模拟网络请求完成之后的回调
+func httpRequest(view: UIView, callBack: (() -> ())?) {
+    let shadowView = UIView(frame: view.bounds)
+    shadowView.backgroundColor = UIColor(white: 0, alpha: 0.5)
+    view.addSubview(shadowView)
+
+    let indicator = UIActivityIndicatorView(style: .whiteLarge)
+    indicator.center = shadowView.center
+
+    shadowView.addSubview(indicator)
+    indicator.startAnimating()
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + DispatchTimeInterval.seconds(1)) {
+        indicator.stopAnimating()
+        indicator.removeFromSuperview()
+        shadowView.removeFromSuperview()
+
+        callBack?()
     }
 }

@@ -23,22 +23,22 @@ class EditingViewController: UIViewController {
         var section = ZJTableViewSection(headerTitle: "DELETEABLE")
         manager.add(section: section)
         for i in 0 ... 3 {
-            let item = ZJTableViewItem(title: "section 0, item " + String(i))
+            let item = ZJTableViewItem(title: "section 0, row " + String(i))
             item.editingStyle = .delete
-            item.setDeletionHandler(deletionHandler: { [weak self] item in
+            item.setDeletionHandler { [weak self] item in
                 self?.deleteConfirm(item: item, needConfirm: false)
-            })
+            }
             section.add(item: item)
         }
 
         section = ZJTableViewSection(headerTitle: "Deletable with confirmation")
         manager.add(section: section)
         for i in 0 ... 3 {
-            let item = ZJTableViewItem(title: "section 1, item " + String(i))
+            let item = ZJTableViewItem(title: "section 1, row " + String(i))
             item.editingStyle = .delete
-            item.setDeletionHandler(deletionHandler: { [weak self] item in
+            item.setDeletionHandler { [weak self] item in
                 self?.deleteConfirm(item: item)
-            })
+            }
             section.add(item: item)
         }
 
@@ -48,13 +48,14 @@ class EditingViewController: UIViewController {
 
     func deleteConfirm(item: ZJTableViewItem, needConfirm: Bool = true) {
         if !needConfirm {
-            print(item.cellTitle ?? "")
+            zj_log((item.cellTitle ?? "") + " deleted！")
             item.delete()
             return
         }
 
         let alertVC = UIAlertController(title: "Confirmation", message: "Are you sure to delete " + (item.cellTitle)!, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "Delete", style: .default, handler: { _ in
+            zj_log((item.cellTitle ?? "") + " deleted！")
             item.delete(.fade)
         }))
         alertVC.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))

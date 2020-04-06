@@ -26,14 +26,14 @@ class FormViewController: ZJBaseTableViewController {
         // Text Item
         section.add(item: ZJTextFieldItem(title: "Text Item", placeHolder: "Text", text: nil, didChanged: { item in
             if let text = (item as! ZJTextFieldItem).text {
-                print(text)
+                zj_log(text)
             }
         }))
 
         // Password
         let passwordItem = ZJTextFieldItem(title: "Password", placeHolder: "Password Item", text: nil, didChanged: { item in
             if let text = (item as! ZJTextFieldItem).text {
-                print(text)
+                zj_log(text)
             }
         })
         passwordItem.isSecureTextEntry = true
@@ -41,7 +41,7 @@ class FormViewController: ZJBaseTableViewController {
 
         // Switch Item
         section.add(item: ZJSwitchItem(title: "Switch Item", isOn: false, didChanged: { item in
-            print((item as! ZJSwitchItem).isOn)
+            zj_log((item as! ZJSwitchItem).isOn)
         }))
 
         manager.reload()

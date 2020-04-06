@@ -19,7 +19,6 @@ class UpdateHeightViewController: UIViewController {
         title = "UpdateHeight"
         tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.separatorStyle = .none
-        self.tableView.backgroundColor = .green
         view.addSubview(tableView)
         manager = ZJTableViewManager(tableView: tableView)
         manager.register(CardTableViewCell.self, CardTableViewCellItem.self)
@@ -31,16 +30,15 @@ class UpdateHeightViewController: UIViewController {
             section.add(item: item)
             item.zPosition = CGFloat(index)
             // cell tap event
-            item.setSelectionHandler { [weak self] selectItem in
-                self?.cellTapEvent(item: selectItem as! CardTableViewCellItem)
+            item.setSelectionHandler { [unowned self] (selectItem: CardTableViewCellItem) in
+                self.cellTapEvent(item: selectItem)
             }
         }
 
-        if let lastItem = section.items.last {
-            let item = (lastItem as! CardTableViewCellItem)
-            // Last cell keep open and don't response tap event
-            item.openCard()
-            item.selectionHandler = nil
+        if let lastItem = section.items.last as? CardTableViewCellItem{
+            // Last cell keep open and don't respond to the tap event
+            lastItem.openCard()
+            lastItem.selectionHandler = nil
         }
 
         manager.reload()

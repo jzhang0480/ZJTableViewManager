@@ -173,23 +173,23 @@
 		660D6D68231E5F52009741A7 /* NormalExample */ = {
 			isa = PBXGroup;
 			children = (
-				66E60F9B2427D1C900C5E2BB /* ZJTableViewManager */,
-				660D6D69231E5F52009741A7 /* ViewController.swift */,
-				660D6D6A231E5F52009741A7 /* CustomCellViewController.swift */,
-				660D6D6B231E5F52009741A7 /* RetractableViewController.swift */,
-				660D6D6C231E5F52009741A7 /* SectionsViewController.swift */,
-				660D6D6D231E5F52009741A7 /* CustomCells */,
-				660D6D71231E5F52009741A7 /* Other */,
+				660D6D8C231E5F52009741A7 /* AppDelegate.swift */,
 				660D6D76231E5F52009741A7 /* Assets.xcassets */,
-				660D6D77231E5F52009741A7 /* FormViewController.swift */,
+				660D6D8D231E5F52009741A7 /* AutomaticHeight */,
+				660D6D6D231E5F52009741A7 /* CustomCells */,
+				660D6D6A231E5F52009741A7 /* CustomCellViewController.swift */,
 				660D6D78231E5F52009741A7 /* EditingViewController.swift */,
-				660D6D79231E5F52009741A7 /* UpdateHeight */,
 				660D6D7D231E5F52009741A7 /* ExpandTree */,
+				660D6D77231E5F52009741A7 /* FormViewController.swift */,
+				660D6D98231E5F52009741A7 /* Info-manager.plist */,
 				660D6D88231E5F52009741A7 /* LaunchScreen.storyboard */,
 				660D6D8A231E5F52009741A7 /* Main.storyboard */,
-				660D6D8C231E5F52009741A7 /* AppDelegate.swift */,
-				660D6D8D231E5F52009741A7 /* AutomaticHeight */,
-				660D6D98231E5F52009741A7 /* Info-manager.plist */,
+				660D6D71231E5F52009741A7 /* Other */,
+				660D6D6B231E5F52009741A7 /* RetractableViewController.swift */,
+				660D6D6C231E5F52009741A7 /* SectionsViewController.swift */,
+				660D6D79231E5F52009741A7 /* UpdateHeight */,
+				660D6D69231E5F52009741A7 /* ViewController.swift */,
+				66E60F9B2427D1C900C5E2BB /* ZJTableViewManager */,
 			);
 			path = NormalExample;
 			sourceTree = "<group>";
@@ -219,8 +219,8 @@
 			isa = PBXGroup;
 			children = (
 				660D6D7A231E5F52009741A7 /* CardTableViewCell.swift */,
-				660D6D7B231E5F52009741A7 /* UpdateHeightViewController.swift */,
 				660D6D7C231E5F52009741A7 /* CardTableViewCell.xib */,
+				660D6D7B231E5F52009741A7 /* UpdateHeightViewController.swift */,
 			);
 			path = UpdateHeight;
 			sourceTree = "<group>";
@@ -237,14 +237,14 @@
 		660D6D7E231E5F52009741A7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				660D6D7F231E5F52009741A7 /* Level1Cell.xib */,
+				660D6D84231E5F52009741A7 /* Level0Cell.swift */,
 				660D6D80231E5F52009741A7 /* Level0Cell.xib */,
 				660D6D81231E5F52009741A7 /* Level1Cell.swift */,
-				660D6D82231E5F52009741A7 /* Level2Cell.xib */,
-				660D6D83231E5F52009741A7 /* Level3Cell.xib */,
-				660D6D84231E5F52009741A7 /* Level0Cell.swift */,
-				660D6D85231E5F52009741A7 /* Level3Cell.swift */,
+				660D6D7F231E5F52009741A7 /* Level1Cell.xib */,
 				660D6D86231E5F52009741A7 /* Level2Cell.swift */,
+				660D6D82231E5F52009741A7 /* Level2Cell.xib */,
+				660D6D85231E5F52009741A7 /* Level3Cell.swift */,
+				660D6D83231E5F52009741A7 /* Level3Cell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -252,9 +252,9 @@
 		660D6D8D231E5F52009741A7 /* AutomaticHeight */ = {
 			isa = PBXGroup;
 			children = (
+				660D6D92231E5F52009741A7 /* AutomaticHeightCell */,
 				660D6D8E231E5F52009741A7 /* AutomaticHeightViewController.swift */,
 				660D6D8F231E5F52009741A7 /* Modes */,
-				660D6D92231E5F52009741A7 /* AutomaticHeightCell */,
 				660D6D95231E5F52009741A7 /* Views */,
 			);
 			path = AutomaticHeight;
@@ -311,15 +311,15 @@
 		66E60FA02427D1C900C5E2BB /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				66E60FA12427D1C900C5E2BB /* ZJSwitchCell.xib */,
-				66E60FA22427D1C900C5E2BB /* ZJTextFieldCell.xib */,
-				66E60FA32427D1C900C5E2BB /* ZJTextCell.xib */,
-				66E60FA42427D1C900C5E2BB /* ZJTextItem.swift */,
-				66E60FA52427D1C900C5E2BB /* ZJSwitchItem.swift */,
-				66E60FA62427D1C900C5E2BB /* ZJTextFieldItem.swift */,
-				66E60FA72427D1C900C5E2BB /* ZJTextFieldCell.swift */,
 				66E60FA82427D1C900C5E2BB /* ZJSwitchCell.swift */,
+				66E60FA12427D1C900C5E2BB /* ZJSwitchCell.xib */,
+				66E60FA52427D1C900C5E2BB /* ZJSwitchItem.swift */,
 				66E60FA92427D1C900C5E2BB /* ZJTextCell.swift */,
+				66E60FA32427D1C900C5E2BB /* ZJTextCell.xib */,
+				66E60FA72427D1C900C5E2BB /* ZJTextFieldCell.swift */,
+				66E60FA22427D1C900C5E2BB /* ZJTextFieldCell.xib */,
+				66E60FA62427D1C900C5E2BB /* ZJTextFieldItem.swift */,
+				66E60FA42427D1C900C5E2BB /* ZJTextItem.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";

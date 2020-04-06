@@ -12,7 +12,7 @@ class ExpandTreeViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     var manager: ZJTableViewManager!
     var section = ZJTableViewSection()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "ExpandTree"
@@ -22,39 +22,67 @@ class ExpandTreeViewController: UIViewController {
         manager.register(Level2Cell.self, Level2CellItem.self)
         manager.register(Level3Cell.self, Level3CellItem.self)
         manager.add(section: section)
-
+        
+        defaultExpandItems()
+        customExpandItems()
+        
+        manager.reload()
+    }
+    
+    /// ************自动处理展开事件的示例*************
+    func defaultExpandItems() {
         // level 0
         let item0 = Level0CellItem()
-        item0.level = 0
+        item0.title = "level0 默认自动处理展开事件"
         section.add(item: item0)
-        // 如果isExpand为true，则下一级的item（也就是item1）必须加入section
-        item0.isExpand = true
+        
         // level 1
         for _ in 0 ..< 3 {
             let item1 = Level1CellItem()
-            // level仅用于记录层级，可以不赋值
-            item1.level = 1
-            item1.isExpand = false
-            section.add(item: item1)
-            item0.arrNextLevel.append(item1)
-
+            item1.isExpand = false // 默认是true，我这里需要第二级收起状态，所以设置false
+            item0.setSubLevel(item: item1, section: section)
+            
             // level 2
             for _ in 0 ..< 3 {
                 let item2 = Level2CellItem()
-                // 如果isExpand为false，则后面就不用把item加入section
-                item2.isExpand = false
-                item1.arrNextLevel.append(item2)
-
+                item1.setSubLevel(item: item2, section: section)
+                
                 // level 3
                 for _ in 0 ..< 3 {
                     let item3 = Level3CellItem()
-                    item3.isExpand = false
-                    item2.arrNextLevel.append(item3)
+                    item2.setSubLevel(item: item3, section: section)
                 }
             }
         }
-        manager.reload()
-
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    /// ************自定义展开操作的示例（如网络请求等）*************
+    func customExpandItems() {
+        // level 0
+        let rootItem = Level0CellItem()
+        rootItem.title = "level0 网络请求获取数据之后再展开"
+        section.add(item: rootItem)
+        rootItem.isExpand = false
+        
+        // 自定义点击事件处理，调用这个方法重写回调就会覆盖掉默认的展开事件
+        rootItem.setSelectionHandler { [unowned self] (callBackItem: Level0CellItem) in
+            
+            // 判断是否已经从网络获得过数据，有的话就直接展开或收起（实际项目根据实际情况来判断，这里只是个例子）
+            if callBackItem.arrSubLevel.count > 0 {
+                callBackItem.toggleExpand()
+                return
+            }
+            
+            // 模拟网络请求
+            httpRequest(view: callBackItem.cell.contentView) { [unowned self] in
+                // 网络请求完成 添加数据
+                for _ in 0 ..< 3 {
+                    let newItem = Level1CellItem()
+                    callBackItem.setSubLevel(item: newItem, section: self.section)
+                }
+                callBackItem.toggleExpand()
+            }
+        }
     }
 }
+
