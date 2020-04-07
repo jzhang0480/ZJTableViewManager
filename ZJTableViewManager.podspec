@@ -1,7 +1,7 @@
 # encoding: utf-8
 Pod::Spec.new do |s|
   s.name = "ZJTableViewManager"
-  s.version = "0.2.7"
+  s.version = "1.0.0"
   s.summary = "Powerful data driven content manager for UITableView.强大的数据驱动的TableView"
   s.description = <<-DESC
 ZJTableViewManager allows to manage the content of any UITableView with ease, both forms and lists. ZJTableViewManager is built on top of reusable cells technique and provides APIs for mapping any object class to any custom cell subclass.
@@ -12,21 +12,16 @@ ZJTableViewManager allows to manage the content of any UITableView with ease, bo
   s.source = { :git => "https://github.com/JavenZ/ZJTableViewManager.git", :tag => "#{s.version}" }
   # s.source_files  = "ZJTableViewManager", "ZJTableViewManager/**/*"
   s.platform = :ios, "8.0"
-  s.swift_version = "4.0"
+  s.swift_version = ['4.0', '4.2', '5.1', '5.2']
   # s.source_files = "ZJTableViewManager"
   s.subspec "Cells" do |ss|
     ss.source_files = "ZJTableViewManager/Cells/*"
-    ss.dependency 'ZJTableViewManager/Core'
-    ss.dependency 'ZJTableViewManager/OtherClass'
   end
   s.subspec "Core" do |ss|
     ss.source_files = "ZJTableViewManager/Core/*"
     ss.dependency 'ZJTableViewManager/Cells'
-    ss.dependency 'ZJTableViewManager/OtherClass'
   end
   s.subspec "Other" do |ss|
     ss.source_files = "ZJTableViewManager/OtherClass/*"
-    ss.dependency 'ZJTableViewManager/Core'
-    ss.dependency 'ZJTableViewManager/Cells'
   end
 end
