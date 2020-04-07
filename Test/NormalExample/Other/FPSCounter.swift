@@ -93,13 +93,27 @@ public class FPSCounter: NSObject {
     ///   - runloop: The runloop to start tracking in
     ///   - mode:    The mode(s) to track in the runloop
     ///
-    @objc public func startTracking(inRunLoop runloop: RunLoop = .main, mode: RunLoop.Mode = RunLoop.Mode.common) {
-        stopTracking()
+    
+    #if swift(>=4.2)
+        @objc public func startTracking(inRunLoop runloop: RunLoop = .main, mode: RunLoop.Mode = RunLoop.Mode.common) {
+        
+            stopTracking()
 
-        self.runloop = runloop
-        self.mode = mode
-        displayLink.add(to: runloop, forMode: mode)
-    }
+            self.runloop = runloop
+            self.mode = mode
+            displayLink.add(to: runloop, forMode: mode)
+        }
+    #else
+    @objc public func startTracking(inRunLoop runloop: RunLoop = .main, mode: RunLoop.Mode = RunLoopMode.commonModes) {
+        
+        stopTracking()
+    self.runloop = runloop
+    self.mode = mode
+    displayLink.add(to: runloop, forMode: mode)
+  }
+    #endif
+    
+
 
     /// Stop tracking FPS updates.
     ///

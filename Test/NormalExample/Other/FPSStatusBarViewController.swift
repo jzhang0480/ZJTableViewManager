@@ -29,10 +29,19 @@ class FPSStatusBarViewController: UIViewController {
     }
 
     private func commonInit() {
+        #if swift(>=4.2)
+            NotificationCenter.default.addObserver(self,
+            selector: #selector(FPSStatusBarViewController.updateStatusBarFrame(_:)),
+            name: UIApplication.didChangeStatusBarOrientationNotification,
+            object: nil)
+        #else
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(FPSStatusBarViewController.updateStatusBarFrame(_:)),
-                                               name: UIApplication.didChangeStatusBarOrientationNotification,
+                                               name: NSNotification.Name.UIApplicationDidChangeStatusBarOrientation,
                                                object: nil)
+            
+        
+        #endif
     }
 
     deinit {
@@ -66,7 +75,12 @@ class FPSStatusBarViewController: UIViewController {
 
     @objc static var statusBarWindow: UIWindow = {
         let window = FPStatusBarWindow()
+        #if swift(>=4.2)
         window.windowLevel = UIWindow.Level.statusBar
+            
+        #else
+        window.windowLevel = UIWindowLevelStatusBar
+        #endif
         window.rootViewController = FPSStatusBarViewController()
         return window
     }()
@@ -116,22 +130,42 @@ public extension FPSCounter {
     ///   - runloop:     The `NSRunLoop` to use when tracking FPS. Default is the main run loop
     ///   - mode:        The run loop mode to use when tracking. Default uses `RunLoop.Mode.common`
     ///
-    @objc class func showInStatusBar(
-        application: UIApplication = .shared,
-        runloop: RunLoop = .main,
-        mode: RunLoop.Mode = RunLoop.Mode.common
-    ) {
-        let window = FPSStatusBarViewController.statusBarWindow
-        window.frame = application.statusBarFrame
-        window.isHidden = false
+    #if swift(>=4.2)
+        @objc class func showInStatusBar(
+            application: UIApplication = .shared,
+            runloop: RunLoop = .main,
+            mode: RunLoop.Mode = RunLoop.Mode.common
+        ) {
+            let window = FPSStatusBarViewController.statusBarWindow
+            window.frame = application.statusBarFrame
+            window.isHidden = false
 
-        if let controller = window.rootViewController as? FPSStatusBarViewController {
-            controller.fpsCounter.startTracking(
-                inRunLoop: runloop,
-                mode: mode
-            )
+            if let controller = window.rootViewController as? FPSStatusBarViewController {
+                controller.fpsCounter.startTracking(
+                    inRunLoop: runloop,
+                    mode: mode
+                )
+            }
         }
-    }
+    #else
+        @objc class func showInStatusBar(
+            application: UIApplication = .shared,
+            runloop: RunLoop = .main,
+            mode: RunLoop.Mode = RunLoopMode.commonModes
+        ) {
+            let window = FPSStatusBarViewController.statusBarWindow
+            window.frame = application.statusBarFrame
+            window.isHidden = false
+
+            if let controller = window.rootViewController as? FPSStatusBarViewController {
+                controller.fpsCounter.startTracking(
+                    inRunLoop: runloop,
+                    mode: mode
+                )
+            }
+        }
+        
+    #endif
 
     /// Removes the label that shows the current FPS from the status bar.
     ///
