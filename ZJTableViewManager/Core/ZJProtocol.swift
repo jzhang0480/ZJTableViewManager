@@ -204,7 +204,6 @@ extension ZJTableViewManager: UIScrollViewDelegate {
         }
     }
 
-    
     public func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView) {
         if let d = scrollDelegate {
             if #available(iOS 11.0, *) {
