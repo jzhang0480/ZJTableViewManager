@@ -36,20 +36,12 @@ open class ZJTableViewManager: NSObject {
         tableView.estimatedRowHeight = 0
         tableView.estimatedSectionFooterHeight = 0
         tableView.estimatedSectionHeaderHeight = 0
-        registerDefaultCells()
     }
 
     /// use this method to update cell height after you change item.cellHeight.
-    open func updateHeight() {
+    public func updateHeight() {
         tableView.beginUpdates()
         tableView.endUpdates()
-    }
-
-    func registerDefaultCells() {
-        let myBundle = Bundle(for: ZJTextItem.self)
-        register(ZJTextCell.self, ZJTextItem.self, myBundle)
-        register(ZJTextFieldCell.self, ZJTextFieldItem.self, myBundle)
-        register(ZJSwitchCell.self, ZJSwitchItem.self, myBundle)
     }
 
     public func register(_ nibClass: AnyClass, _ item: AnyClass, _ bundle: Bundle = Bundle.main) {

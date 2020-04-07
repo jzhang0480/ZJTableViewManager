@@ -8,6 +8,25 @@
 
 import UIKit
 
+open class ZJTextItem: ZJTableViewItem {
+    public var text: String?
+    public var placeHolder: String?
+    public var textViewBackgroundColor: UIColor = UIColor.white
+    public var didChanged: ZJTableViewItemBlock?
+    override init() {
+        super.init()
+        cellHeight = 125
+        selectionStyle = UITableViewCell.SelectionStyle.none
+    }
+
+    public convenience init(text: String?, placeHolder: String, didChanged: ZJTableViewItemBlock?) {
+        self.init()
+        self.text = text
+        self.placeHolder = placeHolder
+        self.didChanged = didChanged
+    }
+}
+
 open class ZJTextCell: UITableViewCell, UITextViewDelegate, ZJTableViewCellProtocol {
     public var item: ZJTextItem!
 

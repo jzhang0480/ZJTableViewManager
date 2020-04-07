@@ -13,9 +13,20 @@ class FormViewController: ZJBaseTableViewController {
         super.viewDidLoad()
         title = "Forms"
         tableView.tableFooterView = UIView()
-        let section = ZJTableViewSection()
+
+        manager.register(ZJTextCell.self, ZJTextItem.self)
+        manager.register(ZJTextFieldCell.self, ZJTextFieldItem.self)
+        manager.register(ZJSwitchCell.self, ZJSwitchItem.self)
+
+        // Custom SectionHeader
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 40))
+        label.backgroundColor = .lightGray
+        label.textColor = .red
+        label.text = "    Custom Section Header"
+        let section = ZJTableViewSection(headerView: label)
         manager.add(section: section)
 
+        // Custom Cell
         // Simple String
         section.add(item: ZJTableViewItem(title: "Simple String"))
 

@@ -8,6 +8,24 @@
 
 import UIKit
 
+open class ZJTextFieldItem: ZJTableViewItem {
+    public var title: String?
+    public var placeHolder: String?
+    public var text: String?
+    public var didChanged: ZJTableViewItemBlock?
+    public var isFullLength: Bool = false
+    public var isSecureTextEntry: Bool = false
+
+    public convenience init(title: String?, placeHolder: String?, text: String?, isFullLength: Bool = false, didChanged: ZJTableViewItemBlock?) {
+        self.init()
+        self.title = title
+        self.placeHolder = placeHolder
+        self.text = text
+        self.isFullLength = isFullLength
+        self.didChanged = didChanged
+    }
+}
+
 open class ZJTextFieldCell: UITableViewCell, ZJTableViewCellProtocol {
     public var item: ZJTextFieldItem!
 

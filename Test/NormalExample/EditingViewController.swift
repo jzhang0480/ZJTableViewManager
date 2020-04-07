@@ -14,7 +14,7 @@ class EditingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Editing"
+        title = "SlideDelete"
 
         tableView = UITableView(frame: view.bounds, style: .grouped)
         view.addSubview(tableView)

@@ -8,14 +8,23 @@
 
 import UIKit
 
+public class ZJSwitchItem: ZJTableViewItem {
+    public var title: String?
+    public var isOn: Bool = false
+    public var didChanged: ZJTableViewItemBlock?
+    public convenience init(title: String?, isOn: Bool, didChanged: ZJTableViewItemBlock?) {
+        self.init()
+        self.title = title
+        self.isOn = isOn
+        self.didChanged = didChanged
+    }
+}
+
+
 open class ZJSwitchCell: UITableViewCell, ZJTableViewCellProtocol {
     public var item: ZJSwitchItem!
 
     public typealias ZJCelltemClass = ZJSwitchItem
-
-    public func cellDidAppear() {}
-
-    public func cellDidDisappear() {}
 
     @IBOutlet var labelTitle: UILabel!
     @IBOutlet var switchButton: UISwitch!
@@ -29,6 +38,10 @@ open class ZJSwitchCell: UITableViewCell, ZJTableViewCellProtocol {
         labelTitle.text = item.title
         switchButton.isOn = item.isOn
     }
+
+    public func cellDidAppear() {}
+
+    public func cellDidDisappear() {}
 
     @IBAction func valueChanged(_ sender: UISwitch) {
         item.isOn = sender.isOn
