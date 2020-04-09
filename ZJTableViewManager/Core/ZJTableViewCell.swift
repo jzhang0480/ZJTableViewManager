@@ -8,30 +8,14 @@
 
 import UIKit
 
-open class ZJTableViewCell: UITableViewCell {
+open class ZJTableViewCell: UITableViewCell, ZJTableViewCellProtocol {
     public var item: ZJTableViewItem!
 
-    open override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    public typealias ZJCelltemType = ZJTableViewItem
 
-    open func cellWillAppear() {}
+    public func cellWillAppear() {}
 
-    open func cellDidAppear() {
-        let item = self.item as ZJTableViewItem
-        if item.isHideSeparator {
-            separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: bounds.size.width - 15)
-        } else {
-            separatorInset = UIEdgeInsets(top: 0, left: item.separatorLeftMargin, bottom: 0, right: 0)
-        }
-    }
+    public func cellDidAppear() {}
 
-    open func cellDidDisappear() {}
-
-    open override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    public func cellDidDisappear() {}
 }
