@@ -26,7 +26,7 @@ open class ZJTextFieldItem: ZJTableViewItem {
     }
 }
 
-open class ZJTextFieldCell: UITableViewCell, ZJTableViewCellProtocol {
+open class ZJTextFieldCell: UITableViewCell, ZJCellProtocol {
     public var item: ZJTextFieldItem!
 
     public typealias ZJCelltemClass = ZJTextFieldItem

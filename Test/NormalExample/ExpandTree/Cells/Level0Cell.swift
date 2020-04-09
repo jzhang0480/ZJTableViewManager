@@ -12,7 +12,7 @@ class Level0CellItem: ZJExpandTreeCellItem {
     var title: String?
 }
 
-class Level0Cell: UITableViewCell, ZJTableViewCellProtocol {
+class Level0Cell: UITableViewCell, ZJCellProtocol {
     @IBOutlet var labelTitle: UILabel!
     var item: Level0CellItem!
 

@@ -21,7 +21,7 @@ public class ZJSwitchItem: ZJTableViewItem {
 }
 
 
-open class ZJSwitchCell: UITableViewCell, ZJTableViewCellProtocol {
+open class ZJSwitchCell: UITableViewCell, ZJCellProtocol {
     public var item: ZJSwitchItem!
 
     public typealias ZJCelltemClass = ZJSwitchItem
