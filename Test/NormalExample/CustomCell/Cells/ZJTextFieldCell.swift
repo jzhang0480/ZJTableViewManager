@@ -31,10 +31,6 @@ open class ZJTextFieldCell: UITableViewCell, ZJCellProtocol {
 
     public typealias ZJCelltemClass = ZJTextFieldItem
 
-    public func cellDidAppear() {}
-
-    public func cellDidDisappear() {}
-
     @IBOutlet var titleConstraint: NSLayoutConstraint!
     @IBOutlet var labelTitle: UILabel!
 

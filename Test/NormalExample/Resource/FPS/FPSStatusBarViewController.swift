@@ -31,16 +31,15 @@ class FPSStatusBarViewController: UIViewController {
     private func commonInit() {
         #if swift(>=4.2)
             NotificationCenter.default.addObserver(self,
-            selector: #selector(FPSStatusBarViewController.updateStatusBarFrame(_:)),
-            name: UIApplication.didChangeStatusBarOrientationNotification,
-            object: nil)
+                                                   selector: #selector(FPSStatusBarViewController.updateStatusBarFrame(_:)),
+                                                   name: UIApplication.didChangeStatusBarOrientationNotification,
+                                                   object: nil)
         #else
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(FPSStatusBarViewController.updateStatusBarFrame(_:)),
-                                               name: NSNotification.Name.UIApplicationDidChangeStatusBarOrientation,
-                                               object: nil)
-            
-        
+            NotificationCenter.default.addObserver(self,
+                                                   selector: #selector(FPSStatusBarViewController.updateStatusBarFrame(_:)),
+                                                   name: NSNotification.Name.UIApplicationDidChangeStatusBarOrientation,
+                                                   object: nil)
+
         #endif
     }
 
@@ -76,10 +75,10 @@ class FPSStatusBarViewController: UIViewController {
     @objc static var statusBarWindow: UIWindow = {
         let window = FPStatusBarWindow()
         #if swift(>=4.2)
-        window.windowLevel = UIWindow.Level.statusBar
-            
+            window.windowLevel = UIWindow.Level.statusBar
+
         #else
-        window.windowLevel = UIWindowLevelStatusBar
+            window.windowLevel = UIWindowLevelStatusBar
         #endif
         window.rootViewController = FPSStatusBarViewController()
         return window
@@ -147,6 +146,7 @@ public extension FPSCounter {
                 )
             }
         }
+
     #else
         @objc class func showInStatusBar(
             application: UIApplication = .shared,
@@ -164,7 +164,7 @@ public extension FPSCounter {
                 )
             }
         }
-        
+
     #endif
 
     /// Removes the label that shows the current FPS from the status bar.

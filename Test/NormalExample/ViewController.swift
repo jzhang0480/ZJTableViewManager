@@ -80,9 +80,9 @@ func httpRequest(view: UIView, callBack: (() -> Void)?) {
     #if swift(>=4.2)
         let indicator = UIActivityIndicatorView(style: .whiteLarge)
     #else
-    let indicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
     #endif
-    
+
     indicator.center = shadowView.center
 
     shadowView.addSubview(indicator)

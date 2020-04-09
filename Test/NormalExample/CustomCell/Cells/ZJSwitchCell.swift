@@ -20,7 +20,6 @@ public class ZJSwitchItem: ZJTableViewItem {
     }
 }
 
-
 open class ZJSwitchCell: UITableViewCell, ZJCellProtocol {
     public var item: ZJSwitchItem!
 
@@ -38,10 +37,6 @@ open class ZJSwitchCell: UITableViewCell, ZJCellProtocol {
         labelTitle.text = item.title
         switchButton.isOn = item.isOn
     }
-
-    public func cellDidAppear() {}
-
-    public func cellDidDisappear() {}
 
     @IBAction func valueChanged(_ sender: UISwitch) {
         item.isOn = sender.isOn

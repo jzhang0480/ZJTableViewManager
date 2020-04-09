@@ -15,7 +15,6 @@ open class ZJTableViewCell: UITableViewCell, ZJCellProtocol {
 
     public func cellWillAppear() {}
 
-    public func cellDidAppear() {}
+    
 
-    public func cellDidDisappear() {}
 }

@@ -20,6 +20,11 @@ public protocol ZJInternalCellProtocol where Self: UITableViewCell {
     func cellDidDisappear()
 }
 
+public extension ZJInternalCellProtocol {
+    func cellDidAppear() {}
+    func cellDidDisappear() {}
+}
+
 public protocol ZJCellProtocol: ZJInternalCellProtocol {
     associatedtype ZJCelltemClass: ZJItemProtocol
     var item: ZJCelltemClass! { get set }

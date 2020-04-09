@@ -46,10 +46,6 @@ open class ZJTextCell: UITableViewCell, UITextViewDelegate, ZJCellProtocol {
         textView.backgroundColor = item.textViewBackgroundColor
     }
 
-    public func cellDidAppear() {}
-
-    public func cellDidDisappear() {}
-
     public func textViewDidChange(_ textView: UITextView) {
         item.text = textView.text
         item.didChanged?(item)
