@@ -14,15 +14,11 @@ ZJTableViewManager allows to manage the content of any UITableView with ease, bo
   s.platform = :ios, "8.0"
   s.swift_version = ['4.0', '4.2', '5.1', '5.2']
   # s.source_files = "ZJTableViewManager"
-  s.subspec "Cells" do |ss|
-    ss.source_files = "ZJTableViewManager/Cells/*"
-    ss.dependency 'ZJTableViewManager/Core'
-  end
   s.subspec "Core" do |ss|
     ss.source_files = "ZJTableViewManager/Core/*"
   end
   s.subspec "Other" do |ss|
-    ss.source_files = "ZJTableViewManager/OtherClass/*"
+    ss.source_files = "ZJTableViewManager/Other/*"
     ss.dependency 'ZJTableViewManager/Core'
   end
 end
