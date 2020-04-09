@@ -96,7 +96,7 @@ public protocol ZJTableViewScrollDelegate: NSObjectProtocol {
 
 // MARK: - ZJTableViewScrollDelegate Default Implementation
 
-extension ZJTableViewScrollDelegate {
+public extension ZJTableViewScrollDelegate {
     func scrollViewDidScroll(_: UIScrollView) {}
 
     func scrollViewDidZoom(_: UIScrollView) {}
