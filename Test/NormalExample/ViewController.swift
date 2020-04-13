@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         let titles = ["Basic", "Retractable", "SlideDelete", "Sections", "AutomaticHeight", "ExpandTree", "UpdateHeight"]
         for i in titles {
             let item = ZJTableViewItem(title: i)
-            item.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+            item.accessoryType = .disclosureIndicator
             item.isAutoDeselect = true
             section.add(item: item)
 

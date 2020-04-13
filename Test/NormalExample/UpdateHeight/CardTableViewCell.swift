@@ -29,7 +29,11 @@ class CardTableViewCellItem: ZJTableViewItem {
     }
 }
 
-class CardTableViewCell: ZJTableViewCell {
+class CardTableViewCell: UITableViewCell, ZJCellProtocol {
+    var item: CardTableViewCellItem!
+
+    typealias ZJCelltemClass = CardTableViewCellItem
+
     @IBOutlet var cardView: UIView!
     @IBOutlet var cardImg: UIImageView!
     override func awakeFromNib() {
@@ -45,8 +49,7 @@ class CardTableViewCell: ZJTableViewCell {
         cardImg.clipsToBounds = true
     }
 
-    override func cellWillAppear() {
-        let item = self.item as! CardTableViewCellItem
+    func cellWillAppear() {
         layer.zPosition = item.zPosition
     }
 

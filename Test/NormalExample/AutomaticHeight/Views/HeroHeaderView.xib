@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HeroHeaderView" customModule="ZJTableViewManagerExample" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HeroHeaderView" customModule="NormalExample" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -25,7 +23,7 @@
                     <blurEffect style="light"/>
                 </visualEffectView>
                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mgx-nO-A0o">
-                    <rect key="frame" x="60" y="18.5" width="106.5" height="40"/>
+                    <rect key="frame" x="15" y="18.5" width="106.5" height="40"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="花木兰" translatesAutoresizingMaskIntoConstraints="NO" id="ias-2c-4lF">
                             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -47,7 +45,7 @@
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sAM-4S-xfN" secondAttribute="trailing" id="5g5-e1-F68"/>
                 <constraint firstItem="Mgx-nO-A0o" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="M5Q-68-6Or"/>
-                <constraint firstItem="Mgx-nO-A0o" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="60" id="SbA-v3-ubw"/>
+                <constraint firstItem="Mgx-nO-A0o" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="SbA-v3-ubw"/>
                 <constraint firstAttribute="bottom" secondItem="sAM-4S-xfN" secondAttribute="bottom" id="Z9K-7R-mYf"/>
                 <constraint firstItem="sAM-4S-xfN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pFl-ck-6aP"/>
                 <constraint firstItem="sAM-4S-xfN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="xpZ-kd-dyV"/>

@@ -50,9 +50,9 @@ class ZJPictureTableItem: ZJTableViewItem {
         self.calculateHeight()
     }
     
-    override func updateHeight() {
+    func updateHeight() {
         self.calculateHeight()
-        super.updateHeight()
+        tableViewManager.updateHeight()
     }
     
     func calculateHeight() {
@@ -73,10 +73,27 @@ class ZJPictureTableItem: ZJTableViewItem {
     }
 }
 
-class ZJPictureTableCell: ZJTableViewCell {
+class ZJPictureTableCell: UITableViewCell, ZJCellProtocol {
+    var item: ZJPictureTableItem!
+    
+    func cellWillAppear() {
+        self.layout.itemSize = self.item.pictureSize!
+        self.layout.minimumInteritemSpacing = self.item.space
+        self.layout.minimumLineSpacing = self.item.space
+        
+        if let edge = item.customEdgeInsets {
+            self.collectionView.contentInset = edge
+        } else {
+            self.collectionView.contentInset = UIEdgeInsets(top: 0, left: self.item.space + 8, bottom: self.item.space, right: self.item.space)
+        }
+        
+        self.collectionView.reloadData()
+    }
+    
+    typealias ZJCelltemClass = ZJPictureTableItem
+    
     var collectionView: UICollectionView!
     var layout: UICollectionViewFlowLayout!
-    var myItem: ZJPictureTableItem!
     
     #if swift(>=4.2)
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -112,33 +129,33 @@ class ZJPictureTableCell: ZJTableViewCell {
         self.collectionView.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
     }
     
-    override func cellWillAppear() {
-        super.cellWillAppear()
-        self.myItem = (self.item as! ZJPictureTableItem)
-        self.layout.itemSize = self.myItem.pictureSize!
-        self.layout.minimumInteritemSpacing = self.myItem.space
-        self.layout.minimumLineSpacing = self.myItem.space
-        
-        if let edge = myItem.customEdgeInsets {
-            self.collectionView.contentInset = edge
-        } else {
-            self.collectionView.contentInset = UIEdgeInsets(top: 0, left: self.myItem.space + 8, bottom: self.myItem.space, right: self.myItem.space)
-        }
-        
-        self.collectionView.reloadData()
-    }
+//    override func cellWillAppear() {
+//        super.cellWillAppear()
+//        self.item = (self.item as! ZJPictureTableItem)
+//        self.layout.itemSize = self.item.pictureSize!
+//        self.layout.minimumInteritemSpacing = self.item.space
+//        self.layout.minimumLineSpacing = self.item.space
+//
+//        if let edge = item.customEdgeInsets {
+//            self.collectionView.contentInset = edge
+//        } else {
+//            self.collectionView.contentInset = UIEdgeInsets(top: 0, left: self.item.space + 8, bottom: self.item.space, right: self.item.space)
+//        }
+//
+//        self.collectionView.reloadData()
+//    }
     
     func deletePicture(vc: UIViewController?, index: Int, complete: (() -> Void)?) {
         let alertVC = UIAlertController(title: "提示", message: "确定删除此附件吗？", preferredStyle: .alert)
         let confirm = UIAlertAction(title: "确定", style: .destructive) { [weak self] _ in
             if (self?.isDisplayAddButton())! {
-                self?.myItem.arrPictures.remove(at: index)
+                self?.item.arrPictures.remove(at: index)
                 self?.collectionView.reloadData()
             } else {
-                self?.myItem.arrPictures.remove(at: index)
+                self?.item.arrPictures.remove(at: index)
                 self?.collectionView.deleteItems(at: [IndexPath(item: index, section: 0)])
             }
-            self?.myItem.updateHeight()
+            self?.item.updateHeight()
             
             if let handler = complete {
                 handler()
@@ -151,19 +168,19 @@ class ZJPictureTableCell: ZJTableViewCell {
         if let superVC = vc {
             superVC.present(alertVC, animated: true, completion: nil)
         } else {
-            self.myItem.superVC.present(alertVC, animated: true, completion: nil)
+            self.item.superVC.present(alertVC, animated: true, completion: nil)
         }
     }
     
     func isDisplayAddButton() -> Bool {
-        return self.myItem.arrPictures.count == Int(self.myItem.maxNumber)
+        return self.item.arrPictures.count == Int(self.item.maxNumber)
     }
     
     func showImage(index: Int, isShowDelete: Bool) {
         let cell = self.collectionView.cellForItem(at: IndexPath(item: index, section: 0)) as! ZJPictureCollectionCell
         
         var images = [SKPhoto]()
-        for image in self.myItem.arrPictures {
+        for image in self.item.arrPictures {
             var photo: SKPhoto!
             if (image as AnyObject).isKind(of: UIImage.self) {
                 photo = SKPhoto.photoWithImage(image as! UIImage)
@@ -179,7 +196,7 @@ class ZJPictureTableCell: ZJTableViewCell {
         let browser = SKPhotoBrowser(originImage: cell.img.image!, photos: images, animatedFromView: cell.img)
         browser.initializePageIndex(index)
         browser.delegate = self as SKPhotoBrowserDelegate
-        self.myItem.superVC.present(browser, animated: true, completion: {})
+        self.item.superVC.present(browser, animated: true, completion: {})
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -197,16 +214,16 @@ class ZJPictureTableCell: ZJTableViewCell {
 
 extension ZJPictureTableCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch self.myItem.type {
+        switch self.item.type {
         case .read: // 只是展示图片，返回图片数量
-            return self.myItem.arrPictures.count
+            return self.item.arrPictures.count
         case .edit:
             // 如果是编辑状态，图片数量满了，就不显示添加按钮
-            if self.myItem.arrPictures.count == Int(self.myItem.maxNumber) {
-                return self.myItem.arrPictures.count
+            if self.item.arrPictures.count == Int(self.item.maxNumber) {
+                return self.item.arrPictures.count
             } else {
                 // 图片数量没有满，显示添加按钮（+1)
-                return self.myItem.arrPictures.count + 1
+                return self.item.arrPictures.count + 1
             }
         }
     }
@@ -214,18 +231,18 @@ extension ZJPictureTableCell: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ZJPictureCollectionCell", for: indexPath) as! ZJPictureCollectionCell
         cell.collectionView = self.collectionView
-        switch self.myItem.type {
+        switch self.item.type {
         case .read: // 只是展示图片
             cell.btnDelete.isHidden = true
-            cell.config(imageModel: self.myItem.arrPictures[indexPath.item])
+            cell.config(imageModel: self.item.arrPictures[indexPath.item])
         case .edit:
             cell.btnDelete.isHidden = false
             // 如果是编辑状态，图片数量满了，就不显示添加按钮
-            if self.myItem.arrPictures.count == indexPath.item {
+            if self.item.arrPictures.count == indexPath.item {
                 cell.btnDelete.isHidden = true
                 cell.img.image = #imageLiteral(resourceName: "picture_add")
             } else {
-                cell.config(imageModel: self.myItem.arrPictures[indexPath.item])
+                cell.config(imageModel: self.item.arrPictures[indexPath.item])
             }
         }
         
@@ -238,17 +255,17 @@ extension ZJPictureTableCell: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        switch self.myItem.type {
+        switch self.item.type {
         case .read:
             print("查看图片")
             self.showImage(index: indexPath.item, isShowDelete: false)
         case .edit:
-            if self.myItem.arrPictures.count == indexPath.item {
+            if self.item.arrPictures.count == indexPath.item {
                 print("添加图片")
                 let imagePickerController = ImagePickerController()
                 imagePickerController.delegate = self
-                imagePickerController.imageLimit = Int(self.myItem.maxNumber - CGFloat(self.myItem.arrPictures.count))
-                self.myItem.superVC.present(imagePickerController, animated: true, completion: nil)
+                imagePickerController.imageLimit = Int(self.item.maxNumber - CGFloat(self.item.arrPictures.count))
+                self.item.superVC.present(imagePickerController, animated: true, completion: nil)
             } else {
                 print("查看图片，可删除")
                 self.showImage(index: indexPath.item, isShowDelete: true)
@@ -262,25 +279,25 @@ extension ZJPictureTableCell: UICollectionViewDelegate, UICollectionViewDataSour
 extension ZJPictureTableCell: ImagePickerDelegate {
     func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         for image in images {
-            self.myItem.arrPictures.append(image)
+            self.item.arrPictures.append(image)
         }
-        self.myItem.updateHeight()
+        self.item.updateHeight()
         self.collectionView.reloadData()
-        self.myItem.superVC.dismiss(animated: true, completion: nil)
+        self.item.superVC.dismiss(animated: true, completion: nil)
     }
     
     // 完成选择图片
     func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         for image in images {
-            self.myItem.arrPictures.append(image)
+            self.item.arrPictures.append(image)
         }
-        self.myItem.updateHeight()
+        self.item.updateHeight()
         self.collectionView.reloadData()
-        self.myItem.superVC.dismiss(animated: true, completion: nil)
+        self.item.superVC.dismiss(animated: true, completion: nil)
     }
     
     func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
-        self.myItem.superVC.dismiss(animated: true, completion: nil)
+        self.item.superVC.dismiss(animated: true, completion: nil)
     }
 }
 

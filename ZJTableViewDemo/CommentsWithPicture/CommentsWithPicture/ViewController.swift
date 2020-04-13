@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Demo"
         self.manager = ZJTableViewManager(tableView: self.tableView)
-        
+        tableView.separatorStyle = .none
         //register cell
         self.manager?.register(OrderEvaluateCell.self, OrderEvaluateItem.self)
         self.manager?.register(ZJPictureTableCell.self, ZJPictureTableItem.self)
@@ -30,13 +30,12 @@ class ViewController: UIViewController {
             //评价cell
             section.add(item: OrderEvaluateItem(eTitle: "评价"))
             let textItem = ZJTextItem(text: nil, placeHolder: "请在此输入您的评价~", didChanged: nil)
-            textItem.isHideSeparator = true
             section.add(item: textItem)
             
             //图片cell
             if i%2 == 1 {
                 //只展示图片
-                let pictureItem = ZJPictureTableItem(maxNumber: 9, column: 8, space: 1, width: self.view.frame.size.width, superVC: self, pictures: [#imageLiteral(resourceName: "demo_image_1"),#imageLiteral(resourceName: "demo_image_2"),#imageLiteral(resourceName: "demo_image_3"),#imageLiteral(resourceName: "demo_image_4"),#imageLiteral(resourceName: "demo_image_5"),#imageLiteral(resourceName: "demo_image_5"),#imageLiteral(resourceName: "demo_image_5"),#imageLiteral(resourceName: "demo_image_5"),#imageLiteral(resourceName: "demo_image_5")])
+                let pictureItem = ZJPictureTableItem(maxNumber: 9, column: 3, space: 1, width: self.view.frame.size.width, superVC: self, pictures: [#imageLiteral(resourceName: "demo_image_1"),#imageLiteral(resourceName: "demo_image_2"),#imageLiteral(resourceName: "demo_image_3"),#imageLiteral(resourceName: "demo_image_4"),#imageLiteral(resourceName: "demo_image_5"),#imageLiteral(resourceName: "demo_image_5"),#imageLiteral(resourceName: "demo_image_5"),#imageLiteral(resourceName: "demo_image_5"),#imageLiteral(resourceName: "demo_image_5")])
                 pictureItem.type = .read
                 section.add(item: pictureItem)
             }else{

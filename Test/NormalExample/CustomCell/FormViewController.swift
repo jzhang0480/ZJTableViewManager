@@ -19,11 +19,10 @@ class FormViewController: ZJBaseTableViewController {
         manager.register(ZJSwitchCell.self, ZJSwitchItem.self)
 
         // Custom SectionHeader
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 40))
-        label.backgroundColor = .lightGray
-        label.textColor = .red
-        label.text = "    Custom Section Header"
-        let section = ZJTableViewSection(headerView: label)
+        let headerView = HeroHeaderView.view()
+        headerView.imageHero.image = UIImage(named: "李信")
+        headerView.labelHero.text = "Custom Section Header"
+        let section = ZJTableViewSection(headerView: headerView)
         manager.add(section: section)
 
         // Custom Cell

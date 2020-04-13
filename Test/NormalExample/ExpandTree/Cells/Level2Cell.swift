@@ -10,7 +10,15 @@ import UIKit
 
 class Level2CellItem: ZJExpandTreeCellItem {}
 
-class Level2Cell: ZJTableViewCell {
+class Level2Cell: UITableViewCell, ZJCellProtocol {
+    var item: Level2CellItem!
+    
+    typealias ZJCelltemClass = Level2CellItem
+    
+    func cellWillAppear() {
+        
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,3 +30,4 @@ class Level2Cell: ZJTableViewCell {
         // Configure the view for the selected state
     }
 }
+

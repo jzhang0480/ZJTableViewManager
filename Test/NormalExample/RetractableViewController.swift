@@ -27,7 +27,7 @@ class RetractableViewController: ZJBaseTableViewController {
         }
 
         let moreItem = ZJTableViewItem(title: "Show More")
-        moreItem.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+        moreItem.accessoryType = .disclosureIndicator
         collapsedItems.append(moreItem)
         moreItem.setSelectionHandler { _ in
             section.replaceItemsFrom(array: expandedItems)
@@ -41,7 +41,7 @@ class RetractableViewController: ZJBaseTableViewController {
         }
 
         let lessItem = ZJTableViewItem(title: "Show Less")
-        lessItem.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+        lessItem.accessoryType = .disclosureIndicator
 
         lessItem.setSelectionHandler { _ in
             section.replaceItemsFrom(array: collapsedItems)

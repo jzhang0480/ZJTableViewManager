@@ -13,7 +13,11 @@ class AutomaticHeightCellItem: ZJTableViewItem {
 }
 
 /// 动态高度的cell说明：支持系统autolayout搭建的cell（xib以及snapkit等基于autolayout的约束框架理论上都是支持的）
-class AutomaticHeightCell: ZJTableViewCell {
+class AutomaticHeightCell: UITableViewCell, ZJCellProtocol {
+    var item: AutomaticHeightCellItem!
+    
+    typealias ZJCelltemClass = AutomaticHeightCellItem
+    
     @IBOutlet var imgSkill: UIImageView!
     @IBOutlet var labelSkill: UILabel!
 
@@ -23,8 +27,7 @@ class AutomaticHeightCell: ZJTableViewCell {
     }
 
     /// cell即将出现在屏幕中的回调方法 在这个方法里面赋值
-    override func cellWillAppear() {
-        let item = self.item as! AutomaticHeightCellItem
+    func cellWillAppear() {
         imgSkill.image = UIImage(named: item.skill.name)
         labelSkill.text = item.skill.desc
     }

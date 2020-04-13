@@ -7,12 +7,21 @@
 //
 
 import UIKit
+import ZJTableViewManager
 
 class Category2CellItem: ZJTableViewItem {
     var title: String!
 }
 
-class Category2Cell: ZJTableViewCell {
+class Category2Cell: UITableViewCell, ZJCellProtocol  {
+    var item: Category2CellItem!
+    
+    typealias ZJCelltemClass = Category2CellItem
+    
+    func cellWillAppear() {
+        categoryTitle.text = item.title
+    }
+    
     @IBOutlet weak var categoryTitle: UILabel!
     
     override func awakeFromNib() {
@@ -20,11 +29,6 @@ class Category2Cell: ZJTableViewCell {
         // Initialization code
     }
     
-    override func cellWillAppear() {
-        super.cellWillAppear()
-        let item = self.item as! Category2CellItem
-        categoryTitle.text = item.title
-    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

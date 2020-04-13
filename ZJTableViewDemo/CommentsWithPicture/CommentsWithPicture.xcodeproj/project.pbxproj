@@ -19,6 +19,9 @@
 		660D6E79231F5F60009741A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660D6E73231F5F60009741A7 /* Assets.xcassets */; };
 		660D6E7A231F5F60009741A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 660D6E74231F5F60009741A7 /* LaunchScreen.storyboard */; };
 		660D6E7B231F5F60009741A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6E75231F5F60009741A7 /* AppDelegate.swift */; };
+		662ABE682444C8D700A6A603 /* ZJTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662ABE672444C8D700A6A603 /* ZJTextView.swift */; };
+		66689ABC2440A2EC00AFF759 /* ZJTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66689ABA2440A2EB00AFF759 /* ZJTextCell.swift */; };
+		66689ABD2440A2EC00AFF759 /* ZJTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66689ABB2440A2EB00AFF759 /* ZJTextCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		660D6E73231F5F60009741A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		660D6E74231F5F60009741A7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		660D6E75231F5F60009741A7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		662ABE672444C8D700A6A603 /* ZJTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ZJTextView.swift; path = ../../../Pods/ZJTableViewManager/ZJTableViewManager/Other/ZJTextView.swift; sourceTree = "<group>"; };
+		66689ABA2440A2EB00AFF759 /* ZJTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTextCell.swift; sourceTree = "<group>"; };
+		66689ABB2440A2EB00AFF759 /* ZJTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZJTextCell.xib; sourceTree = "<group>"; };
 		FFAEE3B7031D9D64EB0A71F1 /* Pods-ZJTableViewDemo-CommentsWithPicture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJTableViewDemo-CommentsWithPicture.debug.xcconfig"; path = "Target Support Files/Pods-ZJTableViewDemo-CommentsWithPicture/Pods-ZJTableViewDemo-CommentsWithPicture.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +110,9 @@
 		660D6E65231F5F53009741A7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				662ABE672444C8D700A6A603 /* ZJTextView.swift */,
+				66689ABA2440A2EB00AFF759 /* ZJTextCell.swift */,
+				66689ABB2440A2EB00AFF759 /* ZJTextCell.xib */,
 				660D6E66231F5F53009741A7 /* OrderEvaluateCell.swift */,
 				660D6E67231F5F53009741A7 /* ZJPictureCollectionCell.xib */,
 				660D6E68231F5F53009741A7 /* OrderEvaluateCell.xib */,
@@ -179,6 +188,7 @@
 				660D6E7A231F5F60009741A7 /* LaunchScreen.storyboard in Resources */,
 				660D6E77231F5F60009741A7 /* Main.storyboard in Resources */,
 				660D6E79231F5F60009741A7 /* Assets.xcassets in Resources */,
+				66689ABD2440A2EC00AFF759 /* ZJTextCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,7 +242,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				660D6E6B231F5F53009741A7 /* OrderEvaluateCell.swift in Sources */,
+				662ABE682444C8D700A6A603 /* ZJTextView.swift in Sources */,
 				660D6E6F231F5F53009741A7 /* ZJPictureCollectionCell.swift in Sources */,
+				66689ABC2440A2EC00AFF759 /* ZJTextCell.swift in Sources */,
 				660D6E78231F5F60009741A7 /* ViewController.swift in Sources */,
 				660D6E7B231F5F60009741A7 /* AppDelegate.swift in Sources */,
 				660D6E6E231F5F53009741A7 /* ZJPictureTableCell.swift in Sources */,

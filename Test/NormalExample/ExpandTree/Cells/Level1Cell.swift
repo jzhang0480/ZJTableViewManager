@@ -10,7 +10,13 @@ import UIKit
 
 class Level1CellItem: ZJExpandTreeCellItem {}
 
-class Level1Cell: ZJTableViewCell {
+class Level1Cell: UITableViewCell, ZJCellProtocol {
+    var item: Level1CellItem!
+
+    typealias ZJCelltemClass = Level1CellItem
+
+    func cellWillAppear() {}
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

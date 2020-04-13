@@ -39,6 +39,7 @@
 		660D6DBA231E5F53009741A7 /* HeroHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 660D6D96231E5F52009741A7 /* HeroHeaderView.xib */; };
 		660D6DBB231E5F53009741A7 /* HeroHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6D97231E5F52009741A7 /* HeroHeaderView.swift */; };
 		660D6DBC231E5F53009741A7 /* Info-manager.plist in Resources */ = {isa = PBXBuildFile; fileRef = 660D6D98231E5F52009741A7 /* Info-manager.plist */; };
+		66689ABF2440A56F00AFF759 /* ZJTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66689ABE2440A56F00AFF759 /* ZJTableViewCell.swift */; };
 		667B07BE243B9031008D959C /* ZJProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B07BD243B9031008D959C /* ZJProtocol.swift */; };
 		667B07CD243C29C3008D959C /* ZJSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 667B07C4243C29C3008D959C /* ZJSwitchCell.xib */; };
 		667B07CE243C29C3008D959C /* ZJTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 667B07C5243C29C3008D959C /* ZJTextFieldCell.xib */; };
@@ -52,7 +53,6 @@
 		66E60FBB2427D1C900C5E2BB /* ZJTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60FAB2427D1C900C5E2BB /* ZJTableViewSection.swift */; };
 		66E60FBC2427D1C900C5E2BB /* ZJTableViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60FAC2427D1C900C5E2BB /* ZJTableViewItem.swift */; };
 		66E60FBD2427D1C900C5E2BB /* ZJTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60FAD2427D1C900C5E2BB /* ZJTableViewManager.swift */; };
-		66E60FBE2427D1C900C5E2BB /* ZJTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60FAE2427D1C900C5E2BB /* ZJTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +93,7 @@
 		660D6D96231E5F52009741A7 /* HeroHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeroHeaderView.xib; sourceTree = "<group>"; };
 		660D6D97231E5F52009741A7 /* HeroHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroHeaderView.swift; sourceTree = "<group>"; };
 		660D6D98231E5F52009741A7 /* Info-manager.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-manager.plist"; sourceTree = "<group>"; };
+		66689ABE2440A56F00AFF759 /* ZJTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewCell.swift; sourceTree = "<group>"; };
 		667B07BD243B9031008D959C /* ZJProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJProtocol.swift; sourceTree = "<group>"; };
 		667B07C4243C29C3008D959C /* ZJSwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZJSwitchCell.xib; sourceTree = "<group>"; };
 		667B07C5243C29C3008D959C /* ZJTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZJTextFieldCell.xib; sourceTree = "<group>"; };
@@ -106,7 +107,6 @@
 		66E60FAB2427D1C900C5E2BB /* ZJTableViewSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewSection.swift; sourceTree = "<group>"; };
 		66E60FAC2427D1C900C5E2BB /* ZJTableViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewItem.swift; sourceTree = "<group>"; };
 		66E60FAD2427D1C900C5E2BB /* ZJTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewManager.swift; sourceTree = "<group>"; };
-		66E60FAE2427D1C900C5E2BB /* ZJTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +259,8 @@
 		667B07BF243C2772008D959C /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				66E60F9E2427D1C900C5E2BB /* ZJBaseTableViewController.swift */,
+				66E60F9F2427D1C900C5E2BB /* ZJTextView.swift */,
 				660D6D71231E5F52009741A7 /* FPS */,
 				660D6D8C231E5F52009741A7 /* AppDelegate.swift */,
 				660D6D76231E5F52009741A7 /* Assets.xcassets */,
@@ -288,7 +290,8 @@
 				667B07CA243C29C3008D959C /* ZJTextFieldCell.swift */,
 				667B07C5243C29C3008D959C /* ZJTextFieldCell.xib */,
 			);
-			path = Cells;
+			name = Cells;
+			path = ../../../ZJTableViewDemo/CommentsWithPicture/CommentsWithPicture/Cells/Cells;
 			sourceTree = "<group>";
 		};
 		66E60F9B2427D1C900C5E2BB /* ZJTableViewManager */ = {
@@ -305,8 +308,6 @@
 			isa = PBXGroup;
 			children = (
 				66E60F9D2427D1C900C5E2BB /* ZJExpandTreeCellItem.swift */,
-				66E60F9E2427D1C900C5E2BB /* ZJBaseTableViewController.swift */,
-				66E60F9F2427D1C900C5E2BB /* ZJTextView.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -314,11 +315,11 @@
 		66E60FAA2427D1C900C5E2BB /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				66689ABE2440A56F00AFF759 /* ZJTableViewCell.swift */,
 				667B07BD243B9031008D959C /* ZJProtocol.swift */,
 				66E60FAB2427D1C900C5E2BB /* ZJTableViewSection.swift */,
 				66E60FAC2427D1C900C5E2BB /* ZJTableViewItem.swift */,
 				66E60FAD2427D1C900C5E2BB /* ZJTableViewManager.swift */,
-				66E60FAE2427D1C900C5E2BB /* ZJTableViewCell.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -465,11 +466,11 @@
 				660D6DA1231E5F53009741A7 /* FPSCounter.swift in Sources */,
 				660D6DA0231E5F53009741A7 /* FPSStatusBarWindow.swift in Sources */,
 				660D6DB7231E5F53009741A7 /* HeroModel.swift in Sources */,
-				66E60FBE2427D1C900C5E2BB /* ZJTableViewCell.swift in Sources */,
 				66E60FBC2427D1C900C5E2BB /* ZJTableViewItem.swift in Sources */,
 				660D6DB6231E5F53009741A7 /* HeroSkill.swift in Sources */,
 				660D6DA6231E5F53009741A7 /* CardTableViewCell.swift in Sources */,
 				660D6DA7231E5F53009741A7 /* UpdateHeightViewController.swift in Sources */,
+				66689ABF2440A56F00AFF759 /* ZJTableViewCell.swift in Sources */,
 				660D6DA5231E5F53009741A7 /* EditingViewController.swift in Sources */,
 				660D6DAB231E5F53009741A7 /* Level1Cell.swift in Sources */,
 				66E60FBD2427D1C900C5E2BB /* ZJTableViewManager.swift in Sources */,

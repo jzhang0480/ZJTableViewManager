@@ -48,14 +48,14 @@ class EditingViewController: UIViewController {
 
     func deleteConfirm(item: ZJTableViewItem, needConfirm: Bool = true) {
         if !needConfirm {
-            zj_log((item.cellTitle ?? "") + " deleted！")
+            zj_log((item.labelText ?? "") + " deleted！")
             item.delete()
             return
         }
 
-        let alertVC = UIAlertController(title: "Confirmation", message: "Are you sure to delete " + (item.cellTitle)!, preferredStyle: .alert)
+        let alertVC = UIAlertController(title: "Confirmation", message: "Are you sure to delete " + (item.labelText)!, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "Delete", style: .default, handler: { _ in
-            zj_log((item.cellTitle ?? "") + " deleted！")
+            zj_log((item.labelText ?? "") + " deleted！")
             item.delete(.fade)
         }))
         alertVC.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
