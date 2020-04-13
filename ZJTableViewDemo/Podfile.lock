@@ -3,11 +3,11 @@ PODS:
   - IQKeyboardManagerSwift (6.5.5)
   - SKPhotoBrowser (5.0.9)
   - SwiftyStarRatingView (1.0.4)
-  - ZJTableViewManager (1.0.2):
-    - ZJTableViewManager/Core (= 1.0.2)
-    - ZJTableViewManager/Other (= 1.0.2)
-  - ZJTableViewManager/Core (1.0.2)
-  - ZJTableViewManager/Other (1.0.2):
+  - ZJTableViewManager (1.0.3-beta):
+    - ZJTableViewManager/Core (= 1.0.3-beta)
+    - ZJTableViewManager/Other (= 1.0.3-beta)
+  - ZJTableViewManager/Core (1.0.3-beta)
+  - ZJTableViewManager/Other (1.0.3-beta):
     - ZJTableViewManager/Core
 
 DEPENDENCIES:
@@ -15,7 +15,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - SKPhotoBrowser (~> 5.0.0)
   - SwiftyStarRatingView
-  - ZJTableViewManager (~> 1.0.2)
+  - ZJTableViewManager (~> 1.0.3-beta)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -30,8 +30,8 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   SKPhotoBrowser: 668c29bdd9d4d276026fc131c55e96d902c2463c
   SwiftyStarRatingView: a2b0057700e0adeb8e7442c55d99cb53b531d2f4
-  ZJTableViewManager: cfd202e659554a165da16144d8b6090dd68e61ad
+  ZJTableViewManager: d13bcd3addfe0fff3cf1224a4c2e3fbc09048821
 
-PODFILE CHECKSUM: 156120b8b5ca7bf729aae27f781b1fdc3242de57
+PODFILE CHECKSUM: b7f182d059a35fc270761821f1d682d001aa7f5f
 
 COCOAPODS: 1.7.5

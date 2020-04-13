@@ -12,7 +12,7 @@ project 'CommentsWithPicture/CommentsWithPicture.xcodeproj'
 
 
 abstract_target 'ZJTableViewDemo' do
-  pod 'ZJTableViewManager', '~> 1.0.2'
+  pod 'ZJTableViewManager', '~> 1.0.3-beta'
 
   target 'Demo2' do
     project 'ShoppingCartDemo/Demo2.xcodeproj'

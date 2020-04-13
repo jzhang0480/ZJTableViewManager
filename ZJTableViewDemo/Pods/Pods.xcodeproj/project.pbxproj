@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		01932479FEE919974D4A1E39A497E3DA /* ImageGalleryViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0926243CBE50CA6ADC1AAF2DCD90256A /* ImageGalleryViewDataSource.swift */; };
+		040B68A1A17BDAE323E666FDD5C49759 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AAF4E98278C241548DB1AB458F350E /* Foundation.framework */; };
 		0564E54A6F03094F6F39F7D2325CE0D5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A20A87499CCE2E72715C99E5C5331AB /* CoreGraphics.framework */; };
 		0939F24799FBD065A1B23CB3A0F4DDFA /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27FE96D37087988A08CF79289E81D7A /* Helper.swift */; };
 		102F4487BC4ADC3C2B56A0470E0A9468 /* IQKeyboardManagerConstantsInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB73C659D546A9203EC7EB4F52344C24 /* IQKeyboardManagerConstantsInternal.swift */; };
-		151698D4D6A5073BFAE70A672CBBDF33 /* ZJProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1C767B34F8BA02B72718BDF730F6B /* ZJProtocol.swift */; };
 		173ED8FF4BB8C4901ED835ECE8E3E53F /* OFF@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B40A6B5AEF946A64D5E0CE306EB97E /* OFF@3x.png */; };
 		17A235D981504C1BDC6AB391C8E5F19D /* SKPhotoBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 154748E9870A15CC39A2258816844932 /* SKPhotoBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		18756856E1633BBC7CF925BE4DBC7227 /* Pods-ZJTableViewDemo-CommentsWithPicture-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BE5964C820B483945D7E15C8682867 /* Pods-ZJTableViewDemo-CommentsWithPicture-dummy.m */; };
@@ -27,6 +27,7 @@
 		45693020B0DEA75B363ACF1040AE3990 /* video@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB3A1B1DAF4F25C58037F14023E411D4 /* video@3x.png */; };
 		4737103B10A1C40C5301D0512B9310E4 /* IQKeyboardReturnKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A085372F28F41B87D19D4620908253 /* IQKeyboardReturnKeyHandler.swift */; };
 		49153A890C0801BCEB7578BAADE109FF /* ImageGalleryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52265F0EED6D2BC01E778AB623DC0E7 /* ImageGalleryViewCell.swift */; };
+		4BE0435ADE657A9DC99CAF753472946F /* ZJTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FA590FC1C4CBB761050CF2826D2287 /* ZJTableViewSection.swift */; };
 		4C069FA7FAA45154DA92CF5DF3BCDCA9 /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62243EA3E1312C954323C6FBE6FBA4B1 /* IQUITextFieldView+Additions.swift */; };
 		4F0CF2AD58CF0D08BC090E7AF0DD63D7 /* IQInvocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B769FE04B13FCD4440AB09B608D47496 /* IQInvocation.swift */; };
 		5044FEAEF09468B6964F9F37A1F1F45C /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EB8F24CB5052536D46CEFEF8648084 /* IQPreviousNextView.swift */; };
@@ -49,21 +50,21 @@
 		7F879FAD4AA4DF42AABD0FE019A2CF93 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AAF4E98278C241548DB1AB458F350E /* Foundation.framework */; };
 		7FB3576FD619DD256294BAD7E5F83CBE /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C762E0B33DC7EDC56E8E90E3EDE59E /* IQTextView.swift */; };
 		809C3661472C4AE7E1F1AE6918C26533 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD36A4CCECD6DAFCD69E7BBBBA357F20 /* UIKit.framework */; };
-		879F6BEA0DEE6A1FDAD8C142EC968AD3 /* ZJTableViewManager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FD5290B89A93710DED2D5F14542998DA /* ZJTableViewManager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		87EE5B9A4A1F8D7F35628638E98A66B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AAF4E98278C241548DB1AB458F350E /* Foundation.framework */; };
-		8A4FDE734512E9FF693ABCD9C9587E92 /* ZJTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A164214EBF0DB421873833E1D1D74826 /* ZJTextView.swift */; };
+		8568FD999A7B06824E3C8CCF5E62DB30 /* ZJProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E089B0EBEFCBF747CB89615347817 /* ZJProtocol.swift */; };
 		8B439A47AA5FDEF67AD63BDDB808AC5A /* IQUIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A86A22813AE13E93701167FA9548EC /* IQUIView+Hierarchy.swift */; };
 		8C1B95AD28CE7A7D8B17C6FBD2DB3D84 /* SKMesurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C065FCFB865E45B67B928E476ADF2BA /* SKMesurement.swift */; };
-		8E3043BBC186FD39A04C04BDEA85C396 /* ZJBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B3277C69DD7136B32EE9315D11139 /* ZJBaseTableViewController.swift */; };
 		8F92DE493E66A26C230C75F95BEB6C77 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88B5834652D56D5C021F76C55A4874A2 /* QuartzCore.framework */; };
 		922594617C39320CFBC55829F3AB1485 /* ImageStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DBD4553FA5B47A525A1C6317C0D252 /* ImageStack.swift */; };
 		92B385792CADF0E73F64971B995ACCFE /* ImagePicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A44FCCF5AD11E409A25E912D5F5D71A0 /* ImagePicker-dummy.m */; };
 		93EB79057E978A7B671AAB99AB047AC8 /* Pods-ZJTableViewDemo-CommentsWithPicture-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AE1AEE9A31272AAC6DF8A7AA32DD40C /* Pods-ZJTableViewDemo-CommentsWithPicture-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9615ECF41B5DB933DFC886D96D87C932 /* ZJTableViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514C450399797AAA2F2F52A2B87F7CB7 /* ZJTableViewItem.swift */; };
 		980E5594F8DBCE362764AEDC2F086E36 /* IQToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5739875A9F786372AB091A1D3A23CD /* IQToolbar.swift */; };
+		9B5E3283CDA11CE1A9C1DA747ABCCE00 /* ZJExpandTreeCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7D7D662A8A72A5D1605F413F11E8BA /* ZJExpandTreeCellItem.swift */; };
 		9C589CB747B5A3320D3FA10459A80632 /* SKIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF20CFBE7BAB1EE4798355E0ADFD1976 /* SKIndicatorView.swift */; };
 		9FD86981AA83CC9D2BCE6CF84865ED0C /* SKPhotoBrowserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D080F2A53655D88E8FB2487E6E4A13A6 /* SKPhotoBrowserDelegate.swift */; };
 		A375B89E11C21C2294119AD1B264BEC9 /* SKAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE03221A19B78EAE41041477CC3F561 /* SKAnimator.swift */; };
 		A54D0A652CDBFEB9047B2B7B388434EA /* SKPaginationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B87525EB8E66E11E4F05E647884A50A /* SKPaginationView.swift */; };
+		A56BCA85B158A40FC34FD997EF5FE84B /* ZJTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39BDBBD17D1AC439BDA613EB367015D /* ZJTableViewCell.swift */; };
 		A83EB41369AB408908462CE4B2354ECD /* SKCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C695093468E1C6896C603F39420AD6 /* SKCache.swift */; };
 		A9052057EF6AD4129CD7AE7027899313 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AAF4E98278C241548DB1AB458F350E /* Foundation.framework */; };
 		AD2CAAE8A96B243D8689E56ED8426588 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B02DBF74E2D1138EDC1144C324BFA7 /* StackView.swift */; };
@@ -71,10 +72,10 @@
 		AF42745E47771DD793F5BAE02EC7B96B /* ON@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4AE35E5908567B057D2503E6CDA36F3 /* ON@3x.png */; };
 		B1AFAAFFD0E14055CBE659B5C057FA8A /* SwiftyStarRatingView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D9435EDF611F09DA812EF98E568D5 /* SwiftyStarRatingView-dummy.m */; };
 		B261785997A6379987F7C35F1712E9CC /* SKLocalPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFCF7141601B54614C8158773AF69C6 /* SKLocalPhoto.swift */; };
+		B2CCADA840D9BAD3A947ACC2D5303653 /* ZJTableViewManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B9710F606BC5F71054AE8E9BE8581231 /* ZJTableViewManager-dummy.m */; };
 		B57A6425170CE20B691DFA78146208B0 /* SKCaptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9A2F07CA985463EEA22D5DAE6293E /* SKCaptionView.swift */; };
 		B93B5565F18514E5A34B49E1CFA80306 /* SKCacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A919A959ED93BB1D3F31A1491A6684C /* SKCacheable.swift */; };
 		B98378C55379E1B92897F11A22E38443 /* IQKeyboardManagerSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B56D45399CA1C037C5BB3132F7D6AFB /* IQKeyboardManagerSwift-dummy.m */; };
-		BA1224864E77E1D16CF704EE2142DE3B /* ZJTableViewManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CE3B00D2CC1EE68F663726911BCDF7 /* ZJTableViewManager-dummy.m */; };
 		BA2D48DD560BA7086C60E8DE4E50A935 /* Pods-ZJTableViewDemo-Demo2-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D84B996E460D8D3B6E99BA6BE2AD4EE /* Pods-ZJTableViewDemo-Demo2-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BB23D73B2BBF501C400022A537DA49F1 /* SKPhotoBrowser-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E1D11600F7016F76C918509060A31089 /* SKPhotoBrowser-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE8022353EFA4BCDF49B31CB8692798C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16249A3DF5817E19058DC2195F73D625 /* AVFoundation.framework */; };
@@ -83,11 +84,8 @@
 		C0EB3776478AB80676E488BC9C9CDA3C /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E212CA7CAE235E261B30D0FDB63A98 /* IQUIScrollView+Additions.swift */; };
 		C35DCE97EB77150C41E735DB57BD6616 /* IQTitleBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF56552225A587A7236FE3319FF4BE8A /* IQTitleBarButtonItem.swift */; };
 		C7D889A679E1ADB79EFC3B442587404A /* SKPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ECE58601298D420432F87135C107D9 /* SKPhoto.swift */; };
-		C80033B71DE7B437F19F29D9C550279E /* ZJTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA82312302BCA4805F7184C554CE8DC /* ZJTableViewSection.swift */; };
-		C99A91D47F9755EA8E9F08241DD95786 /* ZJExpandTreeCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5050188E8BB0C741B7452A0E28EB29B /* ZJExpandTreeCellItem.swift */; };
 		CBF7EF160A4E70084248147FB4C514D1 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB01C3594B596C1F7FD2A88DF1A0E37 /* Configuration.swift */; };
 		CCF4D17DFCD1D960AF06E14F75DAC170 /* CameraMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E6F5388B7F760208FB36F231BD7F4 /* CameraMan.swift */; };
-		D02422F8186802D3DC521C18313F15B7 /* ZJTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642C3788B9259B574E550194A06AFE4 /* ZJTableViewCell.swift */; };
 		D0F84B87D9A3C1E4D723037CD8651E37 /* SKDetectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DC3AB16BB28119168A01AE180D3BED /* SKDetectingView.swift */; };
 		D7619DA499FCC55B64E5B83AF2C61DBB /* SKPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 27D1355ECF80ED78B04D9A5624ED15E6 /* SKPhotoBrowser.bundle */; };
 		DC4F55ABEDEB0EAFE4EDFB7E34295CA1 /* SwiftyStarRatingView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 337C244E0968FDE4C19953630114FAA3 /* SwiftyStarRatingView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -97,17 +95,17 @@
 		E2F241AE194191F06998ECFD8517ACB9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD36A4CCECD6DAFCD69E7BBBBA357F20 /* UIKit.framework */; };
 		E65C2761F774F28B97F7ECDC03ED3939 /* ImageGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECAD1D134F94E6847C507BA34F6B24 /* ImageGalleryView.swift */; };
 		E6890CA114ACBD2636BBD0C74914ECED /* SKActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009430837F46E3C65DFD36A6F1B7299 /* SKActionView.swift */; };
-		E81E95D0A2665EF4B893BC27E2A62B82 /* ZJTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A5BB40F707A4A628C83ADA5ECC7B7 /* ZJTableViewManager.swift */; };
-		EEB3F7EAA19962B3A37CA63C56369319 /* ZJTableViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23605A8E86E501B47EDA4000D531ACA /* ZJTableViewItem.swift */; };
 		F024C4630E34C064B4C9FBDB5ABF94D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AAF4E98278C241548DB1AB458F350E /* Foundation.framework */; };
 		F1DAEF4B2674DF56D577C9028DD197FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AAF4E98278C241548DB1AB458F350E /* Foundation.framework */; };
 		F22546EA38336972A1175D2E42F32744 /* selectedImageGallery@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8D84CA33A074C516692EE41FD9646C9 /* selectedImageGallery@3x.png */; };
 		F23DB2D60E9E904423A7298EF345062F /* ConstraintsSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4C7B3FE103AB51E1D3AD6BEAA7EAD5 /* ConstraintsSetup.swift */; };
 		F414C8BAD4BDA56A1BD4526058C1DE55 /* BottomContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B444097D51545EFA80BFDA7BCB76E07 /* BottomContainerView.swift */; };
 		F494D64187C08DF537AF896C7C2BC861 /* focusIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E1CF00C3F061A2572AE005221251D85 /* focusIcon@3x.png */; };
+		F5375A97F7363A0377AB868D030C7786 /* ZJTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EAA0E7583314921B4811E9C9E8B14F /* ZJTableViewManager.swift */; };
 		F833940EFF6F8F65E5974995EBEB9B01 /* UIView+Radius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8089A0447E903E765CCF211A49AF286F /* UIView+Radius.swift */; };
 		F91194B0B0F898217B741E16F4144DC8 /* SKPhotoBrowser-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8B9C39887D8E1C355896B8AC7777B0 /* SKPhotoBrowser-dummy.m */; };
 		FB2F62A7099BB491C9B499D82B8CF3E0 /* UIApplication+UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E12683DC440A8B17116D7575771268 /* UIApplication+UIWindow.swift */; };
+		FDB7C283E8D57428E4F348B1AA00D3A6 /* ZJTableViewManager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DF0882C11F0160A37C061E9DB2EDA97 /* ZJTableViewManager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,15 +183,14 @@
 		16249A3DF5817E19058DC2195F73D625 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		17C3D730E260F4B0DD130D94136BA8C2 /* Pods-ZJTableViewDemo-Demo2-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZJTableViewDemo-Demo2-frameworks.sh"; sourceTree = "<group>"; };
 		18494F0A2E3ACE0650E879B1E9A3DC4A /* ImagePickerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePickerController.swift; path = Source/ImagePickerController.swift; sourceTree = "<group>"; };
-		1AA82312302BCA4805F7184C554CE8DC /* ZJTableViewSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJTableViewSection.swift; path = ZJTableViewManager/Core/ZJTableViewSection.swift; sourceTree = "<group>"; };
 		1D908C49A85C762BD62690EDAD12BBC9 /* ImagePicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ImagePicker.xcconfig; sourceTree = "<group>"; };
-		21CE3B00D2CC1EE68F663726911BCDF7 /* ZJTableViewManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZJTableViewManager-dummy.m"; sourceTree = "<group>"; };
 		2206DE2F3FA7264A50C2C90013B40A04 /* SKPhotoBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SKPhotoBrowser.framework; path = SKPhotoBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		248B50D2519BF2A2A103698C10894D98 /* CameraView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraView.swift; path = Source/CameraView/CameraView.swift; sourceTree = "<group>"; };
 		25E3E87CC8DF738EEAFFB4B3A44AFA50 /* Pods-ZJTableViewDemo-CommentsWithPicture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZJTableViewDemo-CommentsWithPicture.debug.xcconfig"; sourceTree = "<group>"; };
 		27D1355ECF80ED78B04D9A5624ED15E6 /* SKPhotoBrowser.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SKPhotoBrowser.bundle; path = SKPhotoBrowser/SKPhotoBrowser.bundle; sourceTree = "<group>"; };
 		2AD20543D62369C8758E7F998EBC1132 /* IQKeyboardManagerConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstants.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstants.swift; sourceTree = "<group>"; };
 		2B5D9435EDF611F09DA812EF98E568D5 /* SwiftyStarRatingView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyStarRatingView-dummy.m"; sourceTree = "<group>"; };
+		2DF0882C11F0160A37C061E9DB2EDA97 /* ZJTableViewManager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZJTableViewManager-umbrella.h"; sourceTree = "<group>"; };
 		2EB546C9BB8229E2EC601893DB257AD5 /* Pods-ZJTableViewDemo-Demo2-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZJTableViewDemo-Demo2-Info.plist"; sourceTree = "<group>"; };
 		2F8BB7E06A090432D17B56BD631D8DE8 /* SwiftyStarRatingView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyStarRatingView-prefix.pch"; sourceTree = "<group>"; };
 		31DC3AB16BB28119168A01AE180D3BED /* SKDetectingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SKDetectingView.swift; path = SKPhotoBrowser/SKDetectingView.swift; sourceTree = "<group>"; };
@@ -203,9 +200,11 @@
 		3C065FCFB865E45B67B928E476ADF2BA /* SKMesurement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SKMesurement.swift; path = SKPhotoBrowser/SKMesurement.swift; sourceTree = "<group>"; };
 		3F231C782C95F0F3BD0CC6E31F8037E8 /* Pods-ZJTableViewDemo-Demo2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZJTableViewDemo-Demo2.release.xcconfig"; sourceTree = "<group>"; };
 		44D338928843EB79412BE0B664A3A3D7 /* AssetManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssetManager.swift; path = Source/AssetManager.swift; sourceTree = "<group>"; };
+		44EAA0E7583314921B4811E9C9E8B14F /* ZJTableViewManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJTableViewManager.swift; path = ZJTableViewManager/Core/ZJTableViewManager.swift; sourceTree = "<group>"; };
 		45C695093468E1C6896C603F39420AD6 /* SKCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SKCache.swift; path = SKPhotoBrowser/SKCache.swift; sourceTree = "<group>"; };
 		4803CF1DCB8C89A9F5BF863095C360D8 /* UIImage+Rotation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Rotation.swift"; path = "SKPhotoBrowser/extensions/UIImage+Rotation.swift"; sourceTree = "<group>"; };
 		4CBFAD198BD8F92067BC7FC1A37020C6 /* IQKeyboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManager.swift; path = IQKeyboardManagerSwift/IQKeyboardManager.swift; sourceTree = "<group>"; };
+		514C450399797AAA2F2F52A2B87F7CB7 /* ZJTableViewItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJTableViewItem.swift; path = ZJTableViewManager/Core/ZJTableViewItem.swift; sourceTree = "<group>"; };
 		516F283B16BD4069AA52CB692C8E7E72 /* Pods-ZJTableViewDemo-Demo2-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZJTableViewDemo-Demo2-acknowledgements.plist"; sourceTree = "<group>"; };
 		53BE5964C820B483945D7E15C8682867 /* Pods-ZJTableViewDemo-CommentsWithPicture-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZJTableViewDemo-CommentsWithPicture-dummy.m"; sourceTree = "<group>"; };
 		53FA53F4789D7790CFB2A81C5E08AAC7 /* SKPhotoBrowserOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SKPhotoBrowserOptions.swift; path = SKPhotoBrowser/SKPhotoBrowserOptions.swift; sourceTree = "<group>"; };
@@ -215,18 +214,16 @@
 		5FE3804D9B5295A4DA57DFCF16D65280 /* IQUIViewController+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIViewController+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIViewController+Additions.swift"; sourceTree = "<group>"; };
 		62243EA3E1312C954323C6FBE6FBA4B1 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUITextFieldView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
 		6471F0E3CD3708E8C00778717A81BF66 /* ZJTableViewManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZJTableViewManager.framework; path = ZJTableViewManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		648F1A9CEF03957CD443F408DD5782C3 /* ZJTableViewManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZJTableViewManager.xcconfig; sourceTree = "<group>"; };
 		653E7626A75D89B65262F357B6FA97CC /* ImagePicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImagePicker-umbrella.h"; sourceTree = "<group>"; };
 		6A20A87499CCE2E72715C99E5C5331AB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		6A472B7075B1A904D221E04445D8E7CE /* IQKeyboardManagerSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManagerSwift.xcconfig; sourceTree = "<group>"; };
 		6CE9A2F07CA985463EEA22D5DAE6293E /* SKCaptionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SKCaptionView.swift; path = SKPhotoBrowser/SKCaptionView.swift; sourceTree = "<group>"; };
-		6F570243B474166169404564262D52E0 /* ZJTableViewManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZJTableViewManager-prefix.pch"; sourceTree = "<group>"; };
 		6FE03221A19B78EAE41041477CC3F561 /* SKAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SKAnimator.swift; path = SKPhotoBrowser/SKAnimator.swift; sourceTree = "<group>"; };
+		70DBECD9406ED308E821463674DEB8D7 /* ZJTableViewManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ZJTableViewManager.modulemap; sourceTree = "<group>"; };
 		71477D1C1745CBA88A8F87DE8E5F4ABC /* SKButtons.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SKButtons.swift; path = SKPhotoBrowser/SKButtons.swift; sourceTree = "<group>"; };
 		723E84F6B182EA07E08B9FDA43D966DC /* VideoInfoView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VideoInfoView.swift; path = Source/ImageGallery/VideoInfoView.swift; sourceTree = "<group>"; };
 		748FA71836DA5E153E00D1A3B4400016 /* SwiftyStarRatingView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyStarRatingView.modulemap; sourceTree = "<group>"; };
 		74B66E3843C8248F7FFE5447E7BC6B3B /* Pods-ZJTableViewDemo-CommentsWithPicture.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ZJTableViewDemo-CommentsWithPicture.modulemap"; sourceTree = "<group>"; };
-		74C1C767B34F8BA02B72718BDF730F6B /* ZJProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJProtocol.swift; path = ZJTableViewManager/Core/ZJProtocol.swift; sourceTree = "<group>"; };
 		776D83E5A5E95101729F88A66FA2F17C /* ResourceBundle-ImagePicker-ImagePicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-ImagePicker-ImagePicker-Info.plist"; sourceTree = "<group>"; };
 		78B1A986931BD778430F05BBD034ADDD /* Pods_ZJTableViewDemo_Demo2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ZJTableViewDemo_Demo2.framework; path = "Pods-ZJTableViewDemo-Demo2.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A027FA47485B5FE931DE8D5108373FD /* SKPagingScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SKPagingScrollView.swift; path = SKPhotoBrowser/SKPagingScrollView.swift; sourceTree = "<group>"; };
@@ -235,13 +232,13 @@
 		7C522C67B4A3A257ED61528BC8A5AF9A /* SKZoomingScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SKZoomingScrollView.swift; path = SKPhotoBrowser/SKZoomingScrollView.swift; sourceTree = "<group>"; };
 		7F38DECE144E384115F9992F03DE5A8F /* SKPhotoBrowser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SKPhotoBrowser.swift; path = SKPhotoBrowser/SKPhotoBrowser.swift; sourceTree = "<group>"; };
 		8089A0447E903E765CCF211A49AF286F /* UIView+Radius.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Radius.swift"; path = "SKPhotoBrowser/extensions/UIView+Radius.swift"; sourceTree = "<group>"; };
-		874A5BB40F707A4A628C83ADA5ECC7B7 /* ZJTableViewManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJTableViewManager.swift; path = ZJTableViewManager/Core/ZJTableViewManager.swift; sourceTree = "<group>"; };
 		8784DA22C7CC67A53F6AC375A947FA62 /* Pods-ZJTableViewDemo-Demo2-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZJTableViewDemo-Demo2-acknowledgements.markdown"; sourceTree = "<group>"; };
 		88B5834652D56D5C021F76C55A4874A2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		8B87525EB8E66E11E4F05E647884A50A /* SKPaginationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SKPaginationView.swift; path = SKPhotoBrowser/SKPaginationView.swift; sourceTree = "<group>"; };
 		8DB01C3594B596C1F7FD2A88DF1A0E37 /* Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = Source/Configuration.swift; sourceTree = "<group>"; };
 		8EFCF7141601B54614C8158773AF69C6 /* SKLocalPhoto.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SKLocalPhoto.swift; path = SKPhotoBrowser/SKLocalPhoto.swift; sourceTree = "<group>"; };
 		8F8B9C39887D8E1C355896B8AC7777B0 /* SKPhotoBrowser-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SKPhotoBrowser-dummy.m"; sourceTree = "<group>"; };
+		8F90B98AFC5F452CFBEF9FB9C70C1B9D /* ZJTableViewManager-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ZJTableViewManager-Info.plist"; sourceTree = "<group>"; };
 		8FA34848360161E732030A7EC98A65AC /* IQKeyboardManagerSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = IQKeyboardManagerSwift.modulemap; sourceTree = "<group>"; };
 		97AA160F23F0CBEDDAF212103E762FC7 /* ImagePicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ImagePicker.bundle; path = "ImagePicker-ImagePicker.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		987CD19BC0CE18F2E00B0AD5ABF8670D /* ImagePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ImagePicker.framework; path = ImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,36 +247,36 @@
 		9B5E6F5388B7F760208FB36F231BD7F4 /* CameraMan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraMan.swift; path = Source/CameraView/CameraMan.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E1CF00C3F061A2572AE005221251D85 /* focusIcon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "focusIcon@3x.png"; path = "Images/focusIcon@3x.png"; sourceTree = "<group>"; };
-		A164214EBF0DB421873833E1D1D74826 /* ZJTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJTextView.swift; path = ZJTableViewManager/Other/ZJTextView.swift; sourceTree = "<group>"; };
 		A2E12683DC440A8B17116D7575771268 /* UIApplication+UIWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIApplication+UIWindow.swift"; path = "SKPhotoBrowser/UIApplication+UIWindow.swift"; sourceTree = "<group>"; };
 		A31EA3E190CAF7195E104FC9EDD4AD74 /* SKPhotoBrowser-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SKPhotoBrowser-prefix.pch"; sourceTree = "<group>"; };
 		A44FCCF5AD11E409A25E912D5F5D71A0 /* ImagePicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ImagePicker-dummy.m"; sourceTree = "<group>"; };
 		A4F9871F1BE6F3B14A0C181535CEB952 /* Pods-ZJTableViewDemo-CommentsWithPicture-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZJTableViewDemo-CommentsWithPicture-frameworks.sh"; sourceTree = "<group>"; };
 		A8CDE4E9AB23CC1EBE0A29EB915BE7CD /* SwiftyStarRatingView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyStarRatingView.framework; path = SwiftyStarRatingView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = IQKeyboardManagerSwift.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A92B4A06119D889FB391103413ADF334 /* ZJTableViewManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ZJTableViewManager.modulemap; sourceTree = "<group>"; };
 		A98BE86FE2158A439BC62AA6A26EB035 /* Pods-ZJTableViewDemo-CommentsWithPicture-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZJTableViewDemo-CommentsWithPicture-acknowledgements.markdown"; sourceTree = "<group>"; };
 		AD0AFAF0C567678F3C297A5A958DBEA8 /* ImagePicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImagePicker-prefix.pch"; sourceTree = "<group>"; };
 		B0EB8F24CB5052536D46CEFEF8648084 /* IQPreviousNextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQPreviousNextView.swift; path = IQKeyboardManagerSwift/IQToolbar/IQPreviousNextView.swift; sourceTree = "<group>"; };
 		B2158720A0F426C7B55CCF4501DA43E4 /* LocationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = Source/LocationManager.swift; sourceTree = "<group>"; };
-		B23605A8E86E501B47EDA4000D531ACA /* ZJTableViewItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJTableViewItem.swift; path = ZJTableViewManager/Core/ZJTableViewItem.swift; sourceTree = "<group>"; };
 		B52265F0EED6D2BC01E778AB623DC0E7 /* ImageGalleryViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageGalleryViewCell.swift; path = Source/ImageGallery/ImageGalleryViewCell.swift; sourceTree = "<group>"; };
 		B769FE04B13FCD4440AB09B608D47496 /* IQInvocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQInvocation.swift; path = IQKeyboardManagerSwift/IQToolbar/IQInvocation.swift; sourceTree = "<group>"; };
 		B8D84CA33A074C516692EE41FD9646C9 /* selectedImageGallery@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "selectedImageGallery@3x.png"; path = "Images/selectedImageGallery@3x.png"; sourceTree = "<group>"; };
+		B9710F606BC5F71054AE8E9BE8581231 /* ZJTableViewManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZJTableViewManager-dummy.m"; sourceTree = "<group>"; };
+		BB1E089B0EBEFCBF747CB89615347817 /* ZJProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJProtocol.swift; path = ZJTableViewManager/Core/ZJProtocol.swift; sourceTree = "<group>"; };
 		BE1FAD2999C5934C0B764F96BC02A501 /* SKToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SKToolbar.swift; path = SKPhotoBrowser/SKToolbar.swift; sourceTree = "<group>"; };
 		BF5265D9B6C87F4F1C9F88820AA3ABD0 /* Pods-ZJTableViewDemo-CommentsWithPicture-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZJTableViewDemo-CommentsWithPicture-acknowledgements.plist"; sourceTree = "<group>"; };
+		C39BDBBD17D1AC439BDA613EB367015D /* ZJTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJTableViewCell.swift; path = ZJTableViewManager/Core/ZJTableViewCell.swift; sourceTree = "<group>"; };
 		C3E234DA00CB9218249CE1D7143251D8 /* Pods-ZJTableViewDemo-Demo2.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ZJTableViewDemo-Demo2.modulemap"; sourceTree = "<group>"; };
 		C4AE35E5908567B057D2503E6CDA36F3 /* ON@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ON@3x.png"; path = "Images/ON@3x.png"; sourceTree = "<group>"; };
 		C4ECE58601298D420432F87135C107D9 /* SKPhoto.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SKPhoto.swift; path = SKPhotoBrowser/SKPhoto.swift; sourceTree = "<group>"; };
 		C52A3957D9F56AF4E7647314C9196008 /* Pods-ZJTableViewDemo-Demo2-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZJTableViewDemo-Demo2-dummy.m"; sourceTree = "<group>"; };
 		C92BD9D82FDB4EFC294D45448DDF7008 /* IQKeyboardManagerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-umbrella.h"; sourceTree = "<group>"; };
 		C9ECAD1D134F94E6847C507BA34F6B24 /* ImageGalleryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageGalleryView.swift; path = Source/ImageGallery/ImageGalleryView.swift; sourceTree = "<group>"; };
+		CAB1C5004A2870BF12CA98F6CBDB4983 /* ZJTableViewManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZJTableViewManager.xcconfig; sourceTree = "<group>"; };
 		CB73C659D546A9203EC7EB4F52344C24 /* IQKeyboardManagerConstantsInternal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstantsInternal.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstantsInternal.swift; sourceTree = "<group>"; };
 		CF20CFBE7BAB1EE4798355E0ADFD1976 /* SKIndicatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SKIndicatorView.swift; path = SKPhotoBrowser/SKIndicatorView.swift; sourceTree = "<group>"; };
 		D009430837F46E3C65DFD36A6F1B7299 /* SKActionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SKActionView.swift; path = SKPhotoBrowser/SKActionView.swift; sourceTree = "<group>"; };
 		D00C4A6389CF54649CE9D57177D87E9A /* ButtonPicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ButtonPicker.swift; path = Source/BottomView/ButtonPicker.swift; sourceTree = "<group>"; };
 		D080F2A53655D88E8FB2487E6E4A13A6 /* SKPhotoBrowserDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SKPhotoBrowserDelegate.swift; path = SKPhotoBrowser/SKPhotoBrowserDelegate.swift; sourceTree = "<group>"; };
-		D642C3788B9259B574E550194A06AFE4 /* ZJTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJTableViewCell.swift; path = ZJTableViewManager/Core/ZJTableViewCell.swift; sourceTree = "<group>"; };
 		D810562B809670D6556AA75C13217D92 /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+IQKeyboardToolbar.swift"; path = "IQKeyboardManagerSwift/IQToolbar/IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
 		DB3A1B1DAF4F25C58037F14023E411D4 /* video@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "video@3x.png"; path = "Images/video@3x.png"; sourceTree = "<group>"; };
 		DD36A4CCECD6DAFCD69E7BBBBA357F20 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -289,16 +286,15 @@
 		E1D11600F7016F76C918509060A31089 /* SKPhotoBrowser-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SKPhotoBrowser-umbrella.h"; sourceTree = "<group>"; };
 		E5C762E0B33DC7EDC56E8E90E3EDE59E /* IQTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTextView.swift; path = IQKeyboardManagerSwift/IQTextView/IQTextView.swift; sourceTree = "<group>"; };
 		E71966AB747566806B6285E67DBC59CD /* SwiftyStarRatingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyStarRatingView.swift; path = Source/SwiftyStarRatingView.swift; sourceTree = "<group>"; };
-		EE7B3277C69DD7136B32EE9315D11139 /* ZJBaseTableViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJBaseTableViewController.swift; path = ZJTableViewManager/Other/ZJBaseTableViewController.swift; sourceTree = "<group>"; };
+		E9C1BE8624029A0BADEF0329F6FE5850 /* ZJTableViewManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZJTableViewManager-prefix.pch"; sourceTree = "<group>"; };
+		EA7D7D662A8A72A5D1605F413F11E8BA /* ZJExpandTreeCellItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJExpandTreeCellItem.swift; path = ZJTableViewManager/Other/ZJExpandTreeCellItem.swift; sourceTree = "<group>"; };
 		EF56552225A587A7236FE3319FF4BE8A /* IQTitleBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTitleBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQTitleBarButtonItem.swift; sourceTree = "<group>"; };
-		F03A378F11778B220F0B6AEA3C8C7F31 /* ZJTableViewManager-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ZJTableViewManager-Info.plist"; sourceTree = "<group>"; };
 		F27FE96D37087988A08CF79289E81D7A /* Helper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = Source/Helper.swift; sourceTree = "<group>"; };
 		F38BC01E3FDF6890FBC17C149366A874 /* cameraIcon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "cameraIcon@3x.png"; path = "Images/cameraIcon@3x.png"; sourceTree = "<group>"; };
-		F5050188E8BB0C741B7452A0E28EB29B /* ZJExpandTreeCellItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJExpandTreeCellItem.swift; path = ZJTableViewManager/Other/ZJExpandTreeCellItem.swift; sourceTree = "<group>"; };
+		F6FA590FC1C4CBB761050CF2826D2287 /* ZJTableViewSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJTableViewSection.swift; path = ZJTableViewManager/Core/ZJTableViewSection.swift; sourceTree = "<group>"; };
 		F7E212CA7CAE235E261B30D0FDB63A98 /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIScrollView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
 		F9AAF4E98278C241548DB1AB458F350E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		FC252EB0C5EFE1361B9037DEBF30C08D /* ImageGalleryLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageGalleryLayout.swift; path = Source/ImageGallery/ImageGalleryLayout.swift; sourceTree = "<group>"; };
-		FD5290B89A93710DED2D5F14542998DA /* ZJTableViewManager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZJTableViewManager-umbrella.h"; sourceTree = "<group>"; };
 		FF8689D46266C619A3A43C53DB7651DD /* Pods-ZJTableViewDemo-CommentsWithPicture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZJTableViewDemo-CommentsWithPicture.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -307,6 +303,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		156FECFC8B0107B150C409B5DA14FB8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				040B68A1A17BDAE323E666FDD5C49759 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,14 +342,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		759C7EDD77E3F0B4A230D436809F6E65 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				87EE5B9A4A1F8D7F35628638E98A66B3 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C64077BCEBA1B9279A70CCE3E35CC0C7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -374,12 +370,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F8A76D4D73311B42D89D65152FF2EFD /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				70DBECD9406ED308E821463674DEB8D7 /* ZJTableViewManager.modulemap */,
+				CAB1C5004A2870BF12CA98F6CBDB4983 /* ZJTableViewManager.xcconfig */,
+				B9710F606BC5F71054AE8E9BE8581231 /* ZJTableViewManager-dummy.m */,
+				8F90B98AFC5F452CFBEF9FB9C70C1B9D /* ZJTableViewManager-Info.plist */,
+				E9C1BE8624029A0BADEF0329F6FE5850 /* ZJTableViewManager-prefix.pch */,
+				2DF0882C11F0160A37C061E9DB2EDA97 /* ZJTableViewManager-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ZJTableViewManager";
+			sourceTree = "<group>";
+		};
 		180A0D5356E04C76F0FB830B36F85F6E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				27D1355ECF80ED78B04D9A5624ED15E6 /* SKPhotoBrowser.bundle */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		2938A8A55C06A0CD5B36AB41CEA02511 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				EA7D7D662A8A72A5D1605F413F11E8BA /* ZJExpandTreeCellItem.swift */,
+			);
+			name = Other;
 			sourceTree = "<group>";
 		};
 		2D05A211BF7262012867DEDF46A3565B /* Support Files */ = {
@@ -396,6 +414,18 @@
 			path = "../Target Support Files/SKPhotoBrowser";
 			sourceTree = "<group>";
 		};
+		301361A85938AE1F067E141CBF557E84 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				BB1E089B0EBEFCBF747CB89615347817 /* ZJProtocol.swift */,
+				C39BDBBD17D1AC439BDA613EB367015D /* ZJTableViewCell.swift */,
+				514C450399797AAA2F2F52A2B87F7CB7 /* ZJTableViewItem.swift */,
+				44EAA0E7583314921B4811E9C9E8B14F /* ZJTableViewManager.swift */,
+				F6FA590FC1C4CBB761050CF2826D2287 /* ZJTableViewSection.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
 		39EE60244412C719D1D66782CE2ADC6E /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,42 +439,6 @@
 				6471F0E3CD3708E8C00778717A81BF66 /* ZJTableViewManager.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		4ECFA72BA98B1C41EC0BACA7B0AEFBAE /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				74C1C767B34F8BA02B72718BDF730F6B /* ZJProtocol.swift */,
-				D642C3788B9259B574E550194A06AFE4 /* ZJTableViewCell.swift */,
-				B23605A8E86E501B47EDA4000D531ACA /* ZJTableViewItem.swift */,
-				874A5BB40F707A4A628C83ADA5ECC7B7 /* ZJTableViewManager.swift */,
-				1AA82312302BCA4805F7184C554CE8DC /* ZJTableViewSection.swift */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		524EFAF9A9A22F8495924E6FC21F9208 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				A92B4A06119D889FB391103413ADF334 /* ZJTableViewManager.modulemap */,
-				648F1A9CEF03957CD443F408DD5782C3 /* ZJTableViewManager.xcconfig */,
-				21CE3B00D2CC1EE68F663726911BCDF7 /* ZJTableViewManager-dummy.m */,
-				F03A378F11778B220F0B6AEA3C8C7F31 /* ZJTableViewManager-Info.plist */,
-				6F570243B474166169404564262D52E0 /* ZJTableViewManager-prefix.pch */,
-				FD5290B89A93710DED2D5F14542998DA /* ZJTableViewManager-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/ZJTableViewManager";
-			sourceTree = "<group>";
-		};
-		55636281FB6A6FB39FDE8218C83D5236 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-				EE7B3277C69DD7136B32EE9315D11139 /* ZJBaseTableViewController.swift */,
-				F5050188E8BB0C741B7452A0E28EB29B /* ZJExpandTreeCellItem.swift */,
-				A164214EBF0DB421873833E1D1D74826 /* ZJTextView.swift */,
-			);
-			name = Other;
 			sourceTree = "<group>";
 		};
 		5C9C777357733C79286C4CE5425F0DD7 /* SKPhotoBrowser */ = {
@@ -480,6 +474,17 @@
 			path = SKPhotoBrowser;
 			sourceTree = "<group>";
 		};
+		6981E85093A96B3CDAC8B69C61FC789C /* ZJTableViewManager */ = {
+			isa = PBXGroup;
+			children = (
+				301361A85938AE1F067E141CBF557E84 /* Core */,
+				2938A8A55C06A0CD5B36AB41CEA02511 /* Other */,
+				0F8A76D4D73311B42D89D65152FF2EFD /* Support Files */,
+			);
+			name = ZJTableViewManager;
+			path = ZJTableViewManager;
+			sourceTree = "<group>";
+		};
 		70156A93331434B49679A93E9514A22D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -501,7 +506,7 @@
 				D4F5E304A9CEEB9E431CD8A63F986006 /* IQKeyboardManagerSwift */,
 				5C9C777357733C79286C4CE5425F0DD7 /* SKPhotoBrowser */,
 				DE7277106AB898FA43CDB22BF019A414 /* SwiftyStarRatingView */,
-				BE0834193D51C2D564EC952A6B0C67AD /* ZJTableViewManager */,
+				6981E85093A96B3CDAC8B69C61FC789C /* ZJTableViewManager */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -562,17 +567,6 @@
 				923F0BDB830E52B724C7E22AC36D967C /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BE0834193D51C2D564EC952A6B0C67AD /* ZJTableViewManager */ = {
-			isa = PBXGroup;
-			children = (
-				4ECFA72BA98B1C41EC0BACA7B0AEFBAE /* Core */,
-				55636281FB6A6FB39FDE8218C83D5236 /* Other */,
-				524EFAF9A9A22F8495924E6FC21F9208 /* Support Files */,
-			);
-			name = ZJTableViewManager;
-			path = ZJTableViewManager;
 			sourceTree = "<group>";
 		};
 		BF1C3627C84240D196037C3364C1D3EC /* ImagePicker */ = {
@@ -708,11 +702,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6A147DF5E50123E992FB0EE8A5AE3A2B /* Headers */ = {
+		39E13EC3A71C3AAABC601293405AC38E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				879F6BEA0DEE6A1FDAD8C142EC968AD3 /* ZJTableViewManager-umbrella.h in Headers */,
+				FDB7C283E8D57428E4F348B1AA00D3A6 /* ZJTableViewManager-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -894,12 +888,12 @@
 		};
 		F366DD389362A47A0707FE45D5503886 /* ZJTableViewManager */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9890B798C74D5D2326F0D49E4ADBEE28 /* Build configuration list for PBXNativeTarget "ZJTableViewManager" */;
+			buildConfigurationList = 03CE7D3CC800BF723C41B8DFB547D172 /* Build configuration list for PBXNativeTarget "ZJTableViewManager" */;
 			buildPhases = (
-				6A147DF5E50123E992FB0EE8A5AE3A2B /* Headers */,
-				D0CDE2DEB0F8556EBA6FDC8EC10D47E8 /* Sources */,
-				759C7EDD77E3F0B4A230D436809F6E65 /* Frameworks */,
-				58C0538491322007115F3E7301030B5A /* Resources */,
+				39E13EC3A71C3AAABC601293405AC38E /* Headers */,
+				E6904732C61C529F0CA5A600BA95A229 /* Sources */,
+				156FECFC8B0107B150C409B5DA14FB8D /* Frameworks */,
+				20B12D62E0FC124E34FC7B92B4A0E1E0 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -959,6 +953,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		20B12D62E0FC124E34FC7B92B4A0E1E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		298BCE497D85B86A97D8E522DBF3C763 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -970,13 +971,6 @@
 				AF42745E47771DD793F5BAE02EC7B96B /* ON@3x.png in Resources */,
 				F22546EA38336972A1175D2E42F32744 /* selectedImageGallery@3x.png in Resources */,
 				45693020B0DEA75B363ACF1040AE3990 /* video@3x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		58C0538491322007115F3E7301030B5A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1124,19 +1118,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D0CDE2DEB0F8556EBA6FDC8EC10D47E8 /* Sources */ = {
+		E6904732C61C529F0CA5A600BA95A229 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E3043BBC186FD39A04C04BDEA85C396 /* ZJBaseTableViewController.swift in Sources */,
-				C99A91D47F9755EA8E9F08241DD95786 /* ZJExpandTreeCellItem.swift in Sources */,
-				151698D4D6A5073BFAE70A672CBBDF33 /* ZJProtocol.swift in Sources */,
-				D02422F8186802D3DC521C18313F15B7 /* ZJTableViewCell.swift in Sources */,
-				EEB3F7EAA19962B3A37CA63C56369319 /* ZJTableViewItem.swift in Sources */,
-				BA1224864E77E1D16CF704EE2142DE3B /* ZJTableViewManager-dummy.m in Sources */,
-				E81E95D0A2665EF4B893BC27E2A62B82 /* ZJTableViewManager.swift in Sources */,
-				C80033B71DE7B437F19F29D9C550279E /* ZJTableViewSection.swift in Sources */,
-				8A4FDE734512E9FF693ABCD9C9587E92 /* ZJTextView.swift in Sources */,
+				9B5E3283CDA11CE1A9C1DA747ABCCE00 /* ZJExpandTreeCellItem.swift in Sources */,
+				8568FD999A7B06824E3C8CCF5E62DB30 /* ZJProtocol.swift in Sources */,
+				A56BCA85B158A40FC34FD997EF5FE84B /* ZJTableViewCell.swift in Sources */,
+				9615ECF41B5DB933DFC886D96D87C932 /* ZJTableViewItem.swift in Sources */,
+				B2CCADA840D9BAD3A947ACC2D5303653 /* ZJTableViewManager-dummy.m in Sources */,
+				F5375A97F7363A0377AB868D030C7786 /* ZJTableViewManager.swift in Sources */,
+				4BE0435ADE657A9DC99CAF753472946F /* ZJTableViewSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1188,6 +1180,37 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		149DB0F6690106125DCF755CF6A03C9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAB1C5004A2870BF12CA98F6CBDB4983 /* ZJTableViewManager.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ZJTableViewManager/ZJTableViewManager-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ZJTableViewManager/ZJTableViewManager-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ZJTableViewManager/ZJTableViewManager.modulemap";
+				PRODUCT_MODULE_NAME = ZJTableViewManager;
+				PRODUCT_NAME = ZJTableViewManager;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		15011036DC276A3DEAE1BD2282592EF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6A472B7075B1A904D221E04445D8E7CE /* IQKeyboardManagerSwift.xcconfig */;
@@ -1213,37 +1236,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.1;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		1AD1F0F849D66147C15F2E0841C7C817 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 648F1A9CEF03957CD443F408DD5782C3 /* ZJTableViewManager.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ZJTableViewManager/ZJTableViewManager-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ZJTableViewManager/ZJTableViewManager-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ZJTableViewManager/ZJTableViewManager.modulemap";
-				PRODUCT_MODULE_NAME = ZJTableViewManager;
-				PRODUCT_NAME = ZJTableViewManager;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1315,38 +1307,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		49DF77CA5A3B9FCFB34F50FEAF9EB5CE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 648F1A9CEF03957CD443F408DD5782C3 /* ZJTableViewManager.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ZJTableViewManager/ZJTableViewManager-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ZJTableViewManager/ZJTableViewManager-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ZJTableViewManager/ZJTableViewManager.modulemap";
-				PRODUCT_MODULE_NAME = ZJTableViewManager;
-				PRODUCT_NAME = ZJTableViewManager;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		55E17227E4968EE8FDD4D59A81C72152 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1789,6 +1749,38 @@
 			};
 			name = Release;
 		};
+		FFE04DCE74A8884EF38D955758E8CE3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAB1C5004A2870BF12CA98F6CBDB4983 /* ZJTableViewManager.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ZJTableViewManager/ZJTableViewManager-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ZJTableViewManager/ZJTableViewManager-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ZJTableViewManager/ZJTableViewManager.modulemap";
+				PRODUCT_MODULE_NAME = ZJTableViewManager;
+				PRODUCT_NAME = ZJTableViewManager;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1797,6 +1789,15 @@
 			buildConfigurations = (
 				56AE6F52DB17D1DDE30C7F5EDCE3E844 /* Debug */,
 				E3EC0AE643CA6D0C2011E368B237EEA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03CE7D3CC800BF723C41B8DFB547D172 /* Build configuration list for PBXNativeTarget "ZJTableViewManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				149DB0F6690106125DCF755CF6A03C9F /* Debug */,
+				FFE04DCE74A8884EF38D955758E8CE3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1842,15 +1843,6 @@
 			buildConfigurations = (
 				B9AF2B26CFD38F58964FD6180B473A02 /* Debug */,
 				9ABF6D133B448C504067F3F9B6CDDADA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9890B798C74D5D2326F0D49E4ADBEE28 /* Build configuration list for PBXNativeTarget "ZJTableViewManager" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1AD1F0F849D66147C15F2E0841C7C817 /* Debug */,
-				49DF77CA5A3B9FCFB34F50FEAF9EB5CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -8,13 +8,10 @@
 
 import UIKit
 
-open class ZJTableViewCell: UITableViewCell, ZJCellProtocol {
-    public var item: ZJTableViewItem!
+class ZJDefaultCell: UITableViewCell, ZJCellProtocol {
+    var item: ZJTableViewItem!
 
-    public typealias ZJCelltemType = ZJTableViewItem
+    typealias ZJCelltemType = ZJTableViewItem
 
-    public func cellWillAppear() {}
-
-    
-
+    func cellWillAppear() {}
 }

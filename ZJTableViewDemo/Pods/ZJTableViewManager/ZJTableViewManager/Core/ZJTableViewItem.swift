@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 public typealias ZJTableViewItemBlock = (ZJTableViewItem) -> Void
 
 open class ZJTableViewItem: NSObject {
@@ -31,13 +32,17 @@ open class ZJTableViewItem: NSObject {
         }
     }
 
-    public var cellTitle: String?
-    /// 系统默认样式的cell
-    public var cellStyle: UITableViewCell.CellStyle = .default
+    public var labelText: String?
+    public var detailLabelText: String?
+    public var textAlignment: NSTextAlignment = .left
+    public var detailTextAlignment: NSTextAlignment = .left
+    public var style: UITableViewCell.CellStyle = .default
     public var accessoryType: UITableViewCell.AccessoryType = .none
     public var selectionStyle: UITableViewCell.SelectionStyle = .default
     public var editingStyle: UITableViewCell.EditingStyle = .none
+    public var accessoryView: UIView?
     public var isAutoDeselect: Bool = true
+
     public var indexPath: IndexPath {
         let rowIndex = self.section.items.zj_indexOf(self)
         let section = tableViewManager.sections.zj_indexOf(self.section)
@@ -61,7 +66,7 @@ open class ZJTableViewItem: NSObject {
 
     public convenience init(title: String?) {
         self.init()
-        cellTitle = title
+        labelText = title
     }
 
     public func reload(_ animation: UITableView.RowAnimation) {

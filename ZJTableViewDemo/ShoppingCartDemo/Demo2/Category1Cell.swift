@@ -19,7 +19,7 @@ class Category1Cell: UITableViewCell, ZJCellProtocol {
     typealias ZJCelltemClass = Category1CellItem
     
     func cellWillAppear() {
-        
+        categoryTitle.text = item.title
     }
     
     
@@ -30,12 +30,6 @@ class Category1Cell: UITableViewCell, ZJCellProtocol {
         super.awakeFromNib()
         // Initialization code
     }
-    
-//    override func cellWillAppear() {
-//        super.cellWillAppear()
-//        let item = self.item as! Category1CellItem
-//        categoryTitle.text = item.title
-//    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

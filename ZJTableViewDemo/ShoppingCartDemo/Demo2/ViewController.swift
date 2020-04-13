@@ -48,7 +48,7 @@ class ViewController: UIViewController {
             // 添加分区标题
             let sectionHeader = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 40))
             sectionHeader.text = category
-            sectionHeader.backgroundColor = UIColor.red
+            sectionHeader.backgroundColor = .lightGray
             let section = ZJTableViewSection(headerView: sectionHeader)
             self.productManager.add(section: section)
             // 商品列表滑动时与分类列表联动

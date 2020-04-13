@@ -90,16 +90,6 @@ open class ZJTableViewManager: NSObject {
     public func reload() {
         tableView.reloadData()
     }
-
-    public func transform(fromLabel: UILabel?, toLabel: UILabel?) {
-        toLabel?.text = fromLabel?.text
-        toLabel?.font = fromLabel?.font
-        toLabel?.textColor = fromLabel?.textColor
-        toLabel?.textAlignment = (fromLabel?.textAlignment)!
-        if let string = fromLabel?.attributedText {
-            toLabel?.attributedText = string
-        }
-    }
 }
 
 // MARK: - UITableViewDelegate
@@ -223,25 +213,29 @@ extension ZJTableViewManager: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let obj = getSectionAndItem(indexPath: (indexPath.section, indexPath.row))
-
         obj.item.tableViewManager = self
         // 报错在这里，可能是是没有register cell 和 item
         var cell = tableView.dequeueReusableCell(withIdentifier: obj.item.cellIdentifier) as? ZJInternalCellProtocol
         if cell == nil {
-            cell = (ZJTableViewCell(style: obj.item.cellStyle, reuseIdentifier: obj.item.cellIdentifier) as ZJInternalCellProtocol)
+            cell = (ZJDefaultCell(style: obj.item.style, reuseIdentifier: obj.item.cellIdentifier) as ZJInternalCellProtocol)
         }
-
-        cell!.textLabel?.text = obj.item.cellTitle
-
-        cell!.accessoryType = obj.item.accessoryType
-
-        cell!.selectionStyle = obj.item.selectionStyle
-
-        cell!._item = obj.item
-
-        cell!.cellWillAppear()
-
-        return cell!
+        let unwrappedCell = cell!
+        if let labelText = obj.item.labelText {
+            unwrappedCell.textLabel?.text = labelText
+            unwrappedCell.textLabel?.textAlignment = obj.item.textAlignment
+        }
+        if let detailLabelText = obj.item.detailLabelText {
+            unwrappedCell.detailTextLabel?.text = detailLabelText
+            unwrappedCell.detailTextLabel?.textAlignment = obj.item.detailTextAlignment
+        }
+        if let accessoryView = obj.item.accessoryView {
+            unwrappedCell.accessoryView = accessoryView
+        }
+        unwrappedCell.accessoryType = obj.item.accessoryType
+        unwrappedCell.selectionStyle = obj.item.selectionStyle
+        unwrappedCell._item = obj.item
+        unwrappedCell.cellWillAppear()
+        return unwrappedCell
     }
 }
 

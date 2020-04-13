@@ -129,22 +129,6 @@ class ZJPictureTableCell: UITableViewCell, ZJCellProtocol {
         self.collectionView.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
     }
     
-//    override func cellWillAppear() {
-//        super.cellWillAppear()
-//        self.item = (self.item as! ZJPictureTableItem)
-//        self.layout.itemSize = self.item.pictureSize!
-//        self.layout.minimumInteritemSpacing = self.item.space
-//        self.layout.minimumLineSpacing = self.item.space
-//
-//        if let edge = item.customEdgeInsets {
-//            self.collectionView.contentInset = edge
-//        } else {
-//            self.collectionView.contentInset = UIEdgeInsets(top: 0, left: self.item.space + 8, bottom: self.item.space, right: self.item.space)
-//        }
-//
-//        self.collectionView.reloadData()
-//    }
-    
     func deletePicture(vc: UIViewController?, index: Int, complete: (() -> Void)?) {
         let alertVC = UIAlertController(title: "提示", message: "确定删除此附件吗？", preferredStyle: .alert)
         let confirm = UIAlertAction(title: "确定", style: .destructive) { [weak self] _ in
