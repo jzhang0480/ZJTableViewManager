@@ -220,6 +220,7 @@ extension ZJTableViewManager: UITableViewDataSource {
             cell = (ZJDefaultCell(style: obj.item.style, reuseIdentifier: obj.item.cellIdentifier) as ZJInternalCellProtocol)
         }
         let unwrappedCell = cell!
+        // // [2020-04-14] If show "Value of type 'ZJInternalCellProtocol' has no member xxx", you should use Xcode 10.3 or later. https://stackoverflow.com/questions/46236315/forced-to-cast-even-if-protocol-requires-given-type/50647762#50647762
         if let labelText = obj.item.labelText {
             unwrappedCell.textLabel?.text = labelText
             unwrappedCell.textLabel?.textAlignment = obj.item.textAlignment
