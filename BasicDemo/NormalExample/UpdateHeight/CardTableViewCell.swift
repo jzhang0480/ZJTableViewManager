@@ -3,7 +3,7 @@
 //  ZJTableViewManagerExample
 //
 //  Created by Jie Zhang on 2019/8/15.
-//  Copyright © 2019 上海勾芒信息科技. All rights reserved.
+//  Copyright © 2019 . All rights reserved.
 //
 
 import UIKit

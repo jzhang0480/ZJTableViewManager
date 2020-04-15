@@ -3,7 +3,7 @@
 //  NewRetail
 //
 //  Created by Javen on 2018/3/5.
-//  Copyright © 2018年 上海勾芒信息科技有限公司. All rights reserved.
+//  Copyright © 2018年 . All rights reserved.
 //
 
 import UIKit

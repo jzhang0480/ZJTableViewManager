@@ -3,7 +3,7 @@
 //  ZJTableViewManagerExample
 //
 //  Created by Javen on 2018/10/16.
-//  Copyright © 2018 上海勾芒信息科技. All rights reserved.
+//  Copyright © 2018 . All rights reserved.
 //
 
 import UIKit
