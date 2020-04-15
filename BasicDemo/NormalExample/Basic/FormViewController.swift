@@ -8,10 +8,17 @@
 
 import UIKit
 
-class FormViewController: ZJBaseTableViewController {
+class FormViewController: UIViewController {
+    var tableView: UITableView!
+    var manager: ZJTableViewManager!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Forms"
+
+        tableView = UITableView(frame: view.bounds, style: .plain)
+        view.addSubview(tableView)
+        manager = ZJTableViewManager(tableView: tableView)
 
         manager.register(ZJTextCell.self, ZJTextItem.self)
         manager.register(ZJTextFieldCell.self, ZJTextFieldItem.self)
