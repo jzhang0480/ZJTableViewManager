@@ -9,8 +9,8 @@
 import UIKit
 
 open class ZJExpandTreeCellItem: ZJTableViewItem {
-    public var level: Int = 0
-    public var isExpand = true
+    public private(set) var level: Int = 0
+    public var isExpand = false
     public var arrSubLevel = [ZJExpandTreeCellItem]()
     /// 展开或者收起下级cell的回调
     public var willExpand: ((ZJExpandTreeCellItem) -> Void)?
@@ -25,7 +25,7 @@ open class ZJExpandTreeCellItem: ZJTableViewItem {
         }
     }
 
-    public func setSubLevel(item: ZJExpandTreeCellItem, section: ZJTableViewSection) {
+    public func addSub(item: ZJExpandTreeCellItem, section: ZJTableViewSection) {
         arrSubLevel.append(item)
         item.superLevelItem = self
         item.level = level + 1
@@ -52,6 +52,7 @@ open class ZJExpandTreeCellItem: ZJTableViewItem {
         } else {
             section.delete(arrItems, animate: .fade)
         }
+        zj_log(isExpand ? "展开" : "收起")
 
         return isExpand
     }

@@ -44,6 +44,8 @@
 		662ABE762445516300A6A603 /* ZJSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662ABE702445516300A6A603 /* ZJSwitchCell.swift */; };
 		662ABE772445516300A6A603 /* ZJTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662ABE712445516300A6A603 /* ZJTextCell.swift */; };
 		662ABE79244559D200A6A603 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662ABE78244559D200A6A603 /* Data.swift */; };
+		662ABE7C2446E60B00A6A603 /* CustomExpandButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662ABE7A2446E60B00A6A603 /* CustomExpandButtonCell.swift */; };
+		662ABE7D2446E60B00A6A603 /* CustomExpandButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 662ABE7B2446E60B00A6A603 /* CustomExpandButtonCell.xib */; };
 		66689ABF2440A56F00AFF759 /* ZJTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66689ABE2440A56F00AFF759 /* ZJTableViewCell.swift */; };
 		667B07BE243B9031008D959C /* ZJProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B07BD243B9031008D959C /* ZJProtocol.swift */; };
 		66E60FAF2427D1C900C5E2BB /* ZJExpandTreeCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60F9D2427D1C900C5E2BB /* ZJExpandTreeCellItem.swift */; };
@@ -97,6 +99,8 @@
 		662ABE702445516300A6A603 /* ZJSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJSwitchCell.swift; sourceTree = "<group>"; };
 		662ABE712445516300A6A603 /* ZJTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTextCell.swift; sourceTree = "<group>"; };
 		662ABE78244559D200A6A603 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		662ABE7A2446E60B00A6A603 /* CustomExpandButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomExpandButtonCell.swift; sourceTree = "<group>"; };
+		662ABE7B2446E60B00A6A603 /* CustomExpandButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomExpandButtonCell.xib; sourceTree = "<group>"; };
 		66689ABE2440A56F00AFF759 /* ZJTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewCell.swift; sourceTree = "<group>"; };
 		667B07BD243B9031008D959C /* ZJProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJProtocol.swift; sourceTree = "<group>"; };
 		66E60F9D2427D1C900C5E2BB /* ZJExpandTreeCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJExpandTreeCellItem.swift; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 				660D6D82231E5F52009741A7 /* Level2Cell.xib */,
 				660D6D85231E5F52009741A7 /* Level3Cell.swift */,
 				660D6D83231E5F52009741A7 /* Level3Cell.xib */,
+				662ABE7A2446E60B00A6A603 /* CustomExpandButtonCell.swift */,
+				662ABE7B2446E60B00A6A603 /* CustomExpandButtonCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -378,6 +384,7 @@
 				660D6DBA231E5F53009741A7 /* HeroHeaderView.xib in Resources */,
 				662ABE722445516300A6A603 /* ZJSwitchCell.xib in Resources */,
 				660D6DAC231E5F53009741A7 /* Level2Cell.xib in Resources */,
+				662ABE7D2446E60B00A6A603 /* CustomExpandButtonCell.xib in Resources */,
 				662ABE742445516300A6A603 /* ZJTextCell.xib in Resources */,
 				660D6DA3231E5F53009741A7 /* Assets.xcassets in Resources */,
 				660D6DB8231E5F53009741A7 /* AutomaticHeightCell.xib in Resources */,
@@ -449,6 +456,7 @@
 				660D6DA2231E5F53009741A7 /* FPSStatusBarViewController.swift in Sources */,
 				662ABE752445516300A6A603 /* ZJTextFieldCell.swift in Sources */,
 				66E60FB12427D1C900C5E2BB /* ZJTextView.swift in Sources */,
+				662ABE7C2446E60B00A6A603 /* CustomExpandButtonCell.swift in Sources */,
 				660D6DB1231E5F53009741A7 /* ExpandTreeViewController.swift in Sources */,
 				660D6DAF231E5F53009741A7 /* Level3Cell.swift in Sources */,
 				660D6DA1231E5F53009741A7 /* FPSCounter.swift in Sources */,
@@ -621,7 +629,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jie.NormalExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -640,7 +648,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jie.NormalExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
