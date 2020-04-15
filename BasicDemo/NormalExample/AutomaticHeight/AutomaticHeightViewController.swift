@@ -31,11 +31,14 @@ class AutomaticHeightViewController: UIViewController {
     }
 
     func showData() {
+        //获取假数据
         let array = getFeedData()
         for feed in array {
             let item = AutomaticHeightCellItem()
             item.feed = feed
+            //计算高度
             item.autoHeight(manager)
+            //把cell加入进section
             section.add(item: item)
         }
         manager.reload()

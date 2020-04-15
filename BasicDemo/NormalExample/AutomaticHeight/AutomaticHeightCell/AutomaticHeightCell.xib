@@ -24,7 +24,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMv-0t-N4g">
-                        <rect key="frame" x="16" y="149" width="62" height="23"/>
+                        <rect key="frame" x="16" y="149" width="62" height="19"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -36,7 +36,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hS-KG-zx6">
-                        <rect key="frame" x="368" y="157" width="30" height="14.5"/>
+                        <rect key="frame" x="368" y="153" width="30" height="14.5"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                         <color key="textColor" red="0.54880242599999995" green="0.66666666669999997" blue="0.89463404609999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -56,7 +56,7 @@
                     <constraint firstItem="1oA-QV-LWU" firstAttribute="leading" secondItem="Urw-hc-BEa" secondAttribute="leading" id="SBe-kw-6Dl"/>
                     <constraint firstItem="8Et-Rq-32h" firstAttribute="leading" secondItem="1oA-QV-LWU" secondAttribute="leading" id="UdD-9K-nxM"/>
                     <constraint firstItem="1oA-QV-LWU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="V8z-Fd-7PX"/>
-                    <constraint firstAttribute="bottom" secondItem="yMv-0t-N4g" secondAttribute="bottom" constant="4" id="dE7-al-NRh"/>
+                    <constraint firstAttribute="bottom" secondItem="yMv-0t-N4g" secondAttribute="bottom" constant="8" id="dE7-al-NRh"/>
                     <constraint firstAttribute="trailing" secondItem="6hS-KG-zx6" secondAttribute="trailing" constant="16" id="loA-qZ-H8p"/>
                     <constraint firstAttribute="trailing" secondItem="Urw-hc-BEa" secondAttribute="trailing" constant="16" id="o0O-Xv-yin"/>
                     <constraint firstItem="6hS-KG-zx6" firstAttribute="baseline" secondItem="yMv-0t-N4g" secondAttribute="baseline" id="pHL-Jt-m6V"/>
