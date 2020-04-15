@@ -19,9 +19,7 @@ class FormViewController: ZJBaseTableViewController {
         manager.register(ZJSwitchCell.self, ZJSwitchItem.self)
 
         // Custom SectionHeader
-        let headerView = HeroHeaderView.view()
-        headerView.imageHero.image = UIImage(named: "李信")
-        headerView.labelHero.text = "Custom Section Header"
+        let headerView = CustomSectionHeaderView.view()
         let section = ZJTableViewSection(headerView: headerView)
         manager.add(section: section)
 

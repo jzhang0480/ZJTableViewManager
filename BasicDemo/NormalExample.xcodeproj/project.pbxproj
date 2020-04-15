@@ -34,8 +34,6 @@
 		660D6DB5231E5F53009741A7 /* AutomaticHeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6D8E231E5F52009741A7 /* AutomaticHeightViewController.swift */; };
 		660D6DB8231E5F53009741A7 /* AutomaticHeightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 660D6D93231E5F52009741A7 /* AutomaticHeightCell.xib */; };
 		660D6DB9231E5F53009741A7 /* AutomaticHeightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6D94231E5F52009741A7 /* AutomaticHeightCell.swift */; };
-		660D6DBA231E5F53009741A7 /* HeroHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 660D6D96231E5F52009741A7 /* HeroHeaderView.xib */; };
-		660D6DBB231E5F53009741A7 /* HeroHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6D97231E5F52009741A7 /* HeroHeaderView.swift */; };
 		660D6DBC231E5F53009741A7 /* Info-manager.plist in Resources */ = {isa = PBXBuildFile; fileRef = 660D6D98231E5F52009741A7 /* Info-manager.plist */; };
 		662ABE722445516300A6A603 /* ZJSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 662ABE6C2445516300A6A603 /* ZJSwitchCell.xib */; };
 		662ABE732445516300A6A603 /* ZJTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 662ABE6D2445516300A6A603 /* ZJTextFieldCell.xib */; };
@@ -48,6 +46,8 @@
 		662ABE7D2446E60B00A6A603 /* CustomExpandButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 662ABE7B2446E60B00A6A603 /* CustomExpandButtonCell.xib */; };
 		66689ABF2440A56F00AFF759 /* ZJTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66689ABE2440A56F00AFF759 /* ZJTableViewCell.swift */; };
 		667B07BE243B9031008D959C /* ZJProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B07BD243B9031008D959C /* ZJProtocol.swift */; };
+		66A7FDF02447062A0003BC69 /* CustomSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66A7FDEF2447062A0003BC69 /* CustomSectionHeaderView.xib */; };
+		66A7FDF2244706390003BC69 /* CustomSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A7FDF1244706390003BC69 /* CustomSectionHeaderView.swift */; };
 		66E60FAF2427D1C900C5E2BB /* ZJExpandTreeCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60F9D2427D1C900C5E2BB /* ZJExpandTreeCellItem.swift */; };
 		66E60FB02427D1C900C5E2BB /* ZJBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60F9E2427D1C900C5E2BB /* ZJBaseTableViewController.swift */; };
 		66E60FB12427D1C900C5E2BB /* ZJTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60F9F2427D1C900C5E2BB /* ZJTextView.swift */; };
@@ -89,8 +89,6 @@
 		660D6D8E231E5F52009741A7 /* AutomaticHeightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutomaticHeightViewController.swift; sourceTree = "<group>"; };
 		660D6D93231E5F52009741A7 /* AutomaticHeightCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AutomaticHeightCell.xib; sourceTree = "<group>"; };
 		660D6D94231E5F52009741A7 /* AutomaticHeightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutomaticHeightCell.swift; sourceTree = "<group>"; };
-		660D6D96231E5F52009741A7 /* HeroHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeroHeaderView.xib; sourceTree = "<group>"; };
-		660D6D97231E5F52009741A7 /* HeroHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroHeaderView.swift; sourceTree = "<group>"; };
 		660D6D98231E5F52009741A7 /* Info-manager.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-manager.plist"; sourceTree = "<group>"; };
 		662ABE6C2445516300A6A603 /* ZJSwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZJSwitchCell.xib; sourceTree = "<group>"; };
 		662ABE6D2445516300A6A603 /* ZJTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZJTextFieldCell.xib; sourceTree = "<group>"; };
@@ -103,6 +101,8 @@
 		662ABE7B2446E60B00A6A603 /* CustomExpandButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomExpandButtonCell.xib; sourceTree = "<group>"; };
 		66689ABE2440A56F00AFF759 /* ZJTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewCell.swift; sourceTree = "<group>"; };
 		667B07BD243B9031008D959C /* ZJProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJProtocol.swift; sourceTree = "<group>"; };
+		66A7FDEF2447062A0003BC69 /* CustomSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomSectionHeaderView.xib; sourceTree = "<group>"; };
+		66A7FDF1244706390003BC69 /* CustomSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSectionHeaderView.swift; sourceTree = "<group>"; };
 		66E60F9D2427D1C900C5E2BB /* ZJExpandTreeCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJExpandTreeCellItem.swift; sourceTree = "<group>"; };
 		66E60F9E2427D1C900C5E2BB /* ZJBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJBaseTableViewController.swift; sourceTree = "<group>"; };
 		66E60F9F2427D1C900C5E2BB /* ZJTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTextView.swift; sourceTree = "<group>"; };
@@ -164,8 +164,9 @@
 				667B07BF243C2772008D959C /* Resource */,
 				660D6D8D231E5F52009741A7 /* AutomaticHeight */,
 				660D6D78231E5F52009741A7 /* EditingViewController.swift */,
+				66A7FDEE244705E90003BC69 /* CustomHeader */,
 				660D6D7D231E5F52009741A7 /* ExpandTree */,
-				667B07C0243C27F8008D959C /* CustomCell */,
+				667B07C0243C27F8008D959C /* Basic */,
 				660D6D6B231E5F52009741A7 /* RetractableViewController.swift */,
 				660D6D6C231E5F52009741A7 /* SectionsViewController.swift */,
 				660D6D79231E5F52009741A7 /* UpdateHeight */,
@@ -228,7 +229,6 @@
 				660D6D92231E5F52009741A7 /* AutomaticHeightCell */,
 				660D6D8E231E5F52009741A7 /* AutomaticHeightViewController.swift */,
 				662ABE78244559D200A6A603 /* Data.swift */,
-				660D6D95231E5F52009741A7 /* Views */,
 			);
 			path = AutomaticHeight;
 			sourceTree = "<group>";
@@ -240,15 +240,6 @@
 				660D6D94231E5F52009741A7 /* AutomaticHeightCell.swift */,
 			);
 			path = AutomaticHeightCell;
-			sourceTree = "<group>";
-		};
-		660D6D95231E5F52009741A7 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				660D6D96231E5F52009741A7 /* HeroHeaderView.xib */,
-				660D6D97231E5F52009741A7 /* HeroHeaderView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		662ABE6B2445516300A6A603 /* Cells */ = {
@@ -279,13 +270,22 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		667B07C0243C27F8008D959C /* CustomCell */ = {
+		667B07C0243C27F8008D959C /* Basic */ = {
 			isa = PBXGroup;
 			children = (
 				662ABE6B2445516300A6A603 /* Cells */,
 				660D6D77231E5F52009741A7 /* FormViewController.swift */,
 			);
-			path = CustomCell;
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		66A7FDEE244705E90003BC69 /* CustomHeader */ = {
+			isa = PBXGroup;
+			children = (
+				66A7FDEF2447062A0003BC69 /* CustomSectionHeaderView.xib */,
+				66A7FDF1244706390003BC69 /* CustomSectionHeaderView.swift */,
+			);
+			path = CustomHeader;
 			sourceTree = "<group>";
 		};
 		66E60F9B2427D1C900C5E2BB /* ZJTableViewManager */ = {
@@ -378,10 +378,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66A7FDF02447062A0003BC69 /* CustomSectionHeaderView.xib in Resources */,
 				660D6DA9231E5F53009741A7 /* Level1Cell.xib in Resources */,
 				660D6DB2231E5F53009741A7 /* LaunchScreen.storyboard in Resources */,
 				662ABE732445516300A6A603 /* ZJTextFieldCell.xib in Resources */,
-				660D6DBA231E5F53009741A7 /* HeroHeaderView.xib in Resources */,
 				662ABE722445516300A6A603 /* ZJSwitchCell.xib in Resources */,
 				660D6DAC231E5F53009741A7 /* Level2Cell.xib in Resources */,
 				662ABE7D2446E60B00A6A603 /* CustomExpandButtonCell.xib in Resources */,
@@ -443,7 +443,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				660D6D99231E5F53009741A7 /* ViewController.swift in Sources */,
-				660D6DBB231E5F53009741A7 /* HeroHeaderView.swift in Sources */,
 				660D6DB0231E5F53009741A7 /* Level2Cell.swift in Sources */,
 				667B07BE243B9031008D959C /* ZJProtocol.swift in Sources */,
 				662ABE79244559D200A6A603 /* Data.swift in Sources */,
@@ -456,6 +455,7 @@
 				660D6DA2231E5F53009741A7 /* FPSStatusBarViewController.swift in Sources */,
 				662ABE752445516300A6A603 /* ZJTextFieldCell.swift in Sources */,
 				66E60FB12427D1C900C5E2BB /* ZJTextView.swift in Sources */,
+				66A7FDF2244706390003BC69 /* CustomSectionHeaderView.swift in Sources */,
 				662ABE7C2446E60B00A6A603 /* CustomExpandButtonCell.swift in Sources */,
 				660D6DB1231E5F53009741A7 /* ExpandTreeViewController.swift in Sources */,
 				660D6DAF231E5F53009741A7 /* Level3Cell.swift in Sources */,
