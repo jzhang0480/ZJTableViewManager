@@ -10,9 +10,6 @@
 		660D6D99231E5F53009741A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6D69231E5F52009741A7 /* ViewController.swift */; };
 		660D6D9B231E5F53009741A7 /* RetractableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6D6B231E5F52009741A7 /* RetractableViewController.swift */; };
 		660D6D9C231E5F53009741A7 /* SectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6D6C231E5F52009741A7 /* SectionsViewController.swift */; };
-		660D6DA0231E5F53009741A7 /* FPSStatusBarWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6D72231E5F52009741A7 /* FPSStatusBarWindow.swift */; };
-		660D6DA1231E5F53009741A7 /* FPSCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6D73231E5F52009741A7 /* FPSCounter.swift */; };
-		660D6DA2231E5F53009741A7 /* FPSStatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6D75231E5F52009741A7 /* FPSStatusBarViewController.swift */; };
 		660D6DA3231E5F53009741A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660D6D76231E5F52009741A7 /* Assets.xcassets */; };
 		660D6DA4231E5F53009741A7 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6D77231E5F52009741A7 /* FormViewController.swift */; };
 		660D6DA5231E5F53009741A7 /* EditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6D78231E5F52009741A7 /* EditingViewController.swift */; };
@@ -54,6 +51,9 @@
 		66E60FBB2427D1C900C5E2BB /* ZJTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60FAB2427D1C900C5E2BB /* ZJTableViewSection.swift */; };
 		66E60FBC2427D1C900C5E2BB /* ZJTableViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60FAC2427D1C900C5E2BB /* ZJTableViewItem.swift */; };
 		66E60FBD2427D1C900C5E2BB /* ZJTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60FAD2427D1C900C5E2BB /* ZJTableViewManager.swift */; };
+		8FDF516524476C5400A4AB92 /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDF516424476C5400A4AB92 /* test.m */; };
+		8FDF51B524476D4F00A4AB92 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDF51B424476D4F00A4AB92 /* YYFPSLabel.m */; };
+		8FDF51BB2447715B00A4AB92 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDF51B92447715B00A4AB92 /* YYWeakProxy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,10 +64,6 @@
 		660D6D69231E5F52009741A7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		660D6D6B231E5F52009741A7 /* RetractableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetractableViewController.swift; sourceTree = "<group>"; };
 		660D6D6C231E5F52009741A7 /* SectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionsViewController.swift; sourceTree = "<group>"; };
-		660D6D72231E5F52009741A7 /* FPSStatusBarWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPSStatusBarWindow.swift; sourceTree = "<group>"; };
-		660D6D73231E5F52009741A7 /* FPSCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPSCounter.swift; sourceTree = "<group>"; };
-		660D6D74231E5F52009741A7 /* FPSCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPSCounter.h; sourceTree = "<group>"; };
-		660D6D75231E5F52009741A7 /* FPSStatusBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPSStatusBarViewController.swift; sourceTree = "<group>"; };
 		660D6D76231E5F52009741A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		660D6D77231E5F52009741A7 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		660D6D78231E5F52009741A7 /* EditingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +105,12 @@
 		66E60FAB2427D1C900C5E2BB /* ZJTableViewSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewSection.swift; sourceTree = "<group>"; };
 		66E60FAC2427D1C900C5E2BB /* ZJTableViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewItem.swift; sourceTree = "<group>"; };
 		66E60FAD2427D1C900C5E2BB /* ZJTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewManager.swift; sourceTree = "<group>"; };
+		8FDF516324476C5300A4AB92 /* NormalExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NormalExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		8FDF516424476C5400A4AB92 /* test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
+		8FDF51B324476D4F00A4AB92 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
+		8FDF51B424476D4F00A4AB92 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
+		8FDF51B92447715B00A4AB92 /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
+		8FDF51BA2447715B00A4AB92 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,17 +175,6 @@
 				66E60F9B2427D1C900C5E2BB /* ZJTableViewManager */,
 			);
 			path = NormalExample;
-			sourceTree = "<group>";
-		};
-		660D6D71231E5F52009741A7 /* FPS */ = {
-			isa = PBXGroup;
-			children = (
-				660D6D72231E5F52009741A7 /* FPSStatusBarWindow.swift */,
-				660D6D73231E5F52009741A7 /* FPSCounter.swift */,
-				660D6D74231E5F52009741A7 /* FPSCounter.h */,
-				660D6D75231E5F52009741A7 /* FPSStatusBarViewController.swift */,
-			);
-			path = FPS;
 			sourceTree = "<group>";
 		};
 		660D6D79231E5F52009741A7 /* UpdateHeight */ = {
@@ -257,14 +248,16 @@
 		667B07BF243C2772008D959C /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				8FDF51BC2447715F00A4AB92 /* FPS */,
 				66E60F9E2427D1C900C5E2BB /* ZJBaseTableViewController.swift */,
 				66E60F9F2427D1C900C5E2BB /* ZJTextView.swift */,
-				660D6D71231E5F52009741A7 /* FPS */,
 				660D6D8C231E5F52009741A7 /* AppDelegate.swift */,
 				660D6D76231E5F52009741A7 /* Assets.xcassets */,
 				660D6D98231E5F52009741A7 /* Info-manager.plist */,
 				660D6D88231E5F52009741A7 /* LaunchScreen.storyboard */,
 				660D6D8A231E5F52009741A7 /* Main.storyboard */,
+				8FDF516424476C5400A4AB92 /* test.m */,
+				8FDF516324476C5300A4AB92 /* NormalExample-Bridging-Header.h */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -318,6 +311,17 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		8FDF51BC2447715F00A4AB92 /* FPS */ = {
+			isa = PBXGroup;
+			children = (
+				8FDF51B324476D4F00A4AB92 /* YYFPSLabel.h */,
+				8FDF51B424476D4F00A4AB92 /* YYFPSLabel.m */,
+				8FDF51BA2447715B00A4AB92 /* YYWeakProxy.h */,
+				8FDF51B92447715B00A4AB92 /* YYWeakProxy.m */,
+			);
+			path = FPS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -352,6 +356,7 @@
 				TargetAttributes = {
 					660D6D52231E5F39009741A7 = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -444,7 +449,9 @@
 			files = (
 				660D6D99231E5F53009741A7 /* ViewController.swift in Sources */,
 				660D6DB0231E5F53009741A7 /* Level2Cell.swift in Sources */,
+				8FDF516524476C5400A4AB92 /* test.m in Sources */,
 				667B07BE243B9031008D959C /* ZJProtocol.swift in Sources */,
+				8FDF51BB2447715B00A4AB92 /* YYWeakProxy.m in Sources */,
 				662ABE79244559D200A6A603 /* Data.swift in Sources */,
 				660D6DB4231E5F53009741A7 /* AppDelegate.swift in Sources */,
 				66E60FB02427D1C900C5E2BB /* ZJBaseTableViewController.swift in Sources */,
@@ -452,20 +459,18 @@
 				660D6DAE231E5F53009741A7 /* Level0Cell.swift in Sources */,
 				660D6DB5231E5F53009741A7 /* AutomaticHeightViewController.swift in Sources */,
 				660D6D9C231E5F53009741A7 /* SectionsViewController.swift in Sources */,
-				660D6DA2231E5F53009741A7 /* FPSStatusBarViewController.swift in Sources */,
 				662ABE752445516300A6A603 /* ZJTextFieldCell.swift in Sources */,
 				66E60FB12427D1C900C5E2BB /* ZJTextView.swift in Sources */,
 				66A7FDF2244706390003BC69 /* CustomSectionHeaderView.swift in Sources */,
 				662ABE7C2446E60B00A6A603 /* CustomExpandButtonCell.swift in Sources */,
 				660D6DB1231E5F53009741A7 /* ExpandTreeViewController.swift in Sources */,
 				660D6DAF231E5F53009741A7 /* Level3Cell.swift in Sources */,
-				660D6DA1231E5F53009741A7 /* FPSCounter.swift in Sources */,
-				660D6DA0231E5F53009741A7 /* FPSStatusBarWindow.swift in Sources */,
 				662ABE762445516300A6A603 /* ZJSwitchCell.swift in Sources */,
 				66E60FBC2427D1C900C5E2BB /* ZJTableViewItem.swift in Sources */,
 				662ABE772445516300A6A603 /* ZJTextCell.swift in Sources */,
 				660D6DA6231E5F53009741A7 /* CardTableViewCell.swift in Sources */,
 				660D6DA7231E5F53009741A7 /* UpdateHeightViewController.swift in Sources */,
+				8FDF51B524476D4F00A4AB92 /* YYFPSLabel.m in Sources */,
 				66689ABF2440A56F00AFF759 /* ZJTableViewCell.swift in Sources */,
 				660D6DA5231E5F53009741A7 /* EditingViewController.swift in Sources */,
 				660D6DAB231E5F53009741A7 /* Level1Cell.swift in Sources */,
@@ -619,16 +624,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J3DD658LJM;
+				DEVELOPMENT_TEAM = 37TN2QMZFD;
 				INFOPLIST_FILE = "$(SRCROOT)/NormalExample/Resource/Info-manager.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jie.NormalExample;
+				PRODUCT_BUNDLE_IDENTIFIER = ZJTableView.NormalExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NormalExample/Resource/NormalExample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -638,16 +646,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J3DD658LJM;
+				DEVELOPMENT_TEAM = 37TN2QMZFD;
 				INFOPLIST_FILE = "$(SRCROOT)/NormalExample/Resource/Info-manager.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jie.NormalExample;
+				PRODUCT_BUNDLE_IDENTIFIER = ZJTableView.NormalExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NormalExample/Resource/NormalExample-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

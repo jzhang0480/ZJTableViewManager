@@ -14,7 +14,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        FPSCounter.showInStatusBar()
+        let fpsLabel = YYFPSLabel()
+        let keyWindow = UIApplication.shared.keyWindow!
+        let x = keyWindow.frame.width - fpsLabel.frame.width - 4
+        let y = UIApplication.shared.statusBarFrame.height + 52
+        fpsLabel.frame = CGRect(x: x, y: y, width: fpsLabel.frame.width, height: fpsLabel.frame.height)
+        keyWindow.addSubview(fpsLabel)
 
         ZJTableViewManager.isDebug = true
 

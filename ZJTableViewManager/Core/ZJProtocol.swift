@@ -200,7 +200,7 @@ extension ZJTableViewManager: UIScrollViewDelegate {
         if let d = scrollDelegate {
             return d.scrollViewShouldScrollToTop(scrollView)
         }
-        return false
+        return true
     }
 
     public func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {

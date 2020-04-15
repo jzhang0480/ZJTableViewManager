@@ -27,7 +27,6 @@ class AutomaticHeightViewController: UIViewController {
             // 网络请求完成
             self.showData()
         }
-        // Do any additional setup after loading the view.
     }
 
     func showData() {
