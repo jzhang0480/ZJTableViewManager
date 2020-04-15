@@ -12,7 +12,6 @@ class FormViewController: ZJBaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Forms"
-        tableView.tableFooterView = UIView()
 
         manager.register(ZJTextCell.self, ZJTextItem.self)
         manager.register(ZJTextFieldCell.self, ZJTextFieldItem.self)
