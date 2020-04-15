@@ -38,6 +38,8 @@ class ExpandTreeViewController: UIViewController {
         item0.title = "自动处理展开事件"
         // 默认是false，我这里需要第1级是展开状态，所以单独设置true
         item0.isExpand = true
+        // 当前这一级在收起的时候会忽略后面层级的树形结构。比如1，2级都是展开的，点击0级收起之后再展开，1，2级都会是收起状态。
+        item0.isKeepStructure = false
         section.add(item: item0)
 
         // level 1
