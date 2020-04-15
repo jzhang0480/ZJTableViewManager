@@ -164,7 +164,6 @@
 				667B07BF243C2772008D959C /* Resource */,
 				660D6D8D231E5F52009741A7 /* AutomaticHeight */,
 				660D6D78231E5F52009741A7 /* EditingViewController.swift */,
-				66A7FDEE244705E90003BC69 /* CustomHeader */,
 				660D6D7D231E5F52009741A7 /* ExpandTree */,
 				667B07C0243C27F8008D959C /* Basic */,
 				660D6D6B231E5F52009741A7 /* RetractableViewController.swift */,
@@ -273,6 +272,7 @@
 		667B07C0243C27F8008D959C /* Basic */ = {
 			isa = PBXGroup;
 			children = (
+				66A7FDEE244705E90003BC69 /* CustomHeader */,
 				662ABE6B2445516300A6A603 /* Cells */,
 				660D6D77231E5F52009741A7 /* FormViewController.swift */,
 			);
