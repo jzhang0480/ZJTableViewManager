@@ -24,6 +24,7 @@ class UpdateHeightViewController: UIViewController {
         manager.register(CardTableViewCell.self, CardTableViewCellItem.self)
         section = ZJTableViewSection()
         manager.add(section: section)
+        section.footerTitle = "iOS13模拟器有bug，请用真机查看"
 
         for index in 0 ..< 5 {
             let item = CardTableViewCellItem()
