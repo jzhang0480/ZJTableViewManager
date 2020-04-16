@@ -38,6 +38,7 @@ class ExpandTreeViewController: UIViewController {
         item0.title = "自动处理展开事件"
         // 默认是false，我这里需要第1级是展开状态，所以单独设置true
         item0.isExpand = true
+
         // 当前这一级在收起的时候会忽略后面层级的树形结构。比如1，2级都是展开的，点击0级收起之后再展开，1，2级都会是收起状态。
         item0.isKeepStructure = false
         section.add(item: item0)
@@ -68,7 +69,7 @@ class ExpandTreeViewController: UIViewController {
         rootItem.title = "网络请求获取数据自定义展开事件"
         section.add(item: rootItem)
 
-        // 自定义点击事件处理，调用这个方法重写回调就会覆盖掉默认的展开事件
+        // 自定义点击事件处理，重写回调就会覆盖掉默认的展开事件
         rootItem.setSelectionHandler { [unowned self] (callBackItem: Level0CellItem) in
 
             // 判断是否已经从网络获得过数据，有的话就直接展开或收起（实际项目根据实际情况来判断，这里只是个例子）
