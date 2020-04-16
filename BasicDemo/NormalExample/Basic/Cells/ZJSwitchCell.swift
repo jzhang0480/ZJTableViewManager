@@ -8,11 +8,11 @@
 
 import UIKit
 
-public class ZJSwitchItem: ZJTableViewItem {
-    public var title: String?
-    public var isOn: Bool = false
-    public var didChanged: ZJTableViewItemBlock?
-    public convenience init(title: String?, isOn: Bool, didChanged: ZJTableViewItemBlock?) {
+class ZJSwitchItem: ZJTableViewItem {
+    var title: String?
+    var isOn: Bool = false
+    var didChanged: ((ZJSwitchItem)->())?
+    convenience init(title: String?, isOn: Bool, didChanged: ((ZJSwitchItem)->())?) {
         self.init()
         self.title = title
         self.isOn = isOn
@@ -20,20 +20,20 @@ public class ZJSwitchItem: ZJTableViewItem {
     }
 }
 
-open class ZJSwitchCell: UITableViewCell, ZJCellProtocol {
-    public var item: ZJSwitchItem!
+class ZJSwitchCell: UITableViewCell, ZJCellProtocol {
+    var item: ZJSwitchItem!
 
-    public typealias ZJCelltemClass = ZJSwitchItem
+    typealias ZJCelltemClass = ZJSwitchItem
 
     @IBOutlet var labelTitle: UILabel!
     @IBOutlet var switchButton: UISwitch!
 
-    open override func awakeFromNib() {
+    override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    public func cellWillAppear() {
+    func cellWillAppear() {
         labelTitle.text = item.title
         switchButton.isOn = item.isOn
     }
@@ -43,7 +43,7 @@ open class ZJSwitchCell: UITableViewCell, ZJCellProtocol {
         item.didChanged?(item)
     }
 
-    open override func setSelected(_ selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

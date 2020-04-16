@@ -212,28 +212,24 @@ extension ZJTableViewManager: UITableViewDataSource {
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let obj = getSectionAndItem(indexPath: (indexPath.section, indexPath.row))
-        obj.item.tableViewManager = self
-        // 报错在这里，可能是是没有register cell 和 item
-        var cell = tableView.dequeueReusableCell(withIdentifier: obj.item.cellIdentifier) as? ZJInternalCellProtocol
+        let (_, item) = getSectionAndItem(indexPath: (indexPath.section, indexPath.row))
+        item.tableViewManager = self
+        
+        var cell = tableView.dequeueReusableCell(withIdentifier: item.cellIdentifier) as? ZJInternalCellProtocol
         if cell == nil {
-            cell = (ZJDefaultCell(style: obj.item.style, reuseIdentifier: obj.item.cellIdentifier) as ZJInternalCellProtocol)
+            cell = (ZJDefaultCell(style: item.style, reuseIdentifier: item.cellIdentifier) as ZJInternalCellProtocol)
         }
         let unwrappedCell = cell!
-        if let labelText = obj.item.labelText {
-            unwrappedCell.textLabel?.text = labelText
-            unwrappedCell.textLabel?.textAlignment = obj.item.textAlignment
-        }
-        if let detailLabelText = obj.item.detailLabelText {
-            unwrappedCell.detailTextLabel?.text = detailLabelText
-            unwrappedCell.detailTextLabel?.textAlignment = obj.item.detailTextAlignment
-        }
-        if let accessoryView = obj.item.accessoryView {
-            unwrappedCell.accessoryView = accessoryView
-        }
-        unwrappedCell.accessoryType = obj.item.accessoryType
-        unwrappedCell.selectionStyle = obj.item.selectionStyle
-        unwrappedCell._item = obj.item
+        unwrappedCell.textLabel?.text = item.labelText
+        unwrappedCell.textLabel?.textAlignment = item.textAlignment
+        unwrappedCell.detailTextLabel?.text = item.detailLabelText
+        unwrappedCell.detailTextLabel?.textAlignment = item.detailTextAlignment
+        unwrappedCell.accessoryView = item.accessoryView
+        unwrappedCell.imageView?.image = item.image
+        unwrappedCell.imageView?.highlightedImage = item.highlightedImage
+        unwrappedCell.accessoryType = item.accessoryType
+        unwrappedCell.selectionStyle = item.selectionStyle
+        unwrappedCell._item = item
         unwrappedCell.cellWillAppear()
         return unwrappedCell
     }

@@ -235,12 +235,12 @@
 		662ABE6B2445516300A6A603 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				662ABE702445516300A6A603 /* ZJSwitchCell.swift */,
 				662ABE6C2445516300A6A603 /* ZJSwitchCell.xib */,
-				662ABE6D2445516300A6A603 /* ZJTextFieldCell.xib */,
+				662ABE712445516300A6A603 /* ZJTextCell.swift */,
 				662ABE6E2445516300A6A603 /* ZJTextCell.xib */,
 				662ABE6F2445516300A6A603 /* ZJTextFieldCell.swift */,
-				662ABE702445516300A6A603 /* ZJSwitchCell.swift */,
-				662ABE712445516300A6A603 /* ZJTextCell.swift */,
+				662ABE6D2445516300A6A603 /* ZJTextFieldCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";

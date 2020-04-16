@@ -36,6 +36,8 @@ open class ZJTableViewItem: NSObject {
     public var detailLabelText: String?
     public var textAlignment: NSTextAlignment = .left
     public var detailTextAlignment: NSTextAlignment = .left
+    public var image: UIImage?
+    public var highlightedImage: UIImage?
     public var style: UITableViewCell.CellStyle = .default
     public var accessoryType: UITableViewCell.AccessoryType = .none
     public var selectionStyle: UITableViewCell.SelectionStyle = .default
