@@ -41,7 +41,7 @@ class ViewController: UIViewController {
             item.setSelectionHandler { _ in
 
                 if i == "Basic" {
-                    let vc = FormViewController()
+                    let vc = BasicViewController()
                     self.navigationController?.pushViewController(vc, animated: true)
                 } else if i == "Retractable" {
                     let vc = RetractableViewController()

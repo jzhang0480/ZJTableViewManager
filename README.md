@@ -7,10 +7,10 @@
 
 
 ### 适配
-| Version        | Swift         | Xcode              |
-| -------------- | ------------- | ------------------ |
-| 0.2.7          | 4.0 / 4.2     | Xcode10 or later   |
-| 1.0.3 or later | 4.0 / 4.2 / 5 | Xcode10.2 or later |
+| Version        | Swift     | Xcode              |
+| -------------- | --------- | ------------------ |
+| 0.2.7          | 4.0 / 4.2 | Xcode10 or later   |
+| 1.0.3 or later | 4.0 ~ 5.2 | Xcode10.2 or later |
 
 
 ### 简介

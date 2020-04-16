@@ -8,13 +8,13 @@
 
 import UIKit
 
-class FormViewController: UIViewController {
+class BasicViewController: UIViewController {
     var tableView: UITableView!
     var manager: ZJTableViewManager!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Forms"
+        title = "Basic"
 
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.addSubview(tableView)
