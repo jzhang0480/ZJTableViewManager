@@ -41,16 +41,11 @@
 		662ABE79244559D200A6A603 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662ABE78244559D200A6A603 /* Data.swift */; };
 		662ABE7C2446E60B00A6A603 /* CustomExpandButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662ABE7A2446E60B00A6A603 /* CustomExpandButtonCell.swift */; };
 		662ABE7D2446E60B00A6A603 /* CustomExpandButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 662ABE7B2446E60B00A6A603 /* CustomExpandButtonCell.xib */; };
-		66689ABF2440A56F00AFF759 /* ZJTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66689ABE2440A56F00AFF759 /* ZJTableViewCell.swift */; };
-		667B07BE243B9031008D959C /* ZJProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B07BD243B9031008D959C /* ZJProtocol.swift */; };
 		66A7FDF02447062A0003BC69 /* CustomSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66A7FDEF2447062A0003BC69 /* CustomSectionHeaderView.xib */; };
 		66A7FDF2244706390003BC69 /* CustomSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A7FDF1244706390003BC69 /* CustomSectionHeaderView.swift */; };
-		66E60FAF2427D1C900C5E2BB /* ZJExpandTreeCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60F9D2427D1C900C5E2BB /* ZJExpandTreeCellItem.swift */; };
 		66E60FB02427D1C900C5E2BB /* ZJBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60F9E2427D1C900C5E2BB /* ZJBaseTableViewController.swift */; };
 		66E60FB12427D1C900C5E2BB /* ZJTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60F9F2427D1C900C5E2BB /* ZJTextView.swift */; };
-		66E60FBB2427D1C900C5E2BB /* ZJTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60FAB2427D1C900C5E2BB /* ZJTableViewSection.swift */; };
-		66E60FBC2427D1C900C5E2BB /* ZJTableViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60FAC2427D1C900C5E2BB /* ZJTableViewItem.swift */; };
-		66E60FBD2427D1C900C5E2BB /* ZJTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60FAD2427D1C900C5E2BB /* ZJTableViewManager.swift */; };
+		8F450805244CBDB7007C123E /* ZJTableViewManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F450804244CBDB7007C123E /* ZJTableViewManager.framework */; };
 		8FDF516524476C5400A4AB92 /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDF516424476C5400A4AB92 /* test.m */; };
 		8FDF51B524476D4F00A4AB92 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDF51B424476D4F00A4AB92 /* YYFPSLabel.m */; };
 		8FDF51BB2447715B00A4AB92 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDF51B92447715B00A4AB92 /* YYWeakProxy.m */; };
@@ -95,16 +90,11 @@
 		662ABE78244559D200A6A603 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		662ABE7A2446E60B00A6A603 /* CustomExpandButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomExpandButtonCell.swift; sourceTree = "<group>"; };
 		662ABE7B2446E60B00A6A603 /* CustomExpandButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomExpandButtonCell.xib; sourceTree = "<group>"; };
-		66689ABE2440A56F00AFF759 /* ZJTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewCell.swift; sourceTree = "<group>"; };
-		667B07BD243B9031008D959C /* ZJProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJProtocol.swift; sourceTree = "<group>"; };
 		66A7FDEF2447062A0003BC69 /* CustomSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomSectionHeaderView.xib; sourceTree = "<group>"; };
 		66A7FDF1244706390003BC69 /* CustomSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSectionHeaderView.swift; sourceTree = "<group>"; };
-		66E60F9D2427D1C900C5E2BB /* ZJExpandTreeCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJExpandTreeCellItem.swift; sourceTree = "<group>"; };
 		66E60F9E2427D1C900C5E2BB /* ZJBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJBaseTableViewController.swift; sourceTree = "<group>"; };
 		66E60F9F2427D1C900C5E2BB /* ZJTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTextView.swift; sourceTree = "<group>"; };
-		66E60FAB2427D1C900C5E2BB /* ZJTableViewSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewSection.swift; sourceTree = "<group>"; };
-		66E60FAC2427D1C900C5E2BB /* ZJTableViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewItem.swift; sourceTree = "<group>"; };
-		66E60FAD2427D1C900C5E2BB /* ZJTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewManager.swift; sourceTree = "<group>"; };
+		8F450804244CBDB7007C123E /* ZJTableViewManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ZJTableViewManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FDF516324476C5300A4AB92 /* NormalExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NormalExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		8FDF516424476C5400A4AB92 /* test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
 		8FDF51B324476D4F00A4AB92 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
@@ -118,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F450805244CBDB7007C123E /* ZJTableViewManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +118,7 @@
 		3E388B120F0901220D1F1B2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8F450804244CBDB7007C123E /* ZJTableViewManager.framework */,
 				31648C5FE3FCA399246CC396 /* Pods_ZJTableViewDemo_NormalExample.framework */,
 			);
 			name = Frameworks;
@@ -172,7 +164,6 @@
 				660D6D6C231E5F52009741A7 /* SectionsViewController.swift */,
 				660D6D79231E5F52009741A7 /* UpdateHeight */,
 				660D6D69231E5F52009741A7 /* ViewController.swift */,
-				66E60F9B2427D1C900C5E2BB /* ZJTableViewManager */,
 			);
 			path = NormalExample;
 			sourceTree = "<group>";
@@ -279,36 +270,6 @@
 				66A7FDF1244706390003BC69 /* CustomSectionHeaderView.swift */,
 			);
 			path = CustomHeader;
-			sourceTree = "<group>";
-		};
-		66E60F9B2427D1C900C5E2BB /* ZJTableViewManager */ = {
-			isa = PBXGroup;
-			children = (
-				66E60F9C2427D1C900C5E2BB /* Other */,
-				66E60FAA2427D1C900C5E2BB /* Core */,
-			);
-			name = ZJTableViewManager;
-			path = ../../ZJTableViewManager;
-			sourceTree = "<group>";
-		};
-		66E60F9C2427D1C900C5E2BB /* Other */ = {
-			isa = PBXGroup;
-			children = (
-				66E60F9D2427D1C900C5E2BB /* ZJExpandTreeCellItem.swift */,
-			);
-			path = Other;
-			sourceTree = "<group>";
-		};
-		66E60FAA2427D1C900C5E2BB /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				66689ABE2440A56F00AFF759 /* ZJTableViewCell.swift */,
-				667B07BD243B9031008D959C /* ZJProtocol.swift */,
-				66E60FAB2427D1C900C5E2BB /* ZJTableViewSection.swift */,
-				66E60FAC2427D1C900C5E2BB /* ZJTableViewItem.swift */,
-				66E60FAD2427D1C900C5E2BB /* ZJTableViewManager.swift */,
-			);
-			path = Core;
 			sourceTree = "<group>";
 		};
 		8FDF51BC2447715F00A4AB92 /* FPS */ = {
@@ -450,12 +411,10 @@
 				660D6D99231E5F53009741A7 /* ViewController.swift in Sources */,
 				660D6DB0231E5F53009741A7 /* Level2Cell.swift in Sources */,
 				8FDF516524476C5400A4AB92 /* test.m in Sources */,
-				667B07BE243B9031008D959C /* ZJProtocol.swift in Sources */,
 				8FDF51BB2447715B00A4AB92 /* YYWeakProxy.m in Sources */,
 				662ABE79244559D200A6A603 /* Data.swift in Sources */,
 				660D6DB4231E5F53009741A7 /* AppDelegate.swift in Sources */,
 				66E60FB02427D1C900C5E2BB /* ZJBaseTableViewController.swift in Sources */,
-				66E60FBB2427D1C900C5E2BB /* ZJTableViewSection.swift in Sources */,
 				660D6DAE231E5F53009741A7 /* Level0Cell.swift in Sources */,
 				660D6DB5231E5F53009741A7 /* AutomaticHeightViewController.swift in Sources */,
 				660D6D9C231E5F53009741A7 /* SectionsViewController.swift in Sources */,
@@ -466,18 +425,14 @@
 				660D6DB1231E5F53009741A7 /* ExpandTreeViewController.swift in Sources */,
 				660D6DAF231E5F53009741A7 /* Level3Cell.swift in Sources */,
 				662ABE762445516300A6A603 /* ZJSwitchCell.swift in Sources */,
-				66E60FBC2427D1C900C5E2BB /* ZJTableViewItem.swift in Sources */,
 				662ABE772445516300A6A603 /* ZJTextCell.swift in Sources */,
 				660D6DA6231E5F53009741A7 /* CardTableViewCell.swift in Sources */,
 				660D6DA7231E5F53009741A7 /* UpdateHeightViewController.swift in Sources */,
 				8FDF51B524476D4F00A4AB92 /* YYFPSLabel.m in Sources */,
-				66689ABF2440A56F00AFF759 /* ZJTableViewCell.swift in Sources */,
 				660D6DA5231E5F53009741A7 /* EditingViewController.swift in Sources */,
 				660D6DAB231E5F53009741A7 /* Level1Cell.swift in Sources */,
-				66E60FBD2427D1C900C5E2BB /* ZJTableViewManager.swift in Sources */,
 				660D6DB9231E5F53009741A7 /* AutomaticHeightCell.swift in Sources */,
 				660D6D9B231E5F53009741A7 /* RetractableViewController.swift in Sources */,
-				66E60FAF2427D1C900C5E2BB /* ZJExpandTreeCellItem.swift in Sources */,
 				660D6DA4231E5F53009741A7 /* BasicViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

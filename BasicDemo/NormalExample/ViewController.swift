@@ -7,6 +7,7 @@
 //
 
 import UIKit
+@_exported import ZJTableViewManager
 
 class ViewController: UIViewController {
     var tableView: UITableView!
