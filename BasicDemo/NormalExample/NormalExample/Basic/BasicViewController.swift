@@ -54,7 +54,7 @@ class BasicViewController: UIViewController {
 
         // Switch Item
         section.add(item: ZJSwitchItem(title: "Switch Item", isOn: false, didChanged: { item in
-            zj_log((item as! ZJSwitchItem).isOn)
+            zj_log(item.isOn)
         }))
 
         manager.reload()

@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:NormalExample/ZJTableViewManager/ZJTableViewManager.xcodeproj">
+      location = "group:NormalExample/NormalExample/ZJTableViewManager/ZJTableViewManager.xcodeproj">
    </FileRef>
    <FileRef
-      location = "container:NormalExample.xcodeproj">
+      location = "group:NormalExample/NormalExample.xcodeproj">
    </FileRef>
 </Workspace>
