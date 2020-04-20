@@ -51,16 +51,6 @@
 		8FDF51BB2447715B00A4AB92 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDF51B92447715B00A4AB92 /* YYWeakProxy.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		6685AF22244CC1AB007F78F4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6685AF1E244CC1AB007F78F4 /* ZJTableViewManager.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8F4507F9244CBD5F007C123E;
-			remoteInfo = ZJTableViewManager;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		31648C5FE3FCA399246CC396 /* Pods_ZJTableViewDemo_NormalExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZJTableViewDemo_NormalExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41098006C16FC66E334ACAE8 /* Pods-ZJTableViewDemo-NormalExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJTableViewDemo-NormalExample.debug.xcconfig"; path = "Target Support Files/Pods-ZJTableViewDemo-NormalExample/Pods-ZJTableViewDemo-NormalExample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -100,7 +90,6 @@
 		662ABE78244559D200A6A603 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		662ABE7A2446E60B00A6A603 /* CustomExpandButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomExpandButtonCell.swift; sourceTree = "<group>"; };
 		662ABE7B2446E60B00A6A603 /* CustomExpandButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomExpandButtonCell.xib; sourceTree = "<group>"; };
-		6685AF1E244CC1AB007F78F4 /* ZJTableViewManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZJTableViewManager.xcodeproj; path = NormalExample/ZJTableViewManager/ZJTableViewManager.xcodeproj; sourceTree = "<group>"; };
 		66A7FDEF2447062A0003BC69 /* CustomSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomSectionHeaderView.xib; sourceTree = "<group>"; };
 		66A7FDF1244706390003BC69 /* CustomSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSectionHeaderView.swift; sourceTree = "<group>"; };
 		66E60F9E2427D1C900C5E2BB /* ZJBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJBaseTableViewController.swift; sourceTree = "<group>"; };
@@ -148,7 +137,6 @@
 		660D6D4A231E5F39009741A7 = {
 			isa = PBXGroup;
 			children = (
-				6685AF1E244CC1AB007F78F4 /* ZJTableViewManager.xcodeproj */,
 				660D6D68231E5F52009741A7 /* NormalExample */,
 				660D6D54231E5F39009741A7 /* Products */,
 				5C8FC7F4CDB0A313C90B1529 /* Pods */,
@@ -275,14 +263,6 @@
 			path = Basic;
 			sourceTree = "<group>";
 		};
-		6685AF1F244CC1AB007F78F4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6685AF23244CC1AB007F78F4 /* ZJTableViewManager.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		66A7FDEE244705E90003BC69 /* CustomHeader */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,28 +332,12 @@
 			mainGroup = 660D6D4A231E5F39009741A7;
 			productRefGroup = 660D6D54231E5F39009741A7 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 6685AF1F244CC1AB007F78F4 /* Products */;
-					ProjectRef = 6685AF1E244CC1AB007F78F4 /* ZJTableViewManager.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				660D6D52231E5F39009741A7 /* NormalExample */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		6685AF23244CC1AB007F78F4 /* ZJTableViewManager.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ZJTableViewManager.framework;
-			remoteRef = 6685AF22244CC1AB007F78F4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		660D6D51231E5F39009741A7 /* Resources */ = {
