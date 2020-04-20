@@ -5,6 +5,9 @@
 ### 关于ZJTableViewManager
 强大的数据驱动的TableView，构建复杂TableView从未如此轻松。
 
+### 使用
+直接拖入ZJTableViewManager文件夹里面的文件，或者用cocoapods
+`pod 'ZJTableViewManager'`
 
 ### 适配
 | Version        | Swift     | Xcode              |
@@ -231,10 +234,6 @@ override func viewDidLoad() {
         
     }
 ```
-
-### 使用
-直接拖入ZJTableViewManager文件夹里面的文件，或者用cocoapods
-`pod 'ZJTableViewManager'`
 
 ### 注：
 TableView可以storyboard、xib、纯代码初始化，cell可以xib或者纯代码构建
