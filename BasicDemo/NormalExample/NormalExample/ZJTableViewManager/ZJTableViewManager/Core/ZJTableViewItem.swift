@@ -102,7 +102,6 @@ open class ZJTableViewItem: NSObject {
         if cell == nil {
             zj_log("please register cell")
         } else {
-            // [2020-04-14] If show "Cannot assign to property: 'cell' is a 'let' constant", you should use Xcode 10.3 or later. https://stackoverflow.com/questions/46236315/forced-to-cast-even-if-protocol-requires-given-type/50647762#50647762
             cell?._item = self
             cellHeight = systemFittingHeightForConfiguratedCell(cell!)
         }

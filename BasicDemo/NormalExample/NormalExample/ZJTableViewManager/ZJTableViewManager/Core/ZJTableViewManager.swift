@@ -8,7 +8,7 @@
 
 import UIKit
 
-func zj_log(_ item: Any, file: String = #file, line: Int = #line) {
+public func zj_log(_ item: Any, file: String = #file, line: Int = #line) {
     if ZJTableViewManager.isDebug {
         var logEntry: String = String()
         if let fileName = file.components(separatedBy: "/").last {

@@ -37,7 +37,7 @@ open class ZJExpandTreeCellItem: ZJTableViewItem {
     }
 
     /// 处理展开事件，返回值是当前cell的状态（展开或者收起）
-    @discardableResult public func toggleExpand() -> Bool {
+    @discardableResult open func toggleExpand() -> Bool {
         var arrItems: [ZJExpandTreeCellItem]
         if isExpand {
             // 点击之前是打开的，直接通过递归获取item
