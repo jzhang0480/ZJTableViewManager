@@ -86,11 +86,11 @@ item.detailLabelText = "detail label text"
 
 左边是一个UILabel，右边一个UISwitch，功能是在UISwitch开关时会发出回调，在VC中处理。
 
-首先，新建一个ZJSwitchCell类，继承自UITableViewCell，勾选上Also create XIB file
+首先，新建一个ZJSwitchCell类，继承自UITableViewCell，勾选上Also create XIB file(当然不用XIB，纯代码布局也可以)
 
 ![](https://upload-images.jianshu.io/upload_images/1653855-b483247676b353fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-在xib文件里面拖上控件，并且把控件和UISwitch的value change事件拖线到Cell文件里面，
+在xib文件里面拖上控件，并且把控件和UISwitch的value change事件拖线到Cell文件里面:
 
 ![](https://upload-images.jianshu.io/upload_images/1653855-dd3722b4e90e93a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -114,11 +114,11 @@ ZJCelltemClass这里填写上前面写好的ZJSwitchCellItem类名
 ![](https://upload-images.jianshu.io/upload_images/1653855-d8cbf7d997086d67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 **可能有时候Xcode自动fix补全的代码有问题，比如说`typealias ZJCelltemClass = `出现两遍或者根本没有fix按钮，不要慌，cmd+b编译一下，再试试就好了**
 
-然后在cellWillAppear()方法里面写上赋值操作，相当于我们在tableView(_:, cellForRowAt:)方法里面写的代码。再到valueChanged(:)方法里面，记录UISwitch的状态，并把当前这个item通过回调传出去。Cell部分的自定义就完成了。
+**然后在cellWillAppear()方法里面写上赋值操作，相当于我们在`tableView(_:, cellForRowAt:)`方法里面写的代码。再到valueChanged(:)方法里面，记录UISwitch的状态，并把当前这个item通过回调传出去。Cell部分的自定义就完成了。**
 
 ![](https://upload-images.jianshu.io/upload_images/1653855-0cb0f5ae02200802.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-最后，在VC里面使用，使用之前需要manager.register(ZJSwitchCell.self, ZJSwitchItem.self)注册一下，这和之前使用系统默认的Cell有区别，自定义的Cell都需要注册一下才可以使用。
+最后，在VC里面使用，使用之前需要`manager.register(ZJSwitchCell.self, ZJSwitchItem.self)`注册一下，这和之前使用系统默认的Cell有区别，自定义的Cell都需要注册一下才可以使用。
 ```swift
 class FormViewController: UIViewController {
     var tableView: UITableView!
@@ -146,7 +146,7 @@ class FormViewController: UIViewController {
 **总结一下自定义Cell的步骤：**
 
 1. 新建Cell（XIB或者纯代码都可以）
-2. 创建Cell对应的Item，通过Item给Cell传值（实际项目中一般是用Item持有Model，在cellWillAppear()中通过item.model取值）
+2. 创建Cell对应的Item，通过Item给Cell传值（**实际项目中一般是用Item持有Model，在`cellWillAppear()`中通过item.model取值并赋值到控件里面**）
 3. 在VC中给把Cell向TableViewManager注册。
    
 其余使用方式参考上面系统默认Cell的使用。
