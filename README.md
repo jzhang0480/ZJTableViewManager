@@ -114,7 +114,7 @@ ZJCelltemClass这里填写上前面写好的ZJSwitchCellItem类名
 ![](https://upload-images.jianshu.io/upload_images/1653855-d8cbf7d997086d67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 **可能有时候Xcode自动fix补全的代码有问题，比如说`typealias ZJCelltemClass = `出现两遍或者根本没有fix按钮，不要慌，cmd+b编译一下，再试试就好了**
 
-**然后在cellWillAppear()方法里面写上赋值操作，相当于我们在`tableView(_:, cellForRowAt:)`方法里面写的代码。再到valueChanged(:)方法里面，记录UISwitch的状态，并把当前这个item通过回调传出去。Cell部分的自定义就完成了。**
+**然后在`cellWillAppear()`方法里面写上赋值操作，它等价于`tableView(_:, cellForRowAt:)`方法。再到valueChanged(:)方法里面，记录UISwitch的状态，并把当前这个item通过回调传出去。Cell部分的自定义就完成了。**
 
 ![](https://upload-images.jianshu.io/upload_images/1653855-0cb0f5ae02200802.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
