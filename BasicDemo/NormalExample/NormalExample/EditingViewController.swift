@@ -23,7 +23,7 @@ class EditingViewController: UIViewController {
         var section = ZJTableViewSection(headerTitle: "DELETEABLE")
         manager.add(section: section)
         for i in 0 ... 3 {
-            let item = ZJTableViewItem(title: "section 0, row " + String(i))
+            let item = ZJTableViewItem(text: "section 0, row " + String(i))
             item.editingStyle = .delete
             item.setDeletionHandler { [weak self] item in
                 self?.deleteConfirm(item: item, needConfirm: false)
@@ -34,7 +34,7 @@ class EditingViewController: UIViewController {
         section = ZJTableViewSection(headerTitle: "Deletable with confirmation")
         manager.add(section: section)
         for i in 0 ... 3 {
-            let item = ZJTableViewItem(title: "section 1, row " + String(i))
+            let item = ZJTableViewItem(text: "section 1, row " + String(i))
             item.editingStyle = .delete
             item.setDeletionHandler { [weak self] item in
                 self?.deleteConfirm(item: item)

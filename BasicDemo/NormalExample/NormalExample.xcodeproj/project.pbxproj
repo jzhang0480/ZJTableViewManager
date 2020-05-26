@@ -43,6 +43,9 @@
 		662ABE7D2446E60B00A6A603 /* CustomExpandButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 662ABE7B2446E60B00A6A603 /* CustomExpandButtonCell.xib */; };
 		66A7FDF02447062A0003BC69 /* CustomSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66A7FDEF2447062A0003BC69 /* CustomSectionHeaderView.xib */; };
 		66A7FDF2244706390003BC69 /* CustomSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A7FDF1244706390003BC69 /* CustomSectionHeaderView.swift */; };
+		66BF20EC24752CC600A60AB5 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BF20EB24752CC600A60AB5 /* SelectionViewController.swift */; };
+		66BF20F024752E2B00A60AB5 /* SelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BF20EE24752E2B00A60AB5 /* SelectionCell.swift */; };
+		66BF20F124752E2B00A60AB5 /* SelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66BF20EF24752E2B00A60AB5 /* SelectionCell.xib */; };
 		66E60FB02427D1C900C5E2BB /* ZJBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60F9E2427D1C900C5E2BB /* ZJBaseTableViewController.swift */; };
 		66E60FB12427D1C900C5E2BB /* ZJTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60F9F2427D1C900C5E2BB /* ZJTextView.swift */; };
 		8F450805244CBDB7007C123E /* ZJTableViewManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F450804244CBDB7007C123E /* ZJTableViewManager.framework */; };
@@ -92,6 +95,9 @@
 		662ABE7B2446E60B00A6A603 /* CustomExpandButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomExpandButtonCell.xib; sourceTree = "<group>"; };
 		66A7FDEF2447062A0003BC69 /* CustomSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomSectionHeaderView.xib; sourceTree = "<group>"; };
 		66A7FDF1244706390003BC69 /* CustomSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSectionHeaderView.swift; sourceTree = "<group>"; };
+		66BF20EB24752CC600A60AB5 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
+		66BF20EE24752E2B00A60AB5 /* SelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCell.swift; sourceTree = "<group>"; };
+		66BF20EF24752E2B00A60AB5 /* SelectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectionCell.xib; sourceTree = "<group>"; };
 		66E60F9E2427D1C900C5E2BB /* ZJBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJBaseTableViewController.swift; sourceTree = "<group>"; };
 		66E60F9F2427D1C900C5E2BB /* ZJTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTextView.swift; sourceTree = "<group>"; };
 		8F450804244CBDB7007C123E /* ZJTableViewManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ZJTableViewManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +168,7 @@
 				667B07C0243C27F8008D959C /* Basic */,
 				660D6D6B231E5F52009741A7 /* RetractableViewController.swift */,
 				660D6D6C231E5F52009741A7 /* SectionsViewController.swift */,
+				66BF20ED24752DD800A60AB5 /* Selection */,
 				660D6D79231E5F52009741A7 /* UpdateHeight */,
 				660D6D69231E5F52009741A7 /* ViewController.swift */,
 			);
@@ -272,6 +279,16 @@
 			path = CustomHeader;
 			sourceTree = "<group>";
 		};
+		66BF20ED24752DD800A60AB5 /* Selection */ = {
+			isa = PBXGroup;
+			children = (
+				66BF20EB24752CC600A60AB5 /* SelectionViewController.swift */,
+				66BF20EE24752E2B00A60AB5 /* SelectionCell.swift */,
+				66BF20EF24752E2B00A60AB5 /* SelectionCell.xib */,
+			);
+			path = Selection;
+			sourceTree = "<group>";
+		};
 		8FDF51BC2447715F00A4AB92 /* FPS */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +369,7 @@
 				660D6DAC231E5F53009741A7 /* Level2Cell.xib in Resources */,
 				662ABE7D2446E60B00A6A603 /* CustomExpandButtonCell.xib in Resources */,
 				662ABE742445516300A6A603 /* ZJTextCell.xib in Resources */,
+				66BF20F124752E2B00A60AB5 /* SelectionCell.xib in Resources */,
 				660D6DA3231E5F53009741A7 /* Assets.xcassets in Resources */,
 				660D6DB8231E5F53009741A7 /* AutomaticHeightCell.xib in Resources */,
 				660D6DAA231E5F53009741A7 /* Level0Cell.xib in Resources */,
@@ -424,12 +442,14 @@
 				662ABE7C2446E60B00A6A603 /* CustomExpandButtonCell.swift in Sources */,
 				660D6DB1231E5F53009741A7 /* ExpandTreeViewController.swift in Sources */,
 				660D6DAF231E5F53009741A7 /* Level3Cell.swift in Sources */,
+				66BF20F024752E2B00A60AB5 /* SelectionCell.swift in Sources */,
 				662ABE762445516300A6A603 /* ZJSwitchCell.swift in Sources */,
 				662ABE772445516300A6A603 /* ZJTextCell.swift in Sources */,
 				660D6DA6231E5F53009741A7 /* CardTableViewCell.swift in Sources */,
 				660D6DA7231E5F53009741A7 /* UpdateHeightViewController.swift in Sources */,
 				8FDF51B524476D4F00A4AB92 /* YYFPSLabel.m in Sources */,
 				660D6DA5231E5F53009741A7 /* EditingViewController.swift in Sources */,
+				66BF20EC24752CC600A60AB5 /* SelectionViewController.swift in Sources */,
 				660D6DAB231E5F53009741A7 /* Level1Cell.swift in Sources */,
 				660D6DB9231E5F53009741A7 /* AutomaticHeightCell.swift in Sources */,
 				660D6D9B231E5F53009741A7 /* RetractableViewController.swift in Sources */,

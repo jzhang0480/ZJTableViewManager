@@ -32,9 +32,9 @@ class ViewController: UIViewController {
         let section = ZJTableViewSection()
         manager.add(section: section)
 
-        let titles = ["Basic", "Retractable", "SlideDelete", "Sections", "AutomaticHeight", "ExpandTree", "UpdateHeight"]
+        let titles = ["Basic", "Retractable", "SlideDelete", "Sections", "AutomaticHeight", "ExpandTree", "UpdateHeight", "Selection"]
         for i in titles {
-            let item = ZJTableViewItem(title: i)
+            let item = ZJTableViewItem(text: i)
             item.accessoryType = .disclosureIndicator
             item.isAutoDeselect = true
             section.add(item: item)
@@ -62,6 +62,9 @@ class ViewController: UIViewController {
                     self.navigationController?.pushViewController(vc, animated: true)
                 } else if i == "UpdateHeight" {
                     let vc = UpdateHeightViewController()
+                    self.navigationController?.pushViewController(vc, animated: true)
+                } else if i == "Selection" {
+                    let vc = SelectionViewController()
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
             }

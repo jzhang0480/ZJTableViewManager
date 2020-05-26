@@ -23,10 +23,10 @@ class RetractableViewController: ZJBaseTableViewController {
 
         // collapsed
         for i in 1 ... 4 {
-            collapsedItems.append(ZJTableViewItem(title: "Test Item " + String(i)))
+            collapsedItems.append(ZJTableViewItem(text: "Test Item " + String(i)))
         }
 
-        let moreItem = ZJTableViewItem(title: "Show More")
+        let moreItem = ZJTableViewItem(text: "Show More")
         moreItem.accessoryType = .disclosureIndicator
         collapsedItems.append(moreItem)
         moreItem.setSelectionHandler { _ in
@@ -37,10 +37,10 @@ class RetractableViewController: ZJBaseTableViewController {
 
         // expanded
         for i in 1 ... 7 {
-            expandedItems.append(ZJTableViewItem(title: "Test Item " + String(i)))
+            expandedItems.append(ZJTableViewItem(text: "Test Item " + String(i)))
         }
 
-        let lessItem = ZJTableViewItem(title: "Show Less")
+        let lessItem = ZJTableViewItem(text: "Show Less")
         lessItem.accessoryType = .disclosureIndicator
 
         lessItem.setSelectionHandler { _ in

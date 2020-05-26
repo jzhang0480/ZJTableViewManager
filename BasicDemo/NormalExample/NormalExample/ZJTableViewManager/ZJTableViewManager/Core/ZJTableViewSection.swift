@@ -11,7 +11,19 @@ import UIKit
 public typealias ZJTableViewSectionBlock = (ZJTableViewSection) -> Void
 
 open class ZJTableViewSection: NSObject {
-    public weak var tableViewManager: ZJTableViewManager!
+    var _tableViewManager: ZJTableViewManager?
+    public var tableViewManager: ZJTableViewManager {
+        set{
+            _tableViewManager = newValue
+        }
+        get{
+            guard let tableViewManager = _tableViewManager else {
+                zj_log("Please add section to manager")
+                fatalError()
+            }
+            return tableViewManager
+        }
+    }
     public var items = [ZJTableViewItem]()
     public var headerHeight: CGFloat!
     public var footerHeight: CGFloat!
@@ -83,7 +95,6 @@ open class ZJTableViewSection: NSObject {
 
     public func add(item: ZJTableViewItem) {
         item.section = self
-        item.tableViewManager = tableViewManager
         items.append(item)
     }
 
@@ -109,7 +120,6 @@ open class ZJTableViewSection: NSObject {
 
         tableViewManager.tableView.beginUpdates()
         item.section = self
-        item.tableViewManager = tableViewManager
         items.insert(item, at: items.zj_indexOf(afterItem) + 1)
         tableViewManager.tableView.insertRows(at: [item.indexPath], with: animate)
         tableViewManager.tableView.endUpdates()
@@ -127,7 +137,6 @@ open class ZJTableViewSection: NSObject {
         var arrNewIndexPath = [IndexPath]()
         for i in 0 ..< items.count {
             items[i].section = self
-            items[i].tableViewManager = tableViewManager
             arrNewIndexPath.append(IndexPath(item: newFirstIndex + i, section: afterItem.indexPath.section))
         }
         tableViewManager.tableView.insertRows(at: arrNewIndexPath, with: animate)

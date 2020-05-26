@@ -11,7 +11,9 @@ import UIKit
 public typealias ZJTableViewItemBlock = (ZJTableViewItem) -> Void
 
 open class ZJTableViewItem: NSObject {
-    public weak var tableViewManager: ZJTableViewManager!
+    public var tableVManager: ZJTableViewManager {
+        return section.tableViewManager
+    }
     public weak var section: ZJTableViewSection!
     public var cellIdentifier: String!
     /// cell高度(如果要自动计算高度，使用autoHeight(manager:)方法，框架会算出高度，具体看demo)
@@ -44,20 +46,25 @@ open class ZJTableViewItem: NSObject {
     public var editingStyle: UITableViewCell.EditingStyle = .none
     public var accessoryView: UIView?
     public var isAutoDeselect: Bool = true
+    public var selected: Bool {
+        get{
+            return cell.isSelected
+        }
+    }
 
     public var indexPath: IndexPath {
         let rowIndex = self.section.items.zj_indexOf(self)
-        let section = tableViewManager.sections.zj_indexOf(self.section)
+        let section = tableVManager.sections.zj_indexOf(self.section)
         return IndexPath(item: rowIndex, section: section)
     }
 
-    /// 尽量避免直接修改cell里面的元素，而是修改对应的item的属性，然后item.reload()来刷新cell。原因是直接修改cell没有修改修改数据源，TableView是重用的，容易出问题
+    /// 尽量避免通过此属性直接修改cell里面的元素，直接修改cell没有修改修改数据源，由于TableViewCell的复用，会造成异常（正确做法是修改item的属性，通过item.reload()来刷新cell）
     public var cell: UITableViewCell {
-        if let unwrappedCell = tableViewManager.tableView.cellForRow(at: indexPath) {
+        if let unwrappedCell = tableVManager.tableView.cellForRow(at: indexPath) {
             return unwrappedCell
         }
-        zj_log("没有获取到对应的cell")
-        return UITableViewCell()
+        zj_log("没有获取到对应的cell，必须在tableView reload之后才能通过这个属性获取到cell。或者获取的indexPath对应的cell必须在屏幕内，无法获取屏幕外的cell")
+        fatalError()
     }
 
     public override init() {
@@ -66,20 +73,28 @@ open class ZJTableViewItem: NSObject {
         cellHeight = 44
     }
 
-    public convenience init(title: String?) {
+    public convenience init(text: String?) {
         self.init()
-        labelText = title
+        labelText = text
     }
 
     public func reload(_ animation: UITableView.RowAnimation) {
         zj_log("reload tableview at \(indexPath)")
-        tableViewManager.tableView.beginUpdates()
-        tableViewManager.tableView.reloadRows(at: [indexPath], with: animation)
-        tableViewManager.tableView.endUpdates()
+        tableVManager.tableView.beginUpdates()
+        tableVManager.tableView.reloadRows(at: [indexPath], with: animation)
+        tableVManager.tableView.endUpdates()
+    }
+    
+    public func select(animated: Bool = true, scrollPosition: UITableView.ScrollPosition = .none) {
+        tableVManager.tableView.selectRow(at: indexPath, animated: animated, scrollPosition: scrollPosition)
+    }
+    
+    public func deselect(animated: Bool = true) {
+        tableVManager.tableView.deselectRow(at: indexPath, animated: animated)
     }
 
     public func delete(_ animation: UITableView.RowAnimation = .automatic) {
-        if tableViewManager == nil || section == nil {
+        if tableVManager == nil || section == nil {
             zj_log("Item did not in section，please check section.add() method")
             return
         }
@@ -89,7 +104,7 @@ open class ZJTableViewItem: NSObject {
         }
         let indexPath = self.indexPath
         section.items.remove(at: indexPath.row)
-        tableViewManager.tableView.deleteRows(at: [indexPath], with: animation)
+        tableVManager.tableView.deleteRows(at: [indexPath], with: animation)
     }
 
     /// 计算cell高度
@@ -97,20 +112,14 @@ open class ZJTableViewItem: NSObject {
     /// - Parameters:
     ///   - manager: 当前tableview的manager
     public func autoHeight(_ manager: ZJTableViewManager) {
-        tableViewManager = manager
-        let cell = manager.tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? ZJInternalCellProtocol
-        if cell == nil {
+        guard let cell = manager.tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? ZJInternalCellProtocol else {
             zj_log("please register cell")
-        } else {
-            cell?._item = self
-            cellHeight = systemFittingHeightForConfiguratedCell(cell!)
+            return
         }
-    }
-
-    public func systemFittingHeightForConfiguratedCell(_ cell: ZJInternalCellProtocol) -> CGFloat {
+        
+        cell._item = self
         cell.cellWillAppear()
-
-        let height = cell.systemLayoutSizeFitting(CGSize(width: tableViewManager.tableView.frame.width, height: 0), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel).height
-        return height
+        cellHeight = cell.systemLayoutSizeFitting(CGSize(width: manager.tableView.frame.width, height: 0), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel).height
     }
+
 }

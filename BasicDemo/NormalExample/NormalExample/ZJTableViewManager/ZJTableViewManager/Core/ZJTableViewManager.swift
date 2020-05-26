@@ -27,6 +27,38 @@ open class ZJTableViewManager: NSObject {
         return tableView.style == .grouped ? 44 : 0
     }
 
+    public func selectedItem<T: ZJTableViewItem>() -> T? {
+        if let item = selectedItems().first {
+            return item as? T
+        }
+        return nil
+    }
+
+    public func selectedItems<T: ZJTableViewItem>() -> [T] {
+        if let indexPaths = tableView.indexPathsForSelectedRows {
+            var items = [T]()
+            for idx in indexPaths {
+                if let cell = (tableView.cellForRow(at: idx) as? ZJInternalCellProtocol), let item = cell._item as? T {
+                    items.append(item)
+                }
+            }
+            return items
+        }
+        return []
+    }
+
+    public func selectItems(_ items: [ZJTableViewItem], animated: Bool = true, scrollPosition: UITableView.ScrollPosition = .none) {
+        for item in items {
+            item.select(animated: animated, scrollPosition: scrollPosition)
+        }
+    }
+    
+    public func deselectItems(_ items: [ZJTableViewItem], animated: Bool = true) {
+        for item in items {
+            item.deselect(animated: animated)
+        }
+    }
+
     public init(tableView: UITableView) {
         super.init()
         self.tableView = tableView
@@ -44,12 +76,12 @@ open class ZJTableViewManager: NSObject {
         tableView.endUpdates()
     }
 
-    public func register(_ nibClass: AnyClass, _ item: AnyClass, _ bundle: Bundle = Bundle.main) {
-        zj_log("\(nibClass) registered")
-        if bundle.path(forResource: "\(nibClass)", ofType: "nib") != nil {
-            tableView.register(UINib(nibName: "\(nibClass)", bundle: bundle), forCellReuseIdentifier: "\(item)")
+    public func register(_ cell: ZJInternalCellProtocol.Type, _ item: ZJTableViewItem.Type, _ bundle: Bundle = Bundle.main) {
+        zj_log("\(cell) registered")
+        if bundle.path(forResource: "\(cell)", ofType: "nib") != nil {
+            tableView.register(UINib(nibName: "\(cell)", bundle: bundle), forCellReuseIdentifier: "\(item)")
         } else {
-            tableView.register(nibClass, forCellReuseIdentifier: "\(item)")
+            tableView.register(cell, forCellReuseIdentifier: "\(item)")
         }
     }
 
@@ -213,8 +245,7 @@ extension ZJTableViewManager: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let (_, item) = getSectionAndItem(indexPath: (indexPath.section, indexPath.row))
-        item.tableViewManager = self
-        
+
         var cell = tableView.dequeueReusableCell(withIdentifier: item.cellIdentifier) as? ZJInternalCellProtocol
         if cell == nil {
             cell = (ZJDefaultCell(style: item.style, reuseIdentifier: item.cellIdentifier) as ZJInternalCellProtocol)

@@ -14,7 +14,7 @@
 		8F450810244CBDFB007C123E /* ZJProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F45080A244CBDFB007C123E /* ZJProtocol.swift */; };
 		8F450811244CBDFB007C123E /* ZJTableViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F45080B244CBDFB007C123E /* ZJTableViewItem.swift */; };
 		8F450812244CBDFB007C123E /* ZJTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F45080C244CBDFB007C123E /* ZJTableViewManager.swift */; };
-		8F450813244CBDFB007C123E /* ZJTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F45080D244CBDFB007C123E /* ZJTableViewCell.swift */; };
+		8F450813244CBDFB007C123E /* ZJDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F45080D244CBDFB007C123E /* ZJDefaultCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		8F45080A244CBDFB007C123E /* ZJProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJProtocol.swift; sourceTree = "<group>"; };
 		8F45080B244CBDFB007C123E /* ZJTableViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewItem.swift; sourceTree = "<group>"; };
 		8F45080C244CBDFB007C123E /* ZJTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewManager.swift; sourceTree = "<group>"; };
-		8F45080D244CBDFB007C123E /* ZJTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewCell.swift; sourceTree = "<group>"; };
+		8F45080D244CBDFB007C123E /* ZJDefaultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJDefaultCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +84,7 @@
 				8F45080A244CBDFB007C123E /* ZJProtocol.swift */,
 				8F45080B244CBDFB007C123E /* ZJTableViewItem.swift */,
 				8F45080C244CBDFB007C123E /* ZJTableViewManager.swift */,
-				8F45080D244CBDFB007C123E /* ZJTableViewCell.swift */,
+				8F45080D244CBDFB007C123E /* ZJDefaultCell.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -170,7 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F450810244CBDFB007C123E /* ZJProtocol.swift in Sources */,
-				8F450813244CBDFB007C123E /* ZJTableViewCell.swift in Sources */,
+				8F450813244CBDFB007C123E /* ZJDefaultCell.swift in Sources */,
 				8F45080E244CBDFB007C123E /* ZJExpandTreeCellItem.swift in Sources */,
 				8F450811244CBDFB007C123E /* ZJTableViewItem.swift in Sources */,
 				8F450812244CBDFB007C123E /* ZJTableViewManager.swift in Sources */,

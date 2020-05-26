@@ -1,5 +1,5 @@
 //
-//  ZJTableViewManagerCell.swift
+//  ZJDefaultCell.swift
 //  NewRetail
 //
 //  Created by Javen on 2018/2/8.

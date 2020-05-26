@@ -32,7 +32,7 @@ class SectionsViewController: UIViewController {
             }
 
             for j in 0 ... 4 {
-                section.add(item: ZJTableViewItem(title: "Section " + String(i) + " Row " + String(j)))
+                section.add(item: ZJTableViewItem(text: "Section " + String(i) + " Row " + String(j)))
             }
         }
 
