@@ -17,37 +17,38 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xAn-Ak-wcs">
-                        <rect key="frame" x="15" y="12" width="24" height="20.5"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="24" id="CCD-ep-ahA"/>
-                            <constraint firstAttribute="width" constant="24" id="oaN-4V-1bq"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TA-Xw-6XZ">
-                        <rect key="frame" x="47" y="0.0" width="42" height="44"/>
+                        <rect key="frame" x="15" y="0.0" width="42" height="44"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="Bgd-FG-Qlc">
+                        <rect key="frame" x="291" y="15" width="29" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Bgd-FG-Qlc" secondAttribute="height" multiplier="1:1" id="xNb-OH-dCD"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
+                <color key="backgroundColor" red="0.93325155969999996" green="0.93338567019999996" blue="0.93322223419999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="4TA-Xw-6XZ" secondAttribute="bottom" id="9O9-1d-NY0"/>
-                    <constraint firstItem="xAn-Ak-wcs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="AZA-uB-qch"/>
-                    <constraint firstItem="4TA-Xw-6XZ" firstAttribute="leading" secondItem="xAn-Ak-wcs" secondAttribute="trailing" constant="8" id="NTg-Z9-KCw"/>
-                    <constraint firstItem="xAn-Ak-wcs" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="vzW-jj-tkJ"/>
+                    <constraint firstItem="Bgd-FG-Qlc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="Cz0-cW-5D6"/>
+                    <constraint firstAttribute="trailing" secondItem="Bgd-FG-Qlc" secondAttribute="trailing" id="DMl-2w-xoz"/>
+                    <constraint firstAttribute="bottom" secondItem="Bgd-FG-Qlc" secondAttribute="bottom" id="ELl-E5-RH0"/>
+                    <constraint firstItem="4TA-Xw-6XZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Lup-e3-MiY"/>
                     <constraint firstItem="4TA-Xw-6XZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="y8D-do-Gor"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="img" destination="xAn-Ak-wcs" id="s5k-0w-aN9"/>
+                <outlet property="img" destination="Bgd-FG-Qlc" id="MWh-eN-VLx"/>
                 <outlet property="titleL" destination="4TA-Xw-6XZ" id="Sow-3L-6AA"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="89.732142857142847"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="checkmark" catalog="system" width="64" height="56"/>
+        <image name="checkmark" width="193" height="196"/>
     </resources>
 </document>

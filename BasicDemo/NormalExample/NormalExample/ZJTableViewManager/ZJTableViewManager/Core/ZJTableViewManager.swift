@@ -129,9 +129,6 @@ open class ZJTableViewManager: NSObject {
 extension ZJTableViewManager: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let obj = getSectionAndItem(indexPath: (indexPath.section, indexPath.row))
-        if obj.item.isAutoDeselect {
-            tableView.deselectRow(at: indexPath, animated: true)
-        }
         obj.item.selectionHandler?(obj.item)
     }
 

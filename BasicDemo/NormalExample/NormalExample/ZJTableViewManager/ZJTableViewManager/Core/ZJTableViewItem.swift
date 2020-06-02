@@ -45,8 +45,7 @@ open class ZJTableViewItem: NSObject {
     public var selectionStyle: UITableViewCell.SelectionStyle = .default
     public var editingStyle: UITableViewCell.EditingStyle = .none
     public var accessoryView: UIView?
-    public var isAutoDeselect: Bool = true
-    public var selected: Bool {
+    public var isSelected: Bool {
         get{
             return cell.isSelected
         }
@@ -69,7 +68,7 @@ open class ZJTableViewItem: NSObject {
 
     public override init() {
         super.init()
-        cellIdentifier = NSStringFromClass(type(of: self)).components(separatedBy: ".").last
+        cellIdentifier = "\(type(of: self))"
         cellHeight = 44
     }
 
@@ -94,7 +93,7 @@ open class ZJTableViewItem: NSObject {
     }
 
     public func delete(_ animation: UITableView.RowAnimation = .automatic) {
-        if tableVManager == nil || section == nil {
+        if section == nil {
             zj_log("Item did not in section，please check section.add() method")
             return
         }

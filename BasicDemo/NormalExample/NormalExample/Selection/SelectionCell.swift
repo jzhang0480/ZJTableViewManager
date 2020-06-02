@@ -11,7 +11,6 @@ import UIKit
 class SelectionCellItem: ZJTableViewItem {
     override init() {
         super.init()
-        isAutoDeselect = false
         selectionStyle = .none
     }
 }

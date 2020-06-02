@@ -36,7 +36,6 @@ class ViewController: UIViewController {
         for i in titles {
             let item = ZJTableViewItem(text: i)
             item.accessoryType = .disclosureIndicator
-            item.isAutoDeselect = true
             section.add(item: item)
 
             item.setSelectionHandler { _ in

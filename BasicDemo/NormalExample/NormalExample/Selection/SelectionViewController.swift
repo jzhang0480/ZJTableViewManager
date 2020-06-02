@@ -13,6 +13,7 @@ class SelectionViewController: UIViewController {
     var manager: ZJTableViewManager!
     let section = ZJTableViewSection()
     var selectionTypeBtn: UIBarButtonItem!
+    var selectedItem: SelectionCellItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +37,21 @@ class SelectionViewController: UIViewController {
         for _ in 0..<100 {
             let item = SelectionCellItem()
             section.add(item: item)
-            item.setSelectionHandler { (callBackItem: SelectionCellItem) in
+            
+            // 实现单选情况下的反选操作
+            item.setSelectionHandler { [unowned self] (callBackItem: SelectionCellItem) in
+                if self.tableView.allowsMultipleSelection == true {
+                    return
+                }
                 
+                if callBackItem.isSelected, callBackItem == self.selectedItem {
+                    self.selectedItem = nil
+                    callBackItem.deselect()
+                } else {
+                    self.selectedItem = callBackItem
+                }
             }
+            // 实现单选情况下的反选操作
         }
     }
     
@@ -55,16 +68,15 @@ class SelectionViewController: UIViewController {
     
     @objc func validateSelectionItems(button: UIBarButtonItem) {
         if selectionTypeBtn.title == "单选" {
-            if let item = manager.selectedItem() as?  SelectionCellItem {
+            if let item = manager.selectedItem() as? SelectionCellItem {
                 print("item at \(item.indexPath.row)")
-            }else{
+            } else {
                 print("no item be selected")
             }
         } else if selectionTypeBtn.title == "多选" {
             let items: [SelectionCellItem] = manager.selectedItems()
             print("multi-selected items as follows:")
-            print(items.map({"item at \($0.indexPath.row)"}))
-            
+            print(items.map { "item at \($0.indexPath.row)" })
         }
     }
     
