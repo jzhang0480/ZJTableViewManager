@@ -42,7 +42,9 @@ class ExpandTreeViewController: UIViewController {
         // 当前这一级在收起的时候会忽略后面层级的树形结构。比如1，2级都是展开的，点击0级收起之后再展开，1，2级都会是收起状态。
         item0.isKeepStructure = false
         section.add(item: item0)
-
+        //自动关闭其他展开的cell
+//        item0.isAutoClose = true
+        
         // level 1
         for _ in 0 ..< 3 {
             let item1 = Level1CellItem()

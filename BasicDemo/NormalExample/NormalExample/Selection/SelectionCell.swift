@@ -32,6 +32,5 @@ class SelectionCell: UITableViewCell, ZJCellProtocol {
         } else {
             img.isHidden = true
         }
-        // Configure the view for the selected state
     }
 }
