@@ -30,11 +30,11 @@ open class ZJTextItem: ZJTableViewItem {
 open class ZJTextCell: UITableViewCell, UITextViewDelegate, ZJCellProtocol {
     public var item: ZJTextItem!
 
-    public typealias ZJCelltemClass = ZJTextItem
+    public typealias ZJCellItemClass = ZJTextItem
 
     @IBOutlet var textView: ZJTextView!
 
-    open override func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         textView.delegate = self
@@ -51,7 +51,7 @@ open class ZJTextCell: UITableViewCell, UITextViewDelegate, ZJCellProtocol {
         item.didChanged?(item)
     }
 
-    open override func setSelected(_ selected: Bool, animated: Bool) {
+    override open func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

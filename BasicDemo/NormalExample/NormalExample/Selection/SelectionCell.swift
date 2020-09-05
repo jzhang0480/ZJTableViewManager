@@ -16,7 +16,7 @@ class SelectionCellItem: ZJTableViewItem {
 }
 
 class SelectionCell: UITableViewCell, ZJCellProtocol {
-    typealias ZJCelltemClass = SelectionCellItem
+    typealias ZJCellItemClass = SelectionCellItem
     var item: SelectionCellItem!
     @IBOutlet var img: UIImageView!
     @IBOutlet var titleL: UILabel!

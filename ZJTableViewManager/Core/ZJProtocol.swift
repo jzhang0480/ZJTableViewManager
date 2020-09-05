@@ -26,8 +26,8 @@ public extension ZJInternalCellProtocol {
 }
 
 public protocol ZJCellProtocol: ZJInternalCellProtocol {
-    associatedtype ZJCelltemClass: ZJItemProtocol
-    var item: ZJCelltemClass! { get set }
+    associatedtype ZJCellItemClass: ZJItemProtocol
+    var item: ZJCellItemClass! { get set }
 }
 
 public extension ZJCellProtocol {
@@ -36,7 +36,7 @@ public extension ZJCellProtocol {
             return item
         }
         set {
-            item = (newValue as! Self.ZJCelltemClass)
+            item = (newValue as! Self.ZJCellItemClass)
         }
     }
 }

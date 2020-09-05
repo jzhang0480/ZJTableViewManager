@@ -32,7 +32,7 @@ class CardTableViewCellItem: ZJTableViewItem {
 class CardTableViewCell: UITableViewCell, ZJCellProtocol {
     var item: CardTableViewCellItem!
 
-    typealias ZJCelltemClass = CardTableViewCellItem
+    typealias ZJCellItemClass = CardTableViewCellItem
 
     @IBOutlet var cardView: UIView!
     @IBOutlet var cardImg: UIImageView!
@@ -51,11 +51,5 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
 
     func cellWillAppear() {
         layer.zPosition = item.zPosition
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 }

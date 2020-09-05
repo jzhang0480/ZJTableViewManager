@@ -10,13 +10,13 @@ import UIKit
 
 class CustomExpandButtonCellItem: ZJExpandTreeCellItem {
     var title: String?
-    var buttonTapCallBack: ((CustomExpandButtonCellItem) -> ())?
+    var buttonTapCallBack: ((CustomExpandButtonCellItem) -> Void)?
 
     override init() {
         super.init()
         // 取消默认的点击展开处理
-        self.selectionHandler = nil
-        self.buttonTapCallBack = { callBackItem in
+        selectionHandler = nil
+        buttonTapCallBack = { callBackItem in
             callBackItem.toggleExpand()
         }
     }
@@ -34,7 +34,7 @@ class CustomExpandButtonCellItem: ZJExpandTreeCellItem {
 
 class CustomExpandButtonCell: UITableViewCell, ZJCellProtocol {
     var item: CustomExpandButtonCellItem!
-    typealias ZJCelltemClass = CustomExpandButtonCellItem
+    typealias ZJCellItemClass = CustomExpandButtonCellItem
     @IBOutlet var btnExpand: UIButton!
     @IBOutlet var labelTitle: UILabel!
     func cellWillAppear() {
@@ -42,18 +42,12 @@ class CustomExpandButtonCell: UITableViewCell, ZJCellProtocol {
         labelTitle.text = item.title
     }
 
-    @IBAction func actionExpand(_ sender: Any) {
+    @IBAction func actionExpand(_: Any) {
         item.buttonTapCallBack?(item)
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 }

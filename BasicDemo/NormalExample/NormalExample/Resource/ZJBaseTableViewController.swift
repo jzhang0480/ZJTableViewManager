@@ -14,9 +14,9 @@ open class ZJBaseTableViewController: UIViewController {
     public var manager: ZJTableViewManager!
     public var tableViewStyle: UITableView.Style = UITableView.Style.plain
 
-    open override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
-        if let tableView = self.IBTableView {
+        if let tableView = IBTableView {
             self.tableView = tableView
         } else {
             tableView = UITableView(frame: view.bounds, style: tableViewStyle)
@@ -27,14 +27,14 @@ open class ZJBaseTableViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    open override func viewDidLayoutSubviews() {
+    override open func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if IBTableView == nil {
             tableView.frame = view.bounds
         }
     }
 
-    open override func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

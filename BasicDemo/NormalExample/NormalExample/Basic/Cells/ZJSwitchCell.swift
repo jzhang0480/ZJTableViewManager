@@ -11,8 +11,8 @@ import UIKit
 class ZJSwitchItem: ZJTableViewItem {
     var title: String?
     var isOn: Bool = false
-    var didChanged: ((ZJSwitchItem)->())?
-    convenience init(title: String?, isOn: Bool, didChanged: ((ZJSwitchItem)->())?) {
+    var didChanged: ((ZJSwitchItem) -> Void)?
+    convenience init(title: String?, isOn: Bool, didChanged: ((ZJSwitchItem) -> Void)?) {
         self.init()
         self.title = title
         self.isOn = isOn
@@ -23,7 +23,7 @@ class ZJSwitchItem: ZJTableViewItem {
 class ZJSwitchCell: UITableViewCell, ZJCellProtocol {
     var item: ZJSwitchItem!
 
-    typealias ZJCelltemClass = ZJSwitchItem
+    typealias ZJCellItemClass = ZJSwitchItem
 
     @IBOutlet var labelTitle: UILabel!
     @IBOutlet var switchButton: UISwitch!
@@ -41,11 +41,5 @@ class ZJSwitchCell: UITableViewCell, ZJCellProtocol {
     @IBAction func valueChanged(_ sender: UISwitch) {
         item.isOn = sender.isOn
         item.didChanged?(item)
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 }
