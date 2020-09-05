@@ -7,7 +7,7 @@
 
 ### 使用
 直接拖入ZJTableViewManager文件夹里面的文件，或者用cocoapods
-`pod 'ZJTableViewManager', '~> 1.0.6-beta'`
+`pod 'ZJTableViewManager', '~> 1.0.6'`
 
 ### 适配
 | Version        | Swift     | Xcode              |
