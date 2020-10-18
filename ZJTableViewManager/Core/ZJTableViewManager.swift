@@ -156,32 +156,36 @@ extension ZJTableViewManager: UITableViewDelegate {
     }
 
     public func tableView(_: UITableView, willDisplayHeaderView _: UIView, forSection section: Int) {
-        let section = sectionFrom(section: section)
-        section.headerWillDisplayHandler?(section)
+        let sectionModel = sectionFrom(section: section)
+        sectionModel.headerWillDisplayHandler?(sectionModel)
     }
 
     public func tableView(_: UITableView, didEndDisplayingHeaderView _: UIView, forSection section: Int) {
-        let section = sectionFrom(section: section)
-        section.headerDidEndDisplayHandler?(section)
+        // 这里要做一个保护，因为这个方法在某个section被删除之后reload tableView, 会最后触发一次这个
+        // section的endDisplaying方法，这时去根据section去获取section对象可能会获取不到。
+        if sections.count > section {
+            let sectionModel = sectionFrom(section: section)
+            sectionModel.headerDidEndDisplayHandler?(sectionModel)
+        }
     }
 
     public func tableView(_: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let section = sectionFrom(section: section)
-        return section.headerView
+        let sectionModel = sectionFrom(section: section)
+        return sectionModel.headerView
     }
 
     public func tableView(_: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let section = sectionFrom(section: section)
-        return section.footerView
+        let sectionModel = sectionFrom(section: section)
+        return sectionModel.footerView
     }
 
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let section = sectionFrom(section: section)
-        if section.headerView != nil || (section.headerHeight > 0 && section.headerHeight != CGFloat.leastNormalMagnitude) {
-            return section.headerHeight
+        let sectionModel = sectionFrom(section: section)
+        if sectionModel.headerView != nil || (sectionModel.headerHeight > 0 && sectionModel.headerHeight != CGFloat.leastNormalMagnitude) {
+            return sectionModel.headerHeight
         }
 
-        if let title = section.headerTitle {
+        if let title = sectionModel.headerTitle {
             let label = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.width - 40, height: CGFloat.greatestFiniteMagnitude))
             label.text = title
             label.font = UIFont.preferredFont(forTextStyle: .footnote)
@@ -193,8 +197,8 @@ extension ZJTableViewManager: UITableViewDelegate {
     }
 
     public func tableView(_: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        let section = sectionFrom(section: section)
-        return section.footerHeight
+        let sectionModel = sectionFrom(section: section)
+        return sectionModel.footerHeight
     }
 
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -226,18 +230,18 @@ extension ZJTableViewManager: UITableViewDataSource {
     }
 
     public func tableView(_: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let section = sectionFrom(section: section)
-        return section.headerTitle
+        let sectionModel = sectionFrom(section: section)
+        return sectionModel.headerTitle
     }
 
     public func tableView(_: UITableView, titleForFooterInSection section: Int) -> String? {
-        let section = sectionFrom(section: section)
-        return section.footerTitle
+        let sectionModel = sectionFrom(section: section)
+        return sectionModel.footerTitle
     }
 
     public func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let section = sectionFrom(section: section)
-        return section.items.count
+        let sectionModel = sectionFrom(section: section)
+        return sectionModel.items.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
