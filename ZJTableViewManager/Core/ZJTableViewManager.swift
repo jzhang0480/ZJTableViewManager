@@ -162,7 +162,7 @@ extension ZJTableViewManager: UITableViewDelegate {
 
     public func tableView(_: UITableView, didEndDisplayingHeaderView _: UIView, forSection section: Int) {
         // 这里要做一个保护，因为这个方法在某个section被删除之后reload tableView, 会最后触发一次这个
-        // section的endDisplaying方法，这时去根据section去获取section对象可能会获取不到。
+        // section的endDisplaying方法，这时去根据section去获取section对象会获取不到。
         if sections.count > section {
             let sectionModel = sectionFrom(section: section)
             sectionModel.headerDidEndDisplayHandler?(sectionModel)
