@@ -11,7 +11,7 @@ import UIKit
 class ZJDefaultCell: UITableViewCell, ZJCellProtocol {
     var item: ZJTableViewItem!
 
-    typealias ZJCelltemType = ZJTableViewItem
+    typealias ZJCellItemClass = ZJTableViewItem
 
     func cellWillAppear() {}
 }

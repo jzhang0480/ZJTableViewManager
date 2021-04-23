@@ -13,18 +13,12 @@ class Level3CellItem: ZJExpandTreeCellItem {}
 class Level3Cell: UITableViewCell, ZJCellProtocol {
     var item: Level3CellItem!
 
-    typealias ZJCelltemClass = Level3CellItem
+    typealias ZJCellItemClass = Level3CellItem
 
     func cellWillAppear() {}
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 }

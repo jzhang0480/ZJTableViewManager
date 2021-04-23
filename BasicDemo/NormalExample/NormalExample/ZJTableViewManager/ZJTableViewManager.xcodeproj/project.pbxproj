@@ -8,26 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		6685AF26244D398A007F78F4 /* ZJTableViewManager.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 6685AF25244D398A007F78F4 /* ZJTableViewManager.podspec */; };
+		69CDB2EE2503C8E500A4D14C /* ZJDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDB2E72503C8E500A4D14C /* ZJDefaultCell.swift */; };
+		69CDB2EF2503C8E500A4D14C /* ZJTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDB2E82503C8E500A4D14C /* ZJTableViewSection.swift */; };
+		69CDB2F02503C8E500A4D14C /* ZJProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDB2E92503C8E500A4D14C /* ZJProtocol.swift */; };
+		69CDB2F12503C8E500A4D14C /* ZJTableViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDB2EA2503C8E500A4D14C /* ZJTableViewItem.swift */; };
+		69CDB2F22503C8E500A4D14C /* ZJTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDB2EB2503C8E500A4D14C /* ZJTableViewManager.swift */; };
+		69CDB2F32503C8E500A4D14C /* ZJExpandTreeCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDB2ED2503C8E500A4D14C /* ZJExpandTreeCellItem.swift */; };
 		8F4507FE244CBD5F007C123E /* ZJTableViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F4507FC244CBD5F007C123E /* ZJTableViewManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8F45080E244CBDFB007C123E /* ZJExpandTreeCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F450807244CBDFB007C123E /* ZJExpandTreeCellItem.swift */; };
-		8F45080F244CBDFB007C123E /* ZJTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F450809244CBDFB007C123E /* ZJTableViewSection.swift */; };
-		8F450810244CBDFB007C123E /* ZJProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F45080A244CBDFB007C123E /* ZJProtocol.swift */; };
-		8F450811244CBDFB007C123E /* ZJTableViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F45080B244CBDFB007C123E /* ZJTableViewItem.swift */; };
-		8F450812244CBDFB007C123E /* ZJTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F45080C244CBDFB007C123E /* ZJTableViewManager.swift */; };
-		8F450813244CBDFB007C123E /* ZJDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F45080D244CBDFB007C123E /* ZJDefaultCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6685AF25244D398A007F78F4 /* ZJTableViewManager.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ZJTableViewManager.podspec; path = ../../../../../ZJTableViewManager.podspec; sourceTree = "<group>"; };
+		69CDB2E72503C8E500A4D14C /* ZJDefaultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJDefaultCell.swift; sourceTree = "<group>"; };
+		69CDB2E82503C8E500A4D14C /* ZJTableViewSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewSection.swift; sourceTree = "<group>"; };
+		69CDB2E92503C8E500A4D14C /* ZJProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJProtocol.swift; sourceTree = "<group>"; };
+		69CDB2EA2503C8E500A4D14C /* ZJTableViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewItem.swift; sourceTree = "<group>"; };
+		69CDB2EB2503C8E500A4D14C /* ZJTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewManager.swift; sourceTree = "<group>"; };
+		69CDB2ED2503C8E500A4D14C /* ZJExpandTreeCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJExpandTreeCellItem.swift; sourceTree = "<group>"; };
 		8F4507F9244CBD5F007C123E /* ZJTableViewManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZJTableViewManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F4507FC244CBD5F007C123E /* ZJTableViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJTableViewManager.h; sourceTree = "<group>"; };
 		8F4507FD244CBD5F007C123E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8F450807244CBDFB007C123E /* ZJExpandTreeCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJExpandTreeCellItem.swift; sourceTree = "<group>"; };
-		8F450809244CBDFB007C123E /* ZJTableViewSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewSection.swift; sourceTree = "<group>"; };
-		8F45080A244CBDFB007C123E /* ZJProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJProtocol.swift; sourceTree = "<group>"; };
-		8F45080B244CBDFB007C123E /* ZJTableViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewItem.swift; sourceTree = "<group>"; };
-		8F45080C244CBDFB007C123E /* ZJTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewManager.swift; sourceTree = "<group>"; };
-		8F45080D244CBDFB007C123E /* ZJDefaultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJDefaultCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +41,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		69CDB2E62503C8E500A4D14C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				69CDB2E72503C8E500A4D14C /* ZJDefaultCell.swift */,
+				69CDB2E82503C8E500A4D14C /* ZJTableViewSection.swift */,
+				69CDB2E92503C8E500A4D14C /* ZJProtocol.swift */,
+				69CDB2EA2503C8E500A4D14C /* ZJTableViewItem.swift */,
+				69CDB2EB2503C8E500A4D14C /* ZJTableViewManager.swift */,
+			);
+			name = Core;
+			path = ../../../../../ZJTableViewManager/Core;
+			sourceTree = "<group>";
+		};
+		69CDB2EC2503C8E500A4D14C /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				69CDB2ED2503C8E500A4D14C /* ZJExpandTreeCellItem.swift */,
+			);
+			name = Other;
+			path = ../../../../../ZJTableViewManager/Other;
+			sourceTree = "<group>";
+		};
 		8F4507EF244CBD5F007C123E = {
 			isa = PBXGroup;
 			children = (
@@ -61,32 +83,12 @@
 			isa = PBXGroup;
 			children = (
 				6685AF25244D398A007F78F4 /* ZJTableViewManager.podspec */,
-				8F450808244CBDFB007C123E /* Core */,
-				8F450806244CBDFB007C123E /* Other */,
+				69CDB2E62503C8E500A4D14C /* Core */,
+				69CDB2EC2503C8E500A4D14C /* Other */,
 				8F4507FC244CBD5F007C123E /* ZJTableViewManager.h */,
 				8F4507FD244CBD5F007C123E /* Info.plist */,
 			);
 			path = ZJTableViewManager;
-			sourceTree = "<group>";
-		};
-		8F450806244CBDFB007C123E /* Other */ = {
-			isa = PBXGroup;
-			children = (
-				8F450807244CBDFB007C123E /* ZJExpandTreeCellItem.swift */,
-			);
-			path = Other;
-			sourceTree = "<group>";
-		};
-		8F450808244CBDFB007C123E /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				8F450809244CBDFB007C123E /* ZJTableViewSection.swift */,
-				8F45080A244CBDFB007C123E /* ZJProtocol.swift */,
-				8F45080B244CBDFB007C123E /* ZJTableViewItem.swift */,
-				8F45080C244CBDFB007C123E /* ZJTableViewManager.swift */,
-				8F45080D244CBDFB007C123E /* ZJDefaultCell.swift */,
-			);
-			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,12 +171,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F450810244CBDFB007C123E /* ZJProtocol.swift in Sources */,
-				8F450813244CBDFB007C123E /* ZJDefaultCell.swift in Sources */,
-				8F45080E244CBDFB007C123E /* ZJExpandTreeCellItem.swift in Sources */,
-				8F450811244CBDFB007C123E /* ZJTableViewItem.swift in Sources */,
-				8F450812244CBDFB007C123E /* ZJTableViewManager.swift in Sources */,
-				8F45080F244CBDFB007C123E /* ZJTableViewSection.swift in Sources */,
+				69CDB2F32503C8E500A4D14C /* ZJExpandTreeCellItem.swift in Sources */,
+				69CDB2F02503C8E500A4D14C /* ZJProtocol.swift in Sources */,
+				69CDB2EE2503C8E500A4D14C /* ZJDefaultCell.swift in Sources */,
+				69CDB2F12503C8E500A4D14C /* ZJTableViewItem.swift in Sources */,
+				69CDB2F22503C8E500A4D14C /* ZJTableViewManager.swift in Sources */,
+				69CDB2EF2503C8E500A4D14C /* ZJTableViewSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

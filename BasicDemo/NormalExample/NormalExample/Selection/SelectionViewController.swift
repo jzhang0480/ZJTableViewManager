@@ -14,7 +14,7 @@ class SelectionViewController: UIViewController {
     let section = ZJTableViewSection()
     var selectionTypeBtn: UIBarButtonItem!
     var selectedItem: SelectionCellItem?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Selection"
@@ -22,28 +22,28 @@ class SelectionViewController: UIViewController {
         let validateBtn = UIBarButtonItem(title: "获取选中项", style: .plain, target: self, action: #selector(validateSelectionItems(button:)))
         let selectAllBtn = UIBarButtonItem(title: "全选", style: .plain, target: self, action: #selector(selectAll(button:)))
         navigationItem.rightBarButtonItems = [validateBtn, selectionTypeBtn, selectAllBtn]
-        
+
         // Setup manager
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.addSubview(tableView)
         manager = ZJTableViewManager(tableView: tableView)
         manager.register(SelectionCell.self, SelectionCellItem.self)
-        
+
         // Add section
-        
+
         manager.add(section: section)
-        
+
         // Add Cell
-        for _ in 0..<100 {
+        for _ in 0 ..< 100 {
             let item = SelectionCellItem()
             section.add(item: item)
-            
+
             // 实现单选情况下的反选操作
             item.setSelectionHandler { [unowned self] (callBackItem: SelectionCellItem) in
                 if self.tableView.allowsMultipleSelection == true {
                     return
                 }
-                
+
                 if callBackItem.isSelected, callBackItem == self.selectedItem {
                     self.selectedItem = nil
                     callBackItem.deselect()
@@ -54,7 +54,7 @@ class SelectionViewController: UIViewController {
             // 实现单选情况下的反选操作
         }
     }
-    
+
     @objc func switchSelectionType(button: UIBarButtonItem) {
         if button.title == "单选" {
             button.title = "多选"
@@ -65,8 +65,8 @@ class SelectionViewController: UIViewController {
             section.items.first?.select(animated: true, scrollPosition: .top)
         }
     }
-    
-    @objc func validateSelectionItems(button: UIBarButtonItem) {
+
+    @objc func validateSelectionItems(button _: UIBarButtonItem) {
         if selectionTypeBtn.title == "单选" {
             if let item = manager.selectedItem() as? SelectionCellItem {
                 print("item at \(item.indexPath.row)")
@@ -79,8 +79,8 @@ class SelectionViewController: UIViewController {
             print(items.map { "item at \($0.indexPath.row)" })
         }
     }
-    
-    @objc func selectAll(button: UIBarButtonItem) {
+
+    @objc func selectAll(button _: UIBarButtonItem) {
         selectionTypeBtn.title = "多选"
         tableView.allowsMultipleSelection = true
         manager.selectItems(section.items)

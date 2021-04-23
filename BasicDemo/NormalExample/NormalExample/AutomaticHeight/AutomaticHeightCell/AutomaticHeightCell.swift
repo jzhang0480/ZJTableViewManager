@@ -15,13 +15,13 @@ class AutomaticHeightCellItem: ZJTableViewItem {
 /// 支持系统autolayout搭建的cell（xib以及snapkit等基于autolayout的约束框架都是支持的）
 class AutomaticHeightCell: UITableViewCell, ZJCellProtocol {
     var item: AutomaticHeightCellItem!
-    
-    typealias ZJCelltemClass = AutomaticHeightCellItem
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
-    @IBOutlet weak var contentImageView: UIImageView!
-    @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
+
+    typealias ZJCellItemClass = AutomaticHeightCellItem
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var contentLabel: UILabel!
+    @IBOutlet var contentImageView: UIImageView!
+    @IBOutlet var usernameLabel: UILabel!
+    @IBOutlet var timeLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,11 +35,5 @@ class AutomaticHeightCell: UITableViewCell, ZJCellProtocol {
         contentImageView.image = UIImage(named: item.feed.imageName)
         usernameLabel.text = item.feed.username
         timeLabel.text = item.feed.time
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 }
