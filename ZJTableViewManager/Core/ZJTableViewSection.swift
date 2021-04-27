@@ -11,7 +11,7 @@ import UIKit
 public typealias ZJTableViewSectionBlock = (ZJTableViewSection) -> Void
 
 open class ZJTableViewSection: NSObject {
-    var _tableViewManager: ZJTableViewManager?
+    private weak var _tableViewManager: ZJTableViewManager?
     public var tableViewManager: ZJTableViewManager {
         set {
             _tableViewManager = newValue
@@ -162,5 +162,9 @@ open class ZJTableViewSection: NSObject {
         // If crash at here, section did not in manager！
         let index = tableViewManager.sections.zj_indexOf(self)
         tableViewManager.tableView.reloadSections(IndexSet(integer: index), with: animation)
+    }
+    
+    deinit {
+        print("Section Deinit")
     }
 }

@@ -38,7 +38,7 @@ open class ZJTableViewManager: NSObject {
         if let indexPaths = tableView.indexPathsForSelectedRows {
             var items = [T]()
             for idx in indexPaths {
-                if let cell = (tableView.cellForRow(at: idx) as? ZJInternalCellProtocol), let item = cell._item as? T {
+                if let item = sections[idx.section].items[idx.row] as? T {
                     items.append(item)
                 }
             }
@@ -127,6 +127,16 @@ open class ZJTableViewManager: NSObject {
 // MARK: - UITableViewDelegate
 
 extension ZJTableViewManager: UITableViewDelegate {
+    
+    public func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        let obj = getSectionAndItem(indexPath: (section: indexPath.section, row: indexPath.row))
+        if obj.item.isAllowSelect {
+            return indexPath
+        } else {
+            return nil
+        }
+    }
+    
     public func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         let obj = getSectionAndItem(indexPath: (indexPath.section, indexPath.row))
         obj.item.selectionHandler?(obj.item)

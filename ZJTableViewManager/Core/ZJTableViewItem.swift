@@ -15,7 +15,16 @@ open class ZJTableViewItem: NSObject {
         return section.tableViewManager
     }
 
-    public weak var section: ZJTableViewSection!
+    private weak var _section: ZJTableViewSection?
+    public var section: ZJTableViewSection {
+        set {
+            _section = newValue
+        }
+        get {
+            guard let s = _section else { fatalError() }
+            return s
+        }
+    }
     public var cellIdentifier: String!
     /// cell高度(如果要自动计算高度，使用autoHeight(manager:)方法，框架会算出高度，具体看demo)
     /// 传UITableViewAutomaticDimension则是系统实时计算高度，可能会有卡顿、reload弹跳等问题，不建议使用，有特殊需要可以选择使用
@@ -49,6 +58,7 @@ open class ZJTableViewItem: NSObject {
     public var isSelected: Bool {
         return cell.isSelected
     }
+    public var isAllowSelect: Bool = true
 
     public var indexPath: IndexPath {
         let rowIndex = self.section.items.zj_indexOf(self)
@@ -84,7 +94,9 @@ open class ZJTableViewItem: NSObject {
     }
 
     public func select(animated: Bool = true, scrollPosition: UITableView.ScrollPosition = .none) {
-        tableVManager.tableView.selectRow(at: indexPath, animated: animated, scrollPosition: scrollPosition)
+        if isAllowSelect {        
+            tableVManager.tableView.selectRow(at: indexPath, animated: animated, scrollPosition: scrollPosition)
+        }
     }
 
     public func deselect(animated: Bool = true) {

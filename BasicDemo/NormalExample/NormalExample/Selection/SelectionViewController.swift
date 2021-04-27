@@ -37,6 +37,9 @@ class SelectionViewController: UIViewController {
         for _ in 0 ..< 100 {
             let item = SelectionCellItem()
             section.add(item: item)
+            if section.items.count == 2 {
+                item.isAllowSelect = false
+            }
 
             // 实现单选情况下的反选操作
             item.setSelectionHandler { [unowned self] (callBackItem: SelectionCellItem) in
