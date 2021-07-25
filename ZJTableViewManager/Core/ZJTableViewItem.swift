@@ -25,6 +25,7 @@ open class ZJTableViewItem: NSObject {
             return s
         }
     }
+
     public var cellIdentifier: String!
     /// cell高度(如果要自动计算高度，使用autoHeight(manager:)方法，框架会算出高度，具体看demo)
     /// 传UITableViewAutomaticDimension则是系统实时计算高度，可能会有卡顿、reload弹跳等问题，不建议使用，有特殊需要可以选择使用
@@ -66,12 +67,11 @@ open class ZJTableViewItem: NSObject {
         return IndexPath(item: rowIndex, section: section)
     }
 
-    /// 尽量避免通过此属性直接修改cell里面的元素，直接修改cell没有修改修改数据源，由于TableViewCell的复用，会造成异常（正确做法是修改item的属性，通过item.reload()来刷新cell）
     public var cell: UITableViewCell {
         if let unwrappedCell = tableVManager.tableView.cellForRow(at: indexPath) {
             return unwrappedCell
         }
-        zj_log("没有获取到对应的cell，必须在tableView reload之后才能通过这个属性获取到cell。或者获取的indexPath对应的cell必须在屏幕内，无法获取屏幕外的cell")
+        zj_log("You didn't get that cell, so you have to get that cell after tableView is reload. Or the cell that gets the indexPath has to be on the screen, you can't get the cell that's off the screen")
         fatalError()
     }
 
@@ -94,7 +94,7 @@ open class ZJTableViewItem: NSObject {
     }
 
     public func select(animated: Bool = true, scrollPosition: UITableView.ScrollPosition = .none) {
-        if isAllowSelect {        
+        if isAllowSelect {
             tableVManager.tableView.selectRow(at: indexPath, animated: animated, scrollPosition: scrollPosition)
         }
     }
@@ -104,10 +104,6 @@ open class ZJTableViewItem: NSObject {
     }
 
     public func delete(_ animation: UITableView.RowAnimation = .automatic) {
-        if section == nil {
-            zj_log("Item did not in section，please check section.add() method")
-            return
-        }
         if !section.items.contains(where: { $0 == self }) {
             zj_log("can't delete because this item did not in section")
             return

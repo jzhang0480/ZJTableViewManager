@@ -163,8 +163,4 @@ open class ZJTableViewSection: NSObject {
         let index = tableViewManager.sections.zj_indexOf(self)
         tableViewManager.tableView.reloadSections(IndexSet(integer: index), with: animation)
     }
-    
-    deinit {
-        print("Section Deinit")
-    }
 }
