@@ -162,7 +162,7 @@ extension ZJTableViewManager: UITableViewDelegate {
     }
 
     public func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt _: IndexPath) {
-        (cell as! ZJInternalCellProtocol).cellDidAppear()
+        (cell as! ZJInternalCellProtocol).cellWillAppear()
     }
 
     public func tableView(_: UITableView, willDisplayHeaderView _: UIView, forSection section: Int) {
@@ -253,6 +253,7 @@ extension ZJTableViewManager: UITableViewDataSource {
         let sectionModel = sectionFrom(section: section)
         return sectionModel.items.count
     }
+    
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let (_, item) = getSectionAndItem(indexPath: (indexPath.section, indexPath.row))
@@ -272,7 +273,7 @@ extension ZJTableViewManager: UITableViewDataSource {
         unwrappedCell.accessoryType = item.accessoryType
         unwrappedCell.selectionStyle = item.selectionStyle
         unwrappedCell._item = item
-        unwrappedCell.cellWillAppear()
+        unwrappedCell.cellPrepared()
         return unwrappedCell
     }
 }

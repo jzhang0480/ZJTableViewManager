@@ -25,7 +25,7 @@ class CustomExpandButtonCellItem: ZJExpandTreeCellItem {
     @discardableResult override func toggleExpand() -> Bool {
         let bool = super.toggleExpand()
         if let cell = cell as? CustomExpandButtonCell {
-            // 理论上是要尽量避免直接修改cell上面的控件的值，我这里修改了btnExpand.isSelected属性，同时在cellWillAppear()里面设置btnExpand.isSelected = item.isExpand，确保是一致的。这样不会有复用的问题。
+            // 理论上是要尽量避免直接修改cell上面的控件的值，我这里修改了btnExpand.isSelected属性，同时在cellPrepared()里面设置btnExpand.isSelected = item.isExpand，确保是一致的。这样不会有复用的问题。
             cell.btnExpand.isSelected = bool
         }
         return bool
@@ -37,7 +37,7 @@ class CustomExpandButtonCell: UITableViewCell, ZJCellProtocol {
     typealias ZJCellItemClass = CustomExpandButtonCellItem
     @IBOutlet var btnExpand: UIButton!
     @IBOutlet var labelTitle: UILabel!
-    func cellWillAppear() {
+    func cellPrepared() {
         btnExpand.isSelected = item.isExpand
         labelTitle.text = item.title
     }

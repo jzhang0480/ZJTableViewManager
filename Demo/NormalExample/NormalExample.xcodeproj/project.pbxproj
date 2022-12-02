@@ -48,11 +48,26 @@
 		66BF20F124752E2B00A60AB5 /* SelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66BF20EF24752E2B00A60AB5 /* SelectionCell.xib */; };
 		66E60FB02427D1C900C5E2BB /* ZJBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60F9E2427D1C900C5E2BB /* ZJBaseTableViewController.swift */; };
 		66E60FB12427D1C900C5E2BB /* ZJTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E60F9F2427D1C900C5E2BB /* ZJTextView.swift */; };
-		8F450805244CBDB7007C123E /* ZJTableViewManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F450804244CBDB7007C123E /* ZJTableViewManager.framework */; };
 		8FDF516524476C5400A4AB92 /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDF516424476C5400A4AB92 /* test.m */; };
 		8FDF51B524476D4F00A4AB92 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDF51B424476D4F00A4AB92 /* YYFPSLabel.m */; };
 		8FDF51BB2447715B00A4AB92 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDF51B92447715B00A4AB92 /* YYWeakProxy.m */; };
+		EA2863A4292103F6000C08FD /* ZJTableViewManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F450804244CBDB7007C123E /* ZJTableViewManager.framework */; };
+		EA2863A5292103F6000C08FD /* ZJTableViewManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F450804244CBDB7007C123E /* ZJTableViewManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EA2863A6292103F6000C08FD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EA2863A5292103F6000C08FD /* ZJTableViewManager.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		31648C5FE3FCA399246CC396 /* Pods_ZJTableViewDemo_NormalExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZJTableViewDemo_NormalExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,7 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F450805244CBDB7007C123E /* ZJTableViewManager.framework in Frameworks */,
+				EA2863A4292103F6000C08FD /* ZJTableViewManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +327,7 @@
 				660D6D50231E5F39009741A7 /* Frameworks */,
 				660D6D51231E5F39009741A7 /* Resources */,
 				FCD5D2965C29E245DF5D4F10 /* [CP] Embed Pods Frameworks */,
+				EA2863A6292103F6000C08FD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -601,14 +617,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 37TN2QMZFD;
+				DEVELOPMENT_TEAM = 4WRSWKXL27;
 				INFOPLIST_FILE = "$(SRCROOT)/NormalExample/Resource/Info-manager.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ZJTableView.NormalExample;
+				PRODUCT_BUNDLE_IDENTIFIER = ZJTableViewManager.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "NormalExample/Resource/NormalExample-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -623,14 +639,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 37TN2QMZFD;
+				DEVELOPMENT_TEAM = 4WRSWKXL27;
 				INFOPLIST_FILE = "$(SRCROOT)/NormalExample/Resource/Info-manager.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ZJTableView.NormalExample;
+				PRODUCT_BUNDLE_IDENTIFIER = ZJTableViewManager.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "NormalExample/Resource/NormalExample-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

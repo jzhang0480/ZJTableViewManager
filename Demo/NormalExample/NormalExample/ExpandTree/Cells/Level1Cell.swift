@@ -15,10 +15,11 @@ class Level1Cell: UITableViewCell, ZJCellProtocol {
 
     typealias ZJCellItemClass = Level1CellItem
 
-    func cellWillAppear() {}
+    func cellPrepared() {}
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.backgroundColor = .clear
         // Initialization code
     }
 }

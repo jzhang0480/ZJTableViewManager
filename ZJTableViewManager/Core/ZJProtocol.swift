@@ -15,12 +15,14 @@ public protocol ZJItemProtocol where Self: ZJTableViewItem {}
 
 public protocol ZJInternalCellProtocol where Self: UITableViewCell {
     var _item: ZJItemProtocol? { get set }
+    func cellPrepared()
     func cellWillAppear()
     func cellDidAppear()
     func cellDidDisappear()
 }
 
 public extension ZJInternalCellProtocol {
+    func cellWillAppear() {}
     func cellDidAppear() {}
     func cellDidDisappear() {}
 }

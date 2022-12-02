@@ -124,7 +124,7 @@ open class ZJTableViewItem: NSObject {
         }
 
         cell._item = self
-        cell.cellWillAppear()
+        cell.cellPrepared()
         cellHeight = cell.systemLayoutSizeFitting(CGSize(width: manager.tableView.frame.width, height: 0), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel).height
     }
 }

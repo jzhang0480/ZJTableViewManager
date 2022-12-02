@@ -21,7 +21,7 @@ class SelectionCell: UITableViewCell, ZJCellProtocol {
     @IBOutlet var img: UIImageView!
     @IBOutlet var titleL: UILabel!
 
-    func cellWillAppear() {
+    func cellPrepared() {
         titleL.text = "Item \(item.indexPath.row)"
     }
 

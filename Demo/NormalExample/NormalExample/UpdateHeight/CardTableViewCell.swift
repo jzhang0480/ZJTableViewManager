@@ -47,9 +47,17 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
         cardView.layer.shadowRadius = radius
         cardImg.layer.cornerRadius = radius
         cardImg.clipsToBounds = true
+        backgroundColor = .clear
+        backgroundView = UIView()
+        selectedBackgroundView = UIView()
     }
 
-    func cellWillAppear() {
+    func cellPrepared() {
         layer.zPosition = item.zPosition
+    }
+    
+    func cellWillAppear() {
+        layer.masksToBounds = false
+        contentView.layer.masksToBounds = false
     }
 }

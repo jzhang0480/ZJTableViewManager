@@ -18,7 +18,7 @@ class Level0Cell: UITableViewCell, ZJCellProtocol {
 
     typealias ZJCellItemClass = Level0CellItem
 
-    func cellWillAppear() {
+    func cellPrepared() {
         labelTitle.text = item.title
     }
 

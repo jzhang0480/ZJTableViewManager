@@ -15,7 +15,7 @@ class Level2Cell: UITableViewCell, ZJCellProtocol {
 
     typealias ZJCellItemClass = Level2CellItem
 
-    func cellWillAppear() {}
+    func cellPrepared() {}
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -15,7 +15,7 @@ class Level3Cell: UITableViewCell, ZJCellProtocol {
 
     typealias ZJCellItemClass = Level3CellItem
 
-    func cellWillAppear() {}
+    func cellPrepared() {}
 
     override func awakeFromNib() {
         super.awakeFromNib()

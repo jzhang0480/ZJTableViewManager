@@ -40,7 +40,7 @@ open class ZJTextCell: UITableViewCell, UITextViewDelegate, ZJCellProtocol {
         textView.delegate = self
     }
 
-    public func cellWillAppear() {
+    public func cellPrepared() {
         textView.placeholder = item.placeHolder
         textView.text = item.text
         textView.backgroundColor = item.textViewBackgroundColor

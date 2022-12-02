@@ -42,7 +42,7 @@ open class ZJTextFieldCell: UITableViewCell, ZJCellProtocol {
         // Initialization code
     }
 
-    public func cellWillAppear() {
+    public func cellPrepared() {
         if item.isFullLength {
             titleConstraint.constant = 0
         } else {

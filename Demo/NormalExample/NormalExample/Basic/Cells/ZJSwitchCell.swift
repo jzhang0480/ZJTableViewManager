@@ -33,7 +33,7 @@ class ZJSwitchCell: UITableViewCell, ZJCellProtocol {
         // Initialization code
     }
 
-    func cellWillAppear() {
+    func cellPrepared() {
         labelTitle.text = item.title
         switchButton.isOn = item.isOn
     }

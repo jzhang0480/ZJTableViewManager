@@ -43,20 +43,20 @@ class ExpandTreeViewController: UIViewController {
         item0.isKeepStructure = false
         section.add(item: item0)
         // 自动关闭其他展开的cell
-//        item0.isAutoClose = true
+        item0.isAutoClose = true
 
         // level 1
-        for _ in 0 ..< 3 {
+        for _ in 0 ..< 10 {
             let item1 = Level1CellItem()
             item0.addSub(item: item1, section: section)
 
             // level 2
-            for _ in 0 ..< 3 {
+            for _ in 0 ..< 10 {
                 let item2 = Level2CellItem()
                 item1.addSub(item: item2, section: section)
 
                 // level 3
-                for _ in 0 ..< 3 {
+                for _ in 0 ..< 10 {
                     let item3 = Level3CellItem()
                     item2.addSub(item: item3, section: section)
                 }
