@@ -7,16 +7,17 @@
 //
 
 import UIKit
+import ZJTableViewManager
 
 class ExpandTreeViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
-    var manager: ZJTableViewManager!
-    var section = ZJTableViewSection()
+    var manager: ZJTableViewAccordionManager!
+    var section = ZJTableViewAccordionSection()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "ExpandTree"
-        manager = ZJTableViewManager(tableView: tableView)
+        manager = ZJTableViewAccordionManager(tableView: tableView)
         manager.register(Level0Cell.self, Level0CellItem.self)
         manager.register(Level1Cell.self, Level1CellItem.self)
         manager.register(Level2Cell.self, Level2CellItem.self)
@@ -36,30 +37,28 @@ class ExpandTreeViewController: UIViewController {
         // level 0
         let item0 = Level0CellItem()
         item0.title = "自动处理展开事件"
-        // 默认是false，我这里需要第1级是展开状态，所以单独设置true
-        item0.isExpand = true
-
-        // 当前这一级在收起的时候会忽略后面层级的树形结构。比如1，2级都是展开的，点击0级收起之后再展开，1，2级都会是收起状态。
+        // 当前这一级在收起的时候会忽略后面层级的树形结构。
+        // 比如1，2级都是展开的，点击0级收起之后再展开，1，2级都会是收起状态。
         item0.isKeepStructure = false
-        section.add(item: item0)
         // 自动关闭其他展开的cell
         item0.isAutoClose = true
+        // 默认是false，我这里需要第1级是展开状态，所以单独设置true
+        section.add(item: item0, parentItem: nil, isExpand: true)
 
         // level 1
-        for _ in 0 ..< 10 {
+        for _ in 0 ..< 3 {
             let item1 = Level1CellItem()
-            item0.addSub(item: item1, section: section)
+            section.add(item: item1, parentItem: item0)
 
             // level 2
-            for _ in 0 ..< 10 {
+            for _ in 0 ..< 3 {
                 let item2 = Level2CellItem()
-                item1.addSub(item: item2, section: section)
+                section.add(item: item2, parentItem: item1)
 
                 // level 3
-                for _ in 0 ..< 10 {
-                    let item3 = Level3CellItem()
-                    item2.addSub(item: item3, section: section)
-                }
+                let text = "The world can be changed by man's endeavor, and that this endeavor can lead to something new and better .No man can sever the bonds that unite him to his society simply by averting his eyes . He must ever be receptive and sensitive to the new ; and have sufficient courage and skill to novel facts and to deal with them ."
+                let item3 = Level3CellItem(title: text)
+                section.add(item: item3, parentItem: item2)
             }
         }
     }
@@ -74,8 +73,9 @@ class ExpandTreeViewController: UIViewController {
         // 自定义点击事件处理，重写回调就会覆盖掉默认的展开事件
         rootItem.setSelectionHandler { [unowned self] (callBackItem: Level0CellItem) in
 
-            // 判断是否已经从网络获得过数据，有的话就直接展开或收起（实际项目根据实际情况来判断，这里只是个例子）
-            if callBackItem.arrSubLevel.count > 0 {
+            // 判断是否已经从网络获得过数据，有的话就直接展开或收起
+            // （实际项目根据实际情况来判断，这里只是个例子）
+            if callBackItem.childItems.count > 0 {
                 // toggleExpand()执行动作方法，展开或收起，方法内部会自动处理
                 callBackItem.toggleExpand()
                 return
@@ -86,7 +86,7 @@ class ExpandTreeViewController: UIViewController {
                 // 网络请求完成 添加数据
                 for _ in 0 ..< 3 {
                     let newItem = Level1CellItem()
-                    callBackItem.addSub(item: newItem, section: self.section)
+                    self.section.add(item: newItem, parentItem: callBackItem)
                 }
                 callBackItem.toggleExpand()
             }
@@ -101,7 +101,7 @@ class ExpandTreeViewController: UIViewController {
 
         for _ in 0 ..< 3 {
             let newItem = Level1CellItem()
-            rootItem.addSub(item: newItem, section: section)
+            section.add(item: newItem, parentItem: rootItem)
         }
     }
 
@@ -111,11 +111,11 @@ class ExpandTreeViewController: UIViewController {
         rootItem.title = "自定义展开按钮和展开事件"
         section.add(item: rootItem)
 
-        // 自定义点击事件处理，调用这个方法重写回调就会覆盖掉默认的展开事件
+        // 自定义点击事件处理，调用这个方法重写回z调就会覆盖掉默认的展开事件
         rootItem.buttonTapCallBack = { [unowned self] callBackItem in
 
             // 判断是否已经从网络获得过数据，有的话就直接展开或收起（实际项目根据实际情况来判断，这里只是个例子）
-            if callBackItem.arrSubLevel.count > 0 {
+            if callBackItem.childItems.count > 0 {
                 // toggleExpand()执行动作方法，展开或收起，方法内部会自动处理
                 callBackItem.toggleExpand()
                 return
@@ -126,7 +126,7 @@ class ExpandTreeViewController: UIViewController {
                 // 网络请求完成 添加数据
                 for _ in 0 ..< 3 {
                     let newItem = Level1CellItem()
-                    callBackItem.addSub(item: newItem, section: self.section)
+                    self.section.add(item: newItem, parentItem: callBackItem)
                 }
                 callBackItem.toggleExpand()
             }

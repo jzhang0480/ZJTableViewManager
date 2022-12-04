@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import ZJTableViewManager
 
-class Level2CellItem: ZJExpandTreeCellItem {}
+class Level2CellItem: ZJTableViewAccordionItem {
+    override init() {
+        super.init()
+        self.cellHeight = 50
+    }
+}
 
 class Level2Cell: UITableViewCell, ZJCellProtocol {
     var item: Level2CellItem!

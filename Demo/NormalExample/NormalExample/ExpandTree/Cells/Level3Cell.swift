@@ -7,15 +7,26 @@
 //
 
 import UIKit
+import ZJTableViewManager
 
-class Level3CellItem: ZJExpandTreeCellItem {}
+class Level3CellItem: ZJTableViewAccordionItem {
+    var title: String?
+    convenience init(title: String?) {
+        self.init()
+        self.cellHeight = UITableView.automaticDimension
+        self.title = title
+    }
+}
 
 class Level3Cell: UITableViewCell, ZJCellProtocol {
+    @IBOutlet weak var titleL: UILabel!
     var item: Level3CellItem!
 
     typealias ZJCellItemClass = Level3CellItem
 
-    func cellPrepared() {}
+    func cellPrepared() {
+        titleL.text = item.title
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

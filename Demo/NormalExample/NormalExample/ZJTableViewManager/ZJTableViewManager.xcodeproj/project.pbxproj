@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		663A2BB2293B470100B6F5C5 /* ZJAccordionEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663A2BB1293B470100B6F5C5 /* ZJAccordionEffect.swift */; };
 		6685AF26244D398A007F78F4 /* ZJTableViewManager.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 6685AF25244D398A007F78F4 /* ZJTableViewManager.podspec */; };
 		69CDB2EE2503C8E500A4D14C /* ZJDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDB2E72503C8E500A4D14C /* ZJDefaultCell.swift */; };
 		69CDB2EF2503C8E500A4D14C /* ZJTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDB2E82503C8E500A4D14C /* ZJTableViewSection.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		663A2BB1293B470100B6F5C5 /* ZJAccordionEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJAccordionEffect.swift; sourceTree = "<group>"; };
 		6685AF25244D398A007F78F4 /* ZJTableViewManager.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ZJTableViewManager.podspec; path = ../../../../../ZJTableViewManager.podspec; sourceTree = "<group>"; };
 		69CDB2E72503C8E500A4D14C /* ZJDefaultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJDefaultCell.swift; sourceTree = "<group>"; };
 		69CDB2E82503C8E500A4D14C /* ZJTableViewSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewSection.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				69CDB2ED2503C8E500A4D14C /* ZJExpandTreeCellItem.swift */,
+				663A2BB1293B470100B6F5C5 /* ZJAccordionEffect.swift */,
 			);
 			name = Other;
 			path = ../../../../../ZJTableViewManager/Other;
@@ -130,7 +133,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1130;
-				ORGANIZATIONNAME = Javen;
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					8F4507F8244CBD5F007C123E = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -177,6 +180,7 @@
 				69CDB2F12503C8E500A4D14C /* ZJTableViewItem.swift in Sources */,
 				69CDB2F22503C8E500A4D14C /* ZJTableViewManager.swift in Sources */,
 				69CDB2EF2503C8E500A4D14C /* ZJTableViewSection.swift in Sources */,
+				663A2BB2293B470100B6F5C5 /* ZJAccordionEffect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

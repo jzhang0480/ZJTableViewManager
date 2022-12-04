@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="XqJ-iQ-ueZ" customClass="Level3Cell" customModule="ZJTableViewManagerExample" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="XqJ-iQ-ueZ" customClass="Level3Cell" customModule="NormalExample" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XqJ-iQ-ueZ" id="ZZ3-DL-PgU">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="level 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCK-Y0-dVy">
-                        <rect key="frame" x="60" y="0.0" width="53" height="43.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="level 3" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCK-Y0-dVy">
+                        <rect key="frame" x="45" y="11" width="259" height="21.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -28,13 +26,17 @@
                 </subviews>
                 <color key="backgroundColor" red="0.063999660164946584" green="0.99290133248730961" blue="0.90911642738769161" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstItem="WCK-Y0-dVy" firstAttribute="leading" secondItem="ZZ3-DL-PgU" secondAttribute="leading" constant="60" id="1P2-rX-p8F"/>
-                    <constraint firstItem="WCK-Y0-dVy" firstAttribute="top" secondItem="ZZ3-DL-PgU" secondAttribute="top" id="dMi-Nf-fxN"/>
-                    <constraint firstAttribute="bottom" secondItem="WCK-Y0-dVy" secondAttribute="bottom" id="wij-Xt-p0l"/>
+                    <constraint firstItem="WCK-Y0-dVy" firstAttribute="leading" secondItem="ZZ3-DL-PgU" secondAttribute="leading" constant="45" id="1P2-rX-p8F"/>
+                    <constraint firstAttribute="trailing" secondItem="WCK-Y0-dVy" secondAttribute="trailing" constant="16" id="8xy-v3-650"/>
+                    <constraint firstAttribute="bottom" secondItem="WCK-Y0-dVy" secondAttribute="bottom" constant="11.5" id="Jnf-79-lZH"/>
+                    <constraint firstItem="WCK-Y0-dVy" firstAttribute="top" secondItem="ZZ3-DL-PgU" secondAttribute="top" constant="11" id="TvT-ID-Ul2"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.063999660159999999" green="0.99290133250000001" blue="0.90911642739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <viewLayoutGuide key="safeArea" id="vvI-FL-90s"/>
+            <color key="backgroundColor" red="0.063999660159999999" green="0.99290133250000001" blue="0.90911642739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="titleL" destination="WCK-Y0-dVy" id="8ms-9V-lIn"/>
+            </connections>
             <point key="canvasLocation" x="137.59999999999999" y="187.1064467766117"/>
         </tableViewCell>
     </objects>
