@@ -1,0 +1,22 @@
+# Uncomment the next line to define a global platform for your project
+source "https://github.com/CocoaPods/Specs.git"
+ platform :ios, '9.0'
+
+target 'Demo' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  
+  pod 'ZJTableViewManager', :path => '../'
+
+  # Pods for Demo
+
+  target 'DemoTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'DemoUITests' do
+    # Pods for testing
+  end
+
+end

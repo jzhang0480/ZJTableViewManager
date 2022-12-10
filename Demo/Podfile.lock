@@ -1,0 +1,21 @@
+PODS:
+  - ZJTableViewManager (1.0.8):
+    - ZJTableViewManager/Core (= 1.0.8)
+    - ZJTableViewManager/Other (= 1.0.8)
+  - ZJTableViewManager/Core (1.0.8)
+  - ZJTableViewManager/Other (1.0.8):
+    - ZJTableViewManager/Core
+
+DEPENDENCIES:
+  - ZJTableViewManager (from `../`)
+
+EXTERNAL SOURCES:
+  ZJTableViewManager:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ZJTableViewManager: 2f05817f850fb3646c086b03c1675d75cd7f7c51
+
+PODFILE CHECKSUM: cd44096b2c94e116443d1cec03fe58c7ee13246e
+
+COCOAPODS: 1.11.3
