@@ -8,10 +8,11 @@
 
 import UIKit
 
-open class ZJTableViewAccordionSection: ZJTableViewSection {
+open class ZJAccordionSection: ZJTableViewSection {
 
-    public func add(item: ZJTableViewAccordionItem, parentItem: ZJTableViewAccordionItem?, isExpand: Bool = false) {
+    public func add(item: ZJAccordionItem, parentItem: ZJAccordionItem?, isExpand: Bool = false) {
         item.isExpand = isExpand
+        // 没有指定高度，计算出高度信息（这样可以防止系统自动计算导致的动画异常）
         if item.cellHeight == UITableView.automaticDimension {
             item.autoHeight(tableViewManager)
         }
@@ -28,28 +29,32 @@ open class ZJTableViewAccordionSection: ZJTableViewSection {
         }
     }
 
-    public func checkVisible(_ item: ZJTableViewAccordionItem) -> Bool {
+    // 检查item是否被折叠（可见）
+    public func checkVisible(_ item: ZJAccordionItem) -> Bool {
         if let parentItem = item.parentItem {
-            if parentItem.isExpand {
+            
+            if parentItem.isExpand { // 如果父item状态是展开，检查更上一级是否折叠
                 return checkVisible(parentItem)
             } else {
+                // 父item isExpand是false，说明当前item被折叠（不可见）
                 return false
             }
         } else {
+            // 递归查找到最顶级的item中途都没有折叠，说明传入的这个item没有被折叠（可见）
             return true
         }
     }
 }
 
-open class ZJTableViewAccordionManager: ZJTableViewManager {}
+open class ZJAccordionManager: ZJTableViewManager {}
 
-open class ZJTableViewAccordionItem: ZJTableViewItem {
+open class ZJAccordionItem: ZJTableViewItem {
     public fileprivate(set) var level: Int = 0
     public fileprivate(set) var isExpand = false
-    public fileprivate(set) var childItems = [ZJTableViewAccordionItem]()
-    public weak var parentItem: ZJTableViewAccordionItem?
-    public var willExpand: ((ZJTableViewAccordionItem) -> Void)?
-    public var didExpand: ((ZJTableViewAccordionItem) -> Void)?
+    public fileprivate(set) var childItems = [ZJAccordionItem]()
+    public weak var parentItem: ZJAccordionItem?
+    public var willExpand: ((ZJAccordionItem) -> Void)?
+    public var didExpand: ((ZJAccordionItem) -> Void)?
     public var isKeepStructure = true
     public var isAutoClose = false
 
@@ -64,8 +69,8 @@ open class ZJTableViewAccordionItem: ZJTableViewItem {
 
     @discardableResult
     open func toggleExpand() -> Bool {
-        var waitForDeleteItems: [ZJTableViewAccordionItem] = []
-        var waitForInsertItems: [ZJTableViewAccordionItem] = []
+        var waitForDeleteItems: [ZJAccordionItem] = []
+        var waitForInsertItems: [ZJAccordionItem] = []
         if isExpand {
             waitForDeleteItems = allVisibleChildItems()
             isExpand = false
@@ -73,7 +78,7 @@ open class ZJTableViewAccordionItem: ZJTableViewItem {
             isExpand = true
             waitForInsertItems = allVisibleChildItems()
             if !isKeepStructure {
-                var tempItems = [ZJTableViewAccordionItem]()
+                var tempItems = [ZJAccordionItem]()
                 for item in waitForInsertItems {
                     item.isExpand = false
                     if item.level == level + 1 {
@@ -84,7 +89,7 @@ open class ZJTableViewAccordionItem: ZJTableViewItem {
             }
         }
 
-        var callbackItems: [ZJTableViewAccordionItem] = []
+        var callbackItems: [ZJAccordionItem] = []
         callbackItems.append(self)
         if let parentItem = parentItem, parentItem.isAutoClose {
             parentItem.allVisibleChildItems(self).forEach { item in
@@ -127,13 +132,13 @@ open class ZJTableViewAccordionItem: ZJTableViewItem {
         return isExpand
     }
 
-    public func allVisibleChildItems(_ exceptionNodeItem: ZJTableViewAccordionItem? = nil) -> [ZJTableViewAccordionItem] {
-        var items = [ZJTableViewAccordionItem]()
+    public func allVisibleChildItems(_ exceptionNodeItem: ZJAccordionItem? = nil) -> [ZJAccordionItem] {
+        var items = [ZJAccordionItem]()
         allVisibleChildItems(self, outItems: &items, exceptionNodeItem)
         return items
     }
 
-    fileprivate func allVisibleChildItems(_ parentItem: ZJTableViewAccordionItem, outItems: inout [ZJTableViewAccordionItem], _ exceptionNodeItem: ZJTableViewAccordionItem? = nil) {
+    fileprivate func allVisibleChildItems(_ parentItem: ZJAccordionItem, outItems: inout [ZJAccordionItem], _ exceptionNodeItem: ZJAccordionItem? = nil) {
         for childItem in parentItem.childItems {
             if exceptionNodeItem == childItem {
                 continue

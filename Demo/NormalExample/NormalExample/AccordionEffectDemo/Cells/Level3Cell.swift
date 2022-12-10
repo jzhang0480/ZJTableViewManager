@@ -1,6 +1,6 @@
 //
 //  Level3Cell.swift
-//  ZJExpandTreeDeme
+//  ZJAccordionEffectDemo
 //
 //  Created by Javen on 2019/3/20.
 //  Copyright © 2019 Javen. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit
 import ZJTableViewManager
 
-class Level3CellItem: ZJTableViewAccordionItem {
+class Level3CellItem: ZJAccordionItem {
     var title: String?
     convenience init(title: String?) {
         self.init()

@@ -9,7 +9,7 @@
 import UIKit
 @_exported import ZJTableViewManager
 
-class ViewController: UIViewController {
+class DemoViewController: UIViewController {
     var tableView: UITableView!
     var manager: ZJTableViewManager!
 
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         let section = ZJTableViewSection()
         manager.add(section: section)
 
-        let titles = ["Basic", "Retractable", "SlideDelete", "Sections", "AutomaticHeight", "ExpandTree", "UpdateHeight", "Selection"]
+        let titles = ["Basic", "Retractable", "SlideDelete", "Sections", "AutomaticHeight", "AccordionEffect", "UpdateHeight", "Selection"]
         for i in titles {
             let item = ZJTableViewItem(text: i)
             item.accessoryType = .disclosureIndicator
@@ -55,9 +55,9 @@ class ViewController: UIViewController {
                 } else if i == "AutomaticHeight" {
                     let vc = AutomaticHeightViewController()
                     self.navigationController?.pushViewController(vc, animated: true)
-                } else if i == "ExpandTree" {
+                } else if i == "AccordionEffect" {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let vc = storyboard.instantiateViewController(withIdentifier: "ExpandTreeViewController")
+                    let vc = storyboard.instantiateViewController(withIdentifier: "AccordionEffectViewController")
                     self.navigationController?.pushViewController(vc, animated: true)
                 } else if i == "UpdateHeight" {
                     let vc = UpdateHeightViewController()

@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  ZJExpandTreeDeme
+//  ZJAccordionEffectDemo
 //
 //  Created by Javen on 2019/3/19.
 //  Copyright © 2019 Javen. All rights reserved.
@@ -9,15 +9,15 @@
 import UIKit
 import ZJTableViewManager
 
-class ExpandTreeViewController: UIViewController {
+class AccordionEffectDemoVC: UIViewController {
     @IBOutlet var tableView: UITableView!
-    var manager: ZJTableViewAccordionManager!
-    var section = ZJTableViewAccordionSection()
+    var manager: ZJAccordionManager!
+    var section = ZJAccordionSection()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "ExpandTree"
-        manager = ZJTableViewAccordionManager(tableView: tableView)
+        title = "AccordionEffect"
+        manager = ZJAccordionManager(tableView: tableView)
         manager.register(Level0Cell.self, Level0CellItem.self)
         manager.register(Level1Cell.self, Level1CellItem.self)
         manager.register(Level2Cell.self, Level2CellItem.self)

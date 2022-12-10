@@ -1,6 +1,6 @@
 //
-//  ZJExpandTreeCell.swift
-//  ZJExpandTreeDeme
+//  ZJAccordionEffectCell.swift
+//  ZJAccordionEffectDemo
 //
 //  Created by Javen on 2019/3/19.
 //  Copyright © 2019 Javen. All rights reserved.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-open class ZJExpandTreeCellItem: ZJTableViewItem {
+open class ZJAccordionEffectCellItem: ZJTableViewItem {
     public private(set) var level: Int = 0
     public var isExpand = false
-    public var arrSubLevel = [ZJExpandTreeCellItem]()
+    public var arrSubLevel = [ZJAccordionEffectCellItem]()
     /// 展开或者收起下级cell的回调
-    public var willExpand: ((ZJExpandTreeCellItem) -> Void)?
-    public var didExpand: ((ZJExpandTreeCellItem) -> Void)?
-    public weak var superLevelItem: ZJExpandTreeCellItem?
+    public var willExpand: ((ZJAccordionEffectCellItem) -> Void)?
+    public var didExpand: ((ZJAccordionEffectCellItem) -> Void)?
+    public weak var superLevelItem: ZJAccordionEffectCellItem?
     /// 折叠时是否保持下级的树形结构
     public var isKeepStructure = true
     /// 是否自动折叠已经打开的Cell
@@ -25,24 +25,24 @@ open class ZJExpandTreeCellItem: ZJTableViewItem {
         super.init()
         selectionStyle = .none
 
-        setSelectionHandler { (callBackItem: ZJExpandTreeCellItem) in
+        setSelectionHandler { (callBackItem: ZJAccordionEffectCellItem) in
             callBackItem.toggleExpand()
         }
     }
 
-    public func addSub(item: ZJExpandTreeCellItem, section: ZJTableViewSection) {
+    public func addSub(item: ZJAccordionEffectCellItem, section: ZJTableViewSection) {
         arrSubLevel.append(item)
         item.superLevelItem = self
         item.level = level + 1
-        if ZJExpandTreeCellItem.checkIfFoldedBySupperLevel(self), isExpand {
+        if ZJAccordionEffectCellItem.checkIfFoldedBySupperLevel(self), isExpand {
             section.add(item: item)
         }
     }
 
     /// 处理展开事件，返回值是当前cell的状态（展开或者收起）
     @discardableResult open func toggleExpand() -> Bool {
-        var waitForDeleteItems: [ZJExpandTreeCellItem] = []
-        var waitForInsertItems: [ZJExpandTreeCellItem] = []
+        var waitForDeleteItems: [ZJAccordionEffectCellItem] = []
+        var waitForInsertItems: [ZJAccordionEffectCellItem] = []
         if isExpand {
             // 点击之前是打开的，直接通过递归获取item
             waitForDeleteItems = allVisibleItemsUnderCurrentItem()
@@ -52,7 +52,7 @@ open class ZJExpandTreeCellItem: ZJTableViewItem {
             isExpand = true
             waitForInsertItems = allVisibleItemsUnderCurrentItem()
             if !isKeepStructure {
-                var tempItems = [ZJExpandTreeCellItem]()
+                var tempItems = [ZJAccordionEffectCellItem]()
                 for item in waitForInsertItems {
                     item.isExpand = false
                     if item.level == level + 1 {
@@ -109,14 +109,14 @@ open class ZJExpandTreeCellItem: ZJTableViewItem {
     }
 
     /// 获取当前item下面所有的item
-    public func allVisibleItemsUnderCurrentItem(_ exceptionNodeItem: ZJExpandTreeCellItem? = nil) -> [ZJExpandTreeCellItem] {
-        var arrItems = [ZJExpandTreeCellItem]()
-        ZJExpandTreeCellItem.recursionForItem(self, outItems: &arrItems, exceptionNodeItem)
+    public func allVisibleItemsUnderCurrentItem(_ exceptionNodeItem: ZJAccordionEffectCellItem? = nil) -> [ZJAccordionEffectCellItem] {
+        var arrItems = [ZJAccordionEffectCellItem]()
+        ZJAccordionEffectCellItem.recursionForItem(self, outItems: &arrItems, exceptionNodeItem)
         return arrItems
     }
 
     /// 递归获取一个item下面所有显示的item
-    public class func recursionForItem(_ item: ZJExpandTreeCellItem, outItems: inout [ZJExpandTreeCellItem], _ exceptionNodeItem: ZJExpandTreeCellItem? = nil) {
+    public class func recursionForItem(_ item: ZJAccordionEffectCellItem, outItems: inout [ZJAccordionEffectCellItem], _ exceptionNodeItem: ZJAccordionEffectCellItem? = nil) {
         for subItem in item.arrSubLevel {
             if exceptionNodeItem == subItem {
                 continue
@@ -136,7 +136,7 @@ open class ZJExpandTreeCellItem: ZJTableViewItem {
     }
 
     // 递归判断一个item是否在某个父节点被折叠
-    public class func checkIfFoldedBySupperLevel(_ item: ZJExpandTreeCellItem) -> Bool {
+    public class func checkIfFoldedBySupperLevel(_ item: ZJAccordionEffectCellItem) -> Bool {
         guard let superItem = item.superLevelItem else {
             return item.isExpand
         }

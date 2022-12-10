@@ -9,7 +9,7 @@
 import UIKit
 import ZJTableViewManager
 
-class CustomExpandButtonCellItem: ZJTableViewAccordionItem {
+class CustomExpandButtonCellItem: ZJAccordionItem {
     var title: String?
     var buttonTapCallBack: ((CustomExpandButtonCellItem) -> Void)?
 

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		660D6D99231E5F53009741A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6D69231E5F52009741A7 /* ViewController.swift */; };
+		660D6D99231E5F53009741A7 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6D69231E5F52009741A7 /* DemoViewController.swift */; };
 		660D6D9B231E5F53009741A7 /* RetractableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6D6B231E5F52009741A7 /* RetractableViewController.swift */; };
 		660D6D9C231E5F53009741A7 /* SectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6D6C231E5F52009741A7 /* SectionsViewController.swift */; };
 		660D6DA3231E5F53009741A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660D6D76231E5F52009741A7 /* Assets.xcassets */; };
@@ -24,7 +24,7 @@
 		660D6DAE231E5F53009741A7 /* Level0Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6D84231E5F52009741A7 /* Level0Cell.swift */; };
 		660D6DAF231E5F53009741A7 /* Level3Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6D85231E5F52009741A7 /* Level3Cell.swift */; };
 		660D6DB0231E5F53009741A7 /* Level2Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6D86231E5F52009741A7 /* Level2Cell.swift */; };
-		660D6DB1231E5F53009741A7 /* ExpandTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6D87231E5F52009741A7 /* ExpandTreeViewController.swift */; };
+		660D6DB1231E5F53009741A7 /* AccordionEffectDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6D87231E5F52009741A7 /* AccordionEffectDemoVC.swift */; };
 		660D6DB2231E5F53009741A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 660D6D88231E5F52009741A7 /* LaunchScreen.storyboard */; };
 		660D6DB3231E5F53009741A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 660D6D8A231E5F52009741A7 /* Main.storyboard */; };
 		660D6DB4231E5F53009741A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D6D8C231E5F52009741A7 /* AppDelegate.swift */; };
@@ -74,7 +74,7 @@
 		41098006C16FC66E334ACAE8 /* Pods-ZJTableViewDemo-NormalExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJTableViewDemo-NormalExample.debug.xcconfig"; path = "Target Support Files/Pods-ZJTableViewDemo-NormalExample/Pods-ZJTableViewDemo-NormalExample.debug.xcconfig"; sourceTree = "<group>"; };
 		5EF0B71C17BB9887757FB3D6 /* Pods-ZJTableViewDemo-NormalExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJTableViewDemo-NormalExample.release.xcconfig"; path = "Target Support Files/Pods-ZJTableViewDemo-NormalExample/Pods-ZJTableViewDemo-NormalExample.release.xcconfig"; sourceTree = "<group>"; };
 		660D6D53231E5F39009741A7 /* NormalExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NormalExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		660D6D69231E5F52009741A7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		660D6D69231E5F52009741A7 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		660D6D6B231E5F52009741A7 /* RetractableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetractableViewController.swift; sourceTree = "<group>"; };
 		660D6D6C231E5F52009741A7 /* SectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionsViewController.swift; sourceTree = "<group>"; };
 		660D6D76231E5F52009741A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 		660D6D84231E5F52009741A7 /* Level0Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level0Cell.swift; sourceTree = "<group>"; };
 		660D6D85231E5F52009741A7 /* Level3Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level3Cell.swift; sourceTree = "<group>"; };
 		660D6D86231E5F52009741A7 /* Level2Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level2Cell.swift; sourceTree = "<group>"; };
-		660D6D87231E5F52009741A7 /* ExpandTreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandTreeViewController.swift; sourceTree = "<group>"; };
+		660D6D87231E5F52009741A7 /* AccordionEffectDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccordionEffectDemoVC.swift; sourceTree = "<group>"; };
 		660D6D89231E5F52009741A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		660D6D8B231E5F52009741A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		660D6D8C231E5F52009741A7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -176,16 +176,16 @@
 		660D6D68231E5F52009741A7 /* NormalExample */ = {
 			isa = PBXGroup;
 			children = (
+				660D6D69231E5F52009741A7 /* DemoViewController.swift */,
+				660D6D8D231E5F52009741A7 /* AutomaticHeightDemo */,
+				660D6D7D231E5F52009741A7 /* AccordionEffectDemo */,
 				667B07BF243C2772008D959C /* Resource */,
-				660D6D8D231E5F52009741A7 /* AutomaticHeight */,
 				660D6D78231E5F52009741A7 /* EditingViewController.swift */,
-				660D6D7D231E5F52009741A7 /* ExpandTree */,
 				667B07C0243C27F8008D959C /* Basic */,
 				660D6D6B231E5F52009741A7 /* RetractableViewController.swift */,
 				660D6D6C231E5F52009741A7 /* SectionsViewController.swift */,
 				66BF20ED24752DD800A60AB5 /* Selection */,
 				660D6D79231E5F52009741A7 /* UpdateHeight */,
-				660D6D69231E5F52009741A7 /* ViewController.swift */,
 			);
 			path = NormalExample;
 			sourceTree = "<group>";
@@ -200,13 +200,13 @@
 			path = UpdateHeight;
 			sourceTree = "<group>";
 		};
-		660D6D7D231E5F52009741A7 /* ExpandTree */ = {
+		660D6D7D231E5F52009741A7 /* AccordionEffectDemo */ = {
 			isa = PBXGroup;
 			children = (
+				660D6D87231E5F52009741A7 /* AccordionEffectDemoVC.swift */,
 				660D6D7E231E5F52009741A7 /* Cells */,
-				660D6D87231E5F52009741A7 /* ExpandTreeViewController.swift */,
 			);
-			path = ExpandTree;
+			path = AccordionEffectDemo;
 			sourceTree = "<group>";
 		};
 		660D6D7E231E5F52009741A7 /* Cells */ = {
@@ -226,14 +226,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		660D6D8D231E5F52009741A7 /* AutomaticHeight */ = {
+		660D6D8D231E5F52009741A7 /* AutomaticHeightDemo */ = {
 			isa = PBXGroup;
 			children = (
 				660D6D92231E5F52009741A7 /* AutomaticHeightCell */,
 				660D6D8E231E5F52009741A7 /* AutomaticHeightViewController.swift */,
 				662ABE78244559D200A6A603 /* Data.swift */,
 			);
-			path = AutomaticHeight;
+			path = AutomaticHeightDemo;
 			sourceTree = "<group>";
 		};
 		660D6D92231E5F52009741A7 /* AutomaticHeightCell */ = {
@@ -442,7 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				660D6D99231E5F53009741A7 /* ViewController.swift in Sources */,
+				660D6D99231E5F53009741A7 /* DemoViewController.swift in Sources */,
 				660D6DB0231E5F53009741A7 /* Level2Cell.swift in Sources */,
 				8FDF516524476C5400A4AB92 /* test.m in Sources */,
 				8FDF51BB2447715B00A4AB92 /* YYWeakProxy.m in Sources */,
@@ -456,7 +456,7 @@
 				66E60FB12427D1C900C5E2BB /* ZJTextView.swift in Sources */,
 				66A7FDF2244706390003BC69 /* CustomSectionHeaderView.swift in Sources */,
 				662ABE7C2446E60B00A6A603 /* CustomExpandButtonCell.swift in Sources */,
-				660D6DB1231E5F53009741A7 /* ExpandTreeViewController.swift in Sources */,
+				660D6DB1231E5F53009741A7 /* AccordionEffectDemoVC.swift in Sources */,
 				660D6DAF231E5F53009741A7 /* Level3Cell.swift in Sources */,
 				66BF20F024752E2B00A60AB5 /* SelectionCell.swift in Sources */,
 				662ABE762445516300A6A603 /* ZJSwitchCell.swift in Sources */,
