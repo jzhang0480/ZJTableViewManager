@@ -19,10 +19,34 @@
 		66DD45BC294599B500301E8A /* CustomSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DD45B3294599B500301E8A /* CustomSectionHeaderView.swift */; };
 		66DD45BD294599B500301E8A /* CustomSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66DD45B4294599B500301E8A /* CustomSectionHeaderView.xib */; };
 		66DD45BF29459A2D00301E8A /* ZJTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DD45BE29459A2D00301E8A /* ZJTextView.swift */; };
+		66DD45C429459C3800301E8A /* SectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DD45C129459C3700301E8A /* SectionsViewController.swift */; };
+		66DD45C529459C3800301E8A /* RetractableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DD45C229459C3700301E8A /* RetractableViewController.swift */; };
+		66DD45C629459C3800301E8A /* EditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DD45C329459C3800301E8A /* EditingViewController.swift */; };
+		66DD45E529459DFD00301E8A /* AutomaticHeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DD45CB29459DFD00301E8A /* AutomaticHeightViewController.swift */; };
+		66DD45E629459DFD00301E8A /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DD45CC29459DFD00301E8A /* Data.swift */; };
+		66DD45E729459DFD00301E8A /* AutomaticHeightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66DD45CE29459DFD00301E8A /* AutomaticHeightCell.xib */; };
+		66DD45E829459DFD00301E8A /* AutomaticHeightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DD45CF29459DFD00301E8A /* AutomaticHeightCell.swift */; };
+		66DD45E929459DFD00301E8A /* SelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DD45D129459DFD00301E8A /* SelectionCell.swift */; };
+		66DD45EA29459DFD00301E8A /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DD45D229459DFD00301E8A /* SelectionViewController.swift */; };
+		66DD45EB29459DFD00301E8A /* SelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66DD45D329459DFD00301E8A /* SelectionCell.xib */; };
+		66DD45EC29459DFD00301E8A /* Level1Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66DD45D629459DFD00301E8A /* Level1Cell.xib */; };
+		66DD45ED29459DFD00301E8A /* Level0Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66DD45D729459DFD00301E8A /* Level0Cell.xib */; };
+		66DD45EE29459DFD00301E8A /* Level1Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DD45D829459DFD00301E8A /* Level1Cell.swift */; };
+		66DD45EF29459DFD00301E8A /* Level2Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66DD45D929459DFD00301E8A /* Level2Cell.xib */; };
+		66DD45F029459DFD00301E8A /* Level3Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66DD45DA29459DFD00301E8A /* Level3Cell.xib */; };
+		66DD45F129459DFD00301E8A /* Level0Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DD45DB29459DFD00301E8A /* Level0Cell.swift */; };
+		66DD45F229459DFD00301E8A /* Level3Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DD45DC29459DFD00301E8A /* Level3Cell.swift */; };
+		66DD45F329459DFD00301E8A /* CustomExpandButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DD45DD29459DFD00301E8A /* CustomExpandButtonCell.swift */; };
+		66DD45F429459DFD00301E8A /* CustomExpandButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66DD45DE29459DFD00301E8A /* CustomExpandButtonCell.xib */; };
+		66DD45F529459DFD00301E8A /* Level2Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DD45DF29459DFD00301E8A /* Level2Cell.swift */; };
+		66DD45F629459DFD00301E8A /* AccordionEffectDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DD45E029459DFD00301E8A /* AccordionEffectDemoVC.swift */; };
+		66DD45F729459DFD00301E8A /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DD45E229459DFD00301E8A /* CardTableViewCell.swift */; };
+		66DD45F829459DFD00301E8A /* UpdateHeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DD45E329459DFD00301E8A /* UpdateHeightViewController.swift */; };
+		66DD45F929459DFD00301E8A /* CardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66DD45E429459DFD00301E8A /* CardTableViewCell.xib */; };
+		66DD45FB29459EEE00301E8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66DD45FA29459EEE00301E8A /* Assets.xcassets */; };
 		66F89FE3294485580034A5A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F89FE2294485580034A5A6 /* AppDelegate.swift */; };
 		66F89FE7294485580034A5A6 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F89FE6294485580034A5A6 /* DemoViewController.swift */; };
 		66F89FEA294485580034A5A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66F89FE8294485580034A5A6 /* Main.storyboard */; };
-		66F89FEC294485590034A5A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66F89FEB294485590034A5A6 /* Assets.xcassets */; };
 		66F89FEF294485590034A5A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66F89FED294485590034A5A6 /* LaunchScreen.storyboard */; };
 		66F89FFA294485590034A5A6 /* DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F89FF9294485590034A5A6 /* DemoTests.swift */; };
 		66F8A004294485590034A5A6 /* DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F8A003294485590034A5A6 /* DemoUITests.swift */; };
@@ -64,11 +88,35 @@
 		66DD45B3294599B500301E8A /* CustomSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSectionHeaderView.swift; sourceTree = "<group>"; };
 		66DD45B4294599B500301E8A /* CustomSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSectionHeaderView.xib; sourceTree = "<group>"; };
 		66DD45BE29459A2D00301E8A /* ZJTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZJTextView.swift; path = ../../../DemoOld/NormalExample/NormalExample/Resource/ZJTextView.swift; sourceTree = "<group>"; };
+		66DD45C129459C3700301E8A /* SectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionsViewController.swift; sourceTree = "<group>"; };
+		66DD45C229459C3700301E8A /* RetractableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetractableViewController.swift; sourceTree = "<group>"; };
+		66DD45C329459C3800301E8A /* EditingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingViewController.swift; sourceTree = "<group>"; };
+		66DD45CB29459DFD00301E8A /* AutomaticHeightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutomaticHeightViewController.swift; sourceTree = "<group>"; };
+		66DD45CC29459DFD00301E8A /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		66DD45CE29459DFD00301E8A /* AutomaticHeightCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AutomaticHeightCell.xib; sourceTree = "<group>"; };
+		66DD45CF29459DFD00301E8A /* AutomaticHeightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutomaticHeightCell.swift; sourceTree = "<group>"; };
+		66DD45D129459DFD00301E8A /* SelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionCell.swift; sourceTree = "<group>"; };
+		66DD45D229459DFD00301E8A /* SelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
+		66DD45D329459DFD00301E8A /* SelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectionCell.xib; sourceTree = "<group>"; };
+		66DD45D629459DFD00301E8A /* Level1Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Level1Cell.xib; sourceTree = "<group>"; };
+		66DD45D729459DFD00301E8A /* Level0Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Level0Cell.xib; sourceTree = "<group>"; };
+		66DD45D829459DFD00301E8A /* Level1Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level1Cell.swift; sourceTree = "<group>"; };
+		66DD45D929459DFD00301E8A /* Level2Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Level2Cell.xib; sourceTree = "<group>"; };
+		66DD45DA29459DFD00301E8A /* Level3Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Level3Cell.xib; sourceTree = "<group>"; };
+		66DD45DB29459DFD00301E8A /* Level0Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level0Cell.swift; sourceTree = "<group>"; };
+		66DD45DC29459DFD00301E8A /* Level3Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level3Cell.swift; sourceTree = "<group>"; };
+		66DD45DD29459DFD00301E8A /* CustomExpandButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomExpandButtonCell.swift; sourceTree = "<group>"; };
+		66DD45DE29459DFD00301E8A /* CustomExpandButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomExpandButtonCell.xib; sourceTree = "<group>"; };
+		66DD45DF29459DFD00301E8A /* Level2Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level2Cell.swift; sourceTree = "<group>"; };
+		66DD45E029459DFD00301E8A /* AccordionEffectDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccordionEffectDemoVC.swift; sourceTree = "<group>"; };
+		66DD45E229459DFD00301E8A /* CardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		66DD45E329459DFD00301E8A /* UpdateHeightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateHeightViewController.swift; sourceTree = "<group>"; };
+		66DD45E429459DFD00301E8A /* CardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardTableViewCell.xib; sourceTree = "<group>"; };
+		66DD45FA29459EEE00301E8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66F89FDF294485580034A5A6 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F89FE2294485580034A5A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66F89FE6294485580034A5A6 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		66F89FE9294485580034A5A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		66F89FEB294485590034A5A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66F89FEE294485590034A5A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		66F89FF0294485590034A5A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66F89FF5294485590034A5A6 /* DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,8 +203,104 @@
 			children = (
 				66F89FE6294485580034A5A6 /* DemoViewController.swift */,
 				66DD45A9294599B500301E8A /* Basic */,
+				66DD45C829459D7E00301E8A /* Retractable */,
+				66DD45C729459D5A00301E8A /* Edit */,
+				66DD45C929459D8F00301E8A /* Sections */,
+				66DD45D429459DFD00301E8A /* AccordionEffectDemo */,
+				66DD45CA29459DFD00301E8A /* AutomaticHeightDemo */,
+				66DD45D029459DFD00301E8A /* Selection */,
+				66DD45E129459DFD00301E8A /* UpdateHeight */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		66DD45C729459D5A00301E8A /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				66DD45C329459C3800301E8A /* EditingViewController.swift */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		66DD45C829459D7E00301E8A /* Retractable */ = {
+			isa = PBXGroup;
+			children = (
+				66DD45C229459C3700301E8A /* RetractableViewController.swift */,
+			);
+			path = Retractable;
+			sourceTree = "<group>";
+		};
+		66DD45C929459D8F00301E8A /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				66DD45C129459C3700301E8A /* SectionsViewController.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		66DD45CA29459DFD00301E8A /* AutomaticHeightDemo */ = {
+			isa = PBXGroup;
+			children = (
+				66DD45CB29459DFD00301E8A /* AutomaticHeightViewController.swift */,
+				66DD45CC29459DFD00301E8A /* Data.swift */,
+				66DD45CD29459DFD00301E8A /* AutomaticHeightCell */,
+			);
+			path = AutomaticHeightDemo;
+			sourceTree = "<group>";
+		};
+		66DD45CD29459DFD00301E8A /* AutomaticHeightCell */ = {
+			isa = PBXGroup;
+			children = (
+				66DD45CE29459DFD00301E8A /* AutomaticHeightCell.xib */,
+				66DD45CF29459DFD00301E8A /* AutomaticHeightCell.swift */,
+			);
+			path = AutomaticHeightCell;
+			sourceTree = "<group>";
+		};
+		66DD45D029459DFD00301E8A /* Selection */ = {
+			isa = PBXGroup;
+			children = (
+				66DD45D129459DFD00301E8A /* SelectionCell.swift */,
+				66DD45D229459DFD00301E8A /* SelectionViewController.swift */,
+				66DD45D329459DFD00301E8A /* SelectionCell.xib */,
+			);
+			path = Selection;
+			sourceTree = "<group>";
+		};
+		66DD45D429459DFD00301E8A /* AccordionEffectDemo */ = {
+			isa = PBXGroup;
+			children = (
+				66DD45D529459DFD00301E8A /* Cells */,
+				66DD45E029459DFD00301E8A /* AccordionEffectDemoVC.swift */,
+			);
+			path = AccordionEffectDemo;
+			sourceTree = "<group>";
+		};
+		66DD45D529459DFD00301E8A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				66DD45D629459DFD00301E8A /* Level1Cell.xib */,
+				66DD45D729459DFD00301E8A /* Level0Cell.xib */,
+				66DD45D829459DFD00301E8A /* Level1Cell.swift */,
+				66DD45D929459DFD00301E8A /* Level2Cell.xib */,
+				66DD45DA29459DFD00301E8A /* Level3Cell.xib */,
+				66DD45DB29459DFD00301E8A /* Level0Cell.swift */,
+				66DD45DC29459DFD00301E8A /* Level3Cell.swift */,
+				66DD45DD29459DFD00301E8A /* CustomExpandButtonCell.swift */,
+				66DD45DE29459DFD00301E8A /* CustomExpandButtonCell.xib */,
+				66DD45DF29459DFD00301E8A /* Level2Cell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		66DD45E129459DFD00301E8A /* UpdateHeight */ = {
+			isa = PBXGroup;
+			children = (
+				66DD45E229459DFD00301E8A /* CardTableViewCell.swift */,
+				66DD45E329459DFD00301E8A /* UpdateHeightViewController.swift */,
+				66DD45E429459DFD00301E8A /* CardTableViewCell.xib */,
+			);
+			path = UpdateHeight;
 			sourceTree = "<group>";
 		};
 		66F89FD6294485580034A5A6 = {
@@ -211,10 +355,10 @@
 		66F8A012294492AB0034A5A6 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				66DD45FA29459EEE00301E8A /* Assets.xcassets */,
 				66F89FF0294485590034A5A6 /* Info.plist */,
 				66F89FE2294485580034A5A6 /* AppDelegate.swift */,
 				66F89FE8294485580034A5A6 /* Main.storyboard */,
-				66F89FEB294485590034A5A6 /* Assets.xcassets */,
 				66F89FED294485590034A5A6 /* LaunchScreen.storyboard */,
 				66F8A0142944932B0034A5A6 /* Demo-Bridging-Header.h */,
 				66F8A017294493460034A5A6 /* FPS */,
@@ -376,12 +520,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66DD45EC29459DFD00301E8A /* Level1Cell.xib in Resources */,
+				66DD45F029459DFD00301E8A /* Level3Cell.xib in Resources */,
+				66DD45F929459DFD00301E8A /* CardTableViewCell.xib in Resources */,
+				66DD45EF29459DFD00301E8A /* Level2Cell.xib in Resources */,
+				66DD45FB29459EEE00301E8A /* Assets.xcassets in Resources */,
+				66DD45E729459DFD00301E8A /* AutomaticHeightCell.xib in Resources */,
 				66DD45B6294599B500301E8A /* ZJTextFieldCell.xib in Resources */,
 				66F89FEF294485590034A5A6 /* LaunchScreen.storyboard in Resources */,
-				66F89FEC294485590034A5A6 /* Assets.xcassets in Resources */,
+				66DD45EB29459DFD00301E8A /* SelectionCell.xib in Resources */,
+				66DD45ED29459DFD00301E8A /* Level0Cell.xib in Resources */,
 				66F89FEA294485580034A5A6 /* Main.storyboard in Resources */,
 				66DD45BD294599B500301E8A /* CustomSectionHeaderView.xib in Resources */,
 				66DD45B7294599B500301E8A /* ZJTextCell.xib in Resources */,
+				66DD45F429459DFD00301E8A /* CustomExpandButtonCell.xib in Resources */,
 				66DD45B5294599B500301E8A /* ZJSwitchCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,15 +664,31 @@
 			files = (
 				66DD45B9294599B500301E8A /* ZJSwitchCell.swift in Sources */,
 				66DD45BB294599B500301E8A /* BasicViewController.swift in Sources */,
+				66DD45E929459DFD00301E8A /* SelectionCell.swift in Sources */,
 				66F8A0202944949E0034A5A6 /* Utils.swift in Sources */,
+				66DD45F829459DFD00301E8A /* UpdateHeightViewController.swift in Sources */,
+				66DD45F629459DFD00301E8A /* AccordionEffectDemoVC.swift in Sources */,
+				66DD45EE29459DFD00301E8A /* Level1Cell.swift in Sources */,
+				66DD45C629459C3800301E8A /* EditingViewController.swift in Sources */,
+				66DD45C529459C3800301E8A /* RetractableViewController.swift in Sources */,
+				66DD45E529459DFD00301E8A /* AutomaticHeightViewController.swift in Sources */,
+				66DD45F229459DFD00301E8A /* Level3Cell.swift in Sources */,
 				66F89FE7294485580034A5A6 /* DemoViewController.swift in Sources */,
 				66DD45BF29459A2D00301E8A /* ZJTextView.swift in Sources */,
 				66F89FE3294485580034A5A6 /* AppDelegate.swift in Sources */,
 				66DD45BA294599B500301E8A /* ZJTextCell.swift in Sources */,
+				66DD45F529459DFD00301E8A /* Level2Cell.swift in Sources */,
 				66F8A01D294493460034A5A6 /* YYFPSLabel.m in Sources */,
 				66F8A01C294493460034A5A6 /* YYWeakProxy.m in Sources */,
 				66DD45BC294599B500301E8A /* CustomSectionHeaderView.swift in Sources */,
+				66DD45C429459C3800301E8A /* SectionsViewController.swift in Sources */,
+				66DD45EA29459DFD00301E8A /* SelectionViewController.swift in Sources */,
+				66DD45F129459DFD00301E8A /* Level0Cell.swift in Sources */,
+				66DD45F729459DFD00301E8A /* CardTableViewCell.swift in Sources */,
+				66DD45F329459DFD00301E8A /* CustomExpandButtonCell.swift in Sources */,
 				66DD45B8294599B500301E8A /* ZJTextFieldCell.swift in Sources */,
+				66DD45E829459DFD00301E8A /* AutomaticHeightCell.swift in Sources */,
+				66DD45E629459DFD00301E8A /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

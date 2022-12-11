@@ -25,7 +25,7 @@ class DemoViewController: UIViewController {
         let section = ZJTableViewSection()
         manager.add(section: section)
 
-        let titles = ["Basic", "Retractable", "SlideDelete", "Sections", "AutomaticHeight", "AccordionEffect", "UpdateHeight", "Selection"]
+        let titles = ["Basic", "Retractable", "Edit", "Sections", "AutomaticHeight", "AccordionEffect", "UpdateHeight", "Selection"]
         for i in titles {
             let item = ZJSystemStyleItem(text: i)
             item.accessoryType = .disclosureIndicator
@@ -37,29 +37,35 @@ class DemoViewController: UIViewController {
                     let vc = BasicViewController()
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
-//                else if i == "Retractable" {
-//                    let vc = RetractableViewController()
-//                    self.navigationController?.pushViewController(vc, animated: true)
-//                } else if i == "SlideDelete" {
-//                    let vc = EditingViewController()
-//                    self.navigationController?.pushViewController(vc, animated: true)
-//                } else if i == "Sections" {
-//                    let vc = SectionsViewController()
-//                    self.navigationController?.pushViewController(vc, animated: true)
-//                } else if i == "AutomaticHeight" {
-//                    let vc = AutomaticHeightViewController()
-//                    self.navigationController?.pushViewController(vc, animated: true)
-//                } else if i == "AccordionEffect" {
-//                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                    let vc = storyboard.instantiateViewController(withIdentifier: "AccordionEffectViewController")
-//                    self.navigationController?.pushViewController(vc, animated: true)
-//                } else if i == "UpdateHeight" {
-//                    let vc = UpdateHeightViewController()
-//                    self.navigationController?.pushViewController(vc, animated: true)
-//                } else if i == "Selection" {
-//                    let vc = SelectionViewController()
-//                    self.navigationController?.pushViewController(vc, animated: true)
-//                }
+                else if i == "Retractable" {
+                    let vc = RetractableViewController()
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+                else if i == "Edit" {
+                    let vc = EditingViewController()
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+                else if i == "Sections" {
+                    let vc = SectionsViewController()
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+                else if i == "AutomaticHeight" {
+                    let vc = AutomaticHeightViewController()
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+                else if i == "AccordionEffect" {
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "AccordionEffectViewController")
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+                else if i == "UpdateHeight" {
+                    let vc = UpdateHeightViewController()
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+                else if i == "Selection" {
+                    let vc = SelectionViewController()
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
             }
         }
 
