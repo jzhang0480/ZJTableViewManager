@@ -260,17 +260,10 @@ extension ZJTableViewManager: UITableViewDataSource {
 
         var cell = tableView.dequeueReusableCell(withIdentifier: item.cellIdentifier) as? ZJInternalCellProtocol
         if cell == nil {
-            cell = (ZJDefaultCell(style: item.style, reuseIdentifier: item.cellIdentifier) as ZJInternalCellProtocol)
+            let systemStyleItem = item as! ZJSystemStyleItem
+            cell = (ZJSystemStyleCell(style: systemStyleItem.style, reuseIdentifier: systemStyleItem.cellIdentifier) as ZJInternalCellProtocol)
         }
         let unwrappedCell = cell!
-        unwrappedCell.textLabel?.text = item.labelText
-        unwrappedCell.textLabel?.textAlignment = item.textAlignment
-        unwrappedCell.detailTextLabel?.text = item.detailLabelText
-        unwrappedCell.detailTextLabel?.textAlignment = item.detailTextAlignment
-        unwrappedCell.accessoryView = item.accessoryView
-        unwrappedCell.imageView?.image = item.image
-        unwrappedCell.imageView?.highlightedImage = item.highlightedImage
-        unwrappedCell.accessoryType = item.accessoryType
         unwrappedCell.selectionStyle = item.selectionStyle
         unwrappedCell._item = item
         unwrappedCell.cellPrepared()

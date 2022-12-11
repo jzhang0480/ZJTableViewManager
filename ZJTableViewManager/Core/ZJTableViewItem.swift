@@ -45,17 +45,9 @@ open class ZJTableViewItem: NSObject {
         }
     }
 
-    public var labelText: String?
-    public var detailLabelText: String?
-    public var textAlignment: NSTextAlignment = .left
-    public var detailTextAlignment: NSTextAlignment = .left
-    public var image: UIImage?
-    public var highlightedImage: UIImage?
-    public var style: UITableViewCell.CellStyle = .default
-    public var accessoryType: UITableViewCell.AccessoryType = .none
-    public var selectionStyle: UITableViewCell.SelectionStyle = .default
     public var editingStyle: UITableViewCell.EditingStyle = .none
-    public var accessoryView: UIView?
+
+    public var selectionStyle: UITableViewCell.SelectionStyle = .default
     public var isSelected: Bool {
         return cell.isSelected
     }
@@ -79,11 +71,6 @@ open class ZJTableViewItem: NSObject {
         super.init()
         cellIdentifier = "\(type(of: self))"
         cellHeight = 44
-    }
-
-    public convenience init(text: String?) {
-        self.init()
-        labelText = text
     }
 
     public func reload(_ animation: UITableView.RowAnimation) {

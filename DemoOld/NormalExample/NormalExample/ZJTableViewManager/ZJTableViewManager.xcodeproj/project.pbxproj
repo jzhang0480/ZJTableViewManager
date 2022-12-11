@@ -20,7 +20,7 @@
 
 /* Begin PBXFileReference section */
 		663A2BB1293B470100B6F5C5 /* ZJAccordionEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJAccordionEffect.swift; sourceTree = "<group>"; };
-		6685AF25244D398A007F78F4 /* ZJTableViewManager.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ZJTableViewManager.podspec; path = ../../../../../ZJTableViewManager.podspec; sourceTree = "<group>"; };
+		6685AF25244D398A007F78F4 /* ZJTableViewManager.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ZJTableViewManager.podspec; path = ../../../../../ZJTableViewManager.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		69CDB2E72503C8E500A4D14C /* ZJDefaultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJDefaultCell.swift; sourceTree = "<group>"; };
 		69CDB2E82503C8E500A4D14C /* ZJTableViewSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewSection.swift; sourceTree = "<group>"; };
 		69CDB2E92503C8E500A4D14C /* ZJProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJProtocol.swift; sourceTree = "<group>"; };

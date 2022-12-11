@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ZJTableViewManager
 
 class BasicViewController: UIViewController {
     var tableView: UITableView!
@@ -31,17 +32,10 @@ class BasicViewController: UIViewController {
 
         // Custom Cell
         // Simple String
-        section.add(item: ZJTableViewItem(text: "Simple String"))
+        section.add(item: ZJSystemStyleItem(text: "Simple String"))
 
         // Full length text field
         section.add(item: ZJTextFieldItem(title: nil, placeHolder: "Full length text field", text: nil, isFullLength: true, didChanged: nil))
-
-        // Text Item
-        section.add(item: ZJTextFieldItem(title: "Text Item", placeHolder: "Text", text: nil, didChanged: { item in
-            if let text = (item as! ZJTextFieldItem).text {
-                zj_log(text)
-            }
-        }))
 
         // Password
         let passwordItem = ZJTextFieldItem(title: "Password", placeHolder: "Password Item", text: nil, didChanged: { item in
@@ -57,22 +51,13 @@ class BasicViewController: UIViewController {
             zj_log(item.isOn)
         }))
 
+        // Text Item
+        section.add(item: ZJTextItem(text: nil, placeHolder: "Text Item", didChanged: { item in
+            if let text = (item as! ZJTextItem).text {
+                zj_log(text)
+            }
+        }))
+
         manager.reload()
-        // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    /*
-     // MARK: - Navigation
-
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destinationViewController.
-         // Pass the selected object to the new view controller.
-     }
-     */
 }

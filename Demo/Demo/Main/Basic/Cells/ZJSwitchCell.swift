@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ZJTableViewManager
 
 class ZJSwitchItem: ZJTableViewItem {
     var title: String?

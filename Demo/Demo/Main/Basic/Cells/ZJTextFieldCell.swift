@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ZJTableViewManager
 
 open class ZJTextFieldItem: ZJTableViewItem {
     public var title: String?
