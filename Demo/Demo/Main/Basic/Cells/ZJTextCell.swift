@@ -28,10 +28,7 @@ open class ZJTextItem: ZJTableViewItem {
     }
 }
 
-open class ZJTextCell: UITableViewCell, UITextViewDelegate, ZJCellProtocol {
-    public var item: ZJTextItem!
-
-    public typealias ZJCellItemClass = ZJTextItem
+open class ZJTextCell: ZJCell<ZJTextItem>, UITextViewDelegate, ZJCellProtocol {
 
     @IBOutlet var textView: ZJTextView!
 

@@ -25,10 +25,7 @@ open class ZJSystemStyleItem: ZJTableViewItem {
     }
 }
 
-class ZJSystemStyleCell: UITableViewCell, ZJCellProtocol {
-    typealias ZJCellItemClass = ZJSystemStyleItem
-    var item: ZJSystemStyleItem!
-
+class ZJSystemStyleCell: ZJCell<ZJSystemStyleItem>, ZJCellProtocol {
     func cellPrepared() {
         textLabel?.text = item.labelText
         textLabel?.textAlignment = item.textAlignment

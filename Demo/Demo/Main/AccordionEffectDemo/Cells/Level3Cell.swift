@@ -18,11 +18,8 @@ class Level3CellItem: ZJAccordionItem {
     }
 }
 
-class Level3Cell: UITableViewCell, ZJCellProtocol {
+class Level3Cell: ZJCell<Level3CellItem>, ZJCellProtocol {
     @IBOutlet weak var titleL: UILabel!
-    var item: Level3CellItem!
-
-    typealias ZJCellItemClass = Level3CellItem
 
     func cellPrepared() {
         titleL.text = item.title

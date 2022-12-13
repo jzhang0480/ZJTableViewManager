@@ -11,39 +11,18 @@ import UIKit
 
 // MARK: - ZJTableViewCellProtocol
 
-public protocol ZJItemProtocol where Self: ZJTableViewItem {}
-
-public protocol ZJInternalCellProtocol where Self: UITableViewCell {
-    var _item: ZJItemProtocol? { get set }
+public protocol ZJCellProtocol: UITableViewCell {
     func cellPrepared()
     func cellWillAppear()
     func cellDidAppear()
     func cellDidDisappear()
 }
 
-public extension ZJInternalCellProtocol {
+public extension ZJCellProtocol {
     func cellWillAppear() {}
     func cellDidAppear() {}
     func cellDidDisappear() {}
 }
-
-public protocol ZJCellProtocol: ZJInternalCellProtocol {
-    associatedtype ZJCellItemClass: ZJItemProtocol
-    var item: ZJCellItemClass! { get set }
-}
-
-public extension ZJCellProtocol {
-    var _item: ZJItemProtocol? {
-        get {
-            return item
-        }
-        set {
-            item = (newValue as! Self.ZJCellItemClass)
-        }
-    }
-}
-
-extension ZJTableViewItem: ZJItemProtocol {}
 
 // MARK: - ZJTableViewScrollDelegate
 

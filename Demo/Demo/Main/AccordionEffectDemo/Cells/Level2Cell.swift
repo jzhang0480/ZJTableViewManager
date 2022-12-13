@@ -16,10 +16,7 @@ class Level2CellItem: ZJAccordionItem {
     }
 }
 
-class Level2Cell: UITableViewCell, ZJCellProtocol {
-    var item: Level2CellItem!
-
-    typealias ZJCellItemClass = Level2CellItem
+class Level2Cell: ZJCell<Level2CellItem>, ZJCellProtocol {
 
     func cellPrepared() {}
 

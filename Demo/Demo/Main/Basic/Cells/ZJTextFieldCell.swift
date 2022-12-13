@@ -27,10 +27,7 @@ open class ZJTextFieldItem: ZJTableViewItem {
     }
 }
 
-open class ZJTextFieldCell: UITableViewCell, ZJCellProtocol {
-    public var item: ZJTextFieldItem!
-
-    public typealias ZJCellItemClass = ZJTextFieldItem
+open class ZJTextFieldCell: ZJCell<ZJTextFieldItem>, ZJCellProtocol {
 
     @IBOutlet var titleConstraint: NSLayoutConstraint!
     @IBOutlet var labelTitle: UILabel!

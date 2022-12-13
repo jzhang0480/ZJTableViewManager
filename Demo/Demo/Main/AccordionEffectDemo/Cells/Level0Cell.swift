@@ -17,11 +17,8 @@ class Level0CellItem: ZJAccordionItem {
     }
 }
 
-class Level0Cell: UITableViewCell, ZJCellProtocol {
+class Level0Cell: ZJCell<Level0CellItem>, ZJCellProtocol {
     @IBOutlet var labelTitle: UILabel!
-    var item: Level0CellItem!
-
-    typealias ZJCellItemClass = Level0CellItem
 
     func cellPrepared() {
         labelTitle.text = item.title

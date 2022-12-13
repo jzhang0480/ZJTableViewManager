@@ -31,10 +31,7 @@ class CardTableViewCellItem: ZJTableViewItem {
     }
 }
 
-class CardTableViewCell: UITableViewCell, ZJCellProtocol {
-    var item: CardTableViewCellItem!
-
-    typealias ZJCellItemClass = CardTableViewCellItem
+class CardTableViewCell: ZJCell<CardTableViewCellItem>, ZJCellProtocol {
 
     @IBOutlet var cardView: UIView!
     @IBOutlet var cardImg: UIImageView!

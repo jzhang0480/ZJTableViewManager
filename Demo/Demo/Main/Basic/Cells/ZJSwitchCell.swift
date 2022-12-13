@@ -21,10 +21,7 @@ class ZJSwitchItem: ZJTableViewItem {
     }
 }
 
-class ZJSwitchCell: UITableViewCell, ZJCellProtocol {
-    var item: ZJSwitchItem!
-
-    typealias ZJCellItemClass = ZJSwitchItem
+class ZJSwitchCell: ZJCell<ZJSwitchItem>, ZJCellProtocol {
 
     @IBOutlet var labelTitle: UILabel!
     @IBOutlet var switchButton: UISwitch!

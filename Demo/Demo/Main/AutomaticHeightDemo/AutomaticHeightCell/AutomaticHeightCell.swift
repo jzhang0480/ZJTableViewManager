@@ -14,10 +14,7 @@ class AutomaticHeightCellItem: ZJTableViewItem {
 }
 
 /// 支持系统autolayout搭建的cell（xib以及snapkit等基于autolayout的约束框架都是支持的）
-class AutomaticHeightCell: UITableViewCell, ZJCellProtocol {
-    var item: AutomaticHeightCellItem!
-
-    typealias ZJCellItemClass = AutomaticHeightCellItem
+class AutomaticHeightCell: ZJCell<AutomaticHeightCellItem>, ZJCellProtocol {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var contentLabel: UILabel!
     @IBOutlet var contentImageView: UIImageView!

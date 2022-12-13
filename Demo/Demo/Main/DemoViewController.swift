@@ -31,7 +31,7 @@ class DemoViewController: UIViewController {
             item.accessoryType = .disclosureIndicator
             section.add(item: item)
 
-            item.setSelectionHandler { _ in
+            item.setSelectionHandler {[unowned self] _ in
 
                 if i == "Basic" {
                     let vc = BasicViewController()

@@ -10,7 +10,11 @@ import UIKit
 
 public typealias ZJTableViewItemBlock = (ZJTableViewItem) -> Void
 
-open class ZJTableViewItem: NSObject {
+open class ZJBaseItem: NSObject {
+    public var cellHeight: CGFloat!
+}
+
+open class ZJTableViewItem: ZJBaseItem {
     public var tableVManager: ZJTableViewManager {
         return section.tableViewManager
     }
@@ -27,9 +31,7 @@ open class ZJTableViewItem: NSObject {
     }
 
     public var cellIdentifier: String!
-    /// cell高度(如果要自动计算高度，使用autoHeight(manager:)方法，框架会算出高度，具体看demo)
-    /// 传UITableViewAutomaticDimension则是系统实时计算高度，可能会有卡顿、reload弹跳等问题，不建议使用，有特殊需要可以选择使用
-    public var cellHeight: CGFloat!
+
     /// cell点击事件的回调
     public var selectionHandler: ZJTableViewItemBlock?
     public func setSelectionHandler<T: ZJTableViewItem>(_ handler: ((_ callBackItem: T) -> Void)?) {
@@ -51,6 +53,7 @@ open class ZJTableViewItem: NSObject {
     public var isSelected: Bool {
         return cell.isSelected
     }
+
     public var isAllowSelect: Bool = true
 
     public var indexPath: IndexPath {
@@ -105,13 +108,15 @@ open class ZJTableViewItem: NSObject {
     /// - Parameters:
     ///   - manager: 当前tableview的manager
     public func autoHeight(_ manager: ZJTableViewManager) {
-        guard let cell = manager.tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? ZJInternalCellProtocol else {
-            zj_log("please register cell")
-            return
+        let unwrappedCell = manager.tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
+
+        if let cell = unwrappedCell as? ZJBaseCell {
+            cell._item = self
         }
 
-        cell._item = self
-        cell.cellPrepared()
-        cellHeight = cell.systemLayoutSizeFitting(CGSize(width: manager.tableView.frame.width, height: 0), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel).height
+        if let cell = unwrappedCell as? ZJCellProtocol {
+            cell.cellPrepared()
+        }
+        cellHeight = unwrappedCell?.systemLayoutSizeFitting(CGSize(width: manager.tableView.frame.width, height: 0), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel).height ?? 0
     }
 }

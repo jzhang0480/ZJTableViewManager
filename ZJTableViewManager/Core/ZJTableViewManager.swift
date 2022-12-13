@@ -76,7 +76,7 @@ open class ZJTableViewManager: NSObject {
         tableView.endUpdates()
     }
 
-    public func register(_ cell: ZJInternalCellProtocol.Type, _ item: ZJTableViewItem.Type, _ bundle: Bundle = Bundle.main) {
+    public func register(_ cell: ZJCellProtocol.Type, _ item: ZJTableViewItem.Type, _ bundle: Bundle = Bundle.main) {
         zj_log("\(cell) registered")
         if bundle.path(forResource: "\(cell)", ofType: "nib") != nil {
             tableView.register(UINib(nibName: "\(cell)", bundle: bundle), forCellReuseIdentifier: "\(item)")
@@ -158,11 +158,11 @@ extension ZJTableViewManager: UITableViewDelegate {
     }
 
     public func tableView(_: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt _: IndexPath) {
-        (cell as! ZJInternalCellProtocol).cellDidDisappear()
+        (cell as! ZJCellProtocol).cellDidDisappear()
     }
 
     public func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt _: IndexPath) {
-        (cell as! ZJInternalCellProtocol).cellWillAppear()
+        (cell as! ZJCellProtocol).cellWillAppear()
     }
 
     public func tableView(_: UITableView, willDisplayHeaderView _: UIView, forSection section: Int) {
@@ -258,16 +258,22 @@ extension ZJTableViewManager: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let (_, item) = getSectionAndItem(indexPath: (indexPath.section, indexPath.row))
 
-        var cell = tableView.dequeueReusableCell(withIdentifier: item.cellIdentifier) as? ZJInternalCellProtocol
+        var cell = tableView.dequeueReusableCell(withIdentifier: item.cellIdentifier)
         if cell == nil {
             let systemStyleItem = item as! ZJSystemStyleItem
-            cell = (ZJSystemStyleCell(style: systemStyleItem.style, reuseIdentifier: systemStyleItem.cellIdentifier) as ZJInternalCellProtocol)
+            cell = (ZJSystemStyleCell(style: systemStyleItem.style, reuseIdentifier: systemStyleItem.cellIdentifier) as ZJCellProtocol)
         }
-        let unwrappedCell = cell!
-        unwrappedCell.selectionStyle = item.selectionStyle
-        unwrappedCell._item = item
-        unwrappedCell.cellPrepared()
-        return unwrappedCell
+        
+        cell?.selectionStyle = item.selectionStyle
+        if let baseCell = cell as? ZJBaseCell {
+            print(baseCell)
+            baseCell._item = item
+        }
+
+        if let protocolCell = cell as? ZJCellProtocol {
+            protocolCell.cellPrepared()
+        }
+        return cell!
     }
 }
 

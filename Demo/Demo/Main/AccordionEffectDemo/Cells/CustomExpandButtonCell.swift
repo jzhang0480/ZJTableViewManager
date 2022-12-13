@@ -34,9 +34,8 @@ class CustomExpandButtonCellItem: ZJAccordionItem {
     }
 }
 
-class CustomExpandButtonCell: UITableViewCell, ZJCellProtocol {
-    var item: CustomExpandButtonCellItem!
-    typealias ZJCellItemClass = CustomExpandButtonCellItem
+class CustomExpandButtonCell: ZJCell<CustomExpandButtonCellItem>, ZJCellProtocol {
+    
     @IBOutlet var btnExpand: UIButton!
     @IBOutlet var labelTitle: UILabel!
     func cellPrepared() {
