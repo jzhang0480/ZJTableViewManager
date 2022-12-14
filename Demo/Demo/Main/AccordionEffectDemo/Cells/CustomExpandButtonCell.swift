@@ -9,7 +9,8 @@
 import UIKit
 import ZJTableViewManager
 
-class CustomExpandButtonCellItem: ZJAccordionItem {
+class CustomExpandButtonCellItem: ZJAccordionItem, ZJItemable {
+    static var cellClass: ZJBaseCell.Type { CustomExpandButtonCell.self }
     var title: String?
     var buttonTapCallBack: ((CustomExpandButtonCellItem) -> Void)?
 
@@ -34,7 +35,7 @@ class CustomExpandButtonCellItem: ZJAccordionItem {
     }
 }
 
-class CustomExpandButtonCell: ZJCell<CustomExpandButtonCellItem>, ZJCellProtocol {
+class CustomExpandButtonCell: ZJCell<CustomExpandButtonCellItem>, ZJCellable {
     
     @IBOutlet var btnExpand: UIButton!
     @IBOutlet var labelTitle: UILabel!

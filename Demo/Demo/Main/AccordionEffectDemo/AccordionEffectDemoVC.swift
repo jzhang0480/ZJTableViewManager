@@ -18,11 +18,6 @@ class AccordionEffectDemoVC: UIViewController {
         super.viewDidLoad()
         title = "AccordionEffect"
         manager = ZJAccordionManager(tableView: tableView)
-        manager.register(Level0Cell.self, Level0CellItem.self)
-        manager.register(Level1Cell.self, Level1CellItem.self)
-        manager.register(Level2Cell.self, Level2CellItem.self)
-        manager.register(Level3Cell.self, Level3CellItem.self)
-        manager.register(CustomExpandButtonCell.self, CustomExpandButtonCellItem.self)
 
         manager.add(section: section)
         defaultExpandItems()

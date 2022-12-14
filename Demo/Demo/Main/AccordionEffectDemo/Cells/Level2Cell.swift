@@ -9,14 +9,15 @@
 import UIKit
 import ZJTableViewManager
 
-class Level2CellItem: ZJAccordionItem {
+class Level2CellItem: ZJAccordionItem, ZJItemable {
+    static var cellClass: ZJBaseCell.Type { Level2Cell.self }
     override init() {
         super.init()
         self.cellHeight = 50
     }
 }
 
-class Level2Cell: ZJCell<Level2CellItem>, ZJCellProtocol {
+class Level2Cell: ZJCell<Level2CellItem>, ZJCellable {
 
     func cellPrepared() {}
 

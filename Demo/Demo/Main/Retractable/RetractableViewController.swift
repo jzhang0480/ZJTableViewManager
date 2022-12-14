@@ -22,7 +22,7 @@ class RetractableViewController: UIViewController {
         tableView.tableFooterView = UIView()
 
         // Add main section
-        let section = ZJTableViewSection()
+        let section = ZJSection()
         manager.add(section: section)
 
         var collapsedItems: [ZJSystemStyleItem] = []
@@ -37,10 +37,10 @@ class RetractableViewController: UIViewController {
         moreItem.accessoryType = .disclosureIndicator
         collapsedItems.append(moreItem)
         moreItem.setSelectionHandler { _ in
-            section.replaceItemsFrom(array: expandedItems)
+            section.replaceItemsFrom(items: expandedItems)
             section.reload(UITableView.RowAnimation.automatic)
         }
-        section.replaceItemsFrom(array: collapsedItems)
+        section.replaceItemsFrom(items: collapsedItems)
 
         // expanded
         for i in 1 ... 7 {
@@ -51,7 +51,7 @@ class RetractableViewController: UIViewController {
         lessItem.accessoryType = .disclosureIndicator
 
         lessItem.setSelectionHandler { _ in
-            section.replaceItemsFrom(array: collapsedItems)
+            section.replaceItemsFrom(items: collapsedItems)
             section.reload(UITableView.RowAnimation.automatic)
         }
         expandedItems.append(lessItem)

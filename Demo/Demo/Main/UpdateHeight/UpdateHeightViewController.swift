@@ -12,7 +12,7 @@ import ZJTableViewManager
 class UpdateHeightViewController: UIViewController {
     var tableView: UITableView!
     var manager: ZJTableViewManager!
-    var section: ZJTableViewSection!
+    var section: ZJSection!
     var lastOpenItem: CardTableViewCellItem?
 
     override func viewDidLoad() {
@@ -22,8 +22,8 @@ class UpdateHeightViewController: UIViewController {
         tableView.separatorStyle = .none
         view.addSubview(tableView)
         manager = ZJTableViewManager(tableView: tableView)
-        manager.register(CardTableViewCell.self, CardTableViewCellItem.self)
-        section = ZJTableViewSection()
+//        manager.register(CardTableViewCell.self, CardTableViewCellItem.self)
+        section = ZJSection()
         manager.add(section: section)
 
         for index in 0 ..< 5 {

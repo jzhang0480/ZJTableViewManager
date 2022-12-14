@@ -9,14 +9,17 @@
 import UIKit
 import ZJTableViewManager
 
-class SelectionCellItem: ZJTableViewItem {
+class SelectionCellItem: ZJItem, ZJItemable {
+    static var cellClass: ZJBaseCell.Type { SelectionCell.self }
+    
+    
     override init() {
         super.init()
         selectionStyle = .none
     }
 }
 
-class SelectionCell: ZJCell<SelectionCellItem>, ZJCellProtocol {
+class SelectionCell: ZJCell<SelectionCellItem>, ZJCellable {
     
     @IBOutlet var img: UIImageView!
     @IBOutlet var titleL: UILabel!

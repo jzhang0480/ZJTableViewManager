@@ -12,7 +12,7 @@ import ZJTableViewManager
 class AutomaticHeightViewController: UIViewController {
     var tableView: UITableView!
     var manager: ZJTableViewManager!
-    var section = ZJTableViewSection()
+    var section = ZJSection()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ class AutomaticHeightViewController: UIViewController {
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.addSubview(tableView)
         manager = ZJTableViewManager(tableView: tableView)
-        manager.register(AutomaticHeightCell.self, AutomaticHeightCellItem.self)
+//        manager.register(AutomaticHeightCell.self, AutomaticHeightCellItem.self)
         manager.add(section: section)
 
         // 模拟网络请求

@@ -21,13 +21,13 @@ class BasicViewController: UIViewController {
         view.addSubview(tableView)
         manager = ZJTableViewManager(tableView: tableView)
 
-        manager.register(ZJTextCell.self, ZJTextItem.self)
-        manager.register(ZJTextFieldCell.self, ZJTextFieldItem.self)
-        manager.register(ZJSwitchCell.self, ZJSwitchItem.self)
+//        manager.register(ZJTextCell.self, ZJTextItem.self)
+//        manager.register(ZJTextFieldCell.self, ZJTextFieldItem.self)
+//        manager.register(ZJSwitchCell.self, ZJSwitchItem.self)
 
         // Custom SectionHeader
         let headerView = CustomSectionHeaderView.view()
-        let section = ZJTableViewSection(headerView: headerView)
+        let section = ZJSection(headerView: headerView)
         manager.add(section: section)
 
         // Custom Cell

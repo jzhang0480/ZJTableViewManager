@@ -21,7 +21,7 @@ class EditingViewController: UIViewController {
         view.addSubview(tableView)
         manager = ZJTableViewManager(tableView: tableView)
 
-        var section = ZJTableViewSection(headerTitle: "DELETEABLE")
+        var section = ZJSection(headerTitle: "DELETEABLE")
         manager.add(section: section)
         for i in 0 ... 3 {
             let item = ZJSystemStyleItem(text: "section 0, row " + String(i))
@@ -32,7 +32,7 @@ class EditingViewController: UIViewController {
             section.add(item: item)
         }
 
-        section = ZJTableViewSection(headerTitle: "Deletable with confirmation")
+        section = ZJSection(headerTitle: "Deletable with confirmation")
         manager.add(section: section)
         for i in 0 ... 3 {
             let item = ZJSystemStyleItem(text: "section 1, row " + String(i))

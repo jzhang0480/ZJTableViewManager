@@ -11,14 +11,14 @@ import UIKit
 
 // MARK: - ZJTableViewCellProtocol
 
-public protocol ZJCellProtocol: UITableViewCell {
+public protocol ZJCellable: UITableViewCell {
     func cellPrepared()
     func cellWillAppear()
     func cellDidAppear()
     func cellDidDisappear()
 }
 
-public extension ZJCellProtocol {
+public extension ZJCellable {
     func cellWillAppear() {}
     func cellDidAppear() {}
     func cellDidDisappear() {}
@@ -78,33 +78,33 @@ public protocol ZJTableViewScrollDelegate: NSObjectProtocol {
 // MARK: - ZJTableViewScrollDelegate Default Implementation
 
 public extension ZJTableViewScrollDelegate {
-    func scrollViewDidScroll(_: UIScrollView) {}
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {}
 
-    func scrollViewDidZoom(_: UIScrollView) {}
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {}
 
-    func scrollViewWillBeginDragging(_: UIScrollView) {}
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {}
 
-    func scrollViewWillEndDragging(_: UIScrollView, withVelocity _: CGPoint, targetContentOffset _: UnsafeMutablePointer<CGPoint>) {}
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity _: CGPoint, targetContentOffset _: UnsafeMutablePointer<CGPoint>) {}
 
-    func scrollViewDidEndDragging(_: UIScrollView, willDecelerate _: Bool) {}
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate _: Bool) {}
 
-    func scrollViewWillBeginDecelerating(_: UIScrollView) {}
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {}
 
-    func scrollViewDidEndDecelerating(_: UIScrollView) {}
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {}
 
-    func scrollViewDidEndScrollingAnimation(_: UIScrollView) {}
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {}
 
-    func viewForZooming(in _: UIScrollView) -> UIView? { return nil }
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? { return nil }
 
-    func scrollViewWillBeginZooming(_: UIScrollView, with _: UIView?) {}
+    func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with _: UIView?) {}
 
-    func scrollViewDidEndZooming(_: UIScrollView, with _: UIView?, atScale _: CGFloat) {}
+    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with _: UIView?, atScale _: CGFloat) {}
 
-    func scrollViewShouldScrollToTop(_: UIScrollView) -> Bool { return true }
+    func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool { return true }
 
-    func scrollViewDidScrollToTop(_: UIScrollView) {}
+    func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {}
 
-    func scrollViewDidChangeAdjustedContentInset(_: UIScrollView) {}
+    func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView) {}
 }
 
 // MARK: - UIScrollViewDelegate

@@ -8,7 +8,8 @@
 
 import UIKit
 
-open class ZJSystemStyleItem: ZJTableViewItem {
+open class ZJSystemStyleItem: ZJItem, ZJItemable {
+    public static var cellClass: ZJBaseCell.Type { return ZJSystemStyleCell.self }
     public var labelText: String?
     public var detailLabelText: String?
     public var textAlignment: NSTextAlignment = .left
@@ -25,8 +26,8 @@ open class ZJSystemStyleItem: ZJTableViewItem {
     }
 }
 
-class ZJSystemStyleCell: ZJCell<ZJSystemStyleItem>, ZJCellProtocol {
-    func cellPrepared() {
+public class ZJSystemStyleCell: ZJCell<ZJSystemStyleItem>, ZJCellable {
+    public func cellPrepared() {
         textLabel?.text = item.labelText
         textLabel?.textAlignment = item.textAlignment
         detailTextLabel?.text = item.detailLabelText

@@ -9,12 +9,12 @@
 import UIKit
 import ZJTableViewManager
 
-class AutomaticHeightCellItem: ZJTableViewItem {
+class AutomaticHeightCellItem: ZJItem , ZJItemable {
+    static var cellClass: ZJBaseCell.Type { AutomaticHeightCell.self }
     var feed: Feed!
 }
 
-/// 支持系统autolayout搭建的cell（xib以及snapkit等基于autolayout的约束框架都是支持的）
-class AutomaticHeightCell: ZJCell<AutomaticHeightCellItem>, ZJCellProtocol {
+class AutomaticHeightCell: ZJCell<AutomaticHeightCellItem>, ZJCellable {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var contentLabel: UILabel!
     @IBOutlet var contentImageView: UIImageView!
@@ -30,7 +30,13 @@ class AutomaticHeightCell: ZJCell<AutomaticHeightCellItem>, ZJCellProtocol {
     func cellPrepared() {
         titleLabel.text = item.feed.title
         contentLabel.text = item.feed.content
-        contentImageView.image = UIImage(named: item.feed.imageName)
+        if item.feed.imageName.isEmpty == false {
+            contentImageView.isHidden = false
+            contentImageView.image = UIImage(named: item.feed.imageName)
+        } else {
+            contentImageView.isHidden = true
+        }
+        
         usernameLabel.text = item.feed.username
         timeLabel.text = item.feed.time
     }

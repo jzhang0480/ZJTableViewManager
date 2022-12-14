@@ -10,7 +10,7 @@ import UIKit
 
 public func zj_log(_ item: Any, file: String = #file, line: Int = #line) {
     if ZJTableViewManager.isDebug {
-        var logEntry: String = String()
+        var logEntry = String()
         if let fileName = file.components(separatedBy: "/").last {
             logEntry.append("[\(fileName):\(line)] ")
         }
@@ -19,22 +19,23 @@ public func zj_log(_ item: Any, file: String = #file, line: Int = #line) {
 }
 
 open class ZJTableViewManager: NSObject {
+    private lazy var registeredIdentifier: Set<String> = []
     public static var isDebug = false
     public weak var scrollDelegate: ZJTableViewScrollDelegate?
     public var tableView: UITableView!
-    public var sections: [ZJTableViewSection] = []
+    public var sections: [ZJSection] = []
     var defaultTableViewSectionHeight: CGFloat {
         return tableView.style == .grouped ? 44 : 0
     }
 
-    public func selectedItem<T: ZJTableViewItem>() -> T? {
+    public func selectedItem<T: ZJItem>() -> T? {
         if let item = selectedItems().first {
             return item as? T
         }
         return nil
     }
 
-    public func selectedItems<T: ZJTableViewItem>() -> [T] {
+    public func selectedItems<T: ZJItem>() -> [T] {
         if let indexPaths = tableView.indexPathsForSelectedRows {
             var items = [T]()
             for idx in indexPaths {
@@ -47,13 +48,13 @@ open class ZJTableViewManager: NSObject {
         return []
     }
 
-    public func selectItems(_ items: [ZJTableViewItem], animated: Bool = true, scrollPosition: UITableView.ScrollPosition = .none) {
+    public func selectItems(_ items: [ZJItem], animated: Bool = true, scrollPosition: UITableView.ScrollPosition = .none) {
         for item in items {
             item.select(animated: animated, scrollPosition: scrollPosition)
         }
     }
 
-    public func deselectItems(_ items: [ZJTableViewItem], animated: Bool = true) {
+    public func deselectItems(_ items: [ZJItem], animated: Bool = true) {
         for item in items {
             item.deselect(animated: animated)
         }
@@ -76,30 +77,45 @@ open class ZJTableViewManager: NSObject {
         tableView.endUpdates()
     }
 
-    public func register(_ cell: ZJCellProtocol.Type, _ item: ZJTableViewItem.Type, _ bundle: Bundle = Bundle.main) {
-        zj_log("\(cell) registered")
-        if bundle.path(forResource: "\(cell)", ofType: "nib") != nil {
-            tableView.register(UINib(nibName: "\(cell)", bundle: bundle), forCellReuseIdentifier: "\(item)")
-        } else {
-            tableView.register(cell, forCellReuseIdentifier: "\(item)")
+    public func register(_ itemClasses: [ZJItemable.Type], _ bundle: Bundle = Bundle.main) {
+        for itemClass in itemClasses {
+            register(itemClass, bundle)
         }
     }
 
-    func sectionFrom(section: Int) -> ZJTableViewSection {
+    public func register(_ itemClass: ZJItemable.Type, _ bundle: Bundle = Bundle.main) {
+        let cell = itemClass.cellClass
+        let cellClass = "\(cell)"
+        let reuseIdentifier = "\(itemClass)"
+
+        guard !registeredIdentifier.contains(reuseIdentifier) else {
+            return
+        }
+
+        registeredIdentifier.insert(reuseIdentifier)
+        if bundle.path(forResource: cellClass, ofType: "nib") != nil {
+            tableView.register(UINib(nibName: cellClass, bundle: bundle), forCellReuseIdentifier: reuseIdentifier)
+        } else {
+            tableView.register(cell, forCellReuseIdentifier: reuseIdentifier)
+        }
+        zj_log(cellClass + " registered")
+    }
+
+    func sectionFrom(section: Int) -> ZJSection {
         let section = sections.count > section ? sections[section] : nil
         assert(section != nil, "section out of range")
         return section!
     }
 
-    func getSectionAndItem(indexPath: (section: Int, row: Int)) -> (section: ZJTableViewSection, item: ZJTableViewItem) {
+    func getSectionAndItem(indexPath: (section: Int, row: Int)) -> (section: ZJSection, item: ZJItem) {
         let section = sectionFrom(section: indexPath.section)
         let item = section.items.count > indexPath.row ? section.items[indexPath.row] : nil
         assert(item != nil, "row out of range")
         return (section, item!)
     }
 
-    public func add(section: ZJTableViewSection) {
-        if !section.isKind(of: ZJTableViewSection.self) {
+    public func add(section: ZJSection) {
+        if !section.isKind(of: ZJSection.self) {
             zj_log("error section class")
             return
         }
@@ -108,11 +124,11 @@ open class ZJTableViewManager: NSObject {
     }
 
     public func remove(section: Any) {
-        if !(section as AnyObject).isKind(of: ZJTableViewSection.self) {
+        if !(section as AnyObject).isKind(of: ZJSection.self) {
             zj_log("error section class")
             return
         }
-        sections.remove(at: sections.zj_indexOf(section as! ZJTableViewSection))
+        sections.remove(at: sections.zj_indexOf(section as! ZJSection))
     }
 
     public func removeAllSections() {
@@ -127,7 +143,6 @@ open class ZJTableViewManager: NSObject {
 // MARK: - UITableViewDelegate
 
 extension ZJTableViewManager: UITableViewDelegate {
-    
     public func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         let obj = getSectionAndItem(indexPath: (section: indexPath.section, row: indexPath.row))
         if obj.item.isAllowSelect {
@@ -136,7 +151,7 @@ extension ZJTableViewManager: UITableViewDelegate {
             return nil
         }
     }
-    
+
     public func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         let obj = getSectionAndItem(indexPath: (indexPath.section, indexPath.row))
         obj.item.selectionHandler?(obj.item)
@@ -158,11 +173,11 @@ extension ZJTableViewManager: UITableViewDelegate {
     }
 
     public func tableView(_: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt _: IndexPath) {
-        (cell as! ZJCellProtocol).cellDidDisappear()
+        (cell as! ZJCellable).cellDidDisappear()
     }
 
     public func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt _: IndexPath) {
-        (cell as! ZJCellProtocol).cellWillAppear()
+        (cell as! ZJCellable).cellWillAppear()
     }
 
     public func tableView(_: UITableView, willDisplayHeaderView _: UIView, forSection section: Int) {
@@ -253,24 +268,18 @@ extension ZJTableViewManager: UITableViewDataSource {
         let sectionModel = sectionFrom(section: section)
         return sectionModel.items.count
     }
-    
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let (_, item) = getSectionAndItem(indexPath: (indexPath.section, indexPath.row))
 
-        var cell = tableView.dequeueReusableCell(withIdentifier: item.cellIdentifier)
-        if cell == nil {
-            let systemStyleItem = item as! ZJSystemStyleItem
-            cell = (ZJSystemStyleCell(style: systemStyleItem.style, reuseIdentifier: systemStyleItem.cellIdentifier) as ZJCellProtocol)
-        }
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: item.cellIdentifier)
+
         cell?.selectionStyle = item.selectionStyle
         if let baseCell = cell as? ZJBaseCell {
-            print(baseCell)
             baseCell._item = item
         }
 
-        if let protocolCell = cell as? ZJCellProtocol {
+        if let protocolCell = cell as? ZJCellable {
             protocolCell.cellPrepared()
         }
         return cell!

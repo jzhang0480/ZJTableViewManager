@@ -9,7 +9,8 @@
 import UIKit
 import ZJTableViewManager
 
-class Level3CellItem: ZJAccordionItem {
+class Level3CellItem: ZJAccordionItem, ZJItemable {
+    static var cellClass: ZJBaseCell.Type { Level3Cell.self }
     var title: String?
     convenience init(title: String?) {
         self.init()
@@ -18,7 +19,7 @@ class Level3CellItem: ZJAccordionItem {
     }
 }
 
-class Level3Cell: ZJCell<Level3CellItem>, ZJCellProtocol {
+class Level3Cell: ZJCell<Level3CellItem>, ZJCellable {
     @IBOutlet weak var titleL: UILabel!
 
     func cellPrepared() {

@@ -22,7 +22,7 @@ class DemoViewController: UIViewController {
         manager = ZJTableViewManager(tableView: tableView)
 
         tableView.tableFooterView = UIView()
-        let section = ZJTableViewSection()
+        let section = ZJSection()
         manager.add(section: section)
 
         let titles = ["Basic", "Retractable", "Edit", "Sections", "AutomaticHeight", "AccordionEffect", "UpdateHeight", "Selection"]

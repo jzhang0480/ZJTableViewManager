@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class ZJAccordionSection: ZJTableViewSection {
+open class ZJAccordionSection: ZJSection {
 
     public func add(item: ZJAccordionItem, parentItem: ZJAccordionItem?, isExpand: Bool = false) {
         item.isExpand = isExpand
@@ -22,10 +22,10 @@ open class ZJAccordionSection: ZJTableViewSection {
             item.parentItem = parentItem
             item.level = parentItem.level + 1
             if checkVisible(parentItem), parentItem.isExpand {
-                add(item: item)
+                add(item: item as! ZJItemable)
             }
         } else {
-            add(item: item)
+            add(item: item as! ZJItemable)
         }
     }
 
@@ -48,7 +48,7 @@ open class ZJAccordionSection: ZJTableViewSection {
 
 open class ZJAccordionManager: ZJTableViewManager {}
 
-open class ZJAccordionItem: ZJTableViewItem {
+open class ZJAccordionItem: ZJItem {
     public fileprivate(set) var level: Int = 0
     public fileprivate(set) var isExpand = false
     public fileprivate(set) var childItems = [ZJAccordionItem]()
@@ -117,7 +117,7 @@ open class ZJAccordionItem: ZJTableViewItem {
         }
 
         let newFirstIndex = section.items.zj_indexOf(self) + 1
-        section.items.insert(contentsOf: waitForInsertItems, at: newFirstIndex)
+        section.insert(contentsOf: waitForInsertItems, at: newFirstIndex)
         var insertIndexPaths = [IndexPath]()
         for i in 0 ..< waitForInsertItems.count {
             waitForInsertItems[i].section = section

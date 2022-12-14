@@ -1,5 +1,5 @@
 //
-//  ZJTableViewItem.swift
+//  ZJItem.swift
 //  NewRetail
 //
 //  Created by Javen on 2018/2/8.
@@ -8,40 +8,28 @@
 
 import UIKit
 
-public typealias ZJTableViewItemBlock = (ZJTableViewItem) -> Void
+public typealias ZJTableViewItemBlock = (ZJItem) -> Void
 
-open class ZJBaseItem: NSObject {
-    public var cellHeight: CGFloat!
+public protocol ZJItemable: ZJItem {
+    static var cellClass: ZJBaseCell.Type { get }
 }
 
-open class ZJTableViewItem: ZJBaseItem {
-    public var tableVManager: ZJTableViewManager {
-        return section.tableViewManager
-    }
-
-    private weak var _section: ZJTableViewSection?
-    public var section: ZJTableViewSection {
-        set {
-            _section = newValue
-        }
-        get {
-            guard let s = _section else { fatalError() }
-            return s
-        }
-    }
-
+open class ZJItem: NSObject {
+    public var cellHeight: CGFloat!
+    public var tableVManager: ZJTableViewManager { section.tableViewManager }
+    public var section: ZJSection!
     public var cellIdentifier: String!
 
     /// cell点击事件的回调
     public var selectionHandler: ZJTableViewItemBlock?
-    public func setSelectionHandler<T: ZJTableViewItem>(_ handler: ((_ callBackItem: T) -> Void)?) {
+    public func setSelectionHandler<T: ZJItem>(_ handler: ((_ callBackItem: T) -> Void)?) {
         selectionHandler = { item in
             handler?(item as! T)
         }
     }
 
     public var deletionHandler: ZJTableViewItemBlock?
-    public func setDeletionHandler<T: ZJTableViewItem>(_ handler: ((_ callBackItem: T) -> Void)?) {
+    public func setDeletionHandler<T: ZJItem>(_ handler: ((_ callBackItem: T) -> Void)?) {
         deletionHandler = { item in
             handler?(item as! T)
         }
@@ -54,7 +42,7 @@ open class ZJTableViewItem: ZJBaseItem {
         return cell.isSelected
     }
 
-    public var isAllowSelect: Bool = true
+    public var isAllowSelect = true
 
     public var indexPath: IndexPath {
         let rowIndex = self.section.items.zj_indexOf(self)
@@ -99,7 +87,7 @@ open class ZJTableViewItem: ZJBaseItem {
             return
         }
         let indexPath = self.indexPath
-        section.items.remove(at: indexPath.row)
+        section.remove(at: indexPath.row)
         tableVManager.tableView.deleteRows(at: [indexPath], with: animation)
     }
 
@@ -108,13 +96,15 @@ open class ZJTableViewItem: ZJBaseItem {
     /// - Parameters:
     ///   - manager: 当前tableview的manager
     public func autoHeight(_ manager: ZJTableViewManager) {
+        manager.register([type(of: self) as! ZJItemable.Type])
+
         let unwrappedCell = manager.tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
 
         if let cell = unwrappedCell as? ZJBaseCell {
             cell._item = self
         }
 
-        if let cell = unwrappedCell as? ZJCellProtocol {
+        if let cell = unwrappedCell as? ZJCellable {
             cell.cellPrepared()
         }
         cellHeight = unwrappedCell?.systemLayoutSizeFitting(CGSize(width: manager.tableView.frame.width, height: 0), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel).height ?? 0

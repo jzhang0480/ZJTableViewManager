@@ -10,18 +10,18 @@
 		10ADFD2203B740C04862AEBB12DE95BB /* Pods-Demo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 938C7E1A54FAEC10DA49730DA4BA41C9 /* Pods-Demo-dummy.m */; };
 		31BCD8408CD36D68C7A90238F8A8E70A /* Pods-DemoTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E1B45C12DA62B1BA858187610EBA3E6D /* Pods-DemoTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3D8FA7568B176499D6509EDF9DA72DE2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		4C294C9B17AACDEAC67E09BDD36877D5 /* ZJTableViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794466A78D595E96E6FCD95FC82A798B /* ZJTableViewItem.swift */; };
+		4C294C9B17AACDEAC67E09BDD36877D5 /* ZJItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794466A78D595E96E6FCD95FC82A798B /* ZJItem.swift */; };
 		54A0247E4781A1373F8AA70BE620A1D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		56BF271C0E95CC22BDA000B279DBF735 /* ZJTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB785B99CE1BE26908FFD59FECBB8BA /* ZJTableViewManager.swift */; };
 		57753307D682B3265B9A5379F73FA391 /* ZJAccordionEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF76F2E4E21BEAEEB3C314F91A8F53 /* ZJAccordionEffect.swift */; };
-		66DD464E2948D11B00301E8A /* ZJBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DD464D2948D11B00301E8A /* ZJBaseCell.swift */; };
+		66DD464E2948D11B00301E8A /* ZJCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DD464D2948D11B00301E8A /* ZJCell.swift */; };
 		6A19D1973BFE0088E73E66CEC33EF29B /* Pods-Demo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 73DB61F174D1E2467095F2216A65DCB7 /* Pods-Demo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		76721A7EA2899401C885C5B37C5FC257 /* Pods-Demo-DemoUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5982964000C6EB68548D80D063F4C791 /* Pods-Demo-DemoUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7C1C4B9C1168231322F3A65FAE0594A6 /* ZJTableViewManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE910C2BDB71CD2427E07AABCBD86915 /* ZJTableViewManager-dummy.m */; };
 		841836D98DCCF5F44443109CA3D33866 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		93994B993090F7106A35F973803B87DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		A5631F81BCB900A28E26089846966592 /* ZJProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C95925D3B9D95AB3C1F2F07752B8309 /* ZJProtocol.swift */; };
-		C0993ADB8D17D5644E10DF7C934FB775 /* ZJTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A825CA87DB2BB4CDB5FDB671F010B78 /* ZJTableViewSection.swift */; };
+		C0993ADB8D17D5644E10DF7C934FB775 /* ZJSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A825CA87DB2BB4CDB5FDB671F010B78 /* ZJSection.swift */; };
 		CBE1DFD8D8B5C5DA6B69CA4B67B8066B /* Pods-Demo-DemoUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D20F2DCCBAA709EB338F5EF0A87EEB2 /* Pods-Demo-DemoUITests-dummy.m */; };
 		D6C9D5303534731BAD4BC68517B5BDFF /* Pods-DemoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4920C56CA9E6126E648166C7EDDFA8 /* Pods-DemoTests-dummy.m */; };
 		E5A74BAF64CCEA64BDDBCEDF64CA84ED /* ZJSystemStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312518004E7C82BB058416B295DC7A9 /* ZJSystemStyleCell.swift */; };
@@ -71,13 +71,13 @@
 		5982964000C6EB68548D80D063F4C791 /* Pods-Demo-DemoUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Demo-DemoUITests-umbrella.h"; sourceTree = "<group>"; };
 		5C7EC9496CF949A00EA5CC56CFB7BFA8 /* Pods-Demo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Demo.modulemap"; sourceTree = "<group>"; };
 		6471F0E3CD3708E8C00778717A81BF66 /* ZJTableViewManager */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZJTableViewManager; path = ZJTableViewManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		66DD464D2948D11B00301E8A /* ZJBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJBaseCell.swift; sourceTree = "<group>"; };
-		6A825CA87DB2BB4CDB5FDB671F010B78 /* ZJTableViewSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJTableViewSection.swift; path = ZJTableViewManager/Core/ZJTableViewSection.swift; sourceTree = "<group>"; };
+		66DD464D2948D11B00301E8A /* ZJCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJCell.swift; sourceTree = "<group>"; };
+		6A825CA87DB2BB4CDB5FDB671F010B78 /* ZJSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJSection.swift; path = ZJTableViewManager/Core/ZJSection.swift; sourceTree = "<group>"; };
 		725AD1466A904E1D00E53446E8A2EA02 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		73DB61F174D1E2467095F2216A65DCB7 /* Pods-Demo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Demo-umbrella.h"; sourceTree = "<group>"; };
 		78AA3E20F1ADD9050E7207C089BC14FB /* Pods-Demo-DemoUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Demo-DemoUITests"; path = Pods_Demo_DemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		794466A78D595E96E6FCD95FC82A798B /* ZJTableViewItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJTableViewItem.swift; path = ZJTableViewManager/Core/ZJTableViewItem.swift; sourceTree = "<group>"; };
+		794466A78D595E96E6FCD95FC82A798B /* ZJItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJItem.swift; path = ZJTableViewManager/Core/ZJItem.swift; sourceTree = "<group>"; };
 		7D20F2DCCBAA709EB338F5EF0A87EEB2 /* Pods-Demo-DemoUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Demo-DemoUITests-dummy.m"; sourceTree = "<group>"; };
 		8690D75208B1F976D4C459FEA77D86FA /* Pods-Demo-DemoUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Demo-DemoUITests-frameworks.sh"; sourceTree = "<group>"; };
 		8BA67CDF1F0AAB059E95AA11DCAA888F /* ZJTableViewManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ZJTableViewManager.modulemap; sourceTree = "<group>"; };
@@ -168,12 +168,11 @@
 		644FA4040E18AA08685F49110D327855 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				D312518004E7C82BB058416B295DC7A9 /* ZJSystemStyleCell.swift */,
-				794466A78D595E96E6FCD95FC82A798B /* ZJTableViewItem.swift */,
-				66DD464D2948D11B00301E8A /* ZJBaseCell.swift */,
+				66DD464D2948D11B00301E8A /* ZJCell.swift */,
+				794466A78D595E96E6FCD95FC82A798B /* ZJItem.swift */,
 				1C95925D3B9D95AB3C1F2F07752B8309 /* ZJProtocol.swift */,
+				6A825CA87DB2BB4CDB5FDB671F010B78 /* ZJSection.swift */,
 				0DB785B99CE1BE26908FFD59FECBB8BA /* ZJTableViewManager.swift */,
-				6A825CA87DB2BB4CDB5FDB671F010B78 /* ZJTableViewSection.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -299,6 +298,7 @@
 		E9020646176D4D38FB78A153820F40F6 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				D312518004E7C82BB058416B295DC7A9 /* ZJSystemStyleCell.swift */,
 				0ECF76F2E4E21BEAEEB3C314F91A8F53 /* ZJAccordionEffect.swift */,
 			);
 			name = Other;
@@ -501,12 +501,12 @@
 			files = (
 				57753307D682B3265B9A5379F73FA391 /* ZJAccordionEffect.swift in Sources */,
 				E5A74BAF64CCEA64BDDBCEDF64CA84ED /* ZJSystemStyleCell.swift in Sources */,
-				66DD464E2948D11B00301E8A /* ZJBaseCell.swift in Sources */,
+				66DD464E2948D11B00301E8A /* ZJCell.swift in Sources */,
 				A5631F81BCB900A28E26089846966592 /* ZJProtocol.swift in Sources */,
-				4C294C9B17AACDEAC67E09BDD36877D5 /* ZJTableViewItem.swift in Sources */,
+				4C294C9B17AACDEAC67E09BDD36877D5 /* ZJItem.swift in Sources */,
 				56BF271C0E95CC22BDA000B279DBF735 /* ZJTableViewManager.swift in Sources */,
 				7C1C4B9C1168231322F3A65FAE0594A6 /* ZJTableViewManager-dummy.m in Sources */,
-				C0993ADB8D17D5644E10DF7C934FB775 /* ZJTableViewSection.swift in Sources */,
+				C0993ADB8D17D5644E10DF7C934FB775 /* ZJSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

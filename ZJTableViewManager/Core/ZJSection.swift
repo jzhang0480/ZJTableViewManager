@@ -1,5 +1,5 @@
 //
-//  ZJTableViewSection.swift
+//  ZJSection.swift
 //  NewRetail
 //
 //  Created by Javen on 2018/2/8.
@@ -8,24 +8,12 @@
 
 import UIKit
 
-public typealias ZJTableViewSectionBlock = (ZJTableViewSection) -> Void
+public typealias ZJTableViewSectionBlock = (ZJSection) -> Void
 
-open class ZJTableViewSection: NSObject {
-    private weak var _tableViewManager: ZJTableViewManager?
-    public var tableViewManager: ZJTableViewManager {
-        set {
-            _tableViewManager = newValue
-        }
-        get {
-            guard let tableViewManager = _tableViewManager else {
-                zj_log("Please add section to manager")
-                fatalError()
-            }
-            return tableViewManager
-        }
-    }
+open class ZJSection: NSObject {
+    public var tableViewManager: ZJTableViewManager!
 
-    public var items = [ZJTableViewItem]()
+    public private(set) var items = [ZJItem]()
     public var headerHeight: CGFloat!
     public var footerHeight: CGFloat!
     public var headerView: UIView?
@@ -94,12 +82,13 @@ open class ZJTableViewSection: NSObject {
         }
     }
 
-    public func add(item: ZJTableViewItem) {
+    public func add(item: ZJItemable) {
         item.section = self
         items.append(item)
+        item.tableVManager.register(type(of: item))
     }
 
-    public func remove(item: ZJTableViewItem) {
+    public func remove(item: ZJItem) {
         // If crash at here, item not in this section
         items.remove(at: items.zj_indexOf(item))
     }
@@ -108,12 +97,36 @@ open class ZJTableViewSection: NSObject {
         items.removeAll()
     }
 
-    public func replaceItemsFrom(array: [ZJTableViewItem]!) {
-        removeAllItems()
-        items = items + array
+    public func remove(at i: Int) {
+        items.remove(at: i)
     }
 
-    public func insert(_ item: ZJTableViewItem!, afterItem: ZJTableViewItem, animate: UITableView.RowAnimation = .automatic) {
+    public func insert<C: ZJItem>(contentsOf newElements: [C], at i: Int) {
+        let noDuplicateItems = newElements.enumerated().filter { (index, value) -> Bool in
+            newElements.firstIndex(of: value) == index
+        }.map {
+            type(of: $0.element) as! ZJItemable.Type
+        }
+
+        tableViewManager.register(noDuplicateItems)
+        items.insert(contentsOf: newElements, at: i)
+    }
+
+    public func replaceItemsFrom(items: [ZJItem]!) {
+        removeAllItems()
+
+        let noDuplicateItems = items.enumerated().filter { (index, value) -> Bool in
+            items.firstIndex(of: value) == index
+        }.map {
+            type(of: $0.element) as! ZJItemable.Type
+        }
+
+        tableViewManager.register(noDuplicateItems)
+
+        self.items = items
+    }
+
+    public func insert(_ item: ZJItem!, afterItem: ZJItem, animate: UITableView.RowAnimation = .automatic) {
         if !items.contains(where: { $0 == afterItem }) {
             zj_log("can't insert because afterItem did not in sections")
             return
@@ -126,7 +139,7 @@ open class ZJTableViewSection: NSObject {
         tableViewManager.tableView.endUpdates()
     }
 
-    public func insert(_ items: [ZJTableViewItem], afterItem: ZJTableViewItem, animate: UITableView.RowAnimation = .automatic) {
+    public func insert(_ items: [ZJItem], afterItem: ZJItem, animate: UITableView.RowAnimation = .automatic) {
         if !self.items.contains(where: { $0 == afterItem }) {
             zj_log("can't insert because afterItem did not in sections")
             return
@@ -144,7 +157,7 @@ open class ZJTableViewSection: NSObject {
         tableViewManager.tableView.endUpdates()
     }
 
-    public func delete(_ itemsToDelete: [ZJTableViewItem], animate: UITableView.RowAnimation = .automatic) {
+    public func delete(_ itemsToDelete: [ZJItem], animate: UITableView.RowAnimation = .automatic) {
         guard itemsToDelete.count > 0 else { return }
         tableViewManager.tableView.beginUpdates()
         var arrNewIndexPath = [IndexPath]()

@@ -9,7 +9,8 @@
 import UIKit
 import ZJTableViewManager
 
-class ZJSwitchItem: ZJTableViewItem {
+class ZJSwitchItem: ZJItem, ZJItemable {
+    static var cellClass: ZJBaseCell.Type { ZJSwitchCell.self }
     var title: String?
     var isOn: Bool = false
     var didChanged: ((ZJSwitchItem) -> Void)?
@@ -21,7 +22,7 @@ class ZJSwitchItem: ZJTableViewItem {
     }
 }
 
-class ZJSwitchCell: ZJCell<ZJSwitchItem>, ZJCellProtocol {
+class ZJSwitchCell: ZJCell<ZJSwitchItem>, ZJCellable {
 
     @IBOutlet var labelTitle: UILabel!
     @IBOutlet var switchButton: UISwitch!

@@ -11,7 +11,9 @@ import ZJTableViewManager
 
 let openHeight: CGFloat = (UIScreen.main.bounds.size.width - 30) * (593 / 939) + 25
 let closeHeight: CGFloat = 54
-class CardTableViewCellItem: ZJTableViewItem {
+class CardTableViewCellItem: ZJItem, ZJItemable {
+    static var cellClass: ZJBaseCell.Type { CardTableViewCell.self }
+    
     var isOpen = false
     var zPosition: CGFloat = 0
     override init() {
@@ -31,7 +33,7 @@ class CardTableViewCellItem: ZJTableViewItem {
     }
 }
 
-class CardTableViewCell: ZJCell<CardTableViewCellItem>, ZJCellProtocol {
+class CardTableViewCell: ZJCell<CardTableViewCellItem>, ZJCellable {
 
     @IBOutlet var cardView: UIView!
     @IBOutlet var cardImg: UIImageView!

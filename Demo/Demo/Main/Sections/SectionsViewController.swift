@@ -22,7 +22,7 @@ class SectionsViewController: UIViewController {
         manager = ZJTableViewManager(tableView: tableView)
 
         for i in 0 ... 8 {
-            let section = ZJTableViewSection(headerTitle: "Section " + String(i))
+            let section = ZJSection(headerTitle: "Section " + String(i))
             manager.add(section: section)
             section.setHeaderWillDisplayHandler { currentSection in
                 zj_log("Section" + String(currentSection.index) + " will display!")

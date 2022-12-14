@@ -12,7 +12,7 @@ import ZJTableViewManager
 class SelectionViewController: UIViewController {
     var tableView: UITableView!
     var manager: ZJTableViewManager!
-    let section = ZJTableViewSection()
+    let section = ZJSection()
     var selectionTypeBtn: UIBarButtonItem!
     var selectedItem: SelectionCellItem?
 
@@ -28,7 +28,7 @@ class SelectionViewController: UIViewController {
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.addSubview(tableView)
         manager = ZJTableViewManager(tableView: tableView)
-        manager.register(SelectionCell.self, SelectionCellItem.self)
+//        manager.register(SelectionCell.self, SelectionCellItem.self)
 
         // Add section
 
@@ -73,14 +73,14 @@ class SelectionViewController: UIViewController {
     @objc func validateSelectionItems(button _: UIBarButtonItem) {
         if selectionTypeBtn.title == "单选" {
             if let item = manager.selectedItem() as? SelectionCellItem {
-                print("item at \(item.indexPath.row)")
+                zj_log("item at \(item.indexPath.row)")
             } else {
-                print("no item be selected")
+                zj_log("no item be selected")
             }
         } else if selectionTypeBtn.title == "多选" {
             let items: [SelectionCellItem] = manager.selectedItems()
-            print("multi-selected items as follows:")
-            print(items.map { "item at \($0.indexPath.row)" })
+            zj_log("multi-selected items as follows:")
+            zj_log(items.map { "item at \($0.indexPath.row)" })
         }
     }
 

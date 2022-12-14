@@ -9,7 +9,8 @@
 import UIKit
 import ZJTableViewManager
 
-class Level0CellItem: ZJAccordionItem {
+class Level0CellItem: ZJAccordionItem, ZJItemable {
+    static var cellClass: ZJBaseCell.Type { Level0Cell.self }
     var title: String?
     override init() {
         super.init()
@@ -17,7 +18,7 @@ class Level0CellItem: ZJAccordionItem {
     }
 }
 
-class Level0Cell: ZJCell<Level0CellItem>, ZJCellProtocol {
+class Level0Cell: ZJCell<Level0CellItem>, ZJCellable {
     @IBOutlet var labelTitle: UILabel!
 
     func cellPrepared() {
