@@ -14,7 +14,7 @@ final class Level3CellItem: ZJAccordionItem, ZJItemable {
     var title: String?
     convenience init(title: String?) {
         self.init()
-        self.height = UITableView.automaticDimension
+        height = UITableView.automaticDimension
         self.title = title
     }
 }

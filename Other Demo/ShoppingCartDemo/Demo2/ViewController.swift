@@ -23,16 +23,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // 初始化tableviewManager
-        self.categoryManager = ZJTableViewManager(tableView: self.categoryTableView)
-        self.categoryManager.register(Category1Cell.self, Category1CellItem.self)
-        self.productManager = ZJTableViewManager(tableView: self.productTableView)
-        self.productManager.scrollDelegate = self
+        categoryManager = ZJTableViewManager(tableView: categoryTableView)
+        categoryManager.register(Category1Cell.self, Category1CellItem.self)
+        productManager = ZJTableViewManager(tableView: productTableView)
+        productManager.scrollDelegate = self
         // 假数据
         let arrCategory = ["分类1", "分类2", "分类3", "分类4", "分类5", "分类6"]
         let arrProduct = ["面包", "蛋糕", "香蕉", "牛奶", "饼干", "猫粮"]
         // 添加分类数据
         let categorySection = ZJTableViewSection()
-        self.categoryManager?.add(section: categorySection)
+        categoryManager?.add(section: categorySection)
         for category in arrCategory {
             let categoryItem = Category1CellItem()
             categoryItem.title = category
@@ -46,11 +46,11 @@ class ViewController: UIViewController {
         // 给商品tableView添加商品数据
         for category in arrCategory {
             // 添加分区标题
-            let sectionHeader = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 40))
+            let sectionHeader = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 40))
             sectionHeader.text = category
             sectionHeader.backgroundColor = .lightGray
             let section = ZJTableViewSection(headerView: sectionHeader)
-            self.productManager.add(section: section)
+            productManager.add(section: section)
             // 商品列表滑动时与分类列表联动
             // 商品列表section header显示的回调
             section.setHeaderWillDisplayHandler { [weak self] currentSection in
@@ -75,7 +75,7 @@ class ViewController: UIViewController {
             }
         }
         // 先默认选中categoryTableView分类的第一个cell
-        self.categoryTableView.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: UITableView.ScrollPosition.top)
+        categoryTableView.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: UITableView.ScrollPosition.top)
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,7 +86,7 @@ class ViewController: UIViewController {
 
 extension ViewController: ZJTableViewScrollDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        self.isScrollUp = self.lastOffsetY < scrollView.contentOffset.y
-        self.lastOffsetY = scrollView.contentOffset.y
+        isScrollUp = lastOffsetY < scrollView.contentOffset.y
+        lastOffsetY = scrollView.contentOffset.y
     }
 }

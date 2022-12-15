@@ -10,22 +10,20 @@ import UIKit
 import ZJTableViewManager
 class Category1CellItem: ZJTableViewItem {
     var title: String!
-    
 }
 
 class Category1Cell: UITableViewCell, ZJCellProtocol {
     var item: Category1CellItem!
-    
+
     typealias ZJCelltemClass = Category1CellItem
-    
+
     func cellWillAppear() {
         categoryTitle.text = item.title
     }
-    
-    
+
     @IBOutlet weak var indicatorView: UIView!
     @IBOutlet weak var categoryTitle: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -35,11 +33,10 @@ class Category1Cell: UITableViewCell, ZJCellProtocol {
         super.setSelected(selected, animated: animated)
         if selected {
             indicatorView.backgroundColor = UIColor.blue
-        }else{
+        } else {
             indicatorView.backgroundColor = UIColor.lightGray
         }
 
         // Configure the view for the selected state
     }
-    
 }

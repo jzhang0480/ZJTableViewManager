@@ -15,7 +15,7 @@ extension UIView {
         animation.fromValue = from
         animation.toValue = to
         animation.duration = duration
-        self.layer.add(animation, forKey: "cornerRadius")
-        self.layer.cornerRadius = to
+        layer.add(animation, forKey: "cornerRadius")
+        layer.cornerRadius = to
     }
 }

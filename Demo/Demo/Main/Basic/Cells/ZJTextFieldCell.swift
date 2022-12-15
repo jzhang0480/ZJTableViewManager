@@ -9,9 +9,9 @@
 import UIKit
 import ZJTableViewManager
 
-final public class ZJTextFieldItem: ZJItem, ZJItemable {
+public final class ZJTextFieldItem: ZJItem, ZJItemable {
     public static var cellClass: ZJBaseCell.Type { ZJTextFieldCell.self }
-    
+
     public var title: String?
     public var placeHolder: String?
     public var text: String?
@@ -30,7 +30,6 @@ final public class ZJTextFieldItem: ZJItem, ZJItemable {
 }
 
 open class ZJTextFieldCell: ZJCell<ZJTextFieldItem>, ZJCellable {
-
     @IBOutlet var titleConstraint: NSLayoutConstraint!
     @IBOutlet var labelTitle: UILabel!
 

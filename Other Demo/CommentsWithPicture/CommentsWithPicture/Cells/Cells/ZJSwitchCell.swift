@@ -28,7 +28,7 @@ open class ZJSwitchCell: UITableViewCell, ZJCellProtocol {
     @IBOutlet var labelTitle: UILabel!
     @IBOutlet var switchButton: UISwitch!
 
-    open override func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
@@ -43,7 +43,7 @@ open class ZJSwitchCell: UITableViewCell, ZJCellProtocol {
         item.didChanged?(item)
     }
 
-    open override func setSelected(_ selected: Bool, animated: Bool) {
+    override open func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

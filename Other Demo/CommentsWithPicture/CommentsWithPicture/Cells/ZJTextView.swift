@@ -27,7 +27,7 @@ class ZJTextView: UITextView {
         #endif
     }
 
-    open override func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         #if swift(>=4.2)
             NotificationCenter.default.addObserver(self, selector: #selector(refreshPlaceholder), name: UITextView.textDidChangeNotification, object: self)
@@ -70,7 +70,7 @@ class ZJTextView: UITextView {
         }
     }
 
-    open override func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
 
         if let unwrappedPlaceholderLabel = placeholderLabel {
@@ -93,13 +93,13 @@ class ZJTextView: UITextView {
         }
     }
 
-    open override var text: String! {
+    override open var text: String! {
         didSet {
             refreshPlaceholder()
         }
     }
 
-    open override var font: UIFont? {
+    override open var font: UIFont? {
         didSet {
             if let unwrappedFont = font {
                 placeholderLabel?.font = unwrappedFont
@@ -109,13 +109,13 @@ class ZJTextView: UITextView {
         }
     }
 
-    open override var textAlignment: NSTextAlignment {
+    override open var textAlignment: NSTextAlignment {
         didSet {
             placeholderLabel?.textAlignment = textAlignment
         }
     }
 
-    open override var delegate: UITextViewDelegate? {
+    override open var delegate: UITextViewDelegate? {
         get {
             refreshPlaceholder()
             return super.delegate

@@ -58,7 +58,7 @@ open class ZJTableViewItem: NSObject {
         return UITableViewCell()
     }
 
-    public override init() {
+    override public init() {
         super.init()
         cellIdentifier = NSStringFromClass(type(of: self)).components(separatedBy: ".").last
         cellHeight = 44

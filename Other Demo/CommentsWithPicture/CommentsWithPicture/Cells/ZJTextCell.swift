@@ -12,7 +12,7 @@ import ZJTableViewManager
 open class ZJTextItem: ZJTableViewItem {
     public var text: String?
     public var placeHolder: String?
-    public var textViewBackgroundColor: UIColor = UIColor.white
+    public var textViewBackgroundColor: UIColor = .white
     public var didChanged: ZJTableViewItemBlock?
     override init() {
         super.init()
@@ -35,7 +35,7 @@ open class ZJTextCell: UITableViewCell, UITextViewDelegate, ZJCellProtocol {
 
     @IBOutlet var textView: ZJTextView!
 
-    open override func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         textView.delegate = self
@@ -52,7 +52,7 @@ open class ZJTextCell: UITableViewCell, UITextViewDelegate, ZJCellProtocol {
         item.didChanged?(item)
     }
 
-    open override func setSelected(_ selected: Bool, animated: Bool) {
+    override open func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

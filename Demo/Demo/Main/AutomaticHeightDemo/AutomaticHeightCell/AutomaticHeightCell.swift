@@ -9,7 +9,7 @@
 import UIKit
 import ZJTableViewManager
 
-final class AutomaticHeightCellItem: ZJItem , ZJItemable {
+final class AutomaticHeightCellItem: ZJItem, ZJItemable {
     static var cellClass: ZJBaseCell.Type { AutomaticHeightCell.self }
     var feed: Feed!
 }
@@ -36,7 +36,7 @@ class AutomaticHeightCell: ZJCell<AutomaticHeightCellItem>, ZJCellable {
         } else {
             contentImageView.isHidden = true
         }
-        
+
         usernameLabel.text = item.feed.username
         timeLabel.text = item.feed.time
     }

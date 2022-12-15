@@ -8,11 +8,9 @@
 import UIKit
 import ZJTableViewManager
 
-
 class DemoViewController: UIViewController {
     var tableView: UITableView!
     var manager: ZJTableViewManager!
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,38 +31,31 @@ class DemoViewController: UIViewController {
             item.accessoryType = .disclosureIndicator
             section.add(item: item)
 
-            item.setSelectionHandler {[unowned self] _ in
+            item.setSelectionHandler { [unowned self] _ in
 
                 if i == "Basic" {
                     let vc = BasicViewController()
                     self.navigationController?.pushViewController(vc, animated: true)
-                }
-                else if i == "Retractable" {
+                } else if i == "Retractable" {
                     let vc = RetractableViewController()
                     self.navigationController?.pushViewController(vc, animated: true)
-                }
-                else if i == "Edit" {
+                } else if i == "Edit" {
                     let vc = EditingViewController()
                     self.navigationController?.pushViewController(vc, animated: true)
-                }
-                else if i == "Sections" {
+                } else if i == "Sections" {
                     let vc = SectionsViewController()
                     self.navigationController?.pushViewController(vc, animated: true)
-                }
-                else if i == "AutomaticHeight" {
+                } else if i == "AutomaticHeight" {
                     let vc = AutomaticHeightViewController()
                     self.navigationController?.pushViewController(vc, animated: true)
-                }
-                else if i == "AccordionEffect" {
+                } else if i == "AccordionEffect" {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let vc = storyboard.instantiateViewController(withIdentifier: "AccordionEffectViewController")
                     self.navigationController?.pushViewController(vc, animated: true)
-                }
-                else if i == "UpdateHeight" {
+                } else if i == "UpdateHeight" {
                     let vc = UpdateHeightViewController()
                     self.navigationController?.pushViewController(vc, animated: true)
-                }
-                else if i == "Selection" {
+                } else if i == "Selection" {
                     let vc = SelectionViewController()
                     self.navigationController?.pushViewController(vc, animated: true)
                 }

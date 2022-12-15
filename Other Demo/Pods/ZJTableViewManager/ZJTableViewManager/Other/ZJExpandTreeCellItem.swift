@@ -16,7 +16,7 @@ open class ZJExpandTreeCellItem: ZJTableViewItem {
     public var willExpand: ((ZJExpandTreeCellItem) -> Void)?
     public weak var superLevelItem: ZJExpandTreeCellItem?
 
-    public override init() {
+    override public init() {
         super.init()
         selectionStyle = .none
 

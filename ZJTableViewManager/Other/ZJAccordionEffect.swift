@@ -9,7 +9,6 @@
 import UIKit
 
 open class ZJAccordionSection: ZJSection {
-
     public func add(item: ZJAccordionItem, parentItem: ZJAccordionItem?, isExpand: Bool = false) {
         item.isExpand = isExpand
         // 没有指定高度，计算出高度信息（这样可以防止系统自动计算导致的动画异常）
@@ -32,7 +31,6 @@ open class ZJAccordionSection: ZJSection {
     // 检查item是否被折叠（可见）
     public func checkVisible(_ item: ZJAccordionItem) -> Bool {
         if let parentItem = item.parentItem {
-            
             if parentItem.isExpand { // 如果父item状态是展开，检查更上一级是否折叠
                 return checkVisible(parentItem)
             } else {

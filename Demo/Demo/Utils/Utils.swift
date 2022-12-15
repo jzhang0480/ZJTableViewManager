@@ -9,9 +9,8 @@ import Foundation
 import UIKit
 
 extension UIApplication {
-    
     func getKeyWindow() -> UIWindow {
-        return keyWindow ?? windows.first(where: {$0.isKeyWindow})!
+        return keyWindow ?? windows.first(where: { $0.isKeyWindow })!
     }
 }
 
@@ -25,7 +24,6 @@ extension UIViewController {
         keyWindow.addSubview(fpsLabel)
     }
 }
-
 
 /// 假装调用接口
 /// - Parameters:

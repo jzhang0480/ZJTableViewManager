@@ -33,7 +33,7 @@ open class ZJSection: NSObject {
     public var index: Int {
         return manager.sections.unwrappedIndex(self)
     }
-    
+
     subscript(index: Int) -> ZJItemable {
         get {
             items[index] as! ZJItemable
@@ -42,7 +42,7 @@ open class ZJSection: NSObject {
             items[index] = newValue
         }
     }
-    
+
     public func firstIndex(of element: ZJItem) -> Int? {
         return items.firstIndex(of: element)
     }

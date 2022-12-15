@@ -15,16 +15,16 @@ class OrderEvaluateItem: ZJTableViewItem {
     var evaluate: String?
     var starValue: CGFloat = 1
     var editable: Bool?
-    
+
     override init() {
         super.init()
-        self.cellHeight = 55
-        self.selectionStyle = UITableViewCell.SelectionStyle.none
+        cellHeight = 55
+        selectionStyle = UITableViewCell.SelectionStyle.none
     }
-    
+
     convenience init(eTitle: String!, starValue: CGFloat = 1, editable: Bool = true) {
         self.init()
-        self.title = eTitle
+        title = eTitle
         self.starValue = starValue
         self.editable = editable
     }
@@ -32,19 +32,19 @@ class OrderEvaluateItem: ZJTableViewItem {
 
 class OrderEvaluateCell: UITableViewCell, ZJCellProtocol, UITextViewDelegate {
     var item: OrderEvaluateItem!
-    
+
     typealias ZJCelltemClass = OrderEvaluateItem
-    
+
     func cellWillAppear() {
         labelTitle.text = item.title
         starView.value = item.starValue
         starView.isEnabled = item.editable!
     }
-    
+
     @IBOutlet var imgGoods: UIImageView!
     @IBOutlet var starView: SwiftyStarRatingView!
     @IBOutlet var labelTitle: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         starView.addTarget(self, action: #selector(starViewEndChange(view:)), for: .valueChanged)
@@ -54,10 +54,10 @@ class OrderEvaluateCell: UITableViewCell, ZJCellProtocol, UITextViewDelegate {
     @objc func starViewEndChange(view: SwiftyStarRatingView) {
         item.starValue = view.value
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+
         // Configure the view for the selected state
     }
 }

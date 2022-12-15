@@ -13,14 +13,14 @@ open class SKCache {
     open var imageCache: SKCacheable
 
     init() {
-        self.imageCache = SKDefaultImageCache()
+        imageCache = SKDefaultImageCache()
     }
 
     open func imageForKey(_ key: String) -> UIImage? {
         guard let cache = imageCache as? SKImageCacheable else {
             return nil
         }
-        
+
         return cache.imageForKey(key)
     }
 
@@ -28,7 +28,7 @@ open class SKCache {
         guard let cache = imageCache as? SKImageCacheable else {
             return
         }
-        
+
         cache.setImage(image, forKey: key)
     }
 
@@ -36,15 +36,15 @@ open class SKCache {
         guard let cache = imageCache as? SKImageCacheable else {
             return
         }
-        
+
         cache.removeImageForKey(key)
     }
-    
+
     open func removeAllImages() {
         guard let cache = imageCache as? SKImageCacheable else {
             return
         }
-        
+
         cache.removeAllImages()
     }
 
@@ -52,7 +52,7 @@ open class SKCache {
         guard let cache = imageCache as? SKRequestResponseCacheable else {
             return nil
         }
-        
+
         if let response = cache.cachedResponseForRequest(request) {
             return UIImage(data: response.data)
         }
@@ -86,7 +86,7 @@ class SKDefaultImageCache: SKImageCacheable {
     func removeImageForKey(_ key: String) {
         cache.removeObject(forKey: key as AnyObject)
     }
-    
+
     func removeAllImages() {
         cache.removeAllObjects()
     }

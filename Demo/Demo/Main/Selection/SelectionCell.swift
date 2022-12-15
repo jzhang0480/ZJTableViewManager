@@ -11,8 +11,7 @@ import ZJTableViewManager
 
 final class SelectionCellItem: ZJItem, ZJItemable {
     static var cellClass: ZJBaseCell.Type { SelectionCell.self }
-    
-    
+
     override init() {
         super.init()
         selectionStyle = .none
@@ -20,7 +19,6 @@ final class SelectionCellItem: ZJItem, ZJItemable {
 }
 
 class SelectionCell: ZJCell<SelectionCellItem>, ZJCellable {
-    
     @IBOutlet var img: UIImageView!
     @IBOutlet var titleL: UILabel!
 

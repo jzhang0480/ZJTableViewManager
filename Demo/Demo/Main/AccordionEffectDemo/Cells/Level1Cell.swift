@@ -11,20 +11,19 @@ import ZJTableViewManager
 
 final class Level1CellItem: ZJAccordionItem, ZJItemable {
     static var cellClass: ZJBaseCell.Type { Level1Cell.self }
-    
+
     override init() {
         super.init()
-        self.height = 50
+        height = 50
     }
 }
 
 class Level1Cell: ZJCell<Level1CellItem>, ZJCellable {
-
     func cellPrepared() {}
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = .clear
+        backgroundColor = .clear
         // Initialization code
     }
 }

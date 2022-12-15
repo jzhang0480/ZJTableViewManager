@@ -14,7 +14,7 @@ final class Level0CellItem: ZJAccordionItem, ZJItemable {
     var title: String?
     override init() {
         super.init()
-        self.height = 50
+        height = 50
     }
 }
 

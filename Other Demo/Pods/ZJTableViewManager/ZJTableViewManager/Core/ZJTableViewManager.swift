@@ -10,7 +10,7 @@ import UIKit
 
 func zj_log(_ item: Any, file: String = #file, line: Int = #line) {
     if ZJTableViewManager.isDebug {
-        var logEntry: String = String()
+        var logEntry: String = .init()
         if let fileName = file.components(separatedBy: "/").last {
             logEntry.append("[\(fileName):\(line)] ")
         }

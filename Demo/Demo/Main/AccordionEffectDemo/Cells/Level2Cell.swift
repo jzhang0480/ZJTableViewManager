@@ -13,12 +13,11 @@ final class Level2CellItem: ZJAccordionItem, ZJItemable {
     static var cellClass: ZJBaseCell.Type { Level2Cell.self }
     override init() {
         super.init()
-        self.height = 50
+        height = 50
     }
 }
 
 class Level2Cell: ZJCell<Level2CellItem>, ZJCellable {
-
     func cellPrepared() {}
 
     override func awakeFromNib() {

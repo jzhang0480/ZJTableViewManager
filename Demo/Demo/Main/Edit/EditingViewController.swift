@@ -27,7 +27,7 @@ class EditingViewController: UIViewController {
             let item = ZJSystemStyleItem(text: "section 0, row " + String(i))
             item.editingStyle = .delete
             item.setDeletionHandler { [weak self] item in
-                self?.deleteConfirm(item: item , needConfirm: false)
+                self?.deleteConfirm(item: item, needConfirm: false)
             }
             section.add(item: item)
         }
@@ -62,8 +62,6 @@ class EditingViewController: UIViewController {
         alertVC.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         present(alertVC, animated: true, completion: nil)
     }
-
-
 
     /*
      // MARK: - Navigation

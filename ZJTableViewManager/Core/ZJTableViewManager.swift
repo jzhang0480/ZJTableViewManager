@@ -117,8 +117,7 @@ open class ZJTableViewManager: NSObject {
     public func reload() {
         tableView.reloadData()
     }
-    
-    
+
     /// Returns the optimal size of the view based on its constraints
     /// - Parameter item: item
     public func layoutSizeFitting(_ item: ZJItem) -> CGSize {
@@ -260,7 +259,7 @@ extension ZJTableViewManager: UITableViewDataSource {
         let section = sections[indexPath.section], item = section[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: item.identifier)
         cell?.selectionStyle = item.selectionStyle
-        
+
         if let baseCell = cell as? ZJBaseCell {
             baseCell._item = item
         }

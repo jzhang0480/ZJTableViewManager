@@ -33,7 +33,7 @@ open class ZJTableViewSection: NSObject {
         return tableViewManager.sections.zj_indexOf(self)
     }
 
-    public override init() {
+    override public init() {
         super.init()
         items = []
         headerHeight = CGFloat.leastNormalMagnitude
@@ -153,6 +153,4 @@ open class ZJTableViewSection: NSObject {
         let index = tableViewManager.sections.zj_indexOf(self)
         tableViewManager.tableView.reloadSections(IndexSet(integer: index), with: animation)
     }
-    
-    
 }

@@ -16,17 +16,17 @@ class SKPaginationView: UIView {
     var nextButton: UIButton?
     private var margin: CGFloat = 100
     private var extraMargin: CGFloat = SKMesurement.isPhoneX ? 40 : 0
-    
+
     fileprivate weak var browser: SKPhotoBrowser?
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-    
+
     convenience init(frame: CGRect, browser: SKPhotoBrowser?) {
         self.init(frame: frame)
         self.frame = CGRect(x: 0, y: frame.height - margin - extraMargin, width: frame.width, height: 100)
@@ -36,10 +36,10 @@ class SKPaginationView: UIView {
         setupCounterLabel()
         setupPrevButton()
         setupNextButton()
-        
+
         update(browser?.currentPageIndex ?? 0)
     }
-    
+
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         if let view = super.hitTest(point, with: event) {
             if let counterLabel = counterLabel, counterLabel.frame.contains(point) {
@@ -53,30 +53,30 @@ class SKPaginationView: UIView {
         }
         return nil
     }
-    
+
     func updateFrame(frame: CGRect) {
         self.frame = CGRect(x: 0, y: frame.height - margin - extraMargin, width: frame.width, height: 100)
     }
-    
+
     func update(_ currentPageIndex: Int) {
         guard let browser = browser else { return }
-        
+
         if browser.photos.count > 1 {
             counterLabel?.text = "\(currentPageIndex + 1) / \(browser.photos.count)"
         } else {
             counterLabel?.text = nil
         }
-        
+
         guard let prevButton = prevButton, let nextButton = nextButton else { return }
         prevButton.isEnabled = (currentPageIndex > 0)
         nextButton.isEnabled = (currentPageIndex < browser.photos.count - 1)
     }
-    
+
     func setControlsHidden(hidden: Bool) {
         let alpha: CGFloat = hidden ? 0.0 : 1.0
-        
+
         UIView.animate(withDuration: 0.35,
-                       animations: { () -> Void in self.alpha = alpha },
+                       animations: { () in self.alpha = alpha },
                        completion: nil)
     }
 }
@@ -86,10 +86,10 @@ private extension SKPaginationView {
         backgroundColor = .clear
         clipsToBounds = true
     }
-    
+
     func setupCounterLabel() {
         guard SKPhotoBrowserOptions.displayCounterLabel else { return }
-        
+
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
         label.center = CGPoint(x: frame.width / 2, y: frame.height / 2)
         label.textAlignment = .center
@@ -106,22 +106,22 @@ private extension SKPaginationView {
         addSubview(label)
         counterLabel = label
     }
-    
+
     func setupPrevButton() {
         guard SKPhotoBrowserOptions.displayBackAndForwardButton else { return }
         guard browser?.photos.count ?? 0 > 1 else { return }
-        
+
         let button = SKPrevButton(frame: frame)
         button.center = CGPoint(x: frame.width / 2 - 100, y: frame.height / 2)
         button.addTarget(browser, action: #selector(SKPhotoBrowser.gotoPreviousPage), for: .touchUpInside)
         addSubview(button)
         prevButton = button
     }
-    
+
     func setupNextButton() {
         guard SKPhotoBrowserOptions.displayBackAndForwardButton else { return }
         guard browser?.photos.count ?? 0 > 1 else { return }
-        
+
         let button = SKNextButton(frame: frame)
         button.center = CGPoint(x: frame.width / 2 + 100, y: frame.height / 2)
         button.addTarget(browser, action: #selector(SKPhotoBrowser.gotoNextPage), for: .touchUpInside)
@@ -131,8 +131,8 @@ private extension SKPaginationView {
 }
 
 class SKPaginationButton: UIButton {
-    let insets: UIEdgeInsets = UIEdgeInsets(top: 13.25, left: 17.25, bottom: 13.25, right: 17.25)
-    
+    let insets: UIEdgeInsets = .init(top: 13.25, left: 17.25, bottom: 13.25, right: 17.25)
+
     func setup(_ imageName: String) {
         backgroundColor = .clear
         imageEdgeInsets = insets
@@ -142,9 +142,9 @@ class SKPaginationButton: UIButton {
                             .flexibleRightMargin,
                             .flexibleTopMargin]
         contentMode = .center
-        
+
         let image = UIImage(named: "SKPhotoBrowser.bundle/images/\(imageName)",
-            in: bundle, compatibleWith: nil) ?? UIImage()
+                            in: bundle, compatibleWith: nil) ?? UIImage()
         setImage(image, for: UIControlState())
     }
 }
@@ -154,7 +154,7 @@ class SKPrevButton: SKPaginationButton {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
         setup(imageName)
@@ -166,7 +166,7 @@ class SKNextButton: SKPaginationButton {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
         setup(imageName)

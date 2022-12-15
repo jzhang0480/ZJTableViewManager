@@ -35,7 +35,7 @@ open class ZJTextFieldCell: UITableViewCell, ZJCellProtocol {
     @IBOutlet var labelTitle: UILabel!
 
     @IBOutlet var textField: UITextField!
-    open override func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
 
         textField.addTarget(self, action: #selector(textFieldDidChanged(textField:)), for: UIControl.Event.editingChanged)
@@ -58,7 +58,7 @@ open class ZJTextFieldCell: UITableViewCell, ZJCellProtocol {
         item.didChanged?(item)
     }
 
-    open override func setSelected(_ selected: Bool, animated: Bool) {
+    override open func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

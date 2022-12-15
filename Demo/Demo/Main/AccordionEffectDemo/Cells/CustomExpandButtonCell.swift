@@ -21,7 +21,7 @@ final class CustomExpandButtonCellItem: ZJAccordionItem, ZJItemable {
         buttonTapCallBack = { callBackItem in
             callBackItem.toggleExpand()
         }
-        self.height = 50
+        height = 50
     }
 
     // 重写方法，目的是在展开事件结束后修改cell上面的按钮的标题
@@ -36,7 +36,6 @@ final class CustomExpandButtonCellItem: ZJAccordionItem, ZJItemable {
 }
 
 class CustomExpandButtonCell: ZJCell<CustomExpandButtonCellItem>, ZJCellable {
-    
     @IBOutlet var btnExpand: UIButton!
     @IBOutlet var labelTitle: UILabel!
     func cellPrepared() {

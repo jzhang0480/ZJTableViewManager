@@ -13,7 +13,7 @@ let openHeight: CGFloat = (UIScreen.main.bounds.size.width - 30) * (593 / 939) +
 let closeHeight: CGFloat = 54
 final class CardTableViewCellItem: ZJItem, ZJItemable {
     static var cellClass: ZJBaseCell.Type { CardTableViewCell.self }
-    
+
     var isOpen = false
     var zPosition: CGFloat = 0
     override init() {
@@ -34,7 +34,6 @@ final class CardTableViewCellItem: ZJItem, ZJItemable {
 }
 
 class CardTableViewCell: ZJCell<CardTableViewCellItem>, ZJCellable {
-
     @IBOutlet var cardView: UIView!
     @IBOutlet var cardImg: UIImageView!
     override func awakeFromNib() {
@@ -56,7 +55,7 @@ class CardTableViewCell: ZJCell<CardTableViewCellItem>, ZJCellable {
     func cellPrepared() {
         layer.zPosition = item.zPosition
     }
-    
+
     func cellWillAppear() {
         layer.masksToBounds = false
         contentView.layer.masksToBounds = false

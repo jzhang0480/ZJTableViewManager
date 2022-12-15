@@ -9,11 +9,11 @@
 import UIKit
 import ZJTableViewManager
 
-final public class ZJTextItem: ZJItem, ZJItemable {
-    static public var cellClass: ZJBaseCell.Type { ZJTextCell.self }
+public final class ZJTextItem: ZJItem, ZJItemable {
+    public static var cellClass: ZJBaseCell.Type { ZJTextCell.self }
     public var text: String?
     public var placeHolder: String?
-    public var textViewBackgroundColor: UIColor = UIColor.white
+    public var textViewBackgroundColor: UIColor = .white
     public var didChanged: ZJTableViewItemBlock?
     override init() {
         super.init()
@@ -30,7 +30,6 @@ final public class ZJTextItem: ZJItem, ZJItemable {
 }
 
 open class ZJTextCell: ZJCell<ZJTextItem>, UITextViewDelegate, ZJCellable {
-
     @IBOutlet var textView: ZJTextView!
 
     override open func awakeFromNib() {
