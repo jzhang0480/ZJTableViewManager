@@ -9,7 +9,7 @@
 import UIKit
 import ZJTableViewManager
 
-class AutomaticHeightCellItem: ZJItem , ZJItemable {
+final class AutomaticHeightCellItem: ZJItem , ZJItemable {
     static var cellClass: ZJBaseCell.Type { AutomaticHeightCell.self }
     var feed: Feed!
 }

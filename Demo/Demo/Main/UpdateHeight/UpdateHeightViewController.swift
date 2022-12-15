@@ -31,7 +31,7 @@ class UpdateHeightViewController: UIViewController {
             section.add(item: item)
             item.zPosition = CGFloat(index)
             // cell tap event
-            item.setSelectionHandler { [unowned self] (selectItem: CardTableViewCellItem) in
+            item.setSelectionHandler { [unowned self] selectItem in
                 self.cellTapEvent(item: selectItem)
             }
         }
@@ -39,7 +39,7 @@ class UpdateHeightViewController: UIViewController {
         if let lastItem = section.items.last as? CardTableViewCellItem {
             // Last cell keep open and don't respond to the tap event
             lastItem.openCard()
-            lastItem.selectionHandler = nil
+            lastItem.setSelectionHandler(nil)
         }
 
         manager.reload()

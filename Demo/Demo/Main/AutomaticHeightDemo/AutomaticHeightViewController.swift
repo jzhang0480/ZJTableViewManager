@@ -37,7 +37,7 @@ class AutomaticHeightViewController: UIViewController {
             let item = AutomaticHeightCellItem()
             item.feed = feed
             // 计算高度
-            item.autoHeight(manager)
+            item.height = manager.layoutSizeFitting(item).height
             // 把cell加入进section
             section.add(item: item)
         }

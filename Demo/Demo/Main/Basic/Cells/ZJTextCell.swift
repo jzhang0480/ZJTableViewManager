@@ -9,7 +9,7 @@
 import UIKit
 import ZJTableViewManager
 
-open class ZJTextItem: ZJItem, ZJItemable {
+final public class ZJTextItem: ZJItem, ZJItemable {
     static public var cellClass: ZJBaseCell.Type { ZJTextCell.self }
     public var text: String?
     public var placeHolder: String?
@@ -17,7 +17,7 @@ open class ZJTextItem: ZJItem, ZJItemable {
     public var didChanged: ZJTableViewItemBlock?
     override init() {
         super.init()
-        cellHeight = 125
+        height = 125
         selectionStyle = UITableViewCell.SelectionStyle.none
     }
 

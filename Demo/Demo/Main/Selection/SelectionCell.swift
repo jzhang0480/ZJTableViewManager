@@ -9,7 +9,7 @@
 import UIKit
 import ZJTableViewManager
 
-class SelectionCellItem: ZJItem, ZJItemable {
+final class SelectionCellItem: ZJItem, ZJItemable {
     static var cellClass: ZJBaseCell.Type { SelectionCell.self }
     
     

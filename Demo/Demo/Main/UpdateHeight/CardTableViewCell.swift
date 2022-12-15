@@ -11,25 +11,25 @@ import ZJTableViewManager
 
 let openHeight: CGFloat = (UIScreen.main.bounds.size.width - 30) * (593 / 939) + 25
 let closeHeight: CGFloat = 54
-class CardTableViewCellItem: ZJItem, ZJItemable {
+final class CardTableViewCellItem: ZJItem, ZJItemable {
     static var cellClass: ZJBaseCell.Type { CardTableViewCell.self }
     
     var isOpen = false
     var zPosition: CGFloat = 0
     override init() {
         super.init()
-        cellHeight = closeHeight
+        height = closeHeight
         selectionStyle = .none
     }
 
     func openCard() {
         isOpen = true
-        cellHeight = openHeight
+        height = openHeight
     }
 
     func closeCard() {
         isOpen = false
-        cellHeight = closeHeight
+        height = closeHeight
     }
 }
 

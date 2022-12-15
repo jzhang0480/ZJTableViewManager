@@ -9,7 +9,7 @@
 import UIKit
 import ZJTableViewManager
 
-class CustomExpandButtonCellItem: ZJAccordionItem, ZJItemable {
+final class CustomExpandButtonCellItem: ZJAccordionItem, ZJItemable {
     static var cellClass: ZJBaseCell.Type { CustomExpandButtonCell.self }
     var title: String?
     var buttonTapCallBack: ((CustomExpandButtonCellItem) -> Void)?
@@ -17,11 +17,11 @@ class CustomExpandButtonCellItem: ZJAccordionItem, ZJItemable {
     override init() {
         super.init()
         // 清空默认的点击展开处理
-        selectionHandler = nil
+        setSelectionHandler(nil)
         buttonTapCallBack = { callBackItem in
             callBackItem.toggleExpand()
         }
-        self.cellHeight = 50
+        self.height = 50
     }
 
     // 重写方法，目的是在展开事件结束后修改cell上面的按钮的标题

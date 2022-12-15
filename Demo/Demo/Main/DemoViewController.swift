@@ -8,9 +8,11 @@
 import UIKit
 import ZJTableViewManager
 
+
 class DemoViewController: UIViewController {
     var tableView: UITableView!
     var manager: ZJTableViewManager!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()

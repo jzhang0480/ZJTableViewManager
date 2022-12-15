@@ -9,7 +9,7 @@
 import UIKit
 import ZJTableViewManager
 
-class ZJSwitchItem: ZJItem, ZJItemable {
+ final class ZJSwitchItem: ZJItem, ZJItemable {
     static var cellClass: ZJBaseCell.Type { ZJSwitchCell.self }
     var title: String?
     var isOn: Bool = false

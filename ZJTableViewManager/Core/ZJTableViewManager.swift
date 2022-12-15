@@ -39,7 +39,7 @@ open class ZJTableViewManager: NSObject {
         if let indexPaths = tableView.indexPathsForSelectedRows {
             var items = [T]()
             for idx in indexPaths {
-                if let item = sections[idx.section].items[idx.row] as? T {
+                if let item = sections[idx.section][idx.row] as? T {
                     items.append(item)
                 }
             }
@@ -101,34 +101,13 @@ open class ZJTableViewManager: NSObject {
         zj_log(cellClass + " registered")
     }
 
-    func sectionFrom(section: Int) -> ZJSection {
-        let section = sections.count > section ? sections[section] : nil
-        assert(section != nil, "section out of range")
-        return section!
-    }
-
-    func getSectionAndItem(indexPath: (section: Int, row: Int)) -> (section: ZJSection, item: ZJItem) {
-        let section = sectionFrom(section: indexPath.section)
-        let item = section.items.count > indexPath.row ? section.items[indexPath.row] : nil
-        assert(item != nil, "row out of range")
-        return (section, item!)
-    }
-
     public func add(section: ZJSection) {
-        if !section.isKind(of: ZJSection.self) {
-            zj_log("error section class")
-            return
-        }
-        section.tableViewManager = self
+        section.manager = self
         sections.append(section)
     }
 
-    public func remove(section: Any) {
-        if !(section as AnyObject).isKind(of: ZJSection.self) {
-            zj_log("error section class")
-            return
-        }
-        sections.remove(at: sections.zj_indexOf(section as! ZJSection))
+    public func remove(section: ZJSection) {
+        sections.remove(at: sections.unwrappedIndex(section))
     }
 
     public func removeAllSections() {
@@ -138,14 +117,26 @@ open class ZJTableViewManager: NSObject {
     public func reload() {
         tableView.reloadData()
     }
+    
+    
+    /// Returns the optimal size of the view based on its constraints
+    /// - Parameter item: item
+    public func layoutSizeFitting(_ item: ZJItem) -> CGSize {
+        register(type(of: item) as! ZJItemable.Type)
+        let cell = tableView.dequeueReusableCell(withIdentifier: item.identifier)!
+        (cell as! ZJBaseCell)._item = item
+        (cell as! ZJCellable).cellPrepared()
+
+        return cell.systemLayoutSizeFitting(CGSize(width: tableView.frame.width, height: .zero), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel)
+    }
 }
 
 // MARK: - UITableViewDelegate
 
 extension ZJTableViewManager: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        let obj = getSectionAndItem(indexPath: (section: indexPath.section, row: indexPath.row))
-        if obj.item.isAllowSelect {
+        let section = sections[indexPath.section], item = section[indexPath.row]
+        if item.isAllowSelect {
             return indexPath
         } else {
             return nil
@@ -153,21 +144,21 @@ extension ZJTableViewManager: UITableViewDelegate {
     }
 
     public func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let obj = getSectionAndItem(indexPath: (indexPath.section, indexPath.row))
-        obj.item.selectionHandler?(obj.item)
+        let section = sections[indexPath.section], item = section[indexPath.row]
+        item.selectionHandler?(item)
     }
 
     public func tableView(_: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        let obj = getSectionAndItem(indexPath: (section: indexPath.section, row: indexPath.row))
-        return obj.item.editingStyle
+        let section = sections[indexPath.section], item = section[indexPath.row]
+        return item.editingStyle
     }
 
     public func tableView(_: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        let obj = getSectionAndItem(indexPath: (section: indexPath.section, row: indexPath.row))
+        let section = sections[indexPath.section], item = section[indexPath.row]
 
         if editingStyle == .delete {
-            if let handler = obj.item.deletionHandler {
-                handler(obj.item)
+            if let handler = item.deletionHandler {
+                handler(item)
             }
         }
     }
@@ -181,36 +172,36 @@ extension ZJTableViewManager: UITableViewDelegate {
     }
 
     public func tableView(_: UITableView, willDisplayHeaderView _: UIView, forSection section: Int) {
-        let sectionModel = sectionFrom(section: section)
-        sectionModel.headerWillDisplayHandler?(sectionModel)
+        let section = sections[section]
+        section.headerWillDisplayHandler?(section)
     }
 
     public func tableView(_: UITableView, didEndDisplayingHeaderView _: UIView, forSection section: Int) {
         // 这里要做一个保护，因为这个方法在某个section被删除之后reload tableView, 会最后触发一次这个
         // section的endDisplaying方法，这时去根据section去获取section对象会获取不到。
         if sections.count > section {
-            let sectionModel = sectionFrom(section: section)
-            sectionModel.headerDidEndDisplayHandler?(sectionModel)
+            let section = sections[section]
+            section.headerDidEndDisplayHandler?(section)
         }
     }
 
     public func tableView(_: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let sectionModel = sectionFrom(section: section)
-        return sectionModel.headerView
+        let section = sections[section]
+        return section.headerView
     }
 
     public func tableView(_: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let sectionModel = sectionFrom(section: section)
-        return sectionModel.footerView
+        let section = sections[section]
+        return section.footerView
     }
 
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let sectionModel = sectionFrom(section: section)
-        if sectionModel.headerView != nil || (sectionModel.headerHeight > 0 && sectionModel.headerHeight != CGFloat.leastNormalMagnitude) {
-            return sectionModel.headerHeight
+        let section = sections[section]
+        if section.headerView != nil || (section.headerHeight > 0 && section.headerHeight != CGFloat.leastNormalMagnitude) {
+            return section.headerHeight
         }
 
-        if let title = sectionModel.headerTitle {
+        if let title = section.headerTitle {
             let label = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.width - 40, height: CGFloat.greatestFiniteMagnitude))
             label.text = title
             label.font = UIFont.preferredFont(forTextStyle: .footnote)
@@ -222,15 +213,14 @@ extension ZJTableViewManager: UITableViewDelegate {
     }
 
     public func tableView(_: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        let sectionModel = sectionFrom(section: section)
-        return sectionModel.footerHeight
+        let section = sections[section]
+        return section.footerHeight
     }
 
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let section = sections[indexPath.section]
-        let item = section.items[indexPath.row]
+        let section = sections[indexPath.section], item = section[indexPath.row]
         #if swift(>=4.2)
-            if item.cellHeight == UITableView.automaticDimension, tableView.estimatedRowHeight == 0 {
+            if item.height == UITableView.automaticDimension, tableView.estimatedRowHeight == 0 {
                 tableView.estimatedRowHeight = 44
                 tableView.estimatedSectionFooterHeight = 44
                 tableView.estimatedSectionHeaderHeight = 44
@@ -243,7 +233,7 @@ extension ZJTableViewManager: UITableViewDelegate {
             }
         #endif
 
-        return item.cellHeight
+        return item.height
     }
 }
 
@@ -255,26 +245,22 @@ extension ZJTableViewManager: UITableViewDataSource {
     }
 
     public func tableView(_: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let sectionModel = sectionFrom(section: section)
-        return sectionModel.headerTitle
+        return sections[section].headerTitle
     }
 
     public func tableView(_: UITableView, titleForFooterInSection section: Int) -> String? {
-        let sectionModel = sectionFrom(section: section)
-        return sectionModel.footerTitle
+        return sections[section].footerTitle
     }
 
     public func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionModel = sectionFrom(section: section)
-        return sectionModel.items.count
+        return sections[section].items.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let (_, item) = getSectionAndItem(indexPath: (indexPath.section, indexPath.row))
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: item.cellIdentifier)
-
+        let section = sections[indexPath.section], item = section[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: item.identifier)
         cell?.selectionStyle = item.selectionStyle
+        
         if let baseCell = cell as? ZJBaseCell {
             baseCell._item = item
         }
@@ -287,7 +273,7 @@ extension ZJTableViewManager: UITableViewDataSource {
 }
 
 extension Array where Element: Equatable {
-    func zj_indexOf(_ element: Element) -> Int {
+    func unwrappedIndex(_ element: Element) -> Int {
         var index: Int?
 
         #if swift(>=5)

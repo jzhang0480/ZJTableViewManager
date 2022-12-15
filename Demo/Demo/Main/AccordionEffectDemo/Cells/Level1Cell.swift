@@ -9,12 +9,12 @@
 import UIKit
 import ZJTableViewManager
 
-class Level1CellItem: ZJAccordionItem, ZJItemable {
+final class Level1CellItem: ZJAccordionItem, ZJItemable {
     static var cellClass: ZJBaseCell.Type { Level1Cell.self }
     
     override init() {
         super.init()
-        self.cellHeight = 50
+        self.height = 50
     }
 }
 

@@ -13,8 +13,8 @@ open class ZJAccordionSection: ZJSection {
     public func add(item: ZJAccordionItem, parentItem: ZJAccordionItem?, isExpand: Bool = false) {
         item.isExpand = isExpand
         // 没有指定高度，计算出高度信息（这样可以防止系统自动计算导致的动画异常）
-        if item.cellHeight == UITableView.automaticDimension {
-            item.autoHeight(tableViewManager)
+        if item.height == UITableView.automaticDimension {
+            item.height = manager.layoutSizeFitting(item).height
         }
 
         if let parentItem = parentItem {
@@ -61,7 +61,7 @@ open class ZJAccordionItem: ZJItem {
     override public init() {
         super.init()
         selectionStyle = .none
-        cellHeight = UITableView.automaticDimension
+        height = UITableView.automaticDimension
         selectionHandler = { [weak self] _ in
             self?.toggleExpand()
         }
@@ -116,17 +116,17 @@ open class ZJAccordionItem: ZJItem {
             section.remove(item: i)
         }
 
-        let newFirstIndex = section.items.zj_indexOf(self) + 1
+        let newFirstIndex = section.firstIndex(of: self)! + 1
         section.insert(contentsOf: waitForInsertItems, at: newFirstIndex)
         var insertIndexPaths = [IndexPath]()
         for i in 0 ..< waitForInsertItems.count {
             waitForInsertItems[i].section = section
             insertIndexPaths.append(IndexPath(item: newFirstIndex + i, section: indexPath.section))
         }
-        tableVManager.tableView.beginUpdates()
-        tableVManager.tableView.deleteRows(at: deleteIndexPaths, with: .fade)
-        tableVManager.tableView.insertRows(at: insertIndexPaths, with: .fade)
-        tableVManager.tableView.endUpdates()
+        manager.tableView.beginUpdates()
+        manager.tableView.deleteRows(at: deleteIndexPaths, with: .fade)
+        manager.tableView.insertRows(at: insertIndexPaths, with: .fade)
+        manager.tableView.endUpdates()
         callbackItems.forEach { $0.didExpand?(self) }
 
         return isExpand

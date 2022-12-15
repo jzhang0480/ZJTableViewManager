@@ -9,7 +9,7 @@
 import UIKit
 import ZJTableViewManager
 
-open class ZJTextFieldItem: ZJItem, ZJItemable {
+final public class ZJTextFieldItem: ZJItem, ZJItemable {
     public static var cellClass: ZJBaseCell.Type { ZJTextFieldCell.self }
     
     public var title: String?

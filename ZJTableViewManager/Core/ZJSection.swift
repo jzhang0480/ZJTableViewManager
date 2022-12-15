@@ -11,11 +11,11 @@ import UIKit
 public typealias ZJTableViewSectionBlock = (ZJSection) -> Void
 
 open class ZJSection: NSObject {
-    public var tableViewManager: ZJTableViewManager!
+    public var manager: ZJTableViewManager!
 
-    public private(set) var items = [ZJItem]()
-    public var headerHeight: CGFloat!
-    public var footerHeight: CGFloat!
+    public private(set) var items: [ZJItem] = .init()
+    public var headerHeight: CGFloat = .leastNormalMagnitude
+    public var footerHeight: CGFloat = .leastNormalMagnitude
     public var headerView: UIView?
     public var footerView: UIView?
     public var headerTitle: String?
@@ -31,14 +31,24 @@ open class ZJSection: NSObject {
     }
 
     public var index: Int {
-        return tableViewManager.sections.zj_indexOf(self)
+        return manager.sections.unwrappedIndex(self)
+    }
+    
+    subscript(index: Int) -> ZJItemable {
+        get {
+            items[index] as! ZJItemable
+        }
+        set(newValue) {
+            items[index] = newValue
+        }
+    }
+    
+    public func firstIndex(of element: ZJItem) -> Int? {
+        return items.firstIndex(of: element)
     }
 
     override public init() {
         super.init()
-        items = []
-        headerHeight = CGFloat.leastNormalMagnitude
-        footerHeight = CGFloat.leastNormalMagnitude
     }
 
     public convenience init(headerHeight: CGFloat!, color: UIColor) {
@@ -85,12 +95,12 @@ open class ZJSection: NSObject {
     public func add(item: ZJItemable) {
         item.section = self
         items.append(item)
-        item.tableVManager.register(type(of: item))
+        item.manager.register(type(of: item))
     }
 
     public func remove(item: ZJItem) {
         // If crash at here, item not in this section
-        items.remove(at: items.zj_indexOf(item))
+        items.remove(at: items.unwrappedIndex(item))
     }
 
     public func removeAllItems() {
@@ -108,7 +118,7 @@ open class ZJSection: NSObject {
             type(of: $0.element) as! ZJItemable.Type
         }
 
-        tableViewManager.register(noDuplicateItems)
+        manager.register(noDuplicateItems)
         items.insert(contentsOf: newElements, at: i)
     }
 
@@ -121,7 +131,7 @@ open class ZJSection: NSObject {
             type(of: $0.element) as! ZJItemable.Type
         }
 
-        tableViewManager.register(noDuplicateItems)
+        manager.register(noDuplicateItems)
 
         self.items = items
     }
@@ -132,11 +142,11 @@ open class ZJSection: NSObject {
             return
         }
 
-        tableViewManager.tableView.beginUpdates()
+        manager.tableView.beginUpdates()
         item.section = self
-        items.insert(item, at: items.zj_indexOf(afterItem) + 1)
-        tableViewManager.tableView.insertRows(at: [item.indexPath], with: animate)
-        tableViewManager.tableView.endUpdates()
+        items.insert(item, at: items.unwrappedIndex(afterItem) + 1)
+        manager.tableView.insertRows(at: [item.indexPath], with: animate)
+        manager.tableView.endUpdates()
     }
 
     public func insert(_ items: [ZJItem], afterItem: ZJItem, animate: UITableView.RowAnimation = .automatic) {
@@ -145,21 +155,21 @@ open class ZJSection: NSObject {
             return
         }
 
-        tableViewManager.tableView.beginUpdates()
-        let newFirstIndex = self.items.zj_indexOf(afterItem) + 1
+        manager.tableView.beginUpdates()
+        let newFirstIndex = self.items.unwrappedIndex(afterItem) + 1
         self.items.insert(contentsOf: items, at: newFirstIndex)
         var arrNewIndexPath = [IndexPath]()
         for i in 0 ..< items.count {
             items[i].section = self
             arrNewIndexPath.append(IndexPath(item: newFirstIndex + i, section: afterItem.indexPath.section))
         }
-        tableViewManager.tableView.insertRows(at: arrNewIndexPath, with: animate)
-        tableViewManager.tableView.endUpdates()
+        manager.tableView.insertRows(at: arrNewIndexPath, with: animate)
+        manager.tableView.endUpdates()
     }
 
     public func delete(_ itemsToDelete: [ZJItem], animate: UITableView.RowAnimation = .automatic) {
         guard itemsToDelete.count > 0 else { return }
-        tableViewManager.tableView.beginUpdates()
+        manager.tableView.beginUpdates()
         var arrNewIndexPath = [IndexPath]()
         for i in itemsToDelete {
             arrNewIndexPath.append(i.indexPath)
@@ -167,13 +177,13 @@ open class ZJSection: NSObject {
         for i in itemsToDelete {
             remove(item: i)
         }
-        tableViewManager.tableView.deleteRows(at: arrNewIndexPath, with: animate)
-        tableViewManager.tableView.endUpdates()
+        manager.tableView.deleteRows(at: arrNewIndexPath, with: animate)
+        manager.tableView.endUpdates()
     }
 
     public func reload(_ animation: UITableView.RowAnimation) {
         // If crash at here, section did not in manager！
-        let index = tableViewManager.sections.zj_indexOf(self)
-        tableViewManager.tableView.reloadSections(IndexSet(integer: index), with: animation)
+        let index = manager.sections.unwrappedIndex(self)
+        manager.tableView.reloadSections(IndexSet(integer: index), with: animation)
     }
 }

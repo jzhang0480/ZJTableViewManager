@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class ZJSystemStyleItem: ZJItem, ZJItemable {
+public final class ZJSystemStyleItem: ZJItem, ZJItemable {
     public static var cellClass: ZJBaseCell.Type { return ZJSystemStyleCell.self }
     public var labelText: String?
     public var detailLabelText: String?
