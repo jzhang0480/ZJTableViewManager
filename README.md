@@ -180,7 +180,7 @@ section.add(item: item)
 #### 4.TableView相关事件（如点击事件）
 设置点击事件回调：
 ```swift
-item.setSelectionHandler { (callBackItem: LevelCellItem) in
+item.setSelection { (callBackItem: LevelCellItem) in
     //Do some thing
 }
 ```

@@ -26,7 +26,7 @@ class EditingViewController: UIViewController {
         for i in 0 ... 3 {
             let item = ZJSystemStyleItem(text: "section 0, row " + String(i))
             item.editingStyle = .delete
-            item.setDeletionHandler { [weak self] item in
+            item.setDeletion { [weak self] item in
                 self?.deleteConfirm(item: item, needConfirm: false)
             }
             section.add(item: item)
@@ -37,14 +37,13 @@ class EditingViewController: UIViewController {
         for i in 0 ... 3 {
             let item = ZJSystemStyleItem(text: "section 1, row " + String(i))
             item.editingStyle = .delete
-            item.setDeletionHandler { [weak self] item in
+            item.setDeletion { [weak self] item in
                 self?.deleteConfirm(item: item)
             }
             section.add(item: item)
         }
 
         manager.reload()
-        // Do any additional setup after loading the view.
     }
 
     func deleteConfirm(item: ZJSystemStyleItem, needConfirm: Bool = true) {

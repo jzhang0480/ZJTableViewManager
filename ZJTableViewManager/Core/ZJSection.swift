@@ -10,16 +10,16 @@ import UIKit
 
 public typealias ZJTableViewSectionBlock = (ZJSection) -> Void
 
-open class ZJSection: NSObject {
+open class ZJSection {
     public var manager: ZJTableViewManager!
 
     public private(set) var items: [ZJItem] = .init()
-    public var headerHeight: CGFloat = .leastNormalMagnitude
-    public var footerHeight: CGFloat = .leastNormalMagnitude
-    public var headerView: UIView?
-    public var footerView: UIView?
     public var headerTitle: String?
     public var footerTitle: String?
+    public var headerView: UIView?
+    public var footerView: UIView?
+    public var headerHeight: CGFloat = UITableView.automaticDimension
+    public var footerHeight: CGFloat = UITableView.automaticDimension
     var headerWillDisplayHandler: ZJTableViewSectionBlock?
     public func setHeaderWillDisplayHandler(_ block: ZJTableViewSectionBlock?) {
         headerWillDisplayHandler = block
@@ -47,49 +47,19 @@ open class ZJSection: NSObject {
         return items.firstIndex(of: element)
     }
 
-    override public init() {
-        super.init()
+    public init(headerTitle: String? = nil, footerTitle: String? = nil, headerView: UIView? = nil, footerView: UIView? = nil) {
+        self.headerTitle = headerTitle
+        self.footerTitle = footerTitle
+        self.headerView = headerView
+        self.footerView = footerView
+        headerHeight = headerView?.frame.size.height ?? UITableView.automaticDimension
+        footerHeight = footerView?.frame.size.height ?? UITableView.automaticDimension
     }
 
     public convenience init(headerHeight: CGFloat!, color: UIColor) {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: headerHeight))
         headerView.backgroundColor = color
-        self.init(headerView: headerView, footerView: nil)
-    }
-
-    public convenience init(headerTitle: String?, footerTitle: String?) {
-        self.init()
-        self.headerTitle = headerTitle
-        self.footerTitle = footerTitle
-    }
-
-    public convenience init(headerTitle: String?) {
-        self.init(headerTitle: headerTitle, footerTitle: nil)
-    }
-
-    public convenience init(footerTitle: String?) {
-        self.init(headerTitle: nil, footerTitle: footerTitle)
-    }
-
-    public convenience init(headerView: UIView!) {
-        self.init(headerView: headerView, footerView: nil)
-    }
-
-    public convenience init(footerView: UIView?) {
-        self.init(headerView: nil, footerView: footerView)
-    }
-
-    public convenience init(headerView: UIView?, footerView: UIView?) {
-        self.init()
-        if let header = headerView {
-            self.headerView = header
-            headerHeight = header.frame.size.height
-        }
-
-        if let footer = footerView {
-            self.footerView = footer
-            footerHeight = footer.frame.size.height
-        }
+        self.init(headerView: headerView)
     }
 
     public func add(item: ZJItemable) {
@@ -112,27 +82,13 @@ open class ZJSection: NSObject {
     }
 
     public func insert<C: ZJItem>(contentsOf newElements: [C], at i: Int) {
-        let noDuplicateItems = newElements.enumerated().filter { (index, value) -> Bool in
-            newElements.firstIndex(of: value) == index
-        }.map {
-            type(of: $0.element) as! ZJItemable.Type
-        }
-
-        manager.register(noDuplicateItems)
+        manager.register(newElements)
         items.insert(contentsOf: newElements, at: i)
     }
 
     public func replaceItemsFrom(items: [ZJItem]!) {
         removeAllItems()
-
-        let noDuplicateItems = items.enumerated().filter { (index, value) -> Bool in
-            items.firstIndex(of: value) == index
-        }.map {
-            type(of: $0.element) as! ZJItemable.Type
-        }
-
-        manager.register(noDuplicateItems)
-
+        manager.register(items)
         self.items = items
     }
 
@@ -185,5 +141,11 @@ open class ZJSection: NSObject {
         // If crash at here, section did not in manager！
         let index = manager.sections.unwrappedIndex(self)
         manager.tableView.reloadSections(IndexSet(integer: index), with: animation)
+    }
+}
+
+extension ZJSection: Equatable {
+    public static func == (lhs: ZJSection, rhs: ZJSection) -> Bool {
+        return lhs === rhs
     }
 }

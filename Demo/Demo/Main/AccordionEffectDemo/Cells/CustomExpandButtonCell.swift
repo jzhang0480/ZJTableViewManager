@@ -17,7 +17,7 @@ final class CustomExpandButtonCellItem: ZJAccordionItem, ZJItemable {
     override init() {
         super.init()
         // 清空默认的点击展开处理
-        setSelectionHandler(nil)
+        setSelection(nil)
         buttonTapCallBack = { callBackItem in
             callBackItem.toggleExpand()
         }

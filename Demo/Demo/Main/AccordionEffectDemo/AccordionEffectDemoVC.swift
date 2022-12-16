@@ -66,7 +66,7 @@ class AccordionEffectDemoVC: UIViewController {
         section.add(item: rootItem)
 
         // 自定义点击事件处理，重写回调就会覆盖掉默认的展开事件
-        rootItem.setSelectionHandler { [unowned self] (callBackItem: Level0CellItem) in
+        rootItem.setSelection { [unowned self] (callBackItem: Level0CellItem) in
 
             // 判断是否已经从网络获得过数据，有的话就直接展开或收起
             // （实际项目根据实际情况来判断，这里只是个例子）

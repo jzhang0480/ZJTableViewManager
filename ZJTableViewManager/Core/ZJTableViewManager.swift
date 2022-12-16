@@ -24,9 +24,6 @@ open class ZJTableViewManager: NSObject {
     public weak var scrollDelegate: ZJTableViewScrollDelegate?
     public var tableView: UITableView!
     public var sections: [ZJSection] = []
-    var defaultTableViewSectionHeight: CGFloat {
-        return tableView.style == .grouped ? 44 : 0
-    }
 
     public func selectedItem<T: ZJItem>() -> T? {
         if let item = selectedItems().first {
@@ -66,9 +63,12 @@ open class ZJTableViewManager: NSObject {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.layoutMargins = UIEdgeInsets.zero
-        tableView.estimatedRowHeight = 0
-        tableView.estimatedSectionFooterHeight = 0
-        tableView.estimatedSectionHeaderHeight = 0
+        tableView.estimatedRowHeight = 44
+        tableView.estimatedSectionFooterHeight = 44
+        tableView.estimatedSectionHeaderHeight = 44
+        if #available(iOS 15.0, *) {
+            tableView.sectionHeaderTopPadding = 0
+        }
     }
 
     /// use this method to update cell height after you change item.cellHeight.
@@ -76,17 +76,27 @@ open class ZJTableViewManager: NSObject {
         tableView.beginUpdates()
         tableView.endUpdates()
     }
+    
+    public func register(_ items: [ZJItem], _ bundle: Bundle = Bundle.main) {
+        // 从数组中获取不重复的itemType组成数组
+        let itemTypes = items.enumerated().filter { (index, value) -> Bool in
+            items.firstIndex(of: value) == index
+        }.map {
+            type(of: $0.element) as! ZJItemable.Type
+        }
+        register(itemTypes)
+    }
 
-    public func register(_ itemClasses: [ZJItemable.Type], _ bundle: Bundle = Bundle.main) {
-        for itemClass in itemClasses {
-            register(itemClass, bundle)
+    public func register(_ itemTypes: [ZJItemable.Type], _ bundle: Bundle = Bundle.main) {
+        for itemType in itemTypes {
+            register(itemType, bundle)
         }
     }
 
-    public func register(_ itemClass: ZJItemable.Type, _ bundle: Bundle = Bundle.main) {
-        let cell = itemClass.cellClass
+    public func register(_ itemType: ZJItemable.Type, _ bundle: Bundle = Bundle.main) {
+        let cell = itemType.cellClass
         let cellClass = "\(cell)"
-        let reuseIdentifier = "\(itemClass)"
+        let reuseIdentifier = "\(itemType)"
 
         guard !registeredIdentifier.contains(reuseIdentifier) else {
             return
@@ -195,20 +205,7 @@ extension ZJTableViewManager: UITableViewDelegate {
     }
 
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let section = sections[section]
-        if section.headerView != nil || (section.headerHeight > 0 && section.headerHeight != CGFloat.leastNormalMagnitude) {
-            return section.headerHeight
-        }
-
-        if let title = section.headerTitle {
-            let label = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.width - 40, height: CGFloat.greatestFiniteMagnitude))
-            label.text = title
-            label.font = UIFont.preferredFont(forTextStyle: .footnote)
-            label.sizeToFit()
-            return label.frame.height + 20.0
-        } else {
-            return defaultTableViewSectionHeight
-        }
+        return sections[section].headerHeight
     }
 
     public func tableView(_: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -218,19 +215,6 @@ extension ZJTableViewManager: UITableViewDelegate {
 
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let section = sections[indexPath.section], item = section[indexPath.row]
-        #if swift(>=4.2)
-            if item.height == UITableView.automaticDimension, tableView.estimatedRowHeight == 0 {
-                tableView.estimatedRowHeight = 44
-                tableView.estimatedSectionFooterHeight = 44
-                tableView.estimatedSectionHeaderHeight = 44
-            }
-        #else
-            if item.cellHeight == UITableViewAutomaticDimension, tableView.estimatedRowHeight == 0 {
-                tableView.estimatedRowHeight = 44
-                tableView.estimatedSectionFooterHeight = 44
-                tableView.estimatedSectionHeaderHeight = 44
-            }
-        #endif
 
         return item.height
     }

@@ -43,7 +43,7 @@ class SelectionViewController: UIViewController {
             }
 
             // 实现单选情况下的反选操作
-            item.setSelectionHandler { [unowned self] (callBackItem: SelectionCellItem) in
+            item.setSelection { [unowned self] (callBackItem: SelectionCellItem) in
                 if self.tableView.allowsMultipleSelection == true {
                     return
                 }

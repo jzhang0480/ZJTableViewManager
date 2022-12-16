@@ -36,7 +36,7 @@ class RetractableViewController: UIViewController {
         let moreItem = ZJSystemStyleItem(text: "Show More")
         moreItem.accessoryType = .disclosureIndicator
         collapsedItems.append(moreItem)
-        moreItem.setSelectionHandler { _ in
+        moreItem.setSelection { _ in
             section.replaceItemsFrom(items: expandedItems)
             section.reload(UITableView.RowAnimation.automatic)
         }
@@ -50,7 +50,7 @@ class RetractableViewController: UIViewController {
         let lessItem = ZJSystemStyleItem(text: "Show Less")
         lessItem.accessoryType = .disclosureIndicator
 
-        lessItem.setSelectionHandler { _ in
+        lessItem.setSelection { _ in
             section.replaceItemsFrom(items: collapsedItems)
             section.reload(UITableView.RowAnimation.automatic)
         }

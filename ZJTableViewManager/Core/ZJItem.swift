@@ -12,25 +12,31 @@ public typealias ZJTableViewItemBlock = (ZJItemable) -> Void
 
 public protocol ZJItemable: ZJItem {
     static var cellClass: ZJBaseCell.Type { get }
-    func setSelectionHandler(_ handler: ((Self) -> Void)?)
-    func setDeletionHandler(_ handler: ((Self) -> Void)?)
+    func setSelection(_ handler: ((Self) -> Void)?)
+    func setDeletion(_ handler: ((Self) -> Void)?)
 }
 
 public extension ZJItemable {
-    func setSelectionHandler(_ handler: ((Self) -> Void)?) {
+    func setSelection(_ handler: ((Self) -> Void)?) {
         selectionHandler = { item in
             handler?(item as! Self)
         }
     }
 
-    func setDeletionHandler(_ handler: ((Self) -> Void)?) {
+    func setDeletion(_ handler: ((Self) -> Void)?) {
         deletionHandler = { item in
             handler?(item as! Self)
         }
     }
 }
 
-open class ZJItem: NSObject {
+extension ZJItem: Equatable {
+    public static func == (lhs: ZJItem, rhs: ZJItem) -> Bool {
+        lhs === rhs
+    }
+}
+
+open class ZJItem {
     /// Cell height
     /// Specify the height or use UITableView.automaticDimension
     public var height: CGFloat = 44
@@ -64,9 +70,7 @@ open class ZJItem: NSObject {
         fatalError()
     }
 
-    override public init() {
-        super.init()
-    }
+    public init() {}
 
     public func reload(_ animation: UITableView.RowAnimation) {
         zj_log("reload tableview at \(indexPath)")
