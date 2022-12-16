@@ -205,17 +205,25 @@ extension ZJTableViewManager: UITableViewDelegate {
     }
 
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return sections[section].headerHeight
+        let section = sections[section]
+        if tableView.style == .grouped {
+            return section.headerView != nil ? section.headerHeight : UITableView.automaticDimension
+        } else {
+            return section.headerHeight
+        }
     }
 
     public func tableView(_: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         let section = sections[section]
-        return section.footerHeight
+        if tableView.style == .grouped {
+            return section.footerView != nil ? section.footerHeight : UITableView.automaticDimension
+        } else {
+            return section.footerHeight
+        }
     }
 
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let section = sections[indexPath.section], item = section[indexPath.row]
-
         return item.height
     }
 }

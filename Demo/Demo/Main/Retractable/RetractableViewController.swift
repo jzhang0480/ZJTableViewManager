@@ -30,10 +30,10 @@ class RetractableViewController: UIViewController {
 
         // collapsed
         for i in 1 ... 4 {
-            collapsedItems.append(ZJSystemStyleItem(text: "Test Item " + String(i)))
+            collapsedItems.append(ZJSystemStyleItem(labelText: "Test Item " + String(i)))
         }
 
-        let moreItem = ZJSystemStyleItem(text: "Show More")
+        let moreItem = ZJSystemStyleItem(labelText: "Show More")
         moreItem.accessoryType = .disclosureIndicator
         collapsedItems.append(moreItem)
         moreItem.setSelection { _ in
@@ -44,10 +44,10 @@ class RetractableViewController: UIViewController {
 
         // expanded
         for i in 1 ... 7 {
-            expandedItems.append(ZJSystemStyleItem(text: "Test Item " + String(i)))
+            expandedItems.append(ZJSystemStyleItem(labelText: "Test Item " + String(i)))
         }
 
-        let lessItem = ZJSystemStyleItem(text: "Show Less")
+        let lessItem = ZJSystemStyleItem(labelText: "Show Less")
         lessItem.accessoryType = .disclosureIndicator
 
         lessItem.setSelection { _ in

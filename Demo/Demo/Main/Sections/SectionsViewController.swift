@@ -33,7 +33,7 @@ class SectionsViewController: UIViewController {
             }
 
             for j in 0 ... 4 {
-                section.add(item: ZJSystemStyleItem(text: "Section " + String(i) + " Row " + String(j)))
+                section.add(item: ZJSystemStyleItem(labelText: "Section " + String(i) + " Row " + String(j)))
             }
         }
 

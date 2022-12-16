@@ -32,7 +32,7 @@ class BasicViewController: UIViewController {
 
         // Custom Cell
         // Simple String
-        section.add(item: ZJSystemStyleItem(text: "Simple String"))
+        section.add(item: ZJSystemStyleItem(labelText: "Simple String"))
 
         // Full length text field
         section.add(item: ZJTextFieldItem(title: nil, placeHolder: "Full length text field", text: nil, isFullLength: true, didChanged: nil))

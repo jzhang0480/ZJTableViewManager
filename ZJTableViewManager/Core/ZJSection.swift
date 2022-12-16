@@ -18,8 +18,8 @@ open class ZJSection {
     public var footerTitle: String?
     public var headerView: UIView?
     public var footerView: UIView?
-    public var headerHeight: CGFloat = UITableView.automaticDimension
-    public var footerHeight: CGFloat = UITableView.automaticDimension
+    public var headerHeight: CGFloat = .leastNonzeroMagnitude
+    public var footerHeight: CGFloat = .leastNonzeroMagnitude
     var headerWillDisplayHandler: ZJTableViewSectionBlock?
     public func setHeaderWillDisplayHandler(_ block: ZJTableViewSectionBlock?) {
         headerWillDisplayHandler = block
@@ -52,8 +52,8 @@ open class ZJSection {
         self.footerTitle = footerTitle
         self.headerView = headerView
         self.footerView = footerView
-        headerHeight = headerView?.frame.size.height ?? UITableView.automaticDimension
-        footerHeight = footerView?.frame.size.height ?? UITableView.automaticDimension
+        headerHeight = headerView?.frame.size.height ?? .leastNonzeroMagnitude
+        footerHeight = footerView?.frame.size.height ?? .leastNonzeroMagnitude
     }
 
     public convenience init(headerHeight: CGFloat!, color: UIColor) {

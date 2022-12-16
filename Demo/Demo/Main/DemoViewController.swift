@@ -27,7 +27,7 @@ class DemoViewController: UIViewController {
 
         let titles = ["Basic", "Retractable", "Edit", "Sections", "AutomaticHeight", "AccordionEffect", "UpdateHeight", "Selection"]
         for i in titles {
-            let item = ZJSystemStyleItem(text: i)
+            let item = ZJSystemStyleItem(labelText: i)
             item.accessoryType = .disclosureIndicator
             section.add(item: item)
 

@@ -10,19 +10,26 @@ import UIKit
 
 public final class ZJSystemStyleItem: ZJItem, ZJItemable {
     public static var cellClass: ZJBaseCell.Type { return ZJSystemStyleCell.self }
+    public var style: UITableViewCell.CellStyle = .default
     public var labelText: String?
     public var detailLabelText: String?
     public var textAlignment: NSTextAlignment = .left
     public var detailTextAlignment: NSTextAlignment = .left
     public var image: UIImage?
     public var highlightedImage: UIImage?
-    public var style: UITableViewCell.CellStyle = .default
     public var accessoryType: UITableViewCell.AccessoryType = .none
     public var accessoryView: UIView?
 
-    public convenience init(text: String?) {
-        self.init()
-        labelText = text
+    public init(style: UITableViewCell.CellStyle = .default, labelText: String? = nil, detailLabelText: String? = nil, textAlignment: NSTextAlignment = .left, detailTextAlignment: NSTextAlignment = .left, image: UIImage? = nil, highlightedImage: UIImage? = nil, accessoryType: UITableViewCell.AccessoryType = .none, accessoryView: UIView? = nil) {
+        self.style = style
+        self.labelText = labelText
+        self.detailLabelText = detailLabelText
+        self.textAlignment = textAlignment
+        self.detailTextAlignment = detailTextAlignment
+        self.image = image
+        self.highlightedImage = highlightedImage
+        self.accessoryType = accessoryType
+        self.accessoryView = accessoryView
     }
 }
 
