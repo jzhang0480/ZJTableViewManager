@@ -37,24 +37,20 @@ extension ZJItem: Equatable {
 }
 
 open class ZJItem {
+    public lazy var identifier = "\(type(of: self))"
     /// Cell height
     /// Specify the height or use UITableView.automaticDimension
     public var height: CGFloat = 44
     public var manager: ZJTableViewManager { section.manager }
     public var section: ZJSection!
-    public lazy var identifier = "\(type(of: self))"
 
-    /// cell点击事件的回调
+    /// Cell点击事件的回调
     internal var selectionHandler: ((ZJItem) -> Void)?
+    /// Cell删除事件的回调
     internal var deletionHandler: ((ZJItem) -> Void)?
 
     public var editingStyle: UITableViewCell.EditingStyle = .none
     public var selectionStyle: UITableViewCell.SelectionStyle = .default
-    public var isSelected: Bool {
-        return cell.isSelected
-    }
-
-    public var isAllowSelect = true
 
     public var indexPath: IndexPath {
         let sectionIndex = manager.sections.firstIndex(of: section)
@@ -62,12 +58,8 @@ open class ZJItem {
         return IndexPath(item: rowIndex!, section: sectionIndex!)
     }
 
-    public var cell: UITableViewCell {
-        if let unwrappedCell = manager.tableView.cellForRow(at: indexPath) {
-            return unwrappedCell
-        }
-        zj_log("You didn't get that cell, so you have to get that cell after tableView is reload. Or the cell that gets the indexPath has to be on the screen, you can't get the cell that's off the screen")
-        fatalError()
+    public var cell: UITableViewCell? {
+        return manager.tableView.cellForRow(at: indexPath)
     }
 
     public init() {}
@@ -80,9 +72,7 @@ open class ZJItem {
     }
 
     public func select(animated: Bool = true, scrollPosition: UITableView.ScrollPosition = .none) {
-        if isAllowSelect {
-            manager.tableView.selectRow(at: indexPath, animated: animated, scrollPosition: scrollPosition)
-        }
+        manager.tableView.selectRow(at: indexPath, animated: animated, scrollPosition: scrollPosition)
     }
 
     public func deselect(animated: Bool = true) {

@@ -77,7 +77,7 @@ class AccordionEffectDemoVC: UIViewController {
             }
 
             // 模拟网络请求
-            mockHttpRequest(view: callBackItem.cell.contentView) { [unowned self] in
+            mockHttpRequest(view: callBackItem.cell?.contentView) { [unowned self] in
                 // 网络请求完成 添加数据
                 for _ in 0 ..< 3 {
                     let newItem = Level1CellItem()
@@ -117,7 +117,7 @@ class AccordionEffectDemoVC: UIViewController {
             }
 
             // 模拟网络请求
-            mockHttpRequest(view: callBackItem.cell.contentView) { [unowned self] in
+            mockHttpRequest(view: callBackItem.cell?.contentView) { [unowned self] in
                 // 网络请求完成 添加数据
                 for _ in 0 ..< 3 {
                     let newItem = Level1CellItem()

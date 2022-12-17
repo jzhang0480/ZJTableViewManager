@@ -143,14 +143,6 @@ open class ZJTableViewManager: NSObject {
 // MARK: - UITableViewDelegate
 
 extension ZJTableViewManager: UITableViewDelegate {
-    public func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        let section = sections[indexPath.section], item = section[indexPath.row]
-        if item.isAllowSelect {
-            return indexPath
-        } else {
-            return nil
-        }
-    }
 
     public func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         let section = sections[indexPath.section], item = section[indexPath.row]

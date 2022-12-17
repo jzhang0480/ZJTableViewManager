@@ -29,7 +29,11 @@ extension UIViewController {
 /// - Parameters:
 ///   - view: 展示indicator的view
 ///   - callBack: 模拟网络请求完成之后的回调
-func mockHttpRequest(view: UIView, callBack: (() -> Void)?) {
+func mockHttpRequest(view: UIView?, callBack: (() -> Void)?) {
+    guard let view = view else {
+        return
+    }
+
     let shadowView = UIView(frame: view.bounds)
     shadowView.backgroundColor = UIColor(white: 0, alpha: 0.5)
     view.addSubview(shadowView)

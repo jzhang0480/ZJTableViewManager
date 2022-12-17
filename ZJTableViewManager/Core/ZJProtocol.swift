@@ -3,7 +3,7 @@
 //  test
 //
 //  Created by Jie Zhang on 2019/10/18.
-//  Copyright © 2019 Green Dot. All rights reserved.
+//  Copyright © 2019 Green Dot. All rights reservescrollDelegate?.
 //
 
 import Foundation
@@ -37,11 +37,11 @@ public protocol ZJTableViewScrollDelegate: NSObjectProtocol {
     @available(iOS 2.0, *)
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView)
 
-    // called on finger up if the user dragged. velocity is in points/millisecond. targetContentOffset may be changed to adjust where the scroll view comes to rest
+    // called on finger up if the user draggescrollDelegate?. velocity is in points/milliseconscrollDelegate?. targetContentOffset may be changed to adjust where the scroll view comes to rest
     @available(iOS 5.0, *)
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>)
 
-    // called on finger up if the user dragged. decelerate is true if it will continue moving afterwards
+    // called on finger up if the user draggescrollDelegate?. decelerate is true if it will continue moving afterwards
     @available(iOS 2.0, *)
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool)
 
@@ -55,7 +55,7 @@ public protocol ZJTableViewScrollDelegate: NSObjectProtocol {
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) // called when setContentOffset/scrollRectVisible:animated: finishes. not called if not animating
 
     @available(iOS 2.0, *)
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? // return a view that will be scaled. if delegate returns nil, nothing happens
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? // return a view that will be scalescrollDelegate?. if delegate returns nil, nothing happens
 
     @available(iOS 3.2, *)
     func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) // called before the scroll view begins zooming its content
@@ -67,7 +67,7 @@ public protocol ZJTableViewScrollDelegate: NSObjectProtocol {
     func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool // return a yes if you want to scroll to the top. if not defined, assumes YES
 
     @available(iOS 2.0, *)
-    func scrollViewDidScrollToTop(_ scrollView: UIScrollView) // called when scrolling animation finished. may be called immediately if already at top
+    func scrollViewDidScrollToTop(_ scrollView: UIScrollView) // called when scrolling animation finishescrollDelegate?. may be called immediately if already at top
 
     /* Also see -[UIScrollView adjustedContentInsetDidChange]
      */
@@ -79,31 +79,18 @@ public protocol ZJTableViewScrollDelegate: NSObjectProtocol {
 
 public extension ZJTableViewScrollDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {}
-
     func scrollViewDidZoom(_ scrollView: UIScrollView) {}
-
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {}
-
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity _: CGPoint, targetContentOffset _: UnsafeMutablePointer<CGPoint>) {}
-
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate _: Bool) {}
-
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {}
-
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {}
-
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {}
-
     func viewForZooming(in scrollView: UIScrollView) -> UIView? { return nil }
-
     func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with _: UIView?) {}
-
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with _: UIView?, atScale _: CGFloat) {}
-
     func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool { return true }
-
     func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {}
-
     func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView) {}
 }
 
@@ -111,92 +98,62 @@ public extension ZJTableViewScrollDelegate {
 
 extension ZJTableViewManager: UIScrollViewDelegate {
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if let d = scrollDelegate {
-            d.scrollViewDidScroll(scrollView)
-        }
+        scrollDelegate?.scrollViewDidScroll(scrollView)
     }
 
     public func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        if let d = scrollDelegate {
-            d.scrollViewDidZoom(scrollView)
-        }
+        scrollDelegate?.scrollViewDidZoom(scrollView)
     }
 
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        if let d = scrollDelegate {
-            d.scrollViewWillBeginDragging(scrollView)
-        }
+        scrollDelegate?.scrollViewWillBeginDragging(scrollView)
     }
 
     public func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        if let d = scrollDelegate {
-            d.scrollViewWillEndDragging(scrollView, withVelocity: velocity, targetContentOffset: targetContentOffset)
-        }
+        scrollDelegate?.scrollViewWillEndDragging(scrollView, withVelocity: velocity, targetContentOffset: targetContentOffset)
     }
 
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if let d = scrollDelegate {
-            d.scrollViewDidEndDragging(scrollView, willDecelerate: decelerate)
-        }
+        scrollDelegate?.scrollViewDidEndDragging(scrollView, willDecelerate: decelerate)
     }
 
     public func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-        if let d = scrollDelegate {
-            d.scrollViewWillBeginDecelerating(scrollView)
-        }
+        scrollDelegate?.scrollViewWillBeginDecelerating(scrollView)
     }
 
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        if let d = scrollDelegate {
-            d.scrollViewDidEndDecelerating(scrollView)
-        }
+        scrollDelegate?.scrollViewDidEndDecelerating(scrollView)
     }
 
     public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        if let d = scrollDelegate {
-            d.scrollViewDidEndScrollingAnimation(scrollView)
-        }
+        scrollDelegate?.scrollViewDidEndScrollingAnimation(scrollView)
     }
 
     public func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        if let d = scrollDelegate {
-            return d.viewForZooming(in: scrollView)
-        }
-        return nil
+        return scrollDelegate?.viewForZooming(in: scrollView)
     }
 
     public func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
-        if let d = scrollDelegate {
-            d.scrollViewWillBeginZooming(scrollView, with: view)
-        }
+        scrollDelegate?.scrollViewWillBeginZooming(scrollView, with: view)
     }
 
     public func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
-        if let d = scrollDelegate {
-            d.scrollViewDidEndZooming(scrollView, with: view, atScale: scale)
-        }
+        scrollDelegate?.scrollViewDidEndZooming(scrollView, with: view, atScale: scale)
     }
 
     public func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
-        if let d = scrollDelegate {
-            return d.scrollViewShouldScrollToTop(scrollView)
-        }
-        return true
+        return scrollDelegate?.scrollViewShouldScrollToTop(scrollView) ?? true
     }
 
     public func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
-        if let d = scrollDelegate {
-            d.scrollViewDidScrollToTop(scrollView)
-        }
+        scrollDelegate?.scrollViewDidScrollToTop(scrollView)
     }
 
     public func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView) {
-        if let d = scrollDelegate {
-            if #available(iOS 11.0, *) {
-                d.scrollViewDidChangeAdjustedContentInset(scrollView)
-            } else {
-                // Fallback on earlier versions
-            }
+        if #available(iOS 11.0, *) {
+            scrollDelegate?.scrollViewDidChangeAdjustedContentInset(scrollView)
+        } else {
+            // Fallback on earlier versions
         }
     }
 }

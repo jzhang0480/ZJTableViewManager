@@ -28,35 +28,34 @@ class SelectionViewController: UIViewController {
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.addSubview(tableView)
         manager = ZJTableViewManager(tableView: tableView)
-//        manager.register(SelectionCell.self, SelectionCellItem.self)
 
         // Add section
 
         manager.add(section: section)
 
         // Add Cell
-        for _ in 0 ..< 100 {
-            let item = SelectionCellItem()
-            section.add(item: item)
-            if section.items.count == 2 {
-                item.isAllowSelect = false
-            }
-
-            // 实现单选情况下的反选操作
-            item.setSelection { [unowned self] (callBackItem: SelectionCellItem) in
-                if self.tableView.allowsMultipleSelection == true {
-                    return
-                }
-
-                if callBackItem.isSelected, callBackItem == self.selectedItem {
-                    self.selectedItem = nil
-                    callBackItem.deselect()
-                } else {
-                    self.selectedItem = callBackItem
-                }
-            }
-            // 实现单选情况下的反选操作
-        }
+//        for _ in 0 ..< 100 {
+//            let item = SelectionCellItem()
+//            section.add(item: item)
+//            if section.items.count == 2 {
+//                item.isAllowSelect = false
+//            }
+//
+//            // 实现单选情况下的反选操作
+//            item.setSelection { [unowned self] (callBackItem: SelectionCellItem) in
+//                if self.tableView.allowsMultipleSelection == true {
+//                    return
+//                }
+//
+//                if callBackItem.isSelected, callBackItem == self.selectedItem {
+//                    self.selectedItem = nil
+//                    callBackItem.deselect()
+//                } else {
+//                    self.selectedItem = callBackItem
+//                }
+//            }
+//            // 实现单选情况下的反选操作
+//        }
     }
 
     @objc func switchSelectionType(button: UIBarButtonItem) {
