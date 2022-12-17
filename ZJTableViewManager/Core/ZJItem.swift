@@ -8,25 +8,21 @@
 
 import UIKit
 
-public typealias ZJTableViewItemBlock = (ZJItemable) -> Void
-
 public protocol ZJItemable: ZJItem {
     static var cellClass: ZJBaseCell.Type { get }
+    /// Cell点击事件的回调
     func setSelection(_ handler: ((Self) -> Void)?)
+    /// Cell删除事件的回调
     func setDeletion(_ handler: ((Self) -> Void)?)
 }
 
 public extension ZJItemable {
     func setSelection(_ handler: ((Self) -> Void)?) {
-        selectionHandler = { item in
-            handler?(item as! Self)
-        }
+        _selectionHandler = { handler?($0 as! Self) }
     }
 
     func setDeletion(_ handler: ((Self) -> Void)?) {
-        deletionHandler = { item in
-            handler?(item as! Self)
-        }
+        _deletionHandler = { handler?($0 as! Self) }
     }
 }
 
@@ -42,12 +38,10 @@ open class ZJItem {
     /// Specify the height or use UITableView.automaticDimension
     public var height: CGFloat = 44
     public var manager: ZJTableViewManager { section.manager }
-    public var section: ZJSection!
-
-    /// Cell点击事件的回调
-    internal var selectionHandler: ((ZJItem) -> Void)?
-    /// Cell删除事件的回调
-    internal var deletionHandler: ((ZJItem) -> Void)?
+    public var section: ZJBaseSection!
+    
+    internal var _selectionHandler: ((ZJItem) -> Void)?
+    internal var _deletionHandler: ((ZJItem) -> Void)?
 
     public var editingStyle: UITableViewCell.EditingStyle = .none
     public var selectionStyle: UITableViewCell.SelectionStyle = .default
@@ -58,17 +52,16 @@ open class ZJItem {
         return IndexPath(item: rowIndex!, section: sectionIndex!)
     }
 
+    // 只保证Cell在屏幕上可见的情况下能获取到
     public var cell: UITableViewCell? {
         return manager.tableView.cellForRow(at: indexPath)
     }
 
     public init() {}
 
-    public func reload(_ animation: UITableView.RowAnimation) {
+    public func reload(_ animation: UITableView.RowAnimation = .none) {
         zj_log("reload tableview at \(indexPath)")
-        manager.tableView.beginUpdates()
         manager.tableView.reloadRows(at: [indexPath], with: animation)
-        manager.tableView.endUpdates()
     }
 
     public func select(animated: Bool = true, scrollPosition: UITableView.ScrollPosition = .none) {
@@ -80,7 +73,7 @@ open class ZJItem {
     }
 
     public func delete(_ animation: UITableView.RowAnimation = .automatic) {
-        // Note: indexPath should be cached before remove, or it will changed after remove.
+        // 缓存indexPath，deleteRows传入的indexPath应当是删除之前的indexPath
         let indexPath = self.indexPath
         section.remove(at: indexPath.row)
         manager.tableView.deleteRows(at: [indexPath], with: animation)

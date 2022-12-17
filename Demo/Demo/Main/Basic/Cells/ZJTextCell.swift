@@ -14,14 +14,14 @@ public final class ZJTextItem: ZJItem, ZJItemable {
     public var text: String?
     public var placeHolder: String?
     public var textViewBackgroundColor: UIColor = .white
-    public var didChanged: ZJTableViewItemBlock?
+    public var didChanged: ((ZJTextItem) -> Void)?
     override init() {
         super.init()
         height = 125
         selectionStyle = UITableViewCell.SelectionStyle.none
     }
 
-    public convenience init(text: String?, placeHolder: String, didChanged: ZJTableViewItemBlock?) {
+    public convenience init(text: String?, placeHolder: String, didChanged: ((ZJTextItem) -> Void)?) {
         self.init()
         self.text = text
         self.placeHolder = placeHolder

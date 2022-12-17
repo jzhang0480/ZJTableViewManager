@@ -30,7 +30,7 @@ class DemoViewController: UIViewController {
             let item = ZJSystemStyleItem(labelText: i)
             item.accessoryType = .disclosureIndicator
             section.add(item: item)
-
+            
             item.setSelection { [unowned self] _ in
 
                 if i == "Basic" {

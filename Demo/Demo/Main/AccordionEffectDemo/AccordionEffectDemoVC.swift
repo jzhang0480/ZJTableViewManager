@@ -18,7 +18,6 @@ class AccordionEffectDemoVC: UIViewController {
         super.viewDidLoad()
         title = "AccordionEffect"
         manager = ZJAccordionManager(tableView: tableView)
-
         manager.add(section: section)
         defaultExpandItems()
         customExpandItems()
@@ -102,14 +101,15 @@ class AccordionEffectDemoVC: UIViewController {
 
     func customExpandButtonAndExpandAction() {
         // level 0
-        let rootItem = CustomExpandButtonCellItem()
+        let rootItem = CustomExpandButtonCell2Item2()
         rootItem.title = "自定义展开按钮和展开事件"
         section.add(item: rootItem)
 
-        // 自定义点击事件处理，调用这个方法重写回z调就会覆盖掉默认的展开事件
+        // 自定义点击事件处理，调用这个方法重写回调就会覆盖掉默认的展开事件
         rootItem.buttonTapCallBack = { [unowned self] callBackItem in
 
-            // 判断是否已经从网络获得过数据，有的话就直接展开或收起（实际项目根据实际情况来判断，这里只是个例子）
+            // 判断是否已经从网络获得过数据，有的话就直接展开或收起
+            // （实际项目根据实际情况来判断，这里只是个例子）
             if callBackItem.childItems.count > 0 {
                 // toggleExpand()执行动作方法，展开或收起，方法内部会自动处理
                 callBackItem.toggleExpand()

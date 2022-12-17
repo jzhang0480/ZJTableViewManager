@@ -23,39 +23,7 @@ open class ZJTableViewManager: NSObject {
     public static var isDebug = false
     public weak var scrollDelegate: ZJTableViewScrollDelegate?
     public var tableView: UITableView!
-    public var sections: [ZJSection] = []
-
-    public func selectedItem<T: ZJItem>() -> T? {
-        if let item = selectedItems().first {
-            return item as? T
-        }
-        return nil
-    }
-
-    public func selectedItems<T: ZJItem>() -> [T] {
-        if let indexPaths = tableView.indexPathsForSelectedRows {
-            var items = [T]()
-            for idx in indexPaths {
-                if let item = sections[idx.section][idx.row] as? T {
-                    items.append(item)
-                }
-            }
-            return items
-        }
-        return []
-    }
-
-    public func selectItems(_ items: [ZJItem], animated: Bool = true, scrollPosition: UITableView.ScrollPosition = .none) {
-        for item in items {
-            item.select(animated: animated, scrollPosition: scrollPosition)
-        }
-    }
-
-    public func deselectItems(_ items: [ZJItem], animated: Bool = true) {
-        for item in items {
-            item.deselect(animated: animated)
-        }
-    }
+    public var sections: [ZJBaseSection] = []
 
     public init(tableView: UITableView) {
         super.init()
@@ -71,12 +39,13 @@ open class ZJTableViewManager: NSObject {
         }
     }
 
-    /// use this method to update cell height after you change item.cellHeight.
+    /// 改变item.height之后刷新高度
+    /// 这个方法不会触发cellPrepared(), 如果需要触发cellPrepared()可以使用item.reload()
     public func updateHeight() {
         tableView.beginUpdates()
         tableView.endUpdates()
     }
-    
+
     public func register(_ items: [ZJItem], _ bundle: Bundle = Bundle.main) {
         // 从数组中获取不重复的itemType组成数组
         let itemTypes = items.enumerated().filter { (index, value) -> Bool in
@@ -111,12 +80,12 @@ open class ZJTableViewManager: NSObject {
         zj_log(cellClass + " registered")
     }
 
-    public func add(section: ZJSection) {
+    public func add<S: ZJBaseSection>(section: S) {
         section.manager = self
         sections.append(section)
     }
 
-    public func remove(section: ZJSection) {
+    public func remove<S: ZJBaseSection>(section: S) {
         sections.remove(at: sections.unwrappedIndex(section))
     }
 
@@ -143,10 +112,9 @@ open class ZJTableViewManager: NSObject {
 // MARK: - UITableViewDelegate
 
 extension ZJTableViewManager: UITableViewDelegate {
-
     public func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         let section = sections[indexPath.section], item = section[indexPath.row]
-        item.selectionHandler?(item)
+        item._selectionHandler?(item)
     }
 
     public func tableView(_: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
@@ -158,9 +126,7 @@ extension ZJTableViewManager: UITableViewDelegate {
         let section = sections[indexPath.section], item = section[indexPath.row]
 
         if editingStyle == .delete {
-            if let handler = item.deletionHandler {
-                handler(item)
-            }
+            item._deletionHandler?(item)
         }
     }
 
@@ -174,7 +140,7 @@ extension ZJTableViewManager: UITableViewDelegate {
 
     public func tableView(_: UITableView, willDisplayHeaderView _: UIView, forSection section: Int) {
         let section = sections[section]
-        section.headerWillDisplayHandler?(section)
+        section._headerWillDisplayHandler?(section)
     }
 
     public func tableView(_: UITableView, didEndDisplayingHeaderView _: UIView, forSection section: Int) {
@@ -182,7 +148,7 @@ extension ZJTableViewManager: UITableViewDelegate {
         // section的endDisplaying方法，这时去根据section去获取section对象会获取不到。
         if sections.count > section {
             let section = sections[section]
-            section.headerDidEndDisplayHandler?(section)
+            section._headerDidEndDisplayHandler?(section)
         }
     }
 

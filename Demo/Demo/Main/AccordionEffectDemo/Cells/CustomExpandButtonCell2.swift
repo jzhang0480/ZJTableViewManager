@@ -1,5 +1,5 @@
 //
-//  CustomExpandButtonCell.swift
+//  CustomExpandButtonCell2.swift
 //  NormalExample
 //
 //  Created by Jie Zhang on 2020/4/15.
@@ -9,23 +9,20 @@
 import UIKit
 import ZJTableViewManager
 
-final class CustomExpandButtonCellItem: ZJAccordionItem, ZJItemable {
-    static var cellClass: ZJBaseCell.Type { CustomExpandButtonCell.self }
+final class CustomExpandButtonCell2Item2: ZJAccordionItem, ZJItemable {
+    static var cellClass: ZJBaseCell.Type { CustomExpandButtonCell2.self }
     var title: String?
-    var buttonTapCallBack: ((CustomExpandButtonCellItem) -> Void)?
+    var buttonTapCallBack: ((CustomExpandButtonCell2Item2) -> Void)?
 
     override init() {
         super.init()
         // 清空默认的点击展开处理
         setSelection(nil)
-        buttonTapCallBack = { callBackItem in
-            callBackItem.toggleExpand()
-        }
         height = 50
     }
 }
 
-class CustomExpandButtonCell: ZJCell<CustomExpandButtonCellItem>, ZJCellable {
+class CustomExpandButtonCell2: ZJCell<CustomExpandButtonCell2Item2>, ZJCellable {
     @IBOutlet var btnExpand: UIButton!
     @IBOutlet var labelTitle: UILabel!
     func cellPrepared() {
@@ -34,7 +31,9 @@ class CustomExpandButtonCell: ZJCell<CustomExpandButtonCellItem>, ZJCellable {
     }
 
     @IBAction func actionExpand(_ sender: UIButton) {
-        let isExpand = item.toggleExpand()
-        sender.isSelected = isExpand
+        item.willExpand = {
+            sender.isSelected = $0.isExpand
+        }
+        item.buttonTapCallBack?(item)
     }
 }

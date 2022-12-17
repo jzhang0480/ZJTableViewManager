@@ -61,3 +61,4 @@ class CardTableViewCell: ZJCell<CardTableViewCellItem>, ZJCellable {
         contentView.layer.masksToBounds = false
     }
 }
+

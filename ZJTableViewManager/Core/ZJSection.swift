@@ -8,38 +8,50 @@
 
 import UIKit
 
-public typealias ZJTableViewSectionBlock = (ZJSection) -> Void
+public protocol ZJSectionable: ZJBaseSection {
+    func setHeaderWillDisplayHandler(_ handler: ((Self) -> Void)?)
+    func setHeaderDidEndDisplayHandler(_ handler: ((Self) -> Void)?)
+}
 
-open class ZJSection {
+public final class ZJSection: ZJBaseSection, ZJSectionable {}
+
+open class ZJBaseSection {
     public var manager: ZJTableViewManager!
     public private(set) var items: [ZJItem] = []
-    
     public var headerTitle: String?
     public var footerTitle: String?
     public var headerView: UIView?
     public var footerView: UIView?
-
-    private var _headerHeight: CGFloat = UITableView.automaticDimension
-    private var _footerHeight: CGFloat = UITableView.automaticDimension
+    private var _headerHeight: CGFloat?
+    private var _footerHeight: CGFloat?
     public var headerHeight: CGFloat {
-        set { _headerHeight = newValue }
-        get { headerView == nil ? UITableView.automaticDimension : _headerHeight }
+        set {
+            _headerHeight = newValue
+        }
+        get {
+            if let _headerHeight = _headerHeight {
+                return _headerHeight
+            } else {
+                return (manager.tableView.style == .grouped || headerTitle != nil) ? UITableView.automaticDimension : .leastNonzeroMagnitude
+            }
+        }
     }
 
     public var footerHeight: CGFloat {
-        set { _footerHeight = newValue }
-        get { footerView == nil ? UITableView.automaticDimension : _footerHeight }
+        set {
+            _footerHeight = newValue
+        }
+        get {
+            if let _footerHeight = _footerHeight {
+                return _footerHeight
+            } else {
+                return (manager.tableView.style == .grouped || footerTitle != nil) ? UITableView.automaticDimension : .leastNonzeroMagnitude
+            }
+        }
     }
 
-    var headerWillDisplayHandler: ZJTableViewSectionBlock?
-    public func setHeaderWillDisplayHandler(_ block: ZJTableViewSectionBlock?) {
-        headerWillDisplayHandler = block
-    }
-
-    var headerDidEndDisplayHandler: ZJTableViewSectionBlock?
-    public func setHeaderDidEndDisplayHandler(_ block: ZJTableViewSectionBlock?) {
-        headerDidEndDisplayHandler = block
-    }
+    internal var _headerWillDisplayHandler: ((ZJBaseSection) -> Void)?
+    internal var _headerDidEndDisplayHandler: ((ZJBaseSection) -> Void)?
 
     public var index: Int {
         return manager.sections.unwrappedIndex(self)
@@ -63,8 +75,13 @@ open class ZJSection {
         self.footerTitle = footerTitle
         self.headerView = headerView
         self.footerView = footerView
-        headerHeight = headerView?.frame.size.height ?? .leastNonzeroMagnitude
-        footerHeight = footerView?.frame.size.height ?? .leastNonzeroMagnitude
+        if let headerView = headerView {
+            headerHeight = headerView.frame.size.height
+        }
+
+        if let footerView = footerView {
+            footerHeight = footerView.frame.size.height
+        }
     }
 
     public convenience init(headerHeight: CGFloat!, color: UIColor) {
@@ -104,11 +121,6 @@ open class ZJSection {
     }
 
     public func insert(_ item: ZJItem!, afterItem: ZJItem, animate: UITableView.RowAnimation = .automatic) {
-        if !items.contains(where: { $0 == afterItem }) {
-            zj_log("can't insert because afterItem did not in sections")
-            return
-        }
-
         manager.tableView.beginUpdates()
         item.section = self
         items.insert(item, at: items.unwrappedIndex(afterItem) + 1)
@@ -117,11 +129,6 @@ open class ZJSection {
     }
 
     public func insert(_ items: [ZJItem], afterItem: ZJItem, animate: UITableView.RowAnimation = .automatic) {
-        if !self.items.contains(where: { $0 == afterItem }) {
-            zj_log("can't insert because afterItem did not in sections")
-            return
-        }
-
         manager.tableView.beginUpdates()
         let newFirstIndex = self.items.unwrappedIndex(afterItem) + 1
         self.items.insert(contentsOf: items, at: newFirstIndex)
@@ -155,8 +162,20 @@ open class ZJSection {
     }
 }
 
-extension ZJSection: Equatable {
-    public static func == (lhs: ZJSection, rhs: ZJSection) -> Bool {
+public extension ZJSectionable {
+    func setHeaderDidEndDisplayHandler(_ handler: ((Self) -> Void)?) {
+        _headerDidEndDisplayHandler = { handler?($0 as! Self) }
+    }
+
+    func setHeaderWillDisplayHandler(_ handler: ((Self) -> Void)?) {
+        _headerWillDisplayHandler = { handler?($0 as! Self) }
+    }
+}
+
+// MARK: - Equatable -
+
+extension ZJBaseSection: Equatable {
+    public static func == (lhs: ZJBaseSection, rhs: ZJBaseSection) -> Bool {
         return lhs === rhs
     }
 }

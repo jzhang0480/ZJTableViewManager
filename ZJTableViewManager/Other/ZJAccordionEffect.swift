@@ -8,7 +8,9 @@
 
 import UIKit
 
-open class ZJAccordionSection: ZJSection {
+/// 手风琴效果的section，如果需要处理section header即将显示/消失的事件，
+/// 请参考ZJSection，继承ZJAccordionSection并遵守ZJSectionable协议
+open class ZJAccordionSection: ZJBaseSection {
     public func add(item: ZJAccordionItem, parentItem: ZJAccordionItem?, isExpand: Bool = false) {
         item.isExpand = isExpand
         // 没有指定高度，计算出高度信息（这样可以防止系统自动计算导致的动画异常）
@@ -47,7 +49,7 @@ open class ZJAccordionSection: ZJSection {
 open class ZJAccordionManager: ZJTableViewManager {}
 
 open class ZJAccordionItem: ZJItem {
-    public fileprivate(set) var level: Int = 0
+    public fileprivate(set) var level = 0
     public fileprivate(set) var isExpand = false
     public fileprivate(set) var childItems = [ZJAccordionItem]()
     public weak var parentItem: ZJAccordionItem?
@@ -59,8 +61,7 @@ open class ZJAccordionItem: ZJItem {
     override public init() {
         super.init()
         selectionStyle = .none
-        height = UITableView.automaticDimension
-        selectionHandler = { [weak self] _ in
+        (self as? ZJItemable)?.setSelection { [weak self] _ in
             self?.toggleExpand()
         }
     }
@@ -90,15 +91,15 @@ open class ZJAccordionItem: ZJItem {
         var callbackItems: [ZJAccordionItem] = []
         callbackItems.append(self)
         if let parentItem = parentItem, parentItem.isAutoClose {
-            parentItem.allVisibleChildItems(self).forEach { item in
-                if item.isExpand {
-                    if item.level == self.level {
-                        callbackItems.append(item)
+            parentItem.allVisibleChildItems(self).forEach {
+                if $0.isExpand {
+                    if $0.level == self.level {
+                        callbackItems.append($0)
                     }
-                    item.isExpand = false
+                    $0.isExpand = false
                 }
-                if item.level != self.level {
-                    waitForDeleteItems.append(item)
+                if $0.level != self.level {
+                    waitForDeleteItems.append($0)
                 }
             }
         }

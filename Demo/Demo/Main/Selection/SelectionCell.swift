@@ -11,6 +11,7 @@ import ZJTableViewManager
 
 final class SelectionCellItem: ZJItem, ZJItemable {
     static var cellClass: ZJBaseCell.Type { SelectionCell.self }
+    var isSelected: Bool = false
 
     override init() {
         super.init()
@@ -24,14 +25,6 @@ class SelectionCell: ZJCell<SelectionCellItem>, ZJCellable {
 
     func cellPrepared() {
         titleL.text = "Item \(item.indexPath.row)"
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        if selected {
-            img.isHidden = false
-        } else {
-            img.isHidden = true
-        }
+        img.isHidden = !item.isSelected
     }
 }

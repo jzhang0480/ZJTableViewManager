@@ -15,11 +15,11 @@ public final class ZJTextFieldItem: ZJItem, ZJItemable {
     public var title: String?
     public var placeHolder: String?
     public var text: String?
-    public var didChanged: ZJTableViewItemBlock?
+    public var didChanged: ((ZJTextFieldItem) -> Void)?
     public var isFullLength: Bool = false
     public var isSecureTextEntry: Bool = false
 
-    public convenience init(title: String?, placeHolder: String?, text: String?, isFullLength: Bool = false, didChanged: ZJTableViewItemBlock?) {
+    public convenience init(title: String?, placeHolder: String?, text: String?, isFullLength: Bool = false, didChanged: ((ZJTextFieldItem) -> Void)?) {
         self.init()
         self.title = title
         self.placeHolder = placeHolder

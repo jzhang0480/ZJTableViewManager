@@ -39,7 +39,7 @@ class BasicViewController: UIViewController {
 
         // Password
         let passwordItem = ZJTextFieldItem(title: "Password", placeHolder: "Password Item", text: nil, didChanged: { item in
-            if let text = (item as! ZJTextFieldItem).text {
+            if let text = item.text {
                 zj_log(text)
             }
         })
@@ -53,7 +53,7 @@ class BasicViewController: UIViewController {
 
         // Text Item
         section.add(item: ZJTextItem(text: nil, placeHolder: "Text Item", didChanged: { item in
-            if let text = (item as! ZJTextItem).text {
+            if let text = item.text {
                 zj_log(text)
             }
         }))
