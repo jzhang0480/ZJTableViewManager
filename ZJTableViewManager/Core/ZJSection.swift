@@ -12,14 +12,25 @@ public typealias ZJTableViewSectionBlock = (ZJSection) -> Void
 
 open class ZJSection {
     public var manager: ZJTableViewManager!
-
-    public private(set) var items: [ZJItem] = .init()
+    public private(set) var items: [ZJItem] = []
+    
     public var headerTitle: String?
     public var footerTitle: String?
     public var headerView: UIView?
     public var footerView: UIView?
-    public var headerHeight: CGFloat = .leastNonzeroMagnitude
-    public var footerHeight: CGFloat = .leastNonzeroMagnitude
+
+    private var _headerHeight: CGFloat = UITableView.automaticDimension
+    private var _footerHeight: CGFloat = UITableView.automaticDimension
+    public var headerHeight: CGFloat {
+        set { _headerHeight = newValue }
+        get { headerView == nil ? UITableView.automaticDimension : _headerHeight }
+    }
+
+    public var footerHeight: CGFloat {
+        set { _footerHeight = newValue }
+        get { footerView == nil ? UITableView.automaticDimension : _footerHeight }
+    }
+
     var headerWillDisplayHandler: ZJTableViewSectionBlock?
     public func setHeaderWillDisplayHandler(_ block: ZJTableViewSectionBlock?) {
         headerWillDisplayHandler = block

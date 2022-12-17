@@ -205,21 +205,11 @@ extension ZJTableViewManager: UITableViewDelegate {
     }
 
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let section = sections[section]
-        if tableView.style == .grouped {
-            return section.headerView != nil ? section.headerHeight : UITableView.automaticDimension
-        } else {
-            return section.headerHeight
-        }
+        return sections[section].headerHeight
     }
 
     public func tableView(_: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        let section = sections[section]
-        if tableView.style == .grouped {
-            return section.footerView != nil ? section.footerHeight : UITableView.automaticDimension
-        } else {
-            return section.footerHeight
-        }
+        return sections[section].footerHeight
     }
 
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -251,14 +241,8 @@ extension ZJTableViewManager: UITableViewDataSource {
         let section = sections[indexPath.section], item = section[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: item.identifier)
         cell?.selectionStyle = item.selectionStyle
-
-        if let baseCell = cell as? ZJBaseCell {
-            baseCell._item = item
-        }
-
-        if let protocolCell = cell as? ZJCellable {
-            protocolCell.cellPrepared()
-        }
+        (cell as! ZJBaseCell)._item = item
+        (cell as! ZJCellable).cellPrepared()
         return cell!
     }
 }
