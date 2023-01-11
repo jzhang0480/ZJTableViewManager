@@ -31,7 +31,7 @@ class ZJSwitchCell: ZJCell<ZJSwitchItem>, ZJCellable {
         // Initialization code
     }
 
-    func cellPrepared() {
+    func cellPreparedForReuse() {
         labelTitle.text = item.title
         switchButton.isOn = item.isOn
     }

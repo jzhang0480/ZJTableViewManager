@@ -21,13 +21,11 @@ final class Level0CellItem: ZJAccordionItem, ZJItemable {
 class Level0Cell: ZJCell<Level0CellItem>, ZJCellable {
     @IBOutlet var labelTitle: UILabel!
 
-    func cellPrepared() {
+    func cellPreparedForReuse() {
         labelTitle.text = item.title
     }
 
-    func cellDidAppear() {}
-
-    func cellDidDisappear() {}
+    func cellDidEndDisplaying() {}
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -22,7 +22,7 @@ final class Level3CellItem: ZJAccordionItem, ZJItemable {
 class Level3Cell: ZJCell<Level3CellItem>, ZJCellable {
     @IBOutlet weak var titleL: UILabel!
 
-    func cellPrepared() {
+    func cellPreparedForReuse() {
         titleL.text = item.title
     }
 

@@ -52,11 +52,11 @@ class CardTableViewCell: ZJCell<CardTableViewCellItem>, ZJCellable {
         selectedBackgroundView = UIView()
     }
 
-    func cellPrepared() {
+    func cellPreparedForReuse() {
         layer.zPosition = item.zPosition
     }
 
-    func cellWillAppear() {
+    func cellWillDisplay() {
         layer.masksToBounds = false
         contentView.layer.masksToBounds = false
     }

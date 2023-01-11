@@ -103,7 +103,7 @@ open class ZJTableViewManager: NSObject {
         register(type(of: item) as! ZJItemable.Type)
         let cell = tableView.dequeueReusableCell(withIdentifier: item.identifier)!
         (cell as! ZJBaseCell)._item = item
-        (cell as! ZJCellable).cellPrepared()
+        (cell as! ZJCellable).cellPreparedForReuse()
 
         return cell.systemLayoutSizeFitting(CGSize(width: tableView.frame.width, height: .zero), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel)
     }
@@ -131,11 +131,11 @@ extension ZJTableViewManager: UITableViewDelegate {
     }
 
     public func tableView(_: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt _: IndexPath) {
-        (cell as! ZJCellable).cellDidDisappear()
+        (cell as! ZJCellable).cellDidEndDisplaying()
     }
 
     public func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt _: IndexPath) {
-        (cell as! ZJCellable).cellWillAppear()
+        (cell as! ZJCellable).cellWillDisplay()
     }
 
     public func tableView(_: UITableView, willDisplayHeaderView _: UIView, forSection section: Int) {
@@ -200,7 +200,7 @@ extension ZJTableViewManager: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: item.identifier)
         cell?.selectionStyle = item.selectionStyle
         (cell as! ZJBaseCell)._item = item
-        (cell as! ZJCellable).cellPrepared()
+        (cell as! ZJCellable).cellPreparedForReuse()
         return cell!
     }
 }
