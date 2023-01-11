@@ -41,7 +41,7 @@ open class ZJTextFieldCell: ZJCell<ZJTextFieldItem>, ZJCellable {
         // Initialization code
     }
 
-    public func cellPrepared() {
+    public func cellPreparedForReuse() {
         if item.isFullLength {
             titleConstraint.constant = 0
         } else {

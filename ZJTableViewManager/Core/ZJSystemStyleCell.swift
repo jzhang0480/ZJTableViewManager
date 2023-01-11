@@ -34,7 +34,7 @@ public final class ZJSystemStyleItem: ZJItem, ZJItemable {
 }
 
 public class ZJSystemStyleCell: ZJCell<ZJSystemStyleItem>, ZJCellable {
-    public func cellPrepared() {
+    public func cellPreparedForReuse() {
         textLabel?.text = item.labelText
         textLabel?.textAlignment = item.textAlignment
         detailTextLabel?.text = item.detailLabelText

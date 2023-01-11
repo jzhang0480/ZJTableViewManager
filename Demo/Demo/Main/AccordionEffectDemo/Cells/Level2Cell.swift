@@ -18,7 +18,7 @@ final class Level2CellItem: ZJAccordionItem, ZJItemable {
 }
 
 class Level2Cell: ZJCell<Level2CellItem>, ZJCellable {
-    func cellPrepared() {}
+    func cellPreparedForReuse() {}
 
     override func awakeFromNib() {
         super.awakeFromNib()

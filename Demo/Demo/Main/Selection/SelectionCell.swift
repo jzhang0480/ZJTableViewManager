@@ -23,7 +23,7 @@ class SelectionCell: ZJCell<SelectionCellItem>, ZJCellable {
     @IBOutlet var img: UIImageView!
     @IBOutlet var titleL: UILabel!
 
-    func cellPrepared() {
+    func cellPreparedForReuse() {
         titleL.text = "Item \(item.indexPath.row)"
         img.isHidden = !item.isSelected
     }

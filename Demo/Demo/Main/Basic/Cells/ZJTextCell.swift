@@ -38,7 +38,7 @@ open class ZJTextCell: ZJCell<ZJTextItem>, UITextViewDelegate, ZJCellable {
         textView.delegate = self
     }
 
-    public func cellPrepared() {
+    public func cellPreparedForReuse() {
         textView.placeholder = item.placeHolder
         textView.text = item.text
         textView.backgroundColor = item.textViewBackgroundColor

@@ -12,16 +12,14 @@ import UIKit
 // MARK: - ZJTableViewCellProtocol
 
 public protocol ZJCellable: UITableViewCell {
-    func cellPrepared()
-    func cellWillAppear()
-    func cellDidAppear()
-    func cellDidDisappear()
+    func cellPreparedForReuse()
+    func cellWillDisplay()
+    func cellDidEndDisplaying()
 }
 
 public extension ZJCellable {
-    func cellWillAppear() {}
-    func cellDidAppear() {}
-    func cellDidDisappear() {}
+    func cellWillDisplay() {}
+    func cellDidEndDisplaying() {}
 }
 
 // MARK: - ZJTableViewScrollDelegate

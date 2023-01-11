@@ -27,7 +27,7 @@ class AutomaticHeightCell: ZJCell<AutomaticHeightCellItem>, ZJCellable {
     }
 
     /// cell即将出现在屏幕中的回调方法 在这个方法里面赋值
-    func cellPrepared() {
+    func cellPreparedForReuse() {
         titleLabel.text = item.feed.title
         contentLabel.text = item.feed.content
         if item.feed.imageName.isEmpty == false {

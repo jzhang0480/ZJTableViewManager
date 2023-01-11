@@ -25,7 +25,7 @@ final class CustomExpandButtonCell2Item2: ZJAccordionItem, ZJItemable {
 class CustomExpandButtonCell2: ZJCell<CustomExpandButtonCell2Item2>, ZJCellable {
     @IBOutlet var btnExpand: UIButton!
     @IBOutlet var labelTitle: UILabel!
-    func cellPrepared() {
+    func cellPreparedForReuse() {
         btnExpand.isSelected = item.isExpand
         labelTitle.text = item.title
     }
